@@ -5,3 +5,69 @@ section.u4m-drag-and-drop-area {
         @include form;
     }
 }
+.page-center,
+.conaitner {
+	max-width: 1170px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+.flex_row,
+.flex-row{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+	row-gap: 30px;
+}
+.col{
+	padding:0 15px;
+}
+.col-1  {
+	width: 8.3333%;
+}
+.col-2  {
+	width: 16.6667%;
+	
+}
+.col-3  {
+	width: 25%;
+}
+.col-4  {
+	width: 33.3333%;
+}
+.col-5  {
+	width: 41.6667%;
+}
+.col-6  {
+	width: 50%;
+}
+.col-7  {
+	width: 58.3333%;
+}
+.col-8  {
+	width: 66.6667%;
+}
+.col-9  {
+	width: 75%;
+}
+.col-10 {
+	width: 83.3333%;
+}
+.col-11 {
+	width: 91.6667%;
+}
+.col-12 {
+	width: 100%;
+}
+@media (max-width:991px) and (min-width:768px){
+	.col-4,
+	.col-3{
+		width: 50%;
+	}
+}
+@media (max-width:767px){
+	.col-6,
+	.col-4,
+	.col-3{
+		width: 100%;
+	}
+}
