@@ -293,7 +293,7 @@ div#hs-eu-cookie-confirmation.hs-cookie-notification-position-bottom.can-use-gra
 
 // default p size
 p {
-  @include b3;
+  @include b1;
 }
 
 a {
@@ -353,6 +353,12 @@ button {
 /* Forms */
 form {
   margin-bottom: 30rem;
+}
+
+
+/* primary button */
+.hs-button{
+  @include button;
 }
 
 ::-webkit-input-placeholder {
