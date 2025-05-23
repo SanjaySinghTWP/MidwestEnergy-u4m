@@ -7,6 +7,7 @@ $gray1: #edf0f2;
 $gray2: #cbd6e2;
 $gray3: #7c98b6;
 $bright_green: #d0dd28;
+$super_light_gray: #f5f7f7;
 $light_gray: #b8c0c2;
 $middle_green: #697b79;
 $dark_green: #39473f;
@@ -21,6 +22,12 @@ $gradient1: linear-gradient(
   $middle_green 83.9%,
   $middle_green 101.77%
 );
+$gradient2: radial-gradient(
+  43.24% 59.53% at 35.43% 57.72%,
+  rgba(208, 221, 40, 0.25) 0%,
+  rgba(55, 58, 54, 0.06) 100%
+);
+
 $font1: "Source Sans Pro";
 $font2: "Priori Sans OT";
 $font3: "Lora";

@@ -75,6 +75,40 @@ h6:first-child {
 
 /* 0 top margin on 1st header */
 // default anchor link offset
+
+.dnd-section,
+.dnd_padd {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.bg_overlay ~ :not(.bg_overlay),
+.dnd_padd {
+  position: relative;
+  z-index: 2;
+}
+
+.bg_image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.bg_overlay {
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.page-center.full_width {
+  max-width: 100%;
+  padding: 0;
+}
+
 div.hs_cos_wrapper_widget section.top-margin-none {
   margin-top: 0;
 }
@@ -242,6 +276,39 @@ div.hs_cos_wrapper_widget section.bottom-padding-large {
   top: -160rem;
   visibility: hidden;
 }
+//eyebrowtext
+.eyebrowtext {
+  color: $middle_green;
+  font-family: $font1;
+  font-size: $baseFontSize;
+  font-style: normal;
+  font-weight: 600;
+  line-height: $baseLineHeight;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.intro_btn_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+}
+
+.intro_content.left .intro_btn_wrap {
+  justify-content: left;
+}
+.intro_content.right .intro_btn_wrap {
+  justify-content: right;
+}
+.intro_content.center .intro_btn_wrap {
+  justify-content: center;
+}
+h2.intro_title {
+  margin-bottom: 12px;
+}
+.intro_desc p {
+  margin-bottom: 12px;
+}
 
 // video popup for Magnific modal
 div.video-popup {
@@ -355,10 +422,141 @@ form {
   margin-bottom: 30rem;
 }
 
-
 /* primary button */
-.hs-button{
+.hs-button,
+.btn_item.cmhs-button a.cta_button {
   @include button;
+  -moz-box-sizing: unset !important;
+  -webkit-box-sizing: unset !important;
+  box-sizing: unset !important;
+  vertical-align: unset !important;
+}
+
+a.hs-sec-btn {
+  color: #39473f;
+  font-family: "Source Sans Pro";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  column-gap: 5px;
+  span.text {
+    position: relative;
+    svg {
+      height: 2px;
+      flex-shrink: 0;
+      width: 100%;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 10%;
+      height: 2px;
+      background: linear-gradient(
+        71deg,
+        #fff 0%,
+        $bright_green 41.68%,
+        #697b79 83.9%,
+        #697b79 101.77%
+      );
+      bottom: -1px;
+      transition: all 0.3s ease;
+    }
+  }
+  span.arrow {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    span.text {
+      &:before {
+        width: 100%;
+      }
+    }
+    span.arrow {
+      transform: translateX(5px);
+    }
+  }
+}
+
+.cmhs-sec-btn {
+  a.cta_button {
+    position: relative;
+    color: #39473f;
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    column-gap: 5px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 10%;
+      height: 2px;
+      background: linear-gradient(
+        71deg,
+        #fff 0%,
+        #d0dd28 41.68%,
+        #697b79 83.9%,
+        #697b79 101.77%
+      );
+      bottom: -1px;
+      transition: all 0.3s ease;
+    }
+
+    &::after {
+      content: "";
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2225%22%20viewBox%3D%220%200%2018%2025%22%20fill%3D%22none%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M12.594%2011.8808C12.8098%2012.0901%2012.8098%2012.4294%2012.594%2012.6387L6.95976%2018.1028C6.74394%2018.3121%206.39409%2018.3121%206.17827%2018.1028L5.91772%2017.8501C5.7019%2017.6408%205.7019%2017.3015%205.91772%2017.0922L10.9007%2012.2598L5.91772%207.42731C5.7019%207.21801%205.7019%206.87872%205.91772%206.66942L6.17827%206.41674C6.39409%206.20744%206.74394%206.20744%206.95976%206.41674L12.594%2011.8808Z%22%20fill%3D%22%2339473F%22%2F%3E%3C%2Fsvg%3E");
+      width: 24px;
+      height: 24px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      background-size: 18px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &:hover {
+      &::before {
+        width: calc(100% - 29px);
+      }
+
+      &::after {
+        transform: translateX(5px);
+      }
+    }
+  }
+}
+
+a.tertiary-btn,
+.btn_item.cmtertiary-btn a.cta_button {
+  display: inline-block;
+  padding: 12rem 47.5rem;
+  border-radius: 24px;
+  border: 3px solid $white;
+  color: $white;
+  text-align: center;
+  font-family: $font1;
+  font-size: $baseFontSize;
+  font-style: normal;
+  font-weight: 600;
+  line-height: $baseLineHeight;
+  &:hover {
+    border-color: $bright_green;
+    color: $bright_green;
+  }
 }
 
 ::-webkit-input-placeholder {
@@ -476,4 +674,85 @@ a[href="javascript:;"] {
 //
 section[class*="u4m-"] {
   scroll-margin-top: 150px;
+}
+
+.bright_green_bg {
+  background-color: $bright_green;
+}
+.super_light_gray_bg {
+  background-color: $super_light_gray;
+}
+.light_gray_bg {
+  background-color: $light_gray;
+}
+.middle_green_bg {
+  background-color: $middle_green;
+}
+.dark_green_bg {
+  background-color: $dark_green;
+}
+.orange_bg {
+  background-color: $orange;
+}
+.red_bg {
+  background-color: $red;
+}
+.blue_bg {
+  background-color: $blue;
+}
+.yellow_bg {
+  background-color: $yellow;
+}
+.gradient1 {
+  background: $gradient1;
+}
+
+.gradient2 {
+  background: $gradient2;
+}
+
+.intro_desc.b3 p {
+  @include b3;
+  color: inherit;
+}
+
+.reverse-text {
+  color: $white;
+
+  .cmhs-sec-btn {
+    a.cta_button {
+      color: #fff;
+
+      &::after {
+        filter: invert(1);
+      }
+    }
+  }
+
+  a.hs-sec-btn {
+    color: #fff;
+
+    svg {
+      path {
+        fill: #fff;
+      }
+    }
+  }
+
+  .themeStyle,
+  .bodystyle2,
+  .bodystyle1,
+  .bodystyle3,
+  .bodystyle4,
+  .bodystyle5,
+  .eyebrow_text,
+  .eyebrowtext,
+  .intro_desc,
+  .intro_title {
+    color: $white;
+  }
+
+  :is(h1, h2, h3, h4, h5, h6, p) {
+    color: $white;
+  }
 }
