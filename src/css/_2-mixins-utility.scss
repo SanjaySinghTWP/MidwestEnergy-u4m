@@ -48,15 +48,13 @@
 }
 
 @mixin ie {
-
-  @media all and (-ms-high-contrast: none),
-  (-ms-high-contrast: active) {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     @content;
   }
 }
 
 @mixin safari {
-  @media not all and (min-resolution:.001dpcm) {
+  @media not all and (min-resolution: 0.001dpcm) {
     @supports (-webkit-appearance: none) {
       @content;
     }
