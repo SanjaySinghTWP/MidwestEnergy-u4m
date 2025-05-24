@@ -1,77 +1,73 @@
 @import "../../css/_module-imports";
-section.u4m-animated-stats {
-  margin-top: 100rem;
-  margin-bottom: 100rem;
-  &.reverse-text {
-    color: $white;
-  }
-  .heading {
-    @include center;
-    @include h2;
-    text-align: center;
-  }
-  .intro {
-    @include center;
-  }
-  div.statistics {
-    @include center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    &.items-four {
-      div.statistics__item {
-        flex-basis: calc(25% - 40rem);
-        @include tablet {
-          flex-basis: calc(50% - 40rem);
-        }
-        @include phone {
-          flex: 0 0 100%;
-        }
-      }
+
+$color_1: #39473f;
+$color_2: #697b79;
+$font-family_1: "Priori Sans OT";
+$font-family_2: "Source Sans Pro";
+
+.u4m-animated-stats {
+  .stats-wrapper {
+    .stats_item.col-2 {
+      width: 20%;
     }
-    div.statistics__item {
-      text-align: center;
-      margin: 20rem;
-      flex-basis: calc(33.333% - 40rem);
-      flex-grow: 0;
-      flex-shrink: 0;
-      @include tablet {
-        flex-basis: calc(50% - 40rem);
+    .stats_item {
+      .stats_inner {
+        min-width: 162.334px;
+        min-height: 162.334px;
+        max-width: 162.334px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color_1;
+        text-align: center;
+        font-family: $font-family_1;
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        overflow: hidden;
+        word-break: break-word;
       }
-      @include phone {
-        flex: 0 0 100%;
-      }
-      .image {
-        min-height: 70rem;
-        img {
-          max-width: 80rem;
+      .stats_bottom_text {
+        padding: 20px 0px;
+        text-align: center;
+        p {
+          color: $color_2;
           text-align: center;
-          margin: 0 auto;
-          display: block;
+          font-family: $font-family_2;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
         }
       }
-      .count,
-      .number {
-        font-size: 50rem;
-        font-weight: bold;
-      }
-      .currency {
-        padding-right: 5rem;
-        //vertical-align: text-bottom;
-        font-size: 50rem;
-        font-weight: bold;
-      }
-      .unit {
-        padding-left: 5rem;
-        //vertical-align: text-bottom;
-        font-size: 50rem;
-        font-weight: bold;
-      }
-      .caption {
-        display: block;
-        font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .stats_border_wrapper {
+        padding: 8px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
       }
     }
+    .flex_row {
+      padding: 0px 20px;
+      justify-content: center;
+    }
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u4m-animated-stats .stats-wrapper .stats_item .stats_inner {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u4m-animated-stats .stats-wrapper .stats_item .stats_inner {
+    font-size: 50px;
   }
 }
