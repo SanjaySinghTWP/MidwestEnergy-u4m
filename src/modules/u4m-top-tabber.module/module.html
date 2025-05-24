@@ -1,0 +1,171 @@
+{% set moduleName = 'u4m-top-tabber' %}
+{% include "../partials/u4-module-includes.html" %}
+{{ macros.introGroup(module.intro_content, module.module_settings) }}
+</div>
+<div class="tabber_wrp">
+	<div class="tabber_wrp_inner" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
+			 {% endif %} data-aos-delay="100">
+		<ul class="flex_row tab_row">
+			{% for item in module.tab_items %}
+			{% if item.tab_title %}
+			<li class="col-4 col tab_item-{{loop.index}} {% if loop.first%} active {% endif%}" data="{{loop.index}}">
+				<a href='javascript:void(0)'>{{ item.tab_title }}</a>
+			</li>
+			{% endif %}
+			{% endfor %}
+		</ul>
+		{% for item in module.tab_items %}
+		<div class="tab_content_wrp  tab_content-{{loop.index}} {% if loop.first%} active {% endif%} " data="{{loop.index}}">
+			<div class="tab_content_inner">
+				<div class="flex_row ">
+					{% if item.left_column.content ||item.left_column.button_group %}
+					<div class="left-col col {{ item.number_of_columns }}">
+						<div class="col-inner">
+							{% if item.left_column.content %}
+							<div class="content_wrp">
+								{{ item.left_column.content }}
+							</div>
+							{% endif %}
+							{%  if item.left_column.button_group %}
+							<div class="btn_wrp">
+								{{macros.buttonGroup(item.left_column.button_group)}}
+							</div>
+							{% endif %}
+
+						</div>
+					</div>
+					{% endif %}
+					{% if item.number_of_columns =="col-6"%}
+					<div class="right-col col {{ item.number_of_columns }}">
+						<div class="col-inner">
+							{% if item.right_column.select_content_type =="content"%}
+							{% if item.right_column.content %}
+							<div class="content_wrp">
+								{{ item.right_column.content }}
+							</div>
+							{%  endif %}
+							{%  endif %}
+
+							{% if item.right_column.select_content_type =="image"%}
+							{% if item.right_column.image_field.src %}
+							<div class="img_wrp">
+								{% if item.right_column.image_field.src %}
+								{% set sizeAttrs = 'width="{{ item.right_column.image_field.width|escape_attr }}" height="{{ item.right_column.image_field.height|escape_attr }}"' %}
+								{% if item.right_column.image_field.size_type == 'auto' %}
+								{% set sizeAttrs = 'width="{{ item.right_column.image_field.width|escape_attr }}" height="{{ item.right_column.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+								{% elif item.right_column.image_field.size_type == 'auto_custom_max' %}
+								{% set sizeAttrs = 'width="{{ item.right_column.image_field.max_width|escape_attr }}" height="{{ item.right_column.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+								{% endif %}
+								{% set loadingAttr = item.right_column.image_field.loading != 'disabled' ? 'loading="{{ item.right_column.image_field.loading|escape_attr }}"' : '' %}
+								<img src="{{ item.right_column.image_field.src|escape_url }}" alt="{{ item.right_column.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+								{% endif %}
+							</div>
+							{% endif %}
+							{%  endif %}
+
+							{% if item.right_column.select_content_type =="video"%}
+
+							<div class="vid_wrp">
+								{% if item.right_column.select_video_type =="video1"%}
+								{% if  item.right_column.file_field %}
+								<div class="file_vid">
+									<video autoplay loop controls>
+										<source src="	{{ item.right_column.file_field }}" type="video/mp4">
+									</video>
+								</div>
+								{%  endif %}
+								{%  endif %}
+								{% if item.right_column.select_video_type =="external"%}
+								{% if item.right_column.external_video_url %}
+								<div class="external_vid">
+									<iframe 
+													width="640" 
+													height="360" 
+													src="{{ item.right_column.external_video_url }}" 
+													title="Video Player" 
+													frameborder="0" 
+													allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+													allowfullscreen>
+									</iframe>
+
+								</div>
+								{%  endif %}
+								{%  endif %}
+							</div>
+							{%  endif %}
+							{% if item.right_column.button_group %}
+							<div class="btn_wrp">
+								{{macros.buttonGroup(item.right_column.button_group)}}
+							</div>
+							{%  endif %}
+
+						</div>
+					</div>
+					{% endif %}
+				</div>
+
+				<div class="bottom-section">
+					{% if item.bottom_content %}
+					<div class="content_wrp">
+						{{ item.bottom_content }}
+					</div>
+					{% endif %}
+					<div class="list_wrp">
+						<ul>
+							{% for item2 in item.list_item %}
+							{% if item2.list_title  %}
+							<li>
+								<span class="icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+										<circle cx="12" cy="12" r="10" fill="#39473F"/>
+										<path d="M17.5309 8.13315L17.5296 8.13433L9.88778 14.871L6.47078 11.8587C6.47071 11.8586 6.47064 11.8586 6.47056 11.8585C6.37155 11.7706 6.23682 11.7212 6.09629 11.7212C5.95572 11.7212 5.82098 11.7706 5.72196 11.8586C5.72191 11.8586 5.72186 11.8587 5.7218 11.8587L5.15601 12.3575C5.15595 12.3575 5.15587 12.3576 5.1558 12.3577C5.05608 12.445 5 12.5637 5 12.6876C5 12.8115 5.05611 12.9303 5.15587 13.0176C5.15592 13.0176 5.15596 13.0177 5.15601 13.0177L9.51733 16.8625C9.51741 16.8626 9.5175 16.8626 9.51758 16.8626C9.61659 16.9505 9.75131 17 9.89183 17C10.0323 17 10.1671 16.9505 10.2661 16.8626C10.2661 16.8626 10.2662 16.8626 10.2663 16.8625L18.844 9.3008C18.844 9.30077 18.8441 9.30075 18.8441 9.30073C18.9439 9.21343 19 9.09462 19 8.97067C19 8.84689 18.944 8.72823 18.8445 8.64096C18.8443 8.64083 18.8442 8.64069 18.844 8.64054L18.2785 8.13487V8.13485L18.2765 8.13315C18.0687 7.95562 17.7386 7.95562 17.5309 8.13315Z" fill="white"/>
+									</svg>
+								</span>
+								<span class="text">{{ item2.list_title }}</span>
+							</li>
+							{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>  
+
+
+</div>  
+
+
+</div>
+</section>
+
+
+{% require_js%}
+<script>
+	const tabItem = document.querySelectorAll('.u4m-top-tabber .page-center .tabber_wrp .tab_row > li > a');
+	const tabContent = document.querySelectorAll('.u4m-top-tabber .page-center .tabber_wrp .tab_content_wrp');
+
+	tabItem.forEach((item) => {
+		item.addEventListener('click', function (e) {
+			e.preventDefault(); 
+			tabItem.forEach((elm) => {
+				elm.parentNode.classList.remove('active');
+			});
+			item.parentNode.classList.add('active');
+			const title = item.parentNode.getAttribute('data');
+			tabContent.forEach((cont) => {
+				const content = cont.getAttribute('data');
+				if (title === content) {
+					cont.classList.add('active');
+				} else {
+					cont.classList.remove('active');
+				}
+			});
+		});
+	});
+</script>
+
+{% end_require_js%}

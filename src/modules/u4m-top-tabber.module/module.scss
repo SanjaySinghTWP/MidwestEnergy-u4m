@@ -1,0 +1,196 @@
+$color_1: #b8c0d5;
+$color_2: #39473f;
+$font-family_1: "Priori Sans OT";
+$font-family_2: "Source Sans Pro";
+$border-bottom-color_1: #d0dd28;
+
+.u4m-top-tabber {
+  .page-center {
+    .innerContainer {
+      .intro_content {
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+    .tabber_wrp {
+      .tab_row {
+        padding: 0px 0px;
+        margin: 0;
+        list-style: none;
+        > li {
+          margin: 0;
+          text-align: center;
+          padding: 0;
+          > a {
+            width: 100%;
+            font-family: $font-family_1;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 1;
+            color: $color_1;
+            text-align: center;
+            display: inline-flex;
+            justify-content: center;
+            border-bottom: 3px solid #b8c0d5;
+            padding: 20px;
+            cursor: pointer;
+            &:hover {
+              color: $color_2;
+              border-bottom-color: $border-bottom-color_1;
+            }
+          }
+        }
+        > li.active {
+          a {
+            color: $color_2;
+            border-bottom-color: $border-bottom-color_1;
+          }
+        }
+      }
+      .tab_content_wrp {
+        margin: 0 auto;
+        max-width: 800px;
+        padding: 40px 0;
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s;
+        .flex_row {
+          .col-inner {
+            .content_wrp {
+              h2 {
+                font-family: $font-family_1;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 45px;
+                color: $color_2;
+              }
+            }
+          }
+          .left-col {
+            padding: 0;
+          }
+          .btn_wrp {
+            margin-top: 20px;
+          }
+          .right-col {
+            .vid_wrp {
+              .external_vid {
+                iframe {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+        .bottom-section {
+          margin-top: 40px;
+          width: 100%;
+          margin-left: -15px;
+          margin-right: -15px;
+          h3 {
+            font-family: $font-family_1;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 35px;
+            color: $color_2;
+            margin-bottom: 20px;
+          }
+          .list_wrp {
+            ul {
+              padding: 0;
+              margin: 0;
+              list-style: none;
+              li {
+                margin: 0;
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                span.icon {
+                  svg {
+                    width: 24px;
+                    height: 24px;
+                  }
+                  display: inline-block;
+                  margin-right: 12px;
+                  height: 24px;
+                }
+                span.text {
+                  color: $color_2;
+                  font-family: $font-family_2;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 150%;
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+        .tab_content_inner {
+          .right-col {
+            .img_wrp {
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      .tab_content_wrp.active {
+        opacity: 1;
+        visibility: visible;
+        display: block;
+      }
+    }
+  }
+  .tabber_wrp {
+    padding: 0px 20px;
+    padding: 0px 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u4m-top-tabber
+    .page-center
+    .tabber_wrp
+    .tab_content_wrp
+    .flex_row
+    .col-inner
+    .content_wrp
+    h2 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u4m-top-tabber
+    .page-center
+    .tabber_wrp
+    .tab_content_wrp
+    .tab_content_inner
+    .right-col {
+    padding: 0;
+  }
+  .u4m-top-tabber .tabber_wrp {
+    padding: 0px 10px;
+  }
+  .u4m-top-tabber .page-center .tabber_wrp .tab_row > li > a {
+    padding: 10px 0px;
+  }
+  .u4m-top-tabber
+    .page-center
+    .tabber_wrp
+    .tab_content_wrp
+    .flex_row
+    .col-inner
+    .content_wrp
+    h2 {
+    line-height: 1;
+    font-size: 25px;
+  }
+}
