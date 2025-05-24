@@ -1,0 +1,51 @@
+{% set moduleName = 'u4m-anchor-nav-bar' %}
+{% include "../partials/u4-module-includes.html" %}
+</div>
+
+{% if module.links_items %}
+<div class="content-column">
+	<ul>
+		{% for item in module.links_items %}
+		<li>
+			{% if item.link_type == "anchor" %}
+			{% set href = item.link_field.url.href %}
+			{% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+			{% set href = "mailto:" + href %}
+			{% endif %}
+			<a
+				 {% if item.link_field.url.type is equalto "CALL_TO_ACTION"  %}
+				 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+				 {% else %}
+				 href="{{ href|escape_url }}"
+				 {% endif %}
+				 {% if item.link_field.open_in_new_tab %}
+				 target="_blank"
+				 {% endif %}
+				 {% if item.link_field.rel %}
+				 rel="{{ item.link_field.rel|escape_attr }}"
+				 {% endif %}
+				 >
+				{{ item.link_text }}
+			</a>
+			{% endif %}
+			{% if item.link_type == "bookmark" %}
+			<a href="#{{ item.anchor_link|replace('#', '') }}">{{ item.link_text }}</a>
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endif %}
+
+</div>
+</section>
+
+
+{% require_css %}
+<style>
+	.{{name}}.u4m-anchor-nav-bar .content-column ul {
+		justify-content: {{ module.module_settings.navbar_content_alignment }};
+	}
+</style>
+{% end_require_css %}
+

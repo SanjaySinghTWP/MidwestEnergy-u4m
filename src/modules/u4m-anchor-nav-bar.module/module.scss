@@ -1,0 +1,49 @@
+@import "../../css/_module-imports";
+
+.u4m-anchor-nav-bar {
+  .content-column {
+    ul {
+      column-gap: 80px;
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      row-gap: 10px;
+
+      @include navbreak {
+        column-gap: 20px;
+      }
+
+      li {
+        margin: 0;
+        letter-spacing: 0;
+
+        a {
+          color: #fff;
+          font-family: "Source Sans Pro";
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 150%;
+          position: relative;
+
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #d0dd28;
+            bottom: -2px;
+            transition: all 0.3s ease;
+          }
+
+          &:hover:before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
