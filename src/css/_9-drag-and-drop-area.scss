@@ -70,3 +70,13 @@ section.u4m-drag-and-drop-area {
     width: 100%;
   }
 }
+
+.full-width,
+[class*="full-width-section"].dnd-section > .row-fluid {
+  max-width: 100%;
+  padding: 0;
+}
+
+[class*="full-width-section"].dnd-section > .row-fluid > .dnd-column {
+  padding: 0;
+}
