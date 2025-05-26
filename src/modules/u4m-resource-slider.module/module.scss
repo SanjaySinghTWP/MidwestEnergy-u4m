@@ -1,0 +1,139 @@
+@import "../../css/_module-imports";
+
+$color_1: #536c5f;
+$font-family_1: "Source Sans Pro";
+$font-family_2: "Priori Sans OT";
+
+.u4m-resource-slider {
+  .innerContainer {
+    .intro__inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 50px 0px;
+    }
+  }
+  .cm-resource-slider {
+    .card-item {
+      .card-inner {
+        padding: 40px;
+        .tag-wrp {
+          span {
+            display: inline-block;
+            text-transform: uppercase;
+            line-height: 24px;
+            font-family: $font-family_1;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            color: $color_1;
+          }
+        }
+        .card-cont {
+          text-align: left;
+          .tag-wrp {
+            margin-bottom: 12px;
+          }
+          .title-wrp {
+            h5 {
+              font-family: $font-family_2;
+              font-size: 28px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 30px;
+              margin: 0;
+            }
+            margin-bottom: 12px;
+          }
+          .des-wrp {
+            p {
+              font-family: $font-family_1;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 150%;
+              margin: 0;
+            }
+          }
+          .btn-wrp {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+    .splide {
+      .custom-splide-arrows {
+        padding: 50px 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        button.custom-arrow {
+          background: #fff;
+          border-radius: 50%;
+          display: inline-block;
+          height: 50px;
+          padding: 0;
+          width: 50px;
+          border: 0;
+          svg {
+            width: 50px;
+            height: 50px;
+          }
+        }
+        button.custom-arrow.splide__arrow--next {
+          transform: rotate(0deg);
+        }
+        button.custom-arrow.splide__arrow--prev {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .resource-slider {
+      margin: 0px -20px !important;
+      overflow: hidden;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .u4m-resource-slider .cm-resource-slider .resource-slider {
+    margin: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .u4m-resource-slider .cm-resource-slider .card-item .card-inner {
+    padding: 20px;
+  }
+  .u4m-resource-slider .cm-resource-slider .splide .custom-splide-arrows {
+    padding: 25px 0px;
+  }
+  .u4m-resource-slider
+    .cm-resource-slider
+    .splide
+    .custom-splide-arrows
+    button.custom-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  .u4m-resource-slider
+    .cm-resource-slider
+    .splide
+    .custom-splide-arrows
+    button.custom-arrow
+    svg {
+    width: 40px;
+    height: 40px;
+  }
+  .u4m-resource-slider
+    .cm-resource-slider
+    .card-item
+    .card-inner
+    .card-cont
+    .title-wrp
+    h5 {
+    font-size: 22px;
+    line-height: 1;
+  }
+}
