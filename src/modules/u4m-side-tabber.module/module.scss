@@ -1,0 +1,100 @@
+@import "../../css/_module-imports";
+
+.u4m-side-tabber .page-center .cm-side-tabber .flex_row .right {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
+.u4m-side-tabber .page-center .cm-side-tabber .flex_row .right.active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.u4m-side-tabber .page-center .cm-side-tabber {
+  margin-top: 50px;
+}
+.u4m-side-tabber .page-center .innerContainer .intro_content {
+  margin: 0 auto;
+  text-align: center;
+}
+.u4m-side-tabber .page-center .cm-side-tabber .flex_row .left ul.tab_row {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.u4m-side-tabber .page-center .cm-side-tabber .flex_row .left ul.tab_row > li {
+  margin: 0;
+  border-left: 3px solid #b8c0d5;
+  padding-left: 28px;
+  padding-bottom: 24px;
+}
+.u4m-side-tabber
+  .page-center
+  .cm-side-tabber
+  .flex_row
+  .left
+  ul.tab_row
+  > li
+  a.tablink {
+  font-family: "Priori Sans OT";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+  display: inline-block;
+  color: #b8c0d5;
+  width: 100%;
+  cursor: pointer;
+}
+.u4m-side-tabber
+  .page-center
+  .cm-side-tabber
+  .flex_row
+  .left
+  ul.tab_row
+  > li.active
+  a.tablink {
+  color: #39473f;
+}
+.u4m-side-tabber
+  .page-center
+  .cm-side-tabber
+  .flex_row
+  .left
+  ul.tab_row
+  > li
+  .tab-content
+  p {
+  margin: 0;
+}
+.u4m-side-tabber
+  .page-center
+  .cm-side-tabber
+  .flex_row
+  .left
+  ul.tab_row
+  > li.active {
+  border-color: #d0dd28;
+}
+.u4m-side-tabber
+  .page-center
+  .cm-side-tabber
+  .flex_row
+  .left
+  ul.tab_row
+  > li
+  .tab-content {
+  display: none;
+}
+.u4m-side-tabber
+  .page-center
+  .cm-side-tabber
+  .flex_row
+  .left
+  ul.tab_row
+  > li.active
+  .tab-content {
+  display: block;
+}
