@@ -332,7 +332,7 @@
     "locked" : false,
     "type" : "hubdbtable",
     "display_width" : null,
-    "default" : ""
+    "default" : 119593837
   }, {
     "id" : "bfe887dd-ccb4-2071-691c-0fcc0b0891dc",
     "name" : "learn_more_text",
@@ -373,7 +373,7 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "select_hubdb_table" : "",
+    "select_hubdb_table" : 119593837,
     "learn_more_text" : "Learn More",
     "show_post_per_page" : 9,
     "show_featured_post" : false
