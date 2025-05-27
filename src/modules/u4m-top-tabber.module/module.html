@@ -26,12 +26,13 @@
 								{{ item.left_column.content }}
 							</div>
 							{% endif %}
+									{%  if item.left_column.button_group %}
 							{%  if item.left_column.button_group %}
 							<div class="btn_wrp">
 								{{macros.buttonGroup(item.left_column.button_group)}}
 							</div>
 							{% endif %}
-
+{% endif %}
 						</div>
 					</div>
 					{% endif %}
@@ -94,11 +95,12 @@
 							</div>
 							{%  endif %}
 							{% if item.right_column.button_group %}
+							{% if item.right_column.button_group %}
 							<div class="btn_wrp">
 								{{macros.buttonGroup(item.right_column.button_group)}}
 							</div>
 							{%  endif %}
-
+	{%  endif %}
 						</div>
 					</div>
 					{% endif %}

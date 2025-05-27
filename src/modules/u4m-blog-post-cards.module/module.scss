@@ -1,51 +1,104 @@
 @import "../../css/_module-imports";
-section.u4m-blog-post-cards {
-  margin-top: 100rem;
-  margin-bottom: 100rem;
-  &.reverse-text {
-    h2.heading {
-      color: $white;
-    }
-  }
-  .top-wrapper {
-    @include center;
-    display: flex;
-    justify-content: space-between;
-    .heading {
-      @include h2;
-      @include tablet {
-        @include h4;
-        margin: 0;
+
+$font-family_1: "Priori Sans OT";
+
+.u4m-blog-post-cards {
+  .content_column {
+    margin-top: 50px;
+    .flex_row {
+      margin: 0 -10px;
+      > div {
+        padding: 0 10px;
+      }
+      .content_holder {
+        h4.cardtitle {
+          font-family: $font-family_1;
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 34px;
+          margin-bottom: 15px;
+          margin-top: 12px;
+        }
+        p {
+          margin-top: 0;
+          margin-bottom: 15px;
+        }
+      }
+      .card_inner {
+        .media_holder {
+          .img {
+            svg {
+              height: 100%;
+              margin: 0;
+              display: block;
+              width: 100%;
+            }
+            img {
+              border-radius: 24px 24px 0px 0px;
+            }
+          }
+        }
+        .icon {
+          svg {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 30px;
+          }
+        }
+        .content_holder {
+          a.hs-sec-btn {
+            margin-top: 30px;
+          }
+        }
+      }
+      .media_holder {
+        .svg {
+          margin-bottom: 30px;
+        }
+        svg {
+          max-width: unset;
+        }
+      }
+      .card_inner.iconleft {
+        display: flex;
+        column-gap: 30px;
+        .media_holder {
+          width: 60px;
+        }
+      }
+      .card_area {
+        .media_holder {
+          img {
+            border-radius: 24px 24px 0 0;
+            width: 100%;
+            min-height: 227px;
+            object-fit: cover;
+            max-height: 227px;
+          }
+          svg {
+            display: block;
+            height: 100%;
+            margin: 0;
+            width: 100%;
+          }
+        }
       }
     }
-    .link {
-      flex-grow: 1;
-      text-align: right;
-      @include buttonText;
-      @include tabletvert {
-        text-align: center;
-        width: 100%;
+  }
+  .innerContainer {
+    .intro_content {
+      .intro__inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
       }
     }
-    @include tabletvert {
-      display: block;
-      text-align: center;
-    }
   }
-  div.wrapper {
-    @include center;
-    max-width: 1280rem;
-    display: flex;
+}
+
+@media (max-width: 479px) {
+  .u4m-blog-post-cards .content_column .flex_row .card_inner.iconleft {
     flex-wrap: wrap;
-    a.blog-post-card {
-      @include blogCard;
-    }
-    @include navbreak {
-      padding: 0;
-    }
-    >span.hs_cos_wrapper_type_related_blog_posts {
-      display: flex;
-      width: 100%;
-    };
   }
 }
