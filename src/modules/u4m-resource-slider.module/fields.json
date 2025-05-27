@@ -300,7 +300,7 @@
   "locked" : false,
   "type" : "hubdbtable",
   "display_width" : null,
-  "default" : 119360020
+  "default" : ""
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
   "name" : "module_settings",
