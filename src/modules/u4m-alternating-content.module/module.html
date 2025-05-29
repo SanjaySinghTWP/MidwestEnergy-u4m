@@ -365,8 +365,11 @@
 {% require_css %}
 
 <style>
-	.u4m-alternating-content.{{name}} .page-center .innerContainer{
-		border-radius:{{ module.module_settings.container_border_radius }}px;
+  
+  .u4m-alternating-content.{{name}} .page-center .innerContainer{
+    border-radius:{{ module.module_settings.container_border_radius }}px;
+  }
+	.u4m-alternating-content.{{name}} .page-center .innerContainer .content-col{
 		background-color:rgba({{module.module_settings.content_background_color.color|convert_rgb  }},{{ module.module_settings.content_background_color.opacity/100 }});
 	}
 
