@@ -1,33 +1,385 @@
 {% set moduleName = 'u4m-alternating-content' %}
-  {% set bgImageMax = 1920 %}
-  {% set backgroundImageMax = 1920 %}
-  {% set foregroundImageMax = 1000 %}
-  
-  {% include "../partials/u4-module-includes.html" %}
-  
-  <div class="inner {% if module.content_on_left %} left {% endif %}">           
-    <div class="additional-content">            
-      {% if module.additional_content == 'image' %}
-      <div class="image"><img loading="lazy" src="{{ module.image.src }}" width="600" alt="{{ module.image.alt }}"></div>
-      {% elif module.additional_content == 'video' %}
-      <div class="video">{{ module.video_embed }}</div>
-      {% endif %}
-    </div>      
-    <div class="content">
-      {% if module.include_eyebrow %}
-      <span class="eyebrow">{{ module.eyebrow_text }}</span>
-      {% endif %}
-      {% if module.include_headline %}
-      <h2>{{ module.headline }}</h2>
-      {% endif %}
-      <span>{{ module.content }}</span>       
-      {% if module.link_type == "cta" %}
-      <span class="cta">{% cta guid="{{ module.call_to_action }}" %}</span>
-      {% elif module.link_type == "url" %}
-      <span class="url"><a href="{{ module.link.href }}" {% if module.open_in_new_window %}target="_blank"{% endif %}>{{ module.link_text }}</a></span>
-      {% else %}
-      <!-- No link -->
-      {% endif %}
-    </div>
-  </div>
-  </section>
+{% include "../partials/u4-module-includes.html" %}
+
+<div class="u4m-alt-cnt-wrap {{ module.module_settings.intro_content_alignment }}">
+	<div class="content-col">
+		{% if module.intro_content.include_eyebrow or module.intro_content.include_heading or module.intro_content.include_content or module.intro_content.include_button %}
+		<div class="intro_content {% if not module.intro_content.include_button %}nobtn{% endif %}" data-aos="fade-up">
+			<div class="intro__inner " >
+				<div class="intCnt">
+					{% if module.intro_content.include_eyebrow %}
+					<div class="eyebrowtext">
+						{{ module.intro_content.eybrow_text }}
+					</div>
+					{% endif %}
+					{% if module.intro_content.include_heading %}
+					<{{module.intro_content.heading_size}} class="intro_title">{{ module.intro_content.heading }}{% if group.include_heading_border %}<span></span>{% endif %}</{{module.intro_content.heading_size}}>
+						{% endif %}
+
+
+						{% if module.intro_content.content %}
+						<div class="intro_desc">
+					{{ module.intro_content.content }}
+				</div>
+				{% endif %}
+			</div>
+			{% if module.intro_content.include_button %}
+
+			<div class="intro_btn_wrap">
+				{% for item in module.intro_content.button_group %}
+				{% if item.button_type %}
+				<div class="btn_item {% if item.button_type =="cta" %}cm{{item.button_style}}{% endif %}">
+					{% if item.button_type == "std" %}
+					{% set href = item.link.url.href %}
+					{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+					{% set href = "mailto:" + href %}
+					{% endif %}
+					<a class="{{ item.button_style ? item.button_style : "hs-button" }}"
+						 {% if item.link.url.type is equalto "CALL_TO_ACTION"  %}
+						 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+						 {% else %}
+						 href="{{ href|escape_url }}"
+						 {% endif %}
+						 {% if item.link.open_in_new_tab %}
+						 target="_blank"
+						 {% endif %}
+						 {% if item.link.rel %}
+						 rel="{{ item.link.rel|escape_attr }}"
+						 {% endif %}
+						 >
+						{% if item.button_style == "hs-button" %}
+						{{ item.button_text }}
+						{% endif %}
+						{% if item.button_style == "hs-sec-btn" %}
+						<span class="text">{{ item.button_text }}</span>
+						<span class="arrow">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="25" viewBox="0 0 18 25" fill="none">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M12.594 11.8808C12.8098 12.0901 12.8098 12.4294 12.594 12.6387L6.95976 18.1028C6.74394 18.3121 6.39409 18.3121 6.17827 18.1028L5.91772 17.8501C5.7019 17.6408 5.7019 17.3015 5.91772 17.0922L10.9007 12.2598L5.91772 7.42731C5.7019 7.21801 5.7019 6.87872 5.91772 6.66942L6.17827 6.41674C6.39409 6.20744 6.74394 6.20744 6.95976 6.41674L12.594 11.8808Z" fill="#39473F"/>
+							</svg>
+						</span>
+						{% endif %}
+						{% if item.button_style == "tertiary-btn" %}
+						{{ item.button_text }}
+						{% endif %}
+					</a>
+					{% endif %}
+					{% if item.button_type == "cta" %}
+					{% cta guid="{{ item.cta }}" %}
+					{% endif %}
+				</div>
+				{% endif %}
+				{% endfor %}
+			</div>
+
+			{% endif %}
+		</div>
+	</div>
+	{% endif %}
+</div>
+<div class="media-column">
+	{% if module.media_section.media_type == "image" %}
+	<div class="image">
+		{% if module.media_section.image_content.image_field.src %}
+		<img src="{{ module.media_section.image_content.image_field.src }}" alt="{{ module.media_section.image_content.image_field.alt }}">
+		{% endif %}
+	</div>
+
+	{% if module.media_section.image_content.include_shape %}
+	<div class="shape-box">
+		<svg xmlns="http://www.w3.org/2000/svg" width="80" height="139" viewBox="0 0 80 139" fill="none">
+			<rect x="79.988" y="138.242" width="79.488" height="29.0875" transform="rotate(-180 79.988 138.242)"/>
+			<rect x="79.988" y="83.8477" width="79.488" height="29.0875" transform="rotate(-180 79.988 83.8477)"/>
+			<rect x="79.988" y="29.4521" width="79.488" height="29.2102" transform="rotate(-180 79.988 29.4521)"/>
+		</svg>
+	</div>
+
+	{% endif %}
+	{% endif %}
+
+	{% if module.media_section.media_type == "video" %}
+	<div class="main-vid-wrap">
+
+		<div class="video_container">
+			{% if module.media_section.video_content.video_type == "external" %}
+			<div class="iframe_box cm_vb">
+				<div class="inner_spacer" style="padding-bottom: {{ module.media_section.video_content.video_height }}%;">
+					{% if module.media_section.video_content.poster_image.src %}
+					<div class="poster_image" style="background-image: url({{ module.media_section.video_content.poster_image.src }})"></div>
+					{% endif %}
+
+					{% if module.media_section.video_content.include_popup %}
+					<div class="vid_trigger bg_secondary pop_trigger" data-id="{{name}}_trigger">
+						<div class="vid_icn">
+							{% if module.media_section.select_play_icon_type == 'icon' %}
+							{% if module.media_section.icon_field.name %}
+							{% icon
+	name="{{ module.media_section.icon_field.name }}"
+	style="{{ module.media_section.icon_field.type }}"
+	unicode="{{ module.media_section.icon_field.unicode }}"
+	icon_set="{{ module.media_section.icon_field.icon_set }}"
+%}    
+							{% endif %}             
+							{% elif module.media_section.select_play_icon_type =='image' %}
+							{% if module.media_section.icon_image.src %}
+							<img src="{{ module.media_section.icon_image.src }}" alt="{{ module.media_section.icon_image.alt }}" title="{{ module.media_section.icon_image.alt }}">
+							{% endif %}
+							{% endif %}          
+						</div>
+					</div>
+					{% else %}
+					{% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}
+					<div class="vid_trigger bg_secondary play_trigger">
+						<div class="vid_icn">
+							{% if module.media_section.select_play_icon_type =='icon' %}
+							{% if module.media_section.icon_field.name %}
+							{% icon
+	name="{{ module.media_section.icon_field.name }}"
+	style="{{ module.media_section.icon_field.type }}"
+	unicode="{{ module.media_section.icon_field.unicode }}"
+	icon_set="{{ module.media_section.icon_field.icon_set }}"
+%}   
+							{% endif %}                
+							{% elif module.media_section.select_play_icon_type =='image' %}
+							{% if module.media_section.icon_image.src %}
+							<img src="{{ module.media_section.icon_image.src }}" alt="{{ module.media_section.icon_image.alt }}" title="{{ module.media_section.icon_image.alt }}">
+							{% endif %}
+							{% endif %}
+						</div>
+					</div>
+					{% endif %}
+					{% if module.media_section.video_content.embedded_url is string_containing "youtube.com" %}
+					{% if module.media_section.video_content.poster_image.src %}
+					<iframe {% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}src="" data-{% endif %}src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay={% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}1{% else %}0{% endif %}&loop=0&mute=1&showinfo=0&controls=1&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
+
+					{% else %}
+					<iframe src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=0&loop=0&mute=1&showinfo=0&controls=1&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&mute=1&showinfo=0&controls=1&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
+					{% endif %}
+
+					{% else %}
+					{% if module.media_section.video_content.poster_image.src %}
+					<iframe {% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}src="" data-{% endif %}src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay={% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}1{% else %}0{% endif %}&loop=0&autopause=0&muted=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video"></iframe>
+					{% else %}
+					<iframe src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=0&loop=0&autopause=0&muted=1&title=0&byline=0&portrait=0" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=0&loop=0&autopause=0&muted=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video"></iframe>
+					{% endif %}
+
+					{% endif %}
+					{% endif %}
+
+				</div>
+			</div>
+			{% endif  %}
+			{% if module.media_section.video_content.video_type == "file" %}
+			<div class="video_box cm_vb">
+				<div class="inner_spacer" style="padding-bottom: {{ module.media_section.video_content.video_height }}%;">
+					{% if module.media_section.video_content.poster_image.src %}
+					<div class="poster_image" style="background-image: url({{ module.media_section.video_content.poster_image.src }})"></div>
+					{% endif %}
+
+					{% if module.media_section.video_content.include_popup %}
+					<div class="vid_trigger bg_secondary pop_trigger" data-id="{{name}}_trigger">
+						<div class="vid_icn">
+							{% if module.media_section.select_play_icon_type =='icon' %}
+							{% if module.media_section.icon_field.name %}
+							{% icon
+	name="{{ module.media_section.icon_field.name }}"
+	style="{{ module.media_section.icon_field.type }}"
+	unicode="{{ module.media_section.icon_field.unicode }}"
+	icon_set="{{ module.media_section.icon_field.icon_set }}"
+%}
+							{% endif %}               
+							{% elif module.media_section.select_play_icon_type =='image' %}
+							{% if module.media_section.icon_image.src %}
+							<img src="{{ module.media_section.icon_image.src }}" alt="{{ module.media_section.icon_image.alt }}" title="{{ module.media_section.icon_image.alt }}">
+							{% endif %}
+							{% endif %}
+						</div>
+					</div>
+					{% else %}
+					{% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}
+					<div class="vid_trigger bg_secondary play_trigger">
+						<div class="vid_icn">
+							{% if module.media_section.select_play_icon_type =='icon' %}
+							{% if module.media_section.icon_field.name %}
+							{% icon
+	name="{{ module.media_section.icon_field.name }}"
+	style="{{ module.media_section.icon_field.type }}"
+	unicode="{{ module.media_section.icon_field.unicode }}"
+	icon_set="{{ module.media_section.icon_field.icon_set }}"
+%} 
+							{% endif %}
+							{% elif module.media_section.select_play_icon_type =='image' %}
+							{% if module.media_section.icon_image.src %}
+							<img src="{{ module.media_section.icon_image.src }}" alt="{{ module.media_section.icon_image.alt }}" title="{{ module.media_section.icon_image.alt }}">
+							{% endif %}
+							{% endif %}
+						</div>
+					</div>
+					{% endif %}
+
+					{% if module.media_section.video_content.poster_image.src %}
+					<video {% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}data-{% endif %}src="{{ module.media_section.video_content.file_field }}"{% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %} autoplay{% endif %} controls></video>
+					{% else %}
+					<video src="{{ module.media_section.video_content.file_field }}" data-src="{{ module.media_section.video_content.file_field }}" controls></video>
+					{% endif %}
+
+					{% endif %}
+				</div>
+			</div>
+			{% endif  %}
+		</div>
+
+
+
+	</div>
+	{% endif %}
+
+	{% if module.media_section.video_content.include_popup %}
+	<div class="vid-popup-outer">
+		<div class="video_popup_modal" id="{{name}}_trigger">
+			<div class="modal_video_container">
+				<div class="modal_video_box">
+					<div class="inner_spacer" style="padding-bottom: {{ module.media_section.video_content.video_height }}%;">
+						{% if module.media_section.video_content.video_type == "external" %}
+						{% if module.media_section.video_content.embedded_url is string_containing "youtube.com" %}
+						<iframe src="" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&mute=1&showinfo=0&controls=1&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
+						{% else %}
+						<iframe src="" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&muted=1&autopause=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video"></iframe>
+						{% endif %}
+						{% endif  %}
+
+						{% if module.media_section.video_content.video_type == "file" %}
+						<video data-src="{{ module.media_section.video_content.file_field }}" autoplay controls></video>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			<div class="closeIcon">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path></svg>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+
+</div>
+</div>
+</div>
+</section>
+
+
+{% require_js %}
+<script>
+	{% if module.media_section.media_type == "video" %}
+	var videoContainer = document.querySelectorAll('.u4m-alternating-content.{{name}}');
+																								 if(videoContainer){
+		var getIframeTrigger = document.querySelectorAll('.{{name}} .iframe_box .play_trigger');
+																										 Array.prototype.slice.call(getIframeTrigger).forEach(function(ele, index) {
+			ele.addEventListener('click', function(e) {
+				var getIframeSrc = ele.nextElementSibling.getAttribute('data-src');
+				ele.nextElementSibling.setAttribute('src',getIframeSrc);
+				ele.parentNode.parentNode.classList.add('activeVideo');
+			});
+		});
+
+		var getIVideoTrigger = document.querySelectorAll('.{{name}} .video_box .play_trigger');
+																										 if(getIVideoTrigger){
+			Array.prototype.slice.call(getIVideoTrigger).forEach(function(ele, index) {
+				ele.addEventListener('click', function(e) {
+					var getVideoSrc = ele.nextElementSibling.getAttribute('data-src');
+					ele.nextElementSibling.setAttribute('src',getVideoSrc);
+					ele.nextElementSibling.play();
+					ele.parentNode.parentNode.classList.add('activeVideo');
+				});
+			});
+		}
+
+		var openIframeTrigger = document.querySelectorAll('.{{name}} .iframe_box .pop_trigger');
+																											if(openIframeTrigger){
+			Array.prototype.slice.call(openIframeTrigger).forEach(function(ele, index) {
+				ele.addEventListener('click', function(e) {
+					var getId = this.getAttribute('data-id');
+					var modalId = document.getElementById(getId);
+					document.querySelector('body').classList.add('popup_open')
+					modalId.classList.add('show');
+					var iframeTag = modalId.querySelector('iframe');
+					if(iframeTag){
+						var getAtrr = iframeTag.getAttribute('data-src');
+						iframeTag.setAttribute('src',getAtrr);
+					}
+					setTimeout(function(){
+						modalId.classList.add('active_show');
+					})
+				});
+			});
+		}
+
+		var openVideoTrigger = document.querySelectorAll('.{{name}} .video_box .pop_trigger');
+																										 if(openVideoTrigger){
+			Array.prototype.slice.call(openVideoTrigger).forEach(function(ele, index) {
+				ele.addEventListener('click', function(e) {
+					var getId = this.getAttribute('data-id');
+					var modalId = document.getElementById(getId);
+					document.querySelector('body').classList.add('popup_open')
+					modalId.classList.add('show');
+					var videoTag = modalId.querySelector('video');
+					if(videoTag){
+						var getAtrr =  videoTag.getAttribute('data-src');
+						videoTag.setAttribute('src',getAtrr);
+						videoTag.play();
+					}
+					setTimeout(function(){
+						modalId.classList.add('active_show');
+					})
+				});
+			});
+		}
+
+		var vdieoModalBox = document.querySelectorAll('.{{name}} .video_popup_modal');
+																									if(vdieoModalBox){
+			Array.prototype.slice.call(vdieoModalBox).forEach(function(ele, index) {
+				ele.addEventListener('click', function(e) {
+					ele.classList.remove('active_show');
+					document.querySelector('.{{name}} .video_popup_modal video')?.setAttribute('src','');
+																 document.querySelector('.{{name}} .video_popup_modal iframe')?.setAttribute('src','');
+																 setTimeout(function(){
+						ele.classList.remove('show');
+						document.querySelector('body').classList.remove('popup_open');
+					});
+				});
+			});
+		}
+
+		var modalVideoBox = document.querySelector('.{{name}} .modal_video_box');
+																							 if(modalVideoBox){
+			modalVideoBox.addEventListener('click', function(ele) {
+				ele.stopPropagation();
+			});
+		}
+	}
+	{% endif %}
+
+</script>
+{% end_require_js %}
+
+{% require_css %}
+
+<style>
+	.u4m-alternating-content.{{name}} .page-center .innerContainer{
+		border-radius:{{ module.module_settings.container_border_radius }}px;
+		background-color:rgba({{module.module_settings.content_background_color.color|convert_rgb  }},{{ module.module_settings.content_background_color.opacity/100 }});
+	}
+
+	.u4m-alternating-content.{{name}} .u4m-alt-cnt-wrap .media-column img{
+		border-radius: {{ module.media_section.image_content.image_border_radius.top_left_border_radius }}px {{ module.media_section.image_content.image_border_radius.top_right_border_radius }}px {{ module.media_section.image_content.image_border_radius.bottom_right_border_radius }}px  {{ module.media_section.image_content.image_border_radius.bottom_left_border_radius }}px;
+	}
+
+	.u4m-alternating-content.{{name}} .u4m-alt-cnt-wrap .media-column .shape-box svg rect {
+		fill:rgba({{module.media_section.image_content.shape_color.color|convert_rgb  }},{{ module.media_section.image_content.shape_color.opacity/100 }});
+	}
+
+	.u4m-alternating-content.{{name}}.reverse-text .page-center .innerContainer {
+		background-color: #000;
+	}
+</style>
+
+{% end_require_css %}
+

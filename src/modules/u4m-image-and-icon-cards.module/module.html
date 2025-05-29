@@ -1,0 +1,99 @@
+{% set moduleName = 'u4m-image-and-icon-cards' %}
+{% include "../partials/u4-module-includes.html" %}
+{{ macros.introGroup(module.intro_content, module.module_settings) }}
+</div>
+
+<div class="content_column {% if module.module_settings.card_settings.include_background_in_column %}columnhasbg{% endif %}">
+	<div class="flex_row">
+		{% for item in module.content_column.card_items %}
+		<div class="card_area col {{ module.module_settings.card_settings.number_of_cards }}">
+			<div class="card_inner {% if item.media_type == "img" %}imageholderactive{% endif %} {% if item.media_type == "svg" %}svgholderactive{% endif %} {% if item.media_type == "icon" %}svgholderactive{% endif %} {{ item.icon_alignment }}">
+
+				{% if item.media_type %}
+				<div class="media_holder">
+					{% if item.media_type == "img" %}
+					{% if item.image_field.src %}
+					<div class="img">
+						<img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}">
+						{% if item.include_image_bottom_border %}
+						<svg xmlns="http://www.w3.org/2000/svg" width="414" height="6" viewBox="0 0 414 6" fill="none">
+							<path d="M0 3H414" stroke="url(#paint0_linear_417_954)" stroke-width="5"/>
+							<defs>
+								<linearGradient id="paint0_linear_417_954" x1="0" y1="3.5" x2="414" y2="3.5" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#D0DD28"/>
+									<stop offset="1" stop-color="#697B79"/>
+								</linearGradient>
+							</defs>
+						</svg>
+						{% endif %}
+					</div>
+					{% endif %}
+					{% endif %}
+
+					{% if item.media_type == "icon" %}
+					<div class="icon">
+						{% icon
+    name="{{ item.icon_field.name }}"
+    style="{{ item.icon_field.type }}"
+    unicode="{{ item.icon_field.unicode }}"
+    icon_set="{{ item.icon_field.icon_set }}"
+  %}
+					</div>
+					{% endif %}
+
+					{% if item.media_type == "svg" %}
+					<div class="svg">
+						{{ item.svg_code }}
+					</div>
+					{% endif %}
+				</div>
+				{% endif %}
+
+				<div class="content_holder">
+					<h4 class="cardtitle">{{ item.heading }}</h4>
+					{{ item.content }}
+					{% if item.include_button %}
+					{{macros.buttonGroup(item.button_group)}}
+					{% endif %}
+				</div>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+</div>
+
+
+</div>
+</section>
+
+
+{% require_css %}
+<style>
+	.{{name}}.u4m-image-and-icon-cards .content_column .flex_row .card_inner.imageholderactive .content_holder {
+		padding: 35px;
+	}
+	.{{name}}.u4m-image-and-icon-cards .content_column .flex_row .card_inner.svgholderactive{
+		padding:35px;
+	}
+	.u4m-image-and-icon-cards.{{name}} .content_column .flex_row .content_holder h4.cardtitle,
+	.u4m-image-and-icon-cards.{{name}} .content_column .flex_row .content_holder p{
+		color: rgba({{ module.module_settings.card_settings.card_content_color.color|convert_rgb}},{{ module.module_settings.card_settings.card_content_color.opacity * 0.01}});		
+	}
+	.u4m-image-and-icon-cards.{{name}} .content_column .flex_row .card_inner .icon svg{
+		fill: rgba({{ module.module_settings.card_settings.card_content_color.color|convert_rgb}},{{ module.module_settings.card_settings.card_content_color.opacity * 0.01}});		
+	}
+	.{{name}}.u4m-image-and-icon-cards .content_column .flex_row .card_inner{
+		background-color: rgba({{ module.module_settings.card_settings.card_background_color.color|convert_rgb}},{{ module.module_settings.card_settings.card_background_color.opacity * 0.01}});
+		border-radius: 24px;
+	}
+	{% if module.module_settings.card_settings.include_background_in_column %}
+	.{{name}}.u4m-image-and-icon-cards .content_column{
+		background-color: rgba({{ module.module_settings.card_settings.column_background_color.color|convert_rgb}},{{ module.module_settings.card_settings.column_background_color.opacity * 0.01}});
+		padding:50px;
+		border-radius: 24px;
+	}
+	{% endif %}
+</style>
+{% end_require_css %}

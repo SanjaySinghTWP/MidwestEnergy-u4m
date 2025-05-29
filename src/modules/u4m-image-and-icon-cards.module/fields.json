@@ -85,7 +85,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "FAQs"
+    "default" : "Why Choose Midwest Energy & Communications?"
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -95,7 +95,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : true
+    "default" : false
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
@@ -286,8 +286,8 @@
     "eybrow_text" : "OPTIONAL EYEBROW TEXT",
     "include_heading" : true,
     "heading_size" : "h2",
-    "heading" : "FAQs",
-    "include_content" : true,
+    "heading" : "Why Choose Midwest Energy & Communications?",
+    "include_content" : false,
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>",
     "include_button" : false,
     "button_group" : [ {
@@ -319,48 +319,525 @@
     } ]
   }
 }, {
-  "id" : "21982007-51a9-14ec-97b8-0805c51cbce5",
-  "name" : "accordion_items",
-  "label" : "Accordion Items",
+  "id" : "8c4a69da-ad30-22ad-e00d-b1517125fcd9",
+  "name" : "content_column",
+  "label" : "Content Column",
   "required" : false,
   "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : "f47224eb-a8ed-20a3-f43f-fae73e997311",
-    "default" : 1
-  },
   "children" : [ {
-    "id" : "f47224eb-a8ed-20a3-f43f-fae73e997311",
-    "name" : "title",
-    "label" : "Title",
+    "id" : "08c46c86-4cb0-d4ad-65eb-0e2b45412cf1",
+    "name" : "card_items",
+    "label" : "Card Items",
     "required" : false,
     "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "3f0fb69f-2a3a-3519-4cae-0d45ce454cfb",
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "65e9ce68-87ec-f04e-a4ad-f27b12d8b892",
+      "name" : "media_type",
+      "label" : "Media Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "img", "Image" ], [ "icon", "Icon" ], [ "svg", "Svg" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "img"
+    }, {
+      "id" : "ce17ea74-b6db-cbf2-5889-a3566c928e50",
+      "name" : "image_field",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_column.card_items.media_type",
+        "controlling_value_regex" : "img",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/MidwestEnergy-u4m/images/f06887f7e828f74fc5480924aea4e4556b8ab720.jpg",
+        "alt" : "Image",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 500,
+        "max_width" : 800,
+        "max_height" : 500
+      }
+    }, {
+      "id" : "0103d8b9-863f-70b8-c08f-2d11e47dd578",
+      "name" : "include_image_bottom_border",
+      "label" : "Include Image Bottom Border",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_column.card_items.media_type",
+        "controlling_value_regex" : "img",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "19639112-2391-a7e6-1620-fb10ae4fced1",
+      "name" : "icon_field",
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_column.card_items.media_type",
+        "controlling_value_regex" : "icon",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "icon_set" : "fontawesome-5.14.0",
+      "type" : "icon",
+      "display_width" : null,
+      "default" : { }
+    }, {
+      "id" : "2c535891-82d2-fff8-a1a8-17e51fe19ffd",
+      "name" : "svg_code",
+      "label" : "Svg Code",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_column.card_items.media_type",
+        "controlling_value_regex" : "svg",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"> <path d=\"M15.4839 33.8709L33.871 6.77417L29.0323 26.129H45.4839L27.0968 53.2258L31.9355 33.8709H15.4839Z\" fill=\"#758B50\"></path> <circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"></circle> </svg>"
+    }, {
+      "id" : "393561c5-3c63-06a1-7f20-829c8eee150a",
+      "name" : "icon_alignment",
+      "label" : "Icon Alignment",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_column.card_items.media_type",
+        "controlling_value_regex" : "icon|svg",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "icontop", "Top" ], [ "iconleft", "Left" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "icontop"
+    }, {
+      "id" : "3f0fb69f-2a3a-3519-4cae-0d45ce454cfb",
+      "name" : "heading",
+      "label" : "Heading",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "99.9% Uptime for Electric"
+    }, {
+      "id" : "898e35e7-2276-efee-3040-ed0303d97cb9",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>"
+    }, {
+      "id" : "eadeb8e8-4fc8-9f3a-cf09-2f14c48f4634",
+      "name" : "include_button",
+      "label" : "Include Button",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "38e2c730-71a2-6769-f59f-d2da8ffceae9",
+      "name" : "button_group",
+      "label" : "Button Group",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
+        "default" : 1
+      },
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_column.card_items.include_button",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "551159b5-8a2b-7b2c-0edd-d3288c7a59a6",
+        "name" : "button_type",
+        "label" : "Button Type",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "std"
+      }, {
+        "id" : "d8e02677-ecc3-ee93-abd5-16edf347420e",
+        "name" : "button_style",
+        "label" : "Button Style",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "intro_content.button_group.button_type",
+          "controlling_value_regex" : "std|cta",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "hs-button"
+      }, {
+        "id" : "1a6672dc-d5b7-5cfe-84ce-c727b2483430",
+        "name" : "button_text",
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "content_column.card_items.button_group.button_type",
+          "controlling_value_regex" : "std|popup_content",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null
+        },
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Subpage Link"
+      }, {
+        "id" : "7a0ea6cf-de33-8959-268d-c6f5669edd32",
+        "name" : "link",
+        "label" : "Link",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "content_column.card_items.button_group.button_type",
+          "controlling_value_regex" : "std",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "4cabb3d4-20c2-6683-8eda-ddcd777626a9",
+        "name" : "cta",
+        "label" : "CTA",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "content_column.card_items.button_group.button_type",
+          "controlling_value_regex" : "cta",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "cta",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : [ {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Subpage Link",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
     "display_width" : null,
-    "default" : "Title of Accordion Slide Here"
-  }, {
-    "id" : "9a77e60f-53ab-adf4-6804-b982251212e2",
-    "name" : "content",
-    "label" : "Content",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<p>Quisque accumsan sed sapien non blandit. Nunc malesuada urna non malesuada mattis. Donec ut justo felis. Integer posuere aliquet libero id porta. Ut ac interdum leo. Maecenas porttitor urna risus, sed tincidunt dui mollis eu. Duis congue ornare lacus in dapibus. Sed eget odio mattis, molestie eros sit amet, maximus est.</p>"
+    "default" : [ {
+      "media_type" : "img",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/MidwestEnergy-u4m/images/f06887f7e828f74fc5480924aea4e4556b8ab720.jpg",
+        "alt" : "Image",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 500,
+        "max_width" : 800,
+        "max_height" : 500
+      },
+      "include_image_bottom_border" : true,
+      "icon_field" : { },
+      "svg_code" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"> <path d=\"M15.4839 33.8709L33.871 6.77417L29.0323 26.129H45.4839L27.0968 53.2258L31.9355 33.8709H15.4839Z\" fill=\"#758B50\"></path> <circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"></circle> </svg>",
+      "icon_alignment" : "icontop",
+      "heading" : "99.9% Uptime for Electric",
+      "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>",
+      "include_button" : true,
+      "button_group" : [ {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Subpage Link",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    }, {
+      "media_type" : "img",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/MidwestEnergy-u4m/images/f06887f7e828f74fc5480924aea4e4556b8ab720.jpg",
+        "alt" : "Image",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 500,
+        "max_width" : 800,
+        "max_height" : 500
+      },
+      "include_image_bottom_border" : true,
+      "icon_field" : { },
+      "svg_code" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"> <path d=\"M15.4839 33.8709L33.871 6.77417L29.0323 26.129H45.4839L27.0968 53.2258L31.9355 33.8709H15.4839Z\" fill=\"#758B50\"></path> <circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"></circle> </svg>",
+      "icon_alignment" : "icontop",
+      "heading" : "99.9% Uptime for Electric",
+      "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>",
+      "include_button" : true,
+      "button_group" : [ {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Subpage Link",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    }, {
+      "media_type" : "img",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/MidwestEnergy-u4m/images/f06887f7e828f74fc5480924aea4e4556b8ab720.jpg",
+        "alt" : "Image",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 500,
+        "max_width" : 800,
+        "max_height" : 500
+      },
+      "include_image_bottom_border" : true,
+      "icon_field" : { },
+      "svg_code" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"> <path d=\"M15.4839 33.8709L33.871 6.77417L29.0323 26.129H45.4839L27.0968 53.2258L31.9355 33.8709H15.4839Z\" fill=\"#758B50\"></path> <circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"></circle> </svg>",
+      "icon_alignment" : "icontop",
+      "heading" : "99.9% Uptime for Electric",
+      "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>",
+      "include_button" : true,
+      "button_group" : [ {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Subpage Link",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    } ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
   "type" : "group",
   "display_width" : null,
-  "default" : [ {
-    "title" : "Title of Accordion Slide Here",
-    "content" : "<p>Quisque accumsan sed sapien non blandit. Nunc malesuada urna non malesuada mattis. Donec ut justo felis. Integer posuere aliquet libero id porta. Ut ac interdum leo. Maecenas porttitor urna risus, sed tincidunt dui mollis eu. Duis congue ornare lacus in dapibus. Sed eget odio mattis, molestie eros sit amet, maximus est.</p>"
-  } ]
+  "default" : {
+    "card_items" : [ {
+      "media_type" : "img",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/MidwestEnergy-u4m/images/f06887f7e828f74fc5480924aea4e4556b8ab720.jpg",
+        "alt" : "Image",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 500,
+        "max_width" : 800,
+        "max_height" : 500
+      },
+      "include_image_bottom_border" : true,
+      "icon_field" : { },
+      "svg_code" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"> <path d=\"M15.4839 33.8709L33.871 6.77417L29.0323 26.129H45.4839L27.0968 53.2258L31.9355 33.8709H15.4839Z\" fill=\"#758B50\"></path> <circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"></circle> </svg>",
+      "icon_alignment" : "icontop",
+      "heading" : "99.9% Uptime for Electric",
+      "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>",
+      "include_button" : true,
+      "button_group" : [ {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Subpage Link",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    }, {
+      "media_type" : "img",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/MidwestEnergy-u4m/images/f06887f7e828f74fc5480924aea4e4556b8ab720.jpg",
+        "alt" : "Image",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 500,
+        "max_width" : 800,
+        "max_height" : 500
+      },
+      "include_image_bottom_border" : true,
+      "icon_field" : { },
+      "svg_code" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"> <path d=\"M15.4839 33.8709L33.871 6.77417L29.0323 26.129H45.4839L27.0968 53.2258L31.9355 33.8709H15.4839Z\" fill=\"#758B50\"></path> <circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"></circle> </svg>",
+      "icon_alignment" : "icontop",
+      "heading" : "99.9% Uptime for Electric",
+      "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>",
+      "include_button" : true,
+      "button_group" : [ {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Subpage Link",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    }, {
+      "media_type" : "img",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/MidwestEnergy-u4m/images/f06887f7e828f74fc5480924aea4e4556b8ab720.jpg",
+        "alt" : "Image",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 500,
+        "max_width" : 800,
+        "max_height" : 500
+      },
+      "include_image_bottom_border" : true,
+      "icon_field" : { },
+      "svg_code" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"> <path d=\"M15.4839 33.8709L33.871 6.77417L29.0323 26.129H45.4839L27.0968 53.2258L31.9355 33.8709H15.4839Z\" fill=\"#758B50\"></path> <circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"></circle> </svg>",
+      "icon_alignment" : "icontop",
+      "heading" : "99.9% Uptime for Electric",
+      "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>",
+      "include_button" : true,
+      "button_group" : [ {
+        "button_type" : "std",
+        "button_style" : "hs-button",
+        "button_text" : "Subpage Link",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ]
+    } ]
+  }
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
   "name" : "module_settings",
@@ -380,7 +857,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "center"
+    "default" : "left"
   }, {
     "id" : "75e2e625-fa6b-fef7-0233-79606cf1291a",
     "name" : "intro_content_size",
@@ -406,12 +883,11 @@
     "max" : 2000,
     "step" : 1,
     "type" : "number",
-    "display_width" : null,
-    "default" : 822
+    "display_width" : null
   }, {
-    "id" : "4a3b5000-1724-2087-bd7d-fee2d7a34e6c",
-    "name" : "enable_animation",
-    "label" : "Enable Animation",
+    "id" : "d6ebe062-20c0-9cc5-4fc3-ef8b7a16b4e3",
+    "name" : "include_animation",
+    "label" : "Include Animation",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
@@ -419,27 +895,122 @@
     "display_width" : null,
     "default" : false
   }, {
-    "id" : "e556eb73-5902-1e8c-f88b-1299b5fe0eeb",
+    "id" : "8f9b5dec-ae17-75ad-5c3b-858de80d8bd0",
     "name" : "animation_type",
     "label" : "Animation Type",
     "required" : false,
     "locked" : false,
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "module_settings.enable_animation",
+      "controlling_field_path" : "module_settings.include_animation",
       "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
       "access" : null
     },
     "display" : "select",
-    "choices" : [ [ "fade", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-right", "Fade Right" ], [ "fade-left", "Fade Left" ], [ "zoom-in", "Zoom In" ], [ "zoom-out", "Zoom Out" ] ],
+    "choices" : [ [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-right", "Fade Right" ], [ "fade-left", "Fade Left" ], [ "zoom-in", "Zoom In" ], [ "zoom-out", "Zoom Out" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
+    "display_width" : null
+  }, {
+    "id" : "709abaa3-4d0a-76d1-e1cf-5930f38bc8c4",
+    "name" : "card_settings",
+    "label" : "Card Settings",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "87a68e6b-2b87-de84-487f-0de8036691ee",
+      "name" : "number_of_cards",
+      "label" : "Number Of Cards",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "col-12", "One" ], [ "col-6", "Two" ], [ "col-4", "Three" ], [ "col-3", "Four" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "col-4"
+    }, {
+      "id" : "40298ab2-be09-178c-6920-79bd00dfb51e",
+      "name" : "card_background_color",
+      "label" : "Card Background Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#39473F",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "3ed28522-191b-096f-a7d4-940bff00c065",
+      "name" : "card_content_color",
+      "label" : "Card Content Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "67a3759f-4646-6d2a-cd4b-dec522c44624",
+      "name" : "include_background_in_column",
+      "label" : "Include Background In Column",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "8f3848ac-f5d4-e9ef-c7d6-e88b36b08aca",
+      "name" : "column_background_color",
+      "label" : "Column Background Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_settings.card_settings.include_background_in_column",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#39473F",
+        "opacity" : 100
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
     "display_width" : null,
-    "default" : ""
+    "default" : {
+      "number_of_cards" : "col-4",
+      "card_background_color" : {
+        "color" : "#39473F",
+        "opacity" : 100
+      },
+      "card_content_color" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      },
+      "include_background_in_column" : false,
+      "column_background_color" : {
+        "color" : "#39473F",
+        "opacity" : 100
+      }
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -447,11 +1018,25 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "center",
+    "intro_content_alignment" : "left",
     "intro_content_size" : "theme",
-    "intro_content_width" : 822,
-    "enable_animation" : false,
-    "animation_type" : ""
+    "include_animation" : false,
+    "card_settings" : {
+      "number_of_cards" : "col-4",
+      "card_background_color" : {
+        "color" : "#39473F",
+        "opacity" : 100
+      },
+      "card_content_color" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      },
+      "include_background_in_column" : false,
+      "column_background_color" : {
+        "color" : "#39473F",
+        "opacity" : 100
+      }
+    }
   }
 }, {
   "id" : "module_overrides",
@@ -775,7 +1360,7 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : "color"
+      "default" : ""
     }, {
       "id" : "5d97321e-e326-2d30-8757-51608da05ea6",
       "name" : "background_image",
@@ -903,7 +1488,7 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : "custom"
+      "default" : "orange_bg"
     }, {
       "id" : "0f1d99f5-31a8-7b34-766a-1f40497d8b7c",
       "name" : "custom_color",
@@ -921,8 +1506,8 @@
       "type" : "color",
       "display_width" : null,
       "default" : {
-        "color" : "#ffffff",
-        "opacity" : 100
+        "color" : null,
+        "opacity" : null
       }
     }, {
       "id" : "2659085b-598d-e346-643e-6a9ebb3bae70",
@@ -953,7 +1538,7 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
-      "background_type" : "color",
+      "background_type" : "",
       "background_image" : {
         "size_type" : "auto",
         "src" : "",
@@ -967,10 +1552,10 @@
         "opacity" : null
       },
       "opacity" : 0.5,
-      "select_color" : "custom",
+      "select_color" : "orange_bg",
       "custom_color" : {
-        "color" : "#ffffff",
-        "opacity" : 100
+        "color" : null,
+        "opacity" : null
       },
       "select_gradient" : "gradient1"
     }
@@ -995,7 +1580,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "custom"
+    "default" : "theme"
   }, {
     "id" : "2106c911-74cd-42f1-af9c-4ef05f436c77",
     "name" : "custom_container_size",
@@ -1014,7 +1599,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 1000
+    "default" : 870
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -1037,7 +1622,7 @@
     "custom_bottom_padding_mobile" : 50,
     "reverse_text" : false,
     "background_settings" : {
-      "background_type" : "color",
+      "background_type" : "",
       "background_image" : {
         "size_type" : "auto",
         "src" : "",
@@ -1051,14 +1636,14 @@
         "opacity" : null
       },
       "opacity" : 0.5,
-      "select_color" : "custom",
+      "select_color" : "orange_bg",
       "custom_color" : {
-        "color" : "#ffffff",
-        "opacity" : 100
+        "color" : null,
+        "opacity" : null
       },
       "select_gradient" : "gradient1"
     },
-    "container_size" : "custom",
-    "custom_container_size" : 1000
+    "container_size" : "theme",
+    "custom_container_size" : 870
   }
 } ]

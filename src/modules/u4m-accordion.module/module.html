@@ -1,22 +1,77 @@
 {% set moduleName = 'u4m-accordion' %}
 {% include "../partials/u4-module-includes.html" %}
-  <div class='intro'>
-    <div class="heading">
-      {% if module.include_heading %}
-      <h2>{{ module.heading }}</h2>
-      {% endif %}
-      {% if module.include_copy %}
-      <p>{{ module.copy }}</p>
-      {% endif %}     
-    </div>
-  </div>
-  <div class='accordions'>
-  {# Using details.js as a polyfill for browsers that don't suppose details/open #}
-    {% for accordion in module.accordions %}
-    <details>
-      <summary>{{ accordion.summary }}</summary>
-      <div>{{ accordion.detail }}</div>
-    </details>
-    {% endfor %}
-  </div>
+{{ macros.introGroup(module.intro_content, module.module_settings) }}
+</div>
+<div class="row">
+	<div class="accordion-inner">
+		{% for item in module.accordion_items %}
+		<div class="accordion-item">
+			{% if item.title %}
+			<div class="accordion-title">
+				<p>
+					{{ item.title }}
+				</p>
+				<span class="accordion-title-icon">
+					<span class="open">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+							<path d="M18 13.3415H12.8571V18.4844H11.1429V13.3415H6V11.6272H11.1429V6.48438H12.8571V11.6272H18V13.3415Z" fill="#39473F"/>
+						</svg>
+					</span>
+					<span class="close">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+							<path d="M18 13.1987H6V11.4844H18V13.1987Z" fill="#39473F"/>
+						</svg>
+					</span>
+				</span>
+			</div>
+			{% endif %}
+			{% if item.content %}
+			<div class="accordion-toggle-cnt">
+				{{ item.content }}
+			</div>
+			{% endif %}
+		</div>
+		{% endfor %}
+	</div>
+</div>
+</div>
 </section>
+
+{% require_js %}
+<script>
+	const accTitle = document.querySelectorAll('.{{name}}.u4m-accordion .accordion-title');
+
+																						 if (accTitle.length > 0) {
+
+
+		accTitle.forEach(function(title) {
+			title.addEventListener('click', function() {
+				const content = this.nextElementSibling;
+				const parent = this.parentElement;
+
+				// Close all others
+				accTitle.forEach(function(otherTitle) {
+					const otherContent = otherTitle.nextElementSibling;
+					const otherParent = otherTitle.parentElement;
+
+					if (otherTitle !== title) {
+						otherParent.classList.remove('acc-open');
+						otherContent.style.maxHeight = null;
+					}
+				});
+
+				// Toggle clicked tab
+				const isOpen = parent.classList.contains('acc-open');
+				if (!isOpen) {
+					parent.classList.add('acc-open');
+					content.style.maxHeight = content.scrollHeight + 'px';
+				} else {
+					parent.classList.remove('acc-open');
+					content.style.maxHeight = null;
+				}
+			});
+		});
+	}
+
+</script>
+{% end_require_js %}

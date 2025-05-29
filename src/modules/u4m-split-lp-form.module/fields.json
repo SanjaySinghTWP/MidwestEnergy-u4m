@@ -1,7 +1,7 @@
 [ {
   "id" : "081bfb60-a75d-a475-e7fb-44c8a8969c1a",
   "name" : "intro_content",
-  "label" : "Intro Content",
+  "label" : "Content Section",
   "required" : false,
   "locked" : false,
   "children" : [ {
@@ -85,7 +85,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "FAQs"
+    "default" : "Landing Page Heading Text"
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -112,7 +112,40 @@
     },
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>"
+    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+  }, {
+    "id" : "bb82e2c5-426b-b836-3af3-3945fb527b20",
+    "name" : "list_items",
+    "label" : "List Items",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "b53a9df0-cc44-0bdb-8d91-42d244209c38",
+      "name" : "list_item",
+      "label" : "List Item",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : 1
+      },
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : [ "Lorem ipsum dolor sit amet" ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "list_item" : [ "Lorem ipsum dolor sit amet" ]
+    }
   }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
@@ -286,9 +319,12 @@
     "eybrow_text" : "OPTIONAL EYEBROW TEXT",
     "include_heading" : true,
     "heading_size" : "h2",
-    "heading" : "FAQs",
+    "heading" : "Landing Page Heading Text",
     "include_content" : true,
-    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>",
+    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+    "list_items" : {
+      "list_item" : [ "Lorem ipsum dolor sit amet" ]
+    },
     "include_button" : false,
     "button_group" : [ {
       "button_type" : "std",
@@ -319,127 +355,23 @@
     } ]
   }
 }, {
-  "id" : "21982007-51a9-14ec-97b8-0805c51cbce5",
-  "name" : "accordion_items",
-  "label" : "Accordion Items",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : "f47224eb-a8ed-20a3-f43f-fae73e997311",
-    "default" : 1
-  },
-  "children" : [ {
-    "id" : "f47224eb-a8ed-20a3-f43f-fae73e997311",
-    "name" : "title",
-    "label" : "Title",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Title of Accordion Slide Here"
-  }, {
-    "id" : "9a77e60f-53ab-adf4-6804-b982251212e2",
-    "name" : "content",
-    "label" : "Content",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<p>Quisque accumsan sed sapien non blandit. Nunc malesuada urna non malesuada mattis. Donec ut justo felis. Integer posuere aliquet libero id porta. Ut ac interdum leo. Maecenas porttitor urna risus, sed tincidunt dui mollis eu. Duis congue ornare lacus in dapibus. Sed eget odio mattis, molestie eros sit amet, maximus est.</p>"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : [ {
-    "title" : "Title of Accordion Slide Here",
-    "content" : "<p>Quisque accumsan sed sapien non blandit. Nunc malesuada urna non malesuada mattis. Donec ut justo felis. Integer posuere aliquet libero id porta. Ut ac interdum leo. Maecenas porttitor urna risus, sed tincidunt dui mollis eu. Duis congue ornare lacus in dapibus. Sed eget odio mattis, molestie eros sit amet, maximus est.</p>"
-  } ]
-}, {
-  "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
-  "name" : "module_settings",
-  "label" : "Module Settings",
+  "id" : "e3f5e3fd-fb72-ad91-2224-c4db929065c6",
+  "name" : "form_section",
+  "label" : "Form Section",
   "required" : false,
   "locked" : false,
   "children" : [ {
-    "id" : "0a83880d-e7a4-265e-44f8-4237a6ba4090",
-    "name" : "intro_content_alignment",
-    "label" : "Intro Content Alignment",
+    "id" : "8f592c87-9516-9544-5a0a-93f946bf19d0",
+    "name" : "form_field",
+    "label" : "Form",
     "required" : false,
     "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "left", "Left" ], [ "right", "Right" ], [ "center", "Center" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
+    "type" : "form",
     "display_width" : null,
-    "default" : "center"
-  }, {
-    "id" : "75e2e625-fa6b-fef7-0233-79606cf1291a",
-    "name" : "intro_content_size",
-    "label" : "Intro Content Size",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "theme", "Theme" ], [ "b3", "Large" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "theme"
-  }, {
-    "id" : "7def73cf-f5f3-ad22-22a2-c1a64d3669f5",
-    "name" : "intro_content_width",
-    "label" : "Intro Content Width",
-    "required" : false,
-    "locked" : false,
-    "display" : "slider",
-    "min" : 500,
-    "max" : 2000,
-    "step" : 1,
-    "type" : "number",
-    "display_width" : null,
-    "default" : 822
-  }, {
-    "id" : "4a3b5000-1724-2087-bd7d-fee2d7a34e6c",
-    "name" : "enable_animation",
-    "label" : "Enable Animation",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
-    "id" : "e556eb73-5902-1e8c-f88b-1299b5fe0eeb",
-    "name" : "animation_type",
-    "label" : "Animation Type",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "module_settings.enable_animation",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "fade", "Fade" ], [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-right", "Fade Right" ], [ "fade-left", "Fade Left" ], [ "zoom-in", "Zoom In" ], [ "zoom-out", "Zoom Out" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : ""
+    "default" : {
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form."
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -447,11 +379,56 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "center",
-    "intro_content_size" : "theme",
-    "intro_content_width" : 822,
-    "enable_animation" : false,
-    "animation_type" : ""
+    "form_field" : {
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form."
+    }
+  }
+}, {
+  "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
+  "name" : "module_settings",
+  "label" : "Module Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "d6ebe062-20c0-9cc5-4fc3-ef8b7a16b4e3",
+    "name" : "include_animation",
+    "label" : "Include Animation",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "8f9b5dec-ae17-75ad-5c3b-858de80d8bd0",
+    "name" : "animation_type",
+    "label" : "Animation Type",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.include_animation",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-right", "Fade Right" ], [ "fade-left", "Fade Left" ], [ "zoom-in", "Zoom In" ], [ "zoom-out", "Zoom Out" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "include_animation" : false
   }
 }, {
   "id" : "module_overrides",
@@ -775,7 +752,7 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : "color"
+      "default" : ""
     }, {
       "id" : "5d97321e-e326-2d30-8757-51608da05ea6",
       "name" : "background_image",
@@ -903,7 +880,7 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : "custom"
+      "default" : "orange_bg"
     }, {
       "id" : "0f1d99f5-31a8-7b34-766a-1f40497d8b7c",
       "name" : "custom_color",
@@ -921,8 +898,8 @@
       "type" : "color",
       "display_width" : null,
       "default" : {
-        "color" : "#ffffff",
-        "opacity" : 100
+        "color" : null,
+        "opacity" : null
       }
     }, {
       "id" : "2659085b-598d-e346-643e-6a9ebb3bae70",
@@ -953,7 +930,7 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
-      "background_type" : "color",
+      "background_type" : "",
       "background_image" : {
         "size_type" : "auto",
         "src" : "",
@@ -967,10 +944,10 @@
         "opacity" : null
       },
       "opacity" : 0.5,
-      "select_color" : "custom",
+      "select_color" : "orange_bg",
       "custom_color" : {
-        "color" : "#ffffff",
-        "opacity" : 100
+        "color" : null,
+        "opacity" : null
       },
       "select_gradient" : "gradient1"
     }
@@ -995,7 +972,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "custom"
+    "default" : "theme"
   }, {
     "id" : "2106c911-74cd-42f1-af9c-4ef05f436c77",
     "name" : "custom_container_size",
@@ -1014,7 +991,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 1000
+    "default" : 870
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -1037,7 +1014,7 @@
     "custom_bottom_padding_mobile" : 50,
     "reverse_text" : false,
     "background_settings" : {
-      "background_type" : "color",
+      "background_type" : "",
       "background_image" : {
         "size_type" : "auto",
         "src" : "",
@@ -1051,14 +1028,14 @@
         "opacity" : null
       },
       "opacity" : 0.5,
-      "select_color" : "custom",
+      "select_color" : "orange_bg",
       "custom_color" : {
-        "color" : "#ffffff",
-        "opacity" : 100
+        "color" : null,
+        "opacity" : null
       },
       "select_gradient" : "gradient1"
     },
-    "container_size" : "custom",
-    "custom_container_size" : 1000
+    "container_size" : "theme",
+    "custom_container_size" : 870
   }
 } ]
