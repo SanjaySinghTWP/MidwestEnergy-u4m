@@ -109,6 +109,16 @@ h6:first-child {
   padding: 0;
 }
 
+.intro_content.center .intCnt {
+  text-align: center;
+}
+.intro_content.right .intCnt {
+  text-align: right;
+}
+.intro_content.custom {
+  margin: 0 auto;
+}
+
 div.hs_cos_wrapper_widget section.top-margin-none {
   margin-top: 0;
 }
