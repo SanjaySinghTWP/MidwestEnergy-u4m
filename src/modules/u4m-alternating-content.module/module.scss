@@ -80,7 +80,7 @@
             @include tablet {
                 width: 100%;
                 padding-top: 50rem;
-                padding-bottom: 0;
+                padding-bottom: 30rem;
                 padding-left: 20rem;
                 padding-right: 20rem;
             }
@@ -180,8 +180,13 @@
 
         .innerContainer {
             border-radius: 24rem;
-            background: $super_light_gray;
+
+            .content-col {
+                background: $super_light_gray;
+            }
         }
+
+
     }
 
     .media-column {
