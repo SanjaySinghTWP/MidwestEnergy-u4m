@@ -349,7 +349,7 @@
     "required" : false,
     "locked" : false,
     "display" : "select",
-    "choices" : [ [ "col-12", "One" ], [ "col-6", "Two Column" ] ],
+    "choices" : [ [ "col-12", "One Column" ], [ "col-6", "Two Column" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
