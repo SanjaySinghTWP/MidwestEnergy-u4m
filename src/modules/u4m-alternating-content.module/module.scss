@@ -27,13 +27,14 @@
 
     .u4m-alt-cnt-wrap.left {
         flex-direction: row;
+        row-gap: 0;
 
         @include tablet {
             flex-direction: column;
         }
 
         .content-col {
-            border-radius: 24rem 24rem 0rem 0rem;
+            border-radius: 24rem 0rem 0 24rem;
         }
     }
 
@@ -186,7 +187,7 @@
         }
 
         display: flex;
-        gap: 60rem;
+        gap: 0rem;
     }
 
     .page-center {
@@ -196,14 +197,8 @@
         .innerContainer {
             border-radius: 24rem;
 
-            @include tablet {}
-
             .content-col {
                 background: $super_light_gray;
-
-                @include tablet {
-                    border-radius: 0rem 0rem 0rem 0rem;
-                }
 
             }
         }
