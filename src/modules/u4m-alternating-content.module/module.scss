@@ -31,6 +31,10 @@
         @include tablet {
             flex-direction: column;
         }
+
+        .content-col {
+            border-radius: 24rem 24rem 0rem 0rem;
+        }
     }
 
     .u4m-alt-cnt-wrap.right {
@@ -41,6 +45,16 @@
         }
 
         .media-column {
+
+            .image {
+
+                img {
+
+                    @include tablet {
+                        border-radius: 24rem 24rem 0rem 0rem;
+                    }
+                }
+            }
 
             .shape-box {
                 left: unset;
@@ -57,8 +71,9 @@
 
         .content-col {
             @include tablet {
-                padding-top: 0;
+                padding-top: 30rem;
                 padding-bottom: 30rem;
+                border-radius: 0rem 0rem 24rem 24rem;
             }
         }
     }
@@ -66,7 +81,7 @@
     .u4m-alt-cnt-wrap {
 
         @include navbreak {
-            row-gap: 30rem;
+            row-gap: 0rem;
         }
 
         .content-col {
@@ -181,8 +196,15 @@
         .innerContainer {
             border-radius: 24rem;
 
+            @include tablet {}
+
             .content-col {
                 background: $super_light_gray;
+
+                @include tablet {
+                    border-radius: 0rem 0rem 0rem 0rem;
+                }
+
             }
         }
 
