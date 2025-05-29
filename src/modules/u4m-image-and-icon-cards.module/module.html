@@ -3,7 +3,9 @@
 {{ macros.introGroup(module.intro_content, module.module_settings) }}
 </div>
 
-<div class="content_column {% if module.module_settings.card_settings.include_background_in_column %}columnhasbg{% endif %}">
+<div class="content_column {% if module.module_settings.card_settings.include_background_in_column %}columnhasbg{% endif %}" {% if module.module_settings.include_animation %}
+data-aos="{{ module.module_settings.animation_type }}"
+{% endif %}>
   <div class="flex_row">
     {% for item in module.content_column.card_items %}
     <div class="card_area col {{ module.module_settings.card_settings.number_of_cards }}">
@@ -116,3 +118,4 @@
   }
 </style>
 {% end_require_css %}
+
