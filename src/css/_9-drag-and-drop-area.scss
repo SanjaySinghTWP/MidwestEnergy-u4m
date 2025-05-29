@@ -80,3 +80,8 @@ section.u4m-drag-and-drop-area {
 [class*="full-width-section"].dnd-section > .row-fluid > .dnd-column {
   padding: 0;
 }
+
+.dnd-section[class*="full-width"],
+.dnd-section.dnd_padding {
+  padding: 0rem 0;
+}
