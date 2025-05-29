@@ -2,7 +2,8 @@
 {% include "../partials/u4-module-includes.html" %}
 {{ macros.introGroup(module.intro_content, module.module_settings) }}
 </div>
-<div class="row">
+<div class="row" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
+{% endif %} data-aos-delay="100">
 	{% if module.enable_media %}
 	<div class="media-column">
 		{% if module.media_section.media_type == "image" %}

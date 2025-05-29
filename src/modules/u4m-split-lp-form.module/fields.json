@@ -112,40 +112,7 @@
     },
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
-  }, {
-    "id" : "bb82e2c5-426b-b836-3af3-3945fb527b20",
-    "name" : "list_items",
-    "label" : "List Items",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "b53a9df0-cc44-0bdb-8d91-42d244209c38",
-      "name" : "list_item",
-      "label" : "List Item",
-      "required" : false,
-      "locked" : false,
-      "occurrence" : {
-        "min" : null,
-        "max" : null,
-        "sorting_label_field" : null,
-        "default" : 1
-      },
-      "validation_regex" : "",
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : [ "Lorem ipsum dolor sit amet" ]
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : {
-      "list_item" : [ "Lorem ipsum dolor sit amet" ]
-    }
+    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n<ul>\n<li>Lorem ipsum dolor sit amet</li>\n<li>Consectetur adipiscing elit</li>\n<li>Sed do eiusmod tempor incididunt ut</li>\n<li>Labore et dolore magna aliqua</li>\n</ul>"
   }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
@@ -321,10 +288,7 @@
     "heading_size" : "h2",
     "heading" : "Landing Page Heading Text",
     "include_content" : true,
-    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
-    "list_items" : {
-      "list_item" : [ "Lorem ipsum dolor sit amet" ]
-    },
+    "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n<ul>\n<li>Lorem ipsum dolor sit amet</li>\n<li>Consectetur adipiscing elit</li>\n<li>Sed do eiusmod tempor incididunt ut</li>\n<li>Labore et dolore magna aliqua</li>\n</ul>",
     "include_button" : false,
     "button_group" : [ {
       "button_type" : "std",
@@ -369,8 +333,13 @@
     "type" : "form",
     "display_width" : null,
     "default" : {
+      "form_id" : "24f23109-6fb4-454e-9ceb-0c07d8e9e064",
       "response_type" : "inline",
-      "message" : "Thanks for submitting the form."
+      "message" : "Thanks for submitting the form.",
+      "gotowebinar_webinar_key" : null,
+      "webinar_id" : null,
+      "webinar_source" : null,
+      "form_type" : "HUBSPOT"
     }
   } ],
   "tab" : "CONTENT",
@@ -380,8 +349,13 @@
   "display_width" : null,
   "default" : {
     "form_field" : {
+      "form_id" : "24f23109-6fb4-454e-9ceb-0c07d8e9e064",
       "response_type" : "inline",
-      "message" : "Thanks for submitting the form."
+      "message" : "Thanks for submitting the form.",
+      "gotowebinar_webinar_key" : null,
+      "webinar_id" : null,
+      "webinar_source" : null,
+      "form_type" : "HUBSPOT"
     }
   }
 }, {
@@ -752,7 +726,7 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : ""
+      "default" : "color"
     }, {
       "id" : "5d97321e-e326-2d30-8757-51608da05ea6",
       "name" : "background_image",
@@ -880,7 +854,7 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : "orange_bg"
+      "default" : "custom"
     }, {
       "id" : "0f1d99f5-31a8-7b34-766a-1f40497d8b7c",
       "name" : "custom_color",
@@ -898,8 +872,8 @@
       "type" : "color",
       "display_width" : null,
       "default" : {
-        "color" : null,
-        "opacity" : null
+        "color" : "#ffffff",
+        "opacity" : 100
       }
     }, {
       "id" : "2659085b-598d-e346-643e-6a9ebb3bae70",
@@ -930,7 +904,7 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
-      "background_type" : "",
+      "background_type" : "color",
       "background_image" : {
         "size_type" : "auto",
         "src" : "",
@@ -944,10 +918,10 @@
         "opacity" : null
       },
       "opacity" : 0.5,
-      "select_color" : "orange_bg",
+      "select_color" : "custom",
       "custom_color" : {
-        "color" : null,
-        "opacity" : null
+        "color" : "#ffffff",
+        "opacity" : 100
       },
       "select_gradient" : "gradient1"
     }
@@ -1014,7 +988,7 @@
     "custom_bottom_padding_mobile" : 50,
     "reverse_text" : false,
     "background_settings" : {
-      "background_type" : "",
+      "background_type" : "color",
       "background_image" : {
         "size_type" : "auto",
         "src" : "",
@@ -1028,10 +1002,10 @@
         "opacity" : null
       },
       "opacity" : 0.5,
-      "select_color" : "orange_bg",
+      "select_color" : "custom",
       "custom_color" : {
-        "color" : null,
-        "opacity" : null
+        "color" : "#ffffff",
+        "opacity" : 100
       },
       "select_gradient" : "gradient1"
     },

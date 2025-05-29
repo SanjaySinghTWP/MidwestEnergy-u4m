@@ -1,0 +1,342 @@
+@import "../../css/_module-imports";
+
+$color_4: red;
+
+.u4m-split-lp-form {
+
+    @include tabletvert {
+        padding-left: 20rem;
+        padding-right: 20rem;
+    }
+
+    .page-center {
+        padding: 0;
+
+        .split-lp-wrap {
+            display: flex;
+            gap: 80rem;
+
+
+
+            @include navbreak {
+                gap: 40rem;
+            }
+
+            @include tablet {
+                flex-direction: column;
+            }
+
+            .content-col {
+                width: 50%;
+
+                @include tablet {
+                    width: 100%;
+                }
+
+                .intCnt {
+                    .eyebrowtext {
+                        color: $dark_green;
+                        margin-bottom: 8rem;
+                    }
+
+                    h2.intro_title {
+                        margin-bottom: 20rem;
+                    }
+
+                    .intro_desc {
+                        max-width: 580rem;
+
+                        p {
+                            margin-bottom: 30rem;
+                        }
+
+                        ul {
+                            padding-left: 20rem;
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+
+                            li {
+                                margin-bottom: 5rem;
+                                letter-spacing: normal;
+                                display: flex;
+                                align-items: center;
+                                font-family: $font1;
+                                font-size: 16rem;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 24rem;
+                                position: relative;
+
+                                svg {
+                                    margin-right: 10rem;
+                                    height: 24rem;
+                                    width: 24rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .form-col {
+                width: 50%;
+
+                @include tablet {
+                    width: 100%;
+                }
+            }
+        }
+
+        .form-col {
+            border-radius: 24rem;
+            background: $dark_green;
+            padding: 40rem;
+
+            @include phone {
+                padding: 25rem;
+            }
+
+            .form-wrap {
+                h3 {
+                    display: none;
+                }
+
+                form {
+                    margin: 0;
+
+                    &::-webkit-input-placeholder {
+                        color: $dark_green;
+                        font-size: 14rem;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 150%;
+                    }
+
+                    .hs-richtext {
+                        h3 {
+                            display: block;
+                            font-size: 30rem;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 35rem;
+                            color: $white;
+                            margin-bottom: 12rem;
+                        }
+
+                        p {
+                            margin-top: 0;
+                            color: $white;
+                            margin-bottom: 20rem;
+                        }
+                    }
+
+                    .hs-form-field {
+                        margin-bottom: 20rem;
+                        margin-top: 0;
+
+                        >label {
+                            color: $white;
+                            font-family: $font1;
+                            font-size: 14rem;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: 150%;
+                            margin-bottom: 8rem;
+                            display: inline-block;
+                        }
+
+                        input {
+                            padding: 12rem;
+                            min-height: 48rem;
+                            border-radius: 4rem;
+                            border: 1rem solid $dark_green;
+                            background: $white;
+
+                            @include phone {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    fieldset {
+
+                        @include tablet {
+                            max-width: 100%;
+                        }
+                    }
+
+                    fieldset.form-columns-2 {
+
+                        @include phone {
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        .hs-form-field {
+
+                            @include phone {
+                                width: 100%;
+                            }
+
+                            .input {
+                                margin-right: 20rem;
+
+                                @include phone {
+                                    margin-right: 0rem;
+                                }
+                            }
+
+                            &:last-child {
+                                .input {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    fieldset.form-columns-1 {
+                        .input {
+                            margin: 0;
+
+                            input {
+                                width: 100%;
+                            }
+
+                            textarea {
+                                width: 100%;
+                                border-radius: 4rem;
+                                border: 1rem solid $dark_green;
+                                background: $white;
+                                padding: 12rem;
+                                min-height: 140rem;
+                            }
+                        }
+                    }
+
+                    .hs_submit {
+                        text-align: center;
+
+                        input.hs-button {
+                            padding: 12rem 24rem;
+                            border-radius: 24rem;
+                            border: 1rem solid $white;
+
+                            &:hover {
+                                background: $bright_green;
+                                border: 1rem solid $bright_green;
+                            }
+                        }
+                    }
+
+                    textarea {
+                        outline: none;
+                    }
+
+                    input[type=text] {
+                        outline: none;
+                    }
+
+                    input[type=password] {
+                        outline: none;
+                    }
+
+                    input[type=datetime] {
+                        outline: none;
+                    }
+
+                    input[type=datetime-local] {
+                        outline: none;
+                    }
+
+                    input[type=date] {
+                        outline: none;
+                    }
+
+                    input[type=month] {
+                        outline: none;
+                    }
+
+                    input[type=time] {
+                        outline: none;
+                    }
+
+                    input[type=week] {
+                        outline: none;
+                    }
+
+                    input[type=number] {
+                        outline: none;
+                    }
+
+                    input[type=email] {
+                        outline: none;
+                    }
+
+                    input[type=url] {
+                        outline: none;
+                    }
+
+                    input[type=search] {
+                        outline: none;
+                    }
+
+                    input[type=tel] {
+                        outline: none;
+                    }
+
+                    input[type=color] {
+                        outline: none;
+                    }
+
+                    ul.hs-error-msgs {
+                        margin: 0;
+                        padding: 0;
+
+                        li {
+                            margin: 0;
+                            letter-spacing: normal;
+
+                            label.hs-error-msg {
+                                color: $color_4;
+                                font-family: $font1;
+                                font-size: 14rem;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: 150%;
+                                margin-bottom: 8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    padding-left: 80rem;
+    padding-right: 80rem;
+}
+
+.u4m-split-lp-form.reverse-text {
+    .bg_overlay.custom {
+        background-color: $dark_black;
+    }
+
+    .page-center {
+        .split-lp-wrap {
+            .content-col {
+                .intCnt {
+                    .eyebrowtext {
+                        color: $white;
+                    }
+
+                    .intro_desc {
+                        ul {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

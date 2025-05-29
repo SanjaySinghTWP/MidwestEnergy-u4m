@@ -1,10 +1,8 @@
 @import "../../css/_module-imports";
 
-$background-color_1: #000000;
-
 .u4m-accordion.reverse-text {
     .bg_overlay.custom {
-        background-color: $background-color_1;
+        background-color: $dark_black;
     }
 }
 

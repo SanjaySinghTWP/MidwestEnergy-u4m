@@ -4,7 +4,8 @@
 <div class="split-lp-wrap">
 	<div class="content-col">
 		{% if module.intro_content.include_eyebrow or module.intro_content.include_heading or module.intro_content.include_content or module.intro_content.include_button %}
-		<div class="intro_content {% if not module.intro_content.include_button %}nobtn{% endif %}" data-aos="fade-up">
+		<div class="intro_content {% if not module.intro_content.include_button %}nobtn{% endif %}" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
+{% endif %} data-aos-delay="100">
 			<div class="intro__inner " >
 				<div class="intCnt">
 					{% if module.intro_content.include_eyebrow %}
@@ -22,22 +23,7 @@
 					{{ module.intro_content.content }}
 				</div>
 				{% endif %}
-				<div class="list-items">
-					<ul>
-						{% for item in module.intro_content.list_items.list_item %}
-						<li>
-							<span class="icon">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-									<circle cx="12" cy="12" r="10" fill="#39473F"></circle>
-									<path d="M17.5309 8.13315L17.5296 8.13433L9.88778 14.871L6.47078 11.8587C6.47071 11.8586 6.47064 11.8586 6.47056 11.8585C6.37155 11.7706 6.23682 11.7212 6.09629 11.7212C5.95572 11.7212 5.82098 11.7706 5.72196 11.8586C5.72191 11.8586 5.72186 11.8587 5.7218 11.8587L5.15601 12.3575C5.15595 12.3575 5.15587 12.3576 5.1558 12.3577C5.05608 12.445 5 12.5637 5 12.6876C5 12.8115 5.05611 12.9303 5.15587 13.0176C5.15592 13.0176 5.15596 13.0177 5.15601 13.0177L9.51733 16.8625C9.51741 16.8626 9.5175 16.8626 9.51758 16.8626C9.61659 16.9505 9.75131 17 9.89183 17C10.0323 17 10.1671 16.9505 10.2661 16.8626C10.2661 16.8626 10.2662 16.8626 10.2663 16.8625L18.844 9.3008C18.844 9.30077 18.8441 9.30075 18.8441 9.30073C18.9439 9.21343 19 9.09462 19 8.97067C19 8.84689 18.944 8.72823 18.8445 8.64096C18.8443 8.64083 18.8442 8.64069 18.844 8.64054L18.2785 8.13487V8.13485L18.2765 8.13315C18.0687 7.95562 17.7386 7.95562 17.5309 8.13315Z" fill="white"></path>
-								</svg>
-							</span>
-							<span class="text">{{ item }}</span>
-						</li>
-						{% endfor %}
-					</ul>
-
-				</div>
+				
 			</div>
 			{% if module.intro_content.include_button %}
 
@@ -93,7 +79,8 @@
 	{% endif %}
 </div>
 {% if module.form_section.form_field.form_id %}
-<div class="form-col">
+<div class="form-col" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
+{% endif %} data-aos-delay="100">
 	<div class="form-wrap">
 		{% form
 	form_to_use="{{ module.form_section.form_field.form_id }}"
@@ -109,4 +96,12 @@
 </div>
 </div>
 </section>
+
+{% require_js %}
+<script>
+  $('.u4m-split-lp-form .page-center .split-lp-wrap .content-col .intCnt .intro_desc ul li').prepend(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<circle cx="12" cy="12" r="10" fill="#39473F"></circle>
+									<path d="M17.5309 8.13315L17.5296 8.13433L9.88778 14.871L6.47078 11.8587C6.47071 11.8586 6.47064 11.8586 6.47056 11.8585C6.37155 11.7706 6.23682 11.7212 6.09629 11.7212C5.95572 11.7212 5.82098 11.7706 5.72196 11.8586C5.72191 11.8586 5.72186 11.8587 5.7218 11.8587L5.15601 12.3575C5.15595 12.3575 5.15587 12.3576 5.1558 12.3577C5.05608 12.445 5 12.5637 5 12.6876C5 12.8115 5.05611 12.9303 5.15587 13.0176C5.15592 13.0176 5.15596 13.0177 5.15601 13.0177L9.51733 16.8625C9.51741 16.8626 9.5175 16.8626 9.51758 16.8626C9.61659 16.9505 9.75131 17 9.89183 17C10.0323 17 10.1671 16.9505 10.2661 16.8626C10.2661 16.8626 10.2662 16.8626 10.2663 16.8625L18.844 9.3008C18.844 9.30077 18.8441 9.30075 18.8441 9.30073C18.9439 9.21343 19 9.09462 19 8.97067C19 8.84689 18.944 8.72823 18.8445 8.64096C18.8443 8.64083 18.8442 8.64069 18.844 8.64054L18.2785 8.13487V8.13485L18.2765 8.13315C18.0687 7.95562 17.7386 7.95562 17.5309 8.13315Z" fill="white"></path></svg>`);
+</script>
+{% end_require_js %}
 
