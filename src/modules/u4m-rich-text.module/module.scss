@@ -1,1 +1,280 @@
 @import "../../css/_module-imports";
+
+/* ===== video column style ==== */
+.u4m-rich-text {
+    padding-left: 80rem;
+    padding-right: 80rem;
+    position: relative;
+    z-index: 9;
+
+    @include tabletvert {
+        padding-left: 20rem;
+        padding-right: 20rem;
+    }
+
+    .intro_content {
+        margin-left: auto;
+        margin-right: auto;
+
+        .intCnt {
+            text-align: center;
+        }
+    }
+
+    .row {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-top: 48rem;
+    }
+
+    .page-center {
+        max-width: unset;
+        padding: 0;
+    }
+
+    .media-column {
+        .video-wrap {
+            .video-cnt {
+                .cm_vb {
+                    position: relative;
+                    z-index: 2;
+                    position: relative;
+                }
+
+                .inner_spacer {
+                    .poster_image {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-size: cover;
+                        background-position: center;
+                        z-index: 9;
+                        transition: 0.2s linear;
+                    }
+
+                    position: relative;
+                    padding-bottom: 75%;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+
+    .main-vid-wrap {
+        position: relative;
+        overflow: hidden;
+
+        .cm_vb {
+            position: relative;
+            z-index: 2;
+            position: relative;
+        }
+
+        &:hover {
+            .vid_icn {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .inner_spacer {
+        position: relative;
+        padding-bottom: 75%;
+        overflow: hidden;
+    }
+
+    .cm_vb {
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+        }
+    }
+
+    .poster_image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: 9;
+        transition: 0.2s linear;
+    }
+
+    .vid_trigger {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: 9;
+        transition: 0.2s linear;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $light_black;
+        cursor: pointer;
+
+        .vid_icn {
+            width: 50rem;
+            height: 50rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 100%;
+            cursor: pointer;
+            transition: 0.2s linear;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .cm_vb.activeVideo {
+        .poster_image {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .vid_trigger {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+
+    .video_popup_modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $middle_black;
+        z-index: 999;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.1s ease;
+
+        .modal_video_container {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+            justify-content: center;
+            width: 100%;
+            overflow: hidden;
+            overflow-y: auto;
+            padding: 50rem 20rem;
+        }
+
+        .modal_video_box {
+            margin: 0 auto;
+            max-width: 900rem;
+            transform: translateY(100rem);
+            opacity: 0;
+            transition: .4s ease .2s;
+            width: 100%;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+        }
+    }
+
+    .video_popup_modal.show {
+        display: block;
+    }
+
+    .video_popup_modal.active_show {
+        opacity: 1;
+        visibility: visible;
+
+        .modal_video_box {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .closeIcon {
+        position: absolute;
+        top: 50rem;
+        right: 50rem;
+        font-size: 35rem;
+        width: 50rem;
+        height: 50rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 11;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .video_container {
+        iframe.iframe_video {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.u4m-rich-text.reverse-text {
+    .bg_overlay.custom {
+        background-color: $dark_black;
+    }
+}
+
+.adv_video_module {
+    .cm_vb {
+        iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+        }
+    }
+}
+
+.popup_open {
+    overflow: hidden;
+}
