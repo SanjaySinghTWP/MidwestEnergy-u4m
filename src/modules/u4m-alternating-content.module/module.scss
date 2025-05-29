@@ -58,6 +58,7 @@
         .content-col {
             @include tablet {
                 padding-top: 0;
+                padding-bottom: 0px;
             }
         }
     }
@@ -150,9 +151,6 @@
 
                 }
             }
-
-            width: 50%;
-            position: relative;
 
             .shape-box {
                 position: absolute;
