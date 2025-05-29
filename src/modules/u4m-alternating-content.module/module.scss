@@ -11,6 +11,17 @@
         padding-right: 20rem;
     }
 
+    .u4m-alt-cnt-wrap {
+
+        .media-column {
+
+            @include tablet {
+
+                width: 100%;
+            }
+        }
+    }
+
     .u4m-alt-cnt-wrap.left {
         flex-direction: row;
 
@@ -27,10 +38,6 @@
         }
 
         .media-column {
-
-            @include tablet {
-                width: 100%;
-            }
 
             .shape-box {
                 left: unset;
@@ -151,7 +158,7 @@
                 transform: translate(-50%, -50%);
 
 
-                img {
+                svg {
 
                     @include tablet {
                         display: none;
