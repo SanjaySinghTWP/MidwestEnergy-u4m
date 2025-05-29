@@ -1,0 +1,126 @@
+@import "../../css/_module-imports";
+
+$background-color_1: #000000;
+
+.u4m-accordion.reverse-text {
+    .bg_overlay.custom {
+        background-color: $background-color_1;
+    }
+}
+
+.u4m-accordion {
+    padding-left: 80rem;
+    padding-right: 80rem;
+
+    @include tabletvert {
+        padding-left: 20rem;
+        padding-right: 20rem;
+    }
+
+    .intro_content.center {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-center {
+        padding: 0;
+    }
+
+    .row {
+        .accordion-item {
+            border-radius: 4rem;
+            background: $super_light_gray;
+            padding: 20rem 56rem 20rem 20rem;
+            display: flex;
+            flex-direction: column;
+            row-gap: 0rem;
+            margin-bottom: 20rem;
+
+            &:last-child {
+                margin-bottom: 0rem;
+            }
+
+            @include phone {
+                padding-right: 30rem;
+            }
+
+            .accordion-title {
+                display: flex;
+                justify-content: space-between;
+
+                p {
+                    margin: 0;
+                    color: $dark_green;
+                    font-family: $font1;
+                    font-size: 20rem;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 150%;
+
+                    @include phone {
+                        font-size: 17rem;
+                    }
+                }
+
+                .accordion-title-icon {
+                    .close {
+                        display: none;
+                    }
+
+                    width: 24rem;
+                    height: 24rem;
+                    cursor: pointer;
+
+                    svg {
+                        height: 24rem;
+                        width: 24rem;
+                        fill: $dark_green;
+                    }
+                }
+            }
+
+            .accordion-toggle-cnt {
+                p {
+                    color: $dark_green;
+                    font-family: $font1;
+                    font-size: 14rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    margin: 0;
+                    margin-top: 12rem;
+                }
+
+                display: flex;
+                flex-direction: column;
+                flex-basis: auto;
+                flex-shrink: 1;
+                flex-grow: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: all 0.5s;
+            }
+        }
+
+        .accordion-inner {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 40rem;
+        }
+
+        .accordion-item.acc-open {
+            .accordion-title {
+                .accordion-title-icon {
+                    .open {
+                        display: none;
+                    }
+
+                    .close {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
