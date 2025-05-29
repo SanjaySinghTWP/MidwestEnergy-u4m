@@ -1,0 +1,104 @@
+@import "../../css/_module-imports";
+
+.u4m-image-and-icon-cards {
+  .content_column {
+    margin-top: 50rem;
+    .flex_row {
+      @include phone {
+        .card_inner.iconleft {
+          flex-wrap: wrap;
+        }
+      }
+      margin: 0 -10rem;
+      justify-content: center;
+      row-gap: 20rem;
+      > div {
+        padding: 0 10rem;
+      }
+      .content_holder {
+        h4.cardtitle {
+          font-family: $font2;
+          @include h4;
+          line-height: 1.13333333333;
+          margin-bottom: 15rem;
+        }
+        p {
+          margin-top: 0;
+          margin-bottom: 15rem;
+        }
+        ul {
+          margin: 0;
+          list-style: none;
+          padding-left: 0;
+          margin-bottom: 15rem;
+          li {
+            margin-bottom: 0;
+            letter-spacing: 0;
+            &:before {
+              font-family: "Font Awesome 6 Free";
+              font-weight: 900;
+              content: "\f00c";
+              margin-right: 8rem;
+            }
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .card_inner {
+        .media_holder {
+          .img {
+            svg {
+              height: 100%;
+              margin: 0;
+              display: block;
+              width: 100%;
+            }
+            img {
+              border-radius: 24rem 24rem 0rem 0rem;
+            }
+          }
+        }
+        .icon {
+          svg {
+            width: 60rem;
+            height: 60rem;
+            margin-bottom: 30rem;
+          }
+        }
+      }
+      .media_holder {
+        .svg {
+          margin-bottom: 30rem;
+        }
+        svg {
+          max-width: unset;
+        }
+      }
+      .card_inner.iconleft {
+        display: flex;
+        column-gap: 30rem;
+        .media_holder {
+          width: 60rem;
+        }
+      }
+    }
+    a.hs-button {
+      background-color: $dark_green;
+      color: $white;
+    }
+    .intro_btn_wrap {
+      justify-content: center;
+      margin-top: 50rem;
+      column-gap: 64.5rem;
+      flex-wrap: wrap;
+      row-gap: 30rem;
+    }
+  }
+  .content_column.columnhasbg {
+    .card_inner {
+      padding: 35rem;
+    }
+  }
+}
