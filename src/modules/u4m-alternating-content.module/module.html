@@ -2,9 +2,10 @@
 {% include "../partials/u4-module-includes.html" %}
 
 <div class="u4m-alt-cnt-wrap {{ module.module_settings.intro_content_alignment }}">
-	<div class="content-col">
+	<div class="content-col" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
+{% endif %} data-aos-delay="100">
 		{% if module.intro_content.include_eyebrow or module.intro_content.include_heading or module.intro_content.include_content or module.intro_content.include_button %}
-		<div class="intro_content {% if not module.intro_content.include_button %}nobtn{% endif %}" data-aos="fade-up">
+		<div class="intro_content {% if not module.intro_content.include_button %}nobtn{% endif %}">
 			<div class="intro__inner " >
 				<div class="intCnt">
 					{% if module.intro_content.include_eyebrow %}
@@ -76,7 +77,8 @@
 	</div>
 	{% endif %}
 </div>
-<div class="media-column">
+<div class="media-column" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
+{% endif %} data-aos-delay="100">
 	{% if module.media_section.media_type == "image" %}
 	<div class="image">
 		{% if module.media_section.image_content.image_field.src %}
