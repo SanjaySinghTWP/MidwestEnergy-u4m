@@ -13,7 +13,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : true
+    "default" : false
   }, {
     "id" : "77ccc7db-c222-3a3f-d211-900bf8e8d4d5",
     "name" : "eybrow_text",
@@ -85,7 +85,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Explore Our Comprehensive Range of Insurance Products Tailored for You"
+    "default" : "Animated Stats Module"
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -282,11 +282,11 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "include_eyebrow" : true,
+    "include_eyebrow" : false,
     "eybrow_text" : "OPTIONAL EYEBROW TEXT",
     "include_heading" : true,
     "heading_size" : "h2",
-    "heading" : "Explore Our Comprehensive Range of Insurance Products Tailored for You",
+    "heading" : "Animated Stats Module",
     "include_content" : false,
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>",
     "include_button" : false,
@@ -362,7 +362,8 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "display_width" : null
+    "display_width" : null,
+    "default" : "%"
   }, {
     "id" : "7e05ffd1-a4ed-c2f7-917e-7c705f393c1a",
     "name" : "content",
@@ -381,13 +382,17 @@
   "type" : "group",
   "display_width" : null,
   "default" : [ {
-    "value" : 177
+    "value" : 177,
+    "suffix" : "%"
   }, {
-    "value" : 177
+    "value" : 177,
+    "suffix" : "%"
   }, {
-    "value" : 177
+    "value" : 177,
+    "suffix" : "%"
   }, {
-    "value" : 177
+    "value" : 177,
+    "suffix" : "%"
   } ]
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
@@ -408,7 +413,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "left"
+    "default" : "center"
   }, {
     "id" : "75e2e625-fa6b-fef7-0233-79606cf1291a",
     "name" : "intro_content_size",
@@ -549,7 +554,7 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "left",
+    "intro_content_alignment" : "center",
     "intro_content_size" : "theme",
     "cards" : {
       "number_of_columns" : "col-3",

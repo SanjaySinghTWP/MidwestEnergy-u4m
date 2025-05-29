@@ -1,10 +1,5 @@
 @import "../../css/_module-imports";
 
-$color_1: #39473f;
-$color_2: #697b79;
-$font-family_1: "Priori Sans OT";
-$font-family_2: "Source Sans Pro";
-
 .u4m-animated-stats {
   .stats-wrapper {
     .stats_item.col-2 {
@@ -12,33 +7,39 @@ $font-family_2: "Source Sans Pro";
     }
     .stats_item {
       .stats_inner {
-        min-width: 162.334px;
-        min-height: 162.334px;
-        max-width: 162.334px;
+        min-width: 162.334rem;
+        min-height: 162.334rem;
+        max-width: 162.334rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: $color_1;
+        color: $dark_green;
         text-align: center;
-        font-family: $font-family_1;
-        font-size: 80px;
+        font-family: $font2;
+        font-size: 80rem;
         font-style: normal;
         font-weight: 400;
         line-height: 120%;
         overflow: hidden;
         word-break: break-word;
+        @include tablet {
+          font-size: 60rem;
+          @include tabletvert {
+            font-size: 50rem;
+          }
+        }
       }
       .stats_bottom_text {
-        padding: 20px 0px;
+        padding: 20rem 0rem;
         text-align: center;
         p {
-          color: $color_2;
+          color: $middle_green;
           text-align: center;
-          font-family: $font-family_2;
-          font-size: 18px;
+          font-family: "Source Sans Pro";
+          font-size: 18rem;
           font-style: normal;
           font-weight: 400;
-          line-height: 28px;
+          line-height: 28rem;
         }
       }
       display: flex;
@@ -46,28 +47,16 @@ $font-family_2: "Source Sans Pro";
       justify-content: center;
       align-items: center;
       .stats_border_wrapper {
-        padding: 8px;
+        padding: 8rem;
         display: inline-flex;
         justify-content: center;
         align-items: center;
       }
     }
     .flex_row {
-      padding: 0px 20px;
+      padding: 0rem 20rem;
       justify-content: center;
     }
-    margin-top: 50px;
-  }
-}
-
-@media (max-width: 991px) {
-  .u4m-animated-stats .stats-wrapper .stats_item .stats_inner {
-    font-size: 60px;
-  }
-}
-
-@media (max-width: 767px) {
-  .u4m-animated-stats .stats-wrapper .stats_item .stats_inner {
-    font-size: 50px;
+    margin-top: 50rem;
   }
 }
