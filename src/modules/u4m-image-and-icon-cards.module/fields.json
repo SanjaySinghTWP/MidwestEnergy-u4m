@@ -841,7 +841,7 @@
 }, {
   "id" : "eab059c6-8f7a-b0a5-8ebd-0610e2e1d6bb",
   "name" : "button",
-  "label" : "Button",
+  "label" : "Button Column",
   "required" : false,
   "locked" : false,
   "children" : [ {

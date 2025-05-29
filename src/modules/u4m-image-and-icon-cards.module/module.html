@@ -82,7 +82,8 @@
     padding:35px;
   }
   .u4m-image-and-icon-cards.{{name}} .content_column .flex_row .content_holder h4.cardtitle,
-  .u4m-image-and-icon-cards.{{name}} .content_column .flex_row .content_holder p{
+  .u4m-image-and-icon-cards.{{name}} .content_column .flex_row .content_holder p,
+  .u4m-image-and-icon-cards.{{name}} .content_column .flex_row .content_holder ul li{
     color: rgba({{ module.module_settings.card_settings.card_content_color.color|convert_rgb}},{{ module.module_settings.card_settings.card_content_color.opacity * 0.01}});		
   }
   .u4m-image-and-icon-cards.{{name}} .content_column .flex_row .card_inner .icon svg{
@@ -99,5 +100,19 @@
     border-radius: 24px;
   }
   {% endif %}
+
+  @media (max-width:767px){
+    .{{name}}.u4m-image-and-icon-cards .content_column .flex_row .card_inner.imageholderactive .content_holder {
+      padding: 15px;
+    }
+    .{{name}}.u4m-image-and-icon-cards .content_column .flex_row .card_inner.svgholderactive{
+      padding:15px;
+    }
+    {% if module.module_settings.card_settings.include_background_in_column %}
+    .{{name}}.u4m-image-and-icon-cards .content_column{
+      padding:15px;
+    }
+    {% endif %}
+  }
 </style>
 {% end_require_css %}
