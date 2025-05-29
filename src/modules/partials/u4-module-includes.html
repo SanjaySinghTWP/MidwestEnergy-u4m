@@ -2,40 +2,95 @@
   templateType: "none"
   isAvailableForNewContent: false
 -->
-<section 
-id='{% if module.module_overrides.enable_overrides and module.module_overrides.section_id %}{{ module.module_overrides.section_id }}{% else %}{{name}}{% endif %}' 
-class="{{ moduleName }} {{ name }}{{ ' lazy' if module.module_overrides.background_image.src && module.module_overrides.background_lazy  }}{% if module.module_overrides.enable_overrides %}{{ ' {{ module.module_overrides.top_margin }}' if (module.module_overrides.enable_overrides) and ((module.module_overrides.top_margin != 'top-margin-default') or (module.module_overrides.top_margin != 'top-margin-custom')) }}{{ ' {{ module.module_overrides.bottom_margin }}' if (module.module_overrides.enable_overrides) and ((module.module_overrides.bottom_margin != 'bottom-margin-default') or (module.module_overrides.bottom_margin != 'bottom-margin-custom'))  }}{{ ' {{ module.module_overrides.top_padding }}' if (module.module_overrides.enable_overrides) and ((module.module_overrides.top_padding != 'top-padding-default') or (module.module_overrides.top_padding != 'top-padding-custom')) }}{{ ' {{ module.module_overrides.bottom_padding }}' if (module.module_overrides.enable_overrides) and ((module.module_overrides.bottom_padding != 'bottom-padding-default') or (module.module_overrides.bottom_padding != 'bottom-padding-custom'))  }}{{ ' reverse-text' if (module.module_overrides.enable_overrides) and (module.module_overrides.reverse_text)  }}{% endif %}"
-{% if module.module_overrides.background_image.src && module.module_overrides.background_lazy %} 
-data-bg="{{ resize_image_url(module.module_overrides.background_image.src, 0,0,bgImageMax) }}" {% endif %} 
-style="{% if module.background_color.color %} background-color:rgba({{ module.background_color.color|convert_rgb }},{{ module.background_color.opacity }});{% endif %}{% if module.module_overrides.background_image.src && !module.module_overrides.background_lazy %} 
-background-image: url({{ resize_image_url(module.module_overrides.background_image.src, 0,0,bgImageMax) }}); {% endif %} 
-">
-{% if module.module_overrides.enable_overrides %}
-{% require_js %}
-<style>  
-{% if module.module_overrides.top_margin == 'top-margin-custom' %}
-section.{{ moduleName}}.{{ name }} {margin-top:{{ module.module_overrides.custom_top_margin }}rem; }
-@media (max-width: 767px) { section.{{ moduleName}}.{{ name }} { margin-top:{{ module.module_overrides.custom_top_margin_mobile }}rem; } }
-{% endif %}
-{% if module.module_overrides.bottom_margin == 'bottom-margin-custom' %}
-section.{{ moduleName}}.{{ name }} {margin-bottom:{{ module.module_overrides.custom_bottom_margin }}rem; }
-@media (max-width: 767px) { section.{{ moduleName}}.{{ name }} { margin-bottom:{{ module.module_overrides.custom_bottom_margin_mobile }}rem; } }
-{% endif %}
-{% if module.module_overrides.top_padding == 'top-padding-custom' %}
-section.{{ moduleName}}.{{ name }} {padding-top:{{ module.module_overrides.custom_top_padding }}rem; }
-@media (max-width: 767px) { section.{{ moduleName}}.{{ name }} { padding-top:{{ module.module_overrides.custom_top_padding_mobile }}rem; } }
-{% endif %}
-{% if module.module_overrides.bottom_padding == 'bottom-padding-custom' %}
-section.{{ moduleName}}.{{ name }} {padding-bottom:{{ module.module_overrides.custom_bottom_padding }}rem; }
-@media (max-width: 767px) { section.{{ moduleName}}.{{ name }} { padding-bottom:{{ module.module_overrides.custom_bottom_padding_mobile }}rem; } }
-{% endif %}  
-{# Background Color and Image #}
-{% if module.module_overrides.background_color.color %}
-section.{{ moduleName}}.{{ name }} { background-color:rgba({{ module.module_overrides.background_color.color|convert_rgb }},{{ module.module_overrides.background_color.opacity * .01 }}); }
-{% endif %}  
-{% if module.module_overrides.background_image.src %}
-section.{{ moduleName}}.{{ name }} {  background-size: cover; background-position: {{ module.module_overrides.background_image_position }}; }
-{% endif %}
-</style>
-{% end_require_js %}
-{% endif %}
+{% import "../../macros/_macros.html" as macros %} {% if is_in_previewer %} {{
+require_css (get_asset_url('../../css/styles.css')) }} {% endif %}
+<section
+         id="{% if module.module_overrides.enable_overrides and module.module_overrides.section_id %}{{ module.module_overrides.section_id }}{% else %}{{name}}{% endif %}"
+         class="{{ moduleName }} {{ moduleExtraName }} dnd_padd {{ name }}{% if module.module_overrides.enable_overrides %}{{ ' {{ module.module_overrides.top_margin }}' if (module.module_overrides.enable_overrides) and ((module.module_overrides.top_margin != 'top-margin-default') or (module.module_overrides.top_margin != 'top-margin-custom')) }}{{ ' {{ module.module_overrides.bottom_margin }}' if (module.module_overrides.enable_overrides) and ((module.module_overrides.bottom_margin != 'bottom-margin-default') or (module.module_overrides.bottom_margin != 'bottom-margin-custom'))  }}{{ ' {{ module.module_overrides.top_padding }}' if (module.module_overrides.enable_overrides) and ((module.module_overrides.top_padding != 'top-padding-default') or (module.module_overrides.top_padding != 'top-padding-custom')) }}{{ ' {{ module.module_overrides.bottom_padding }}' if (module.module_overrides.enable_overrides) and ((module.module_overrides.bottom_padding != 'bottom-padding-default') or (module.module_overrides.bottom_padding != 'bottom-padding-custom'))  }}{{ ' reverse-text' if (module.module_overrides.enable_overrides) and (module.module_overrides.reverse_text)  }}{% endif %} bg_{{ module.module_overrides.background_settings.background_type }} bg_pos_{{ module.module_overrides.background_settings.select_background_position }} {% if module.module_overrides.background_settings.add_top_curve %}topcurve{% endif %} {% if module.module_overrides.background_settings.add_bottom_curve %}btcurve{% endif %}"
+         >
+  
+  {% if module.module_overrides.enable_overrides %}
+  {% if module.module_overrides.background_settings.background_type == "color"
+  %}
+  <div class="bg_overlay bg_color {{ module.module_overrides.background_settings.select_color }}"></div>
+  {% endif %} 
+  {% endif %}
+
+
+  {% if module.module_overrides.enable_overrides %}
+  {% if module.module_overrides.background_settings.background_type== "gradient" %} 
+  <div class="bg_overlay {{ module.module_overrides.background_settings.select_gradient }}" {% if module.module_overrides.background_settings.select_gradient == 'custom' %}style="background:linear-gradient(
+  104.96deg,
+  {{ module.module_overrides.background_settings.custom_gradient_color.start_color.rgba }} 6.9%,
+  {{ module.module_overrides.background_settings.custom_gradient_color.end_color.rgba }} 99.09%
+);"{% endif %}></div>
+  {% if module.module_overrides.background_settings.overlay_image.src %}
+  <div class="bg_overlay overlay_img " style="background-image:url({{ module.module_overrides.background_settings.overlay_image.src }}); "></div>
+  {% endif %}
+  {% endif %}
+  {% endif %} 
+
+
+  {% if module.module_overrides.background_settings.background_type
+  == "image" %}
+  <div class="bg_overlay bg_image {% if module.module_overrides.background_settings.include_overlay_gradient %}{{ module.module_overrides.background_settings.select_gradient }}{% endif %}"></div>
+  {% if module.module_overrides.background_settings.include_overlay %}
+  <div class="bg_overlay  bg_ovarlayclr {{ module.module_overrides.background_settings.image_overlay_select_color }}" style="opacity:{{ module.module_overrides.background_settings.opacity }}; {% if module.module_overrides.background_settings.image_overlay_select_color == 'custom' %}background-color:{{ module.module_overrides.background_settings.overlay_color.rgba }}{% endif %}"></div>
+  {% endif %}
+  {% endif %} 
+
+  <div class="page-center {% if module.module_overrides.enable_overrides %}  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem {% endif %}       {% endif %}" >
+    <div class="innerContainer">
+
+
+
+
+      {% if module.module_overrides.enable_overrides %} {% require_css %}
+      <style>
+        {% if module.module_overrides.top_margin == 'top-margin-custom' %}
+        section.{{ moduleName}}.{{ name }} {margin-top:{{ module.module_overrides.custom_top_margin }}rem; }
+        @media (max-width: 767px) { section.{{ moduleName}}.{{ name }} { margin-top:{{ module.module_overrides.custom_top_margin_mobile }}rem; } }
+        {% endif %}
+        {% if module.module_overrides.bottom_margin == 'bottom-margin-custom' %}
+        section.{{ moduleName}}.{{ name }} {margin-bottom:{{ module.module_overrides.custom_bottom_margin }}rem; }
+        @media (max-width: 767px) { section.{{ moduleName}}.{{ name }} { margin-bottom:{{ module.module_overrides.custom_bottom_margin_mobile }}rem; } }
+        {% endif %}
+        {% if module.module_overrides.top_padding == 'top-padding-custom' %}
+        section.{{ moduleName}}.{{ name }} {padding-top:{{ module.module_overrides.custom_top_padding }}rem; }
+        @media (max-width: 767px) { section.{{ moduleName}}.{{ name }} { padding-top:{{ module.module_overrides.custom_top_padding_mobile }}rem; } }
+        {% endif %}
+        {% if module.module_overrides.bottom_padding == 'bottom-padding-custom' %}
+        section.{{ moduleName}}.{{ name }} {padding-bottom:{{ module.module_overrides.custom_bottom_padding }}rem; }
+        @media (max-width: 767px) { section.{{ moduleName}}.{{ name }} { padding-bottom:{{ module.module_overrides.custom_bottom_padding_mobile }}rem; } }
+        {% endif %}
+
+        
+      
+
+
+
+        {% if module.module_overrides.background_settings.background_type == "image"  %}
+        .{{ moduleName}}.{{ name }} .bg_image{
+          background-image: url({{ module.module_overrides.background_settings.background_image.src }});
+          background-position:{{ module.module_overrides.background_settings.background_image_position }};
+        }
+        {% endif %}
+        
+
+        {% if module.module_overrides.container.size == "full-width"%}
+        .{{name}} .page-center{
+          max-width: 100%;
+        }
+        {% endif %}
+        {% if module.module_overrides.container.size == "custom"%}
+        .{{name}} .page-center{
+          max-width: {{ module.module_overrides.container.custom_size }}px;
+        }
+        {% endif %}
+        {% if  module.module_overrides.background_settings.select_color == 'custom'%}
+        .{{name}} .bg_overlay.custom{
+          background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+        }
+        {% endif %}  
+      </style>
+      {% end_require_css %} {% endif %}
