@@ -15,6 +15,9 @@
 
         .media-column {
 
+            width: 50%;
+            position: relative;
+
             @include tablet {
 
                 width: 100%;
