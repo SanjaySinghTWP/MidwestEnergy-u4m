@@ -3,6 +3,18 @@
 .u4m-image-and-icon-cards {
   .content_column {
     margin-top: 50rem;
+    > .intro_btn_wrap {
+      column-gap: 64.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 50rem;
+
+      row-gap: 30rem;
+      a.hs-button {
+        background-color: $dark_green;
+        color: $white;
+      }
+    }
     .flex_row {
       @include phone {
         .card_inner.iconleft {
@@ -84,21 +96,14 @@
         }
       }
     }
-    a.hs-button {
-      background-color: $dark_green;
-      color: $white;
-    }
-    .intro_btn_wrap {
-      justify-content: center;
-      margin-top: 50rem;
-      column-gap: 64.5rem;
-      flex-wrap: wrap;
-      row-gap: 30rem;
-    }
   }
+
   .content_column.columnhasbg {
     .card_inner {
       padding: 35rem;
+      @include tabletvert {
+        padding: 15rem;
+      }
     }
   }
 }
