@@ -1,8 +1,8 @@
 .header-wrap {
   .header-top {
     .page-center {
-      max-width: 1440px;
-      padding: 15px 80px;
+      max-width: 1440rem;
+      padding: 15rem 80rem;
 
       .top-inner {
         display: flex;
@@ -12,25 +12,25 @@
 
         .left {
           .hs-menu-wrapper {
-            > ul {
+            >ul {
               margin: 0;
 
-              > li {
+              >li {
                 margin: 0;
                 letter-spacing: normal;
 
                 &:not(:last-child) {
-                  margin-right: 40px;
+                  margin-right: 40rem;
                 }
 
-                > a {
+                >a {
                   max-width: unset;
                   padding: 0;
                   overflow: unset;
                   text-overflow: unset;
-                  color: #39473f;
-                  font-family: "Source Sans Pro";
-                  font-size: 16px;
+                  color: $dark_green;
+                  font-family: $font1;
+                  font-size: 16rem;
                   font-style: normal;
                   font-weight: 600;
                   line-height: 150%;
@@ -46,22 +46,22 @@
 
           .right-menu {
             .hs-menu-wrapper {
-              > ul {
+              >ul {
                 margin: 0;
 
-                > li {
+                >li {
                   margin: 0;
                   letter-spacing: normal;
-                  margin-right: 40px;
+                  margin-right: 40rem;
 
-                  > a {
+                  >a {
                     max-width: unset;
                     padding: 0;
                     overflow: unset;
                     text-overflow: unset;
-                    color: #39473f;
-                    font-family: "Source Sans Pro";
-                    font-size: 16px;
+                    color: $dark_green;
+                    font-family: $font1;
+                    font-size: 16rem;
                     font-style: normal;
                     font-weight: 600;
                     line-height: 150%;
@@ -80,8 +80,8 @@
     position: relative;
 
     .page-center {
-      max-width: 1440px;
-      padding: 20px 80px;
+      max-width: 1440rem;
+      padding: 20rem 80rem;
 
       .mainNav-inner {
         display: flex;
@@ -90,28 +90,28 @@
 
         .header-menu {
           .hs-menu-wrapper {
-            > ul {
+            >ul {
               margin: 0;
               display: flex;
               justify-content: space-between;
               flex-direction: row;
 
-              > li {
+              >li {
                 margin: 0;
 
                 &:not(:last-child) {
-                  margin-right: 80px;
+                  margin-right: 80rem;
                 }
 
-                > a {
+                >a {
                   max-width: unset;
                   padding: 0;
                   overflow: unset;
                   text-overflow: unset;
-                  color: #39473f;
+                  color: $dark_green;
                   text-align: right;
-                  font-family: "Source Sans Pro";
-                  font-size: 16px;
+                  font-family: $font1;
+                  font-size: 16rem;
                   font-style: normal;
                   font-weight: 600;
                   line-height: 150%;
@@ -127,13 +127,13 @@
                     cursor: pointer;
 
                     svg {
-                      width: 15px;
-                      height: 15px;
-                      margin-left: 5px;
+                      width: 15rem;
+                      height: 15rem;
+                      margin-left: 5rem;
                       transition: all 0.3s;
                       transform: rotate(0deg);
                       position: relative;
-                      top: 1px;
+                      top: 1rem;
                     }
                   }
 
@@ -148,8 +148,8 @@
                     opacity: 0;
                     transition: opacity 0.3s cubic-bezier(0.48, 0.01, 0.5, 0.99),
                       visibility 0.1s linear;
-                    min-width: 150px;
-                    box-shadow: 0px 0px 3px 0px #505050;
+                    min-width: 150rem;
+                    box-shadow: 0rem 0rem 3rem 0rem #505050;
                     top: 120%;
 
                     li {
@@ -161,14 +161,14 @@
                         width: 100%;
                         overflow: unset;
                         text-overflow: unset;
-                        color: #39473f;
-                        font-family: "Source Sans Pro";
-                        font-size: 16px;
+                        color: $dark_green;
+                        font-family: $font1;
+                        font-size: 16rem;
                         font-style: normal;
                         font-weight: 600;
                         line-height: 150%;
                         cursor: pointer;
-                        padding: 5px 20px;
+                        padding: 5rem 20rem;
                       }
                     }
                   }
@@ -188,8 +188,8 @@
 
           .open svg,
           .close svg {
-            width: 20px;
-            height: 20px;
+            width: 20rem;
+            height: 20rem;
           }
 
           .close {
@@ -206,8 +206,8 @@
 
   .search-box {
     cursor: pointer;
-    width: 24px;
-    height: 24px;
+    width: 24rem;
+    height: 24rem;
 
     form {
       margin: 0;
@@ -217,13 +217,13 @@
         border: none;
         background: unset;
         position: absolute;
-        right: 10px;
+        right: 10rem;
         top: 15%;
         z-index: 99;
 
         .ctm-search-icon svg {
-          width: 24px;
-          height: 24px;
+          width: 24rem;
+          height: 24rem;
         }
       }
     }
@@ -232,7 +232,7 @@
   .search-item {
     position: fixed;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: $medium_light_black;
     top: 0;
     left: 0;
     height: 100%;
@@ -245,51 +245,51 @@
 
     a.search_close {
       position: absolute;
-      right: 50px;
-      top: 50px;
-      width: 40px;
-      height: 40px;
+      right: 50rem;
+      top: 50rem;
+      width: 40rem;
+      height: 40rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
-      font-size: 34px;
+      color: $white;
+      font-size: 34rem;
       text-decoration: none;
 
       svg {
-        width: 30px;
-        height: 30px;
+        width: 30rem;
+        height: 30rem;
       }
     }
 
     form {
-      min-width: 1110px;
+      min-width: 1110rem;
       position: relative;
 
       input[type="search"] {
         font-weight: normal;
-        font-family: "Open Sans";
-        color: rgba(255, 255, 255, 1);
-        font-size: 60px;
+        font-family: $font1;
+        color: $white;
+        font-size: 60rem;
         border: 0;
-        padding: 0 50px 0 20px;
+        padding: 0 50rem 0 20rem;
         width: 100%;
         background: transparent;
-        border-bottom: 1px solid rgb(181, 181, 181);
-        box-shadow: 0 1px 0 0 #e4e4e4;
+        border-bottom: 1rem solid $medium_light_grey;
+        box-shadow: 0 1rem 0 0 $medium_grey;
       }
 
       button svg {
-        fill: rgb(255, 255, 255);
-        width: 40px;
-        height: 40px;
+        fill: $white;
+        width: 40rem;
+        height: 40rem;
       }
 
       .hs-search-field__suggestions-container ul li {
         line-height: 1.5;
-        background-color: #fff;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        background-color: $white;
+        padding-top: 20rem;
+        padding-bottom: 20rem;
       }
     }
 
@@ -303,8 +303,8 @@
       .search-field-box {
         margin: 0;
         background: transparent;
-        border: 0 solid rgb(181, 181, 181);
-        box-shadow: 0 1px 0 0 #e4e4e4;
+        border: 0 solid $medium_light_grey;
+        box-shadow: 0 1rem 0 0 $medium_grey;
       }
     }
   }
@@ -333,7 +333,7 @@ html.mobile-menu-open {
         }
 
         .header-menu {
-          max-height: 800px;
+          max-height: 800rem;
         }
       }
     }
@@ -342,87 +342,43 @@ html.mobile-menu-open {
 
 // Responsive breakpoints
 
-@media (max-width: 1360px) {
-  .header-wrap
-    .mainNav
-    .page-center
-    .mainNav-inner
-    .header-menu
-    .hs-menu-wrapper
-    > ul
-    > li:not(:last-child) {
-    margin-right: 40px;
+@include laptop {
+  .header-wrap .mainNav .page-center .mainNav-inner .header-menu .hs-menu-wrapper>ul>li:not(:last-child) {
+    margin-right: 40rem;
   }
 }
 
-@media (max-width: 1280px) {
-  .header-wrap
-    .header-top
-    .page-center
-    .top-inner
-    .right-search
-    .search-item
-    form {
-    min-width: 767px;
-    max-width: 767px;
+@include navbreak {
+  .header-wrap .header-top .page-center .top-inner .right-search .search-item form {
+    min-width: 767rem;
+    max-width: 767rem;
+  }
+
+  .header-wrap .header-top .page-center .top-inner .left .hs-menu-wrapper>ul>li:not(:last-child),
+  .header-wrap .header-top .page-center .top-inner .right-search .right-menu .hs-menu-wrapper>ul>li,
+  .header-wrap .mainNav .page-center .mainNav-inner .header-menu .hs-menu-wrapper>ul>li:not(:last-child) {
+    margin-right: 20rem;
   }
 }
 
-@media (max-width: 1200px) {
-  .header-wrap
-    .header-top
-    .page-center
-    .top-inner
-    .left
-    .hs-menu-wrapper
-    > ul
-    > li:not(:last-child),
-  .header-wrap
-    .header-top
-    .page-center
-    .top-inner
-    .right-search
-    .right-menu
-    .hs-menu-wrapper
-    > ul
-    > li,
-  .header-wrap
-    .mainNav
-    .page-center
-    .mainNav-inner
-    .header-menu
-    .hs-menu-wrapper
-    > ul
-    > li:not(:last-child) {
-    margin-right: 20px;
-  }
-}
-
-@media (max-width: 1024px) {
+@include tablet {
   .header-wrap {
     .mainNav .page-center .mainNav-inner {
-      .header-menu .hs-menu-wrapper > ul > li > a,
-      .header-menu .hs-menu-wrapper > ul ul li a {
-        font-size: 15px;
+
+      .header-menu .hs-menu-wrapper>ul>li>a,
+      .header-menu .hs-menu-wrapper>ul ul li a {
+        font-size: 15rem;
       }
     }
 
-    .header-top
-      .page-center
-      .top-inner
-      .right-search
-      .right-menu
-      .hs-menu-wrapper
-      > ul
-      > li
-      > a,
-    .header-top .page-center .top-inner .left .hs-menu-wrapper > ul > li > a {
-      font-size: 15px;
+    .header-top .page-center .top-inner .right-search .right-menu .hs-menu-wrapper>ul>li>a,
+    .header-top .page-center .top-inner .left .hs-menu-wrapper>ul>li>a {
+      font-size: 15rem;
     }
 
     .search-item form {
-      min-width: 400px;
-      max-width: 400px;
+      min-width: 400rem;
+      max-width: 400rem;
     }
   }
 }
