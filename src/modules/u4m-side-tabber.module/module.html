@@ -5,83 +5,138 @@
 
 
 <div class="cm-side-tabber " {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
-		 {% endif %} data-aos-delay="100">
-	<div class="flex_row">
-		{% if  module.tab_title %}
-		<div class="col col-3 left">
-			<div class="col-inner">
-				<ul class="tab_row">
-					{% for item in module.tab_title %}
-					<li data="{{loop.index}}" class="{% if loop.first%} active {% endif  %}">
-						{% if  item.title %}
-						<a href="javascript:void(0)" class="tablink">{{ item.title }}</a>
-						{% endif %}
-						{% if item.tab_content %}
-						<div class="tab-content">
-							{{ item.tab_content }}
-						</div>
-						{% endif %}
-					</li>
-					{% endfor %}
-				</ul>
-			</div>	
-		</div>	
-		{% endif %}
-		{% for item in module.tab_title %}
-		<div class="col col-9 right {% if loop.first%} active {% endif  %} " data="{{loop.index}}">
-			<div class="col-inner">
-				<div class="flex_row">
-					<div class="col-6 {% if  not item.right_column.media_column.image_field.src %}col-12 {% endif %}">
-						<div class="inner">
-							{% if item.right_column.content_column.select_icon_type   == "icon"%}
-							{% if icon %}
-							<div class="icon-wrp">
-								{% icon
+     {% endif %} data-aos-delay="100">
+  <div class="flex_row">
+    {% if  module.tab_title %}
+    <div class="col col-3 left">
+      <div class="col-inner">
+        <ul class="tab_row">
+          {% for item in module.tab_title %}
+          <li data="{{loop.index}}" class="{% if loop.first%} active {% endif  %}">
+            {% if  item.title %}
+            <a href="javascript:void(0)" class="tablink">{{ item.title }}</a>
+            {% endif %}
+            {% if item.tab_content %}
+            <div class="tab-content">
+              {{ item.tab_content }}
+            </div>
+            {% endif %}
+            <div class="col col-9 mobile right {% if loop.first%} active {% endif  %}" data="{{loop.index}}">
+              <div class="col-inner {% if item.right_column.media_column.image_field.src %}media_colum_active{% endif %}">
+                <div class="flex_row">
+                  <div class="col-6 col contentcol {% if not item.right_column.media_column.image_field.src %}col-12 {% endif %}">
+                    <div class="inner">
+                      {% if item.right_column.content_column.select_icon_type   == "icon" %}
+                      <div class="icon-wrp">
+                        {% icon
 		name="{{ item.right_column.content_column.icon_field.name }}"
 		style="{{ item.right_column.content_column.icon_field.type }}"
 		unicode="{{ item.right_column.content_column.icon_field.unicode }}"
 		icon_set="{{ item.right_column.content_column.icon_field.icon_set }}"
 	%}
-							</div>
-							{% endif%}
-							{% endif%}
-							{% if item.right_column.content_column.select_icon_type  =="svg"%}
-							{% if item.right_column.content_column.svg_icon_text %}
-							<div class="icon-wrp">
-								{{ item.right_column.content_column.svg_icon_text }}
-							</div>
-							{% endif%}
-							{% endif%}
-							{% if item.right_column.content_column.title %}
-							<h5 class="title">
-								{{ item.right_column.content_column.title }}
-							</h5>
-							{% endif%}
+                      </div>
+                      {% endif %}
+                      {% if item.right_column.content_column.select_icon_type  =="svg"%}
+                      {% if item.right_column.content_column.svg_icon_text %}
+                      <div class="icon-wrp">
+                        {{ item.right_column.content_column.svg_icon_text }}
+                      </div>
+                      {% endif%}
+                      {% endif%}
 
-							{% if item.right_column.content_column.content %}
-							<div class="cont">
-								{{ item.right_column.content_column.content }}
-							</div>
-							{% endif%}
-							{% if item.right_column.content_column.include_button %}
-							{% if item.right_column.content_column.button_group %}
-							{{macros.buttonGroup(item.right_column.content_column.button_group)}}
-							{% endif %}
-							{% endif%}
-						</div>
-					</div>
-					{% if item.right_column.media_column.image_field.src %}
-					<div class="col-6">
-						<div class="inner">
-							<div class="bgImg" style="background-image:url({{ item.right_column.media_column.image_field.src|escape_url }})"></div>
-						</div>
-					</div>
-	{% endif%}
-				</div>	
-			</div>	
-		</div>	
-		{% endfor %}
-	</div>
+                      {% if item.title %}
+                      <h5 class="title">
+                        {{ item.title }}
+                      </h5>
+                      {% endif%}
+
+                      {% if item.right_column.content_column.content %}
+                      <div class="cont">
+                        {{ item.right_column.content_column.content }}
+                      </div>
+                      {% endif%}
+                      {% if item.right_column.content_column.include_button %}
+                      {% if item.right_column.content_column.button_group %}
+                      {{macros.buttonGroup(item.right_column.content_column.button_group)}}
+                      {% endif %}
+                      {% endif%}
+                    </div>
+                  </div>
+                  {% if item.right_column.media_column.image_field.src %}
+                  <div class="col-6 col imagecol">
+                    <div class="inner">
+                      <div class="bgImg" style="background-image:url({{ item.right_column.media_column.image_field.src|escape_url }})"></div>
+                    </div>
+                  </div>
+                  {% endif%}
+                </div>	
+              </div>	
+            </div>	
+          </li>
+          {% endfor %}
+        </ul>
+      </div>	
+    </div>	
+    {% endif %}
+    {% for item in module.tab_title %}
+    <div class="col col-9 right {% if loop.first%} active {% endif  %}" data="{{loop.index}}">
+      <div class="col-inner {% if item.right_column.media_column.image_field.src %}media_colum_active{% endif %}">
+        <svg class="shape" xmlns="http://www.w3.org/2000/svg" width="79" height="138" viewBox="0 0 79 138" fill="none">
+          <rect x="79" y="138" width="79" height="29.0875" transform="rotate(-180 79 138)" fill="#D0DD28" fill-opacity="0.5"/>
+          <rect x="79" y="83.605" width="79" height="29.0875" transform="rotate(-180 79 83.605)" fill="#D0DD28" fill-opacity="0.5"/>
+          <rect x="79" y="29.21" width="79" height="29.2102" transform="rotate(-180 79 29.21)" fill="#D0DD28" fill-opacity="0.5"/>
+        </svg>
+        <div class="flex_row">
+          <div class="col-6 col contentcol {% if not item.right_column.media_column.image_field.src %}col-12 {% endif %}">
+            <div class="inner">
+              {% if item.right_column.content_column.select_icon_type   == "icon" %}
+              <div class="icon-wrp">
+                {% icon
+		name="{{ item.right_column.content_column.icon_field.name }}"
+		style="{{ item.right_column.content_column.icon_field.type }}"
+		unicode="{{ item.right_column.content_column.icon_field.unicode }}"
+		icon_set="{{ item.right_column.content_column.icon_field.icon_set }}"
+	%}
+              </div>
+              {% endif %}
+              {% if item.right_column.content_column.select_icon_type  =="svg"%}
+              {% if item.right_column.content_column.svg_icon_text %}
+              <div class="icon-wrp">
+                {{ item.right_column.content_column.svg_icon_text }}
+              </div>
+              {% endif%}
+              {% endif%}
+
+              {% if item.title %}
+              <h5 class="title">
+                {{ item.title }}
+              </h5>
+              {% endif%}
+
+              {% if item.right_column.content_column.content %}
+              <div class="cont">
+                {{ item.right_column.content_column.content }}
+              </div>
+              {% endif%}
+              {% if item.right_column.content_column.include_button %}
+              {% if item.right_column.content_column.button_group %}
+              {{macros.buttonGroup(item.right_column.content_column.button_group)}}
+              {% endif %}
+              {% endif%}
+            </div>
+          </div>
+          {% if item.right_column.media_column.image_field.src %}
+          <div class="col-6 col imagecol">
+            <div class="inner">
+              <div class="bgImg" style="background-image:url({{ item.right_column.media_column.image_field.src|escape_url }})"></div>
+            </div>
+          </div>
+          {% endif%}
+        </div>	
+      </div>	
+    </div>	
+    {% endfor %}
+  </div>
 </div>
 </div>
 </section>
@@ -91,27 +146,87 @@
 
 {% require_js%}
 <script>
-	const tabItem = document.querySelectorAll('.u4m-side-tabber .page-center .cm-side-tabber .flex_row .left ul.tab_row a.tablink');
-	const tabContent = document.querySelectorAll('.u4m-side-tabber .page-center .cm-side-tabber .flex_row .right');
+  function setupDesktopTabber() {
+    // Only run this on screens 1025px and wider
+    if (window.innerWidth >= 1025) {
+      const tabModules = document.querySelectorAll('.u4m-side-tabber');
 
-	tabItem.forEach((item) => {
-		item.addEventListener('click', function (e) {
-			e.preventDefault(); 
-			tabItem.forEach((elm) => {
-				elm.parentNode.classList.remove('active');
-			});
-			item.parentNode.classList.add('active');
-			const title = item.parentNode.getAttribute('data');
-			tabContent.forEach((cont) => {
-				const content = cont.getAttribute('data');
-				if (title === content) {
-					cont.classList.add('active');
-				} else {
-					cont.classList.remove('active');
-				}
-			});
-		});
-	});
+      tabModules.forEach((module) => {
+        const tabItems = module.querySelectorAll('.page-center .cm-side-tabber .flex_row .left ul.tab_row a.tablink');
+        const tabContents = module.querySelectorAll('.page-center .cm-side-tabber .flex_row .right');
+
+        tabItems.forEach((item) => {
+          item.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Remove 'active' from all tabs
+            tabItems.forEach((elm) => {
+              elm.parentNode.classList.remove('active');
+            });
+
+            // Add 'active' to clicked tab
+            item.parentNode.classList.add('active');
+
+            const title = item.parentNode.getAttribute('data');
+
+            // Show matching tab content
+            tabContents.forEach((cont) => {
+              const content = cont.getAttribute('data');
+              cont.classList.toggle('active', title === content);
+            });
+          });
+        });
+
+        // On load: ensure only the active tab's content is shown
+        const activeTab = module.querySelector('ul.tab_row > li.active');
+        if (activeTab) {
+          const activeData = activeTab.getAttribute('data');
+          tabContents.forEach((cont) => {
+            const content = cont.getAttribute('data');
+            cont.classList.toggle('active', activeData === content);
+          });
+        }
+      });
+    }
+  }
+
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', setupDesktopTabber);
+
+  // Run on resize
+  window.addEventListener('resize', () => {
+    // Optional: debounce if needed for performance
+    setupDesktopTabber();
+  });
+
+
+  $(document).ready(function () {
+    // STEP 1: Initial setup — open the active tab's .mobile.right
+    $('ul.tab_row > li.active').each(function () {
+      $(this).find('.mobile.right').slideDown(0); // instantly show (no animation)
+    });
+
+    // STEP 2: On tab click
+    $('.u4m-side-tabber .page-center .cm-side-tabber .flex_row .left ul.tab_row > li a.tablink').on('click', function () {
+      const $parentLi = $(this).closest('li');
+      const $target = $parentLi.find('.mobile.right');
+
+      // If already active, just toggle its content
+      if ($parentLi.hasClass('active')) {
+        $target.stop(true, true).slideToggle();
+      } else {
+        // Remove active from others
+        $parentLi.siblings().removeClass('active').find('.mobile.right').slideUp();
+
+        // Add active to clicked
+        $parentLi.addClass('active');
+
+        // Slide down the selected
+        $target.stop(true, true).slideDown();
+      }
+    });
+  });
+
 </script>
 
 {% end_require_js%}
