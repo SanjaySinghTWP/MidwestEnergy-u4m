@@ -16,19 +16,58 @@
 		<div class="intro-col {% if module.filtered_content.show_featured_post %} col12 {% else %} col6{% endif %}">
 			{{ macros.introGroup(module.intro_content, module.module_settings) }}
 		</div>
+    
 		{% if module.filtered_content.show_featured_post %}
 		<div class="faeture-col col6">
-
 			{% if featured_rows|length > 0 %}
 			{% set featured = featured_rows[0] %}
-
 			<div class="featured-card">
-				<h3>{{ featured.name }}</h3>
-				{% if featured.image %}
-				<img src="{{ featured.image.url }}" alt="{{ featured.image.alt }}" />
-				{% endif %}
-				<p>{{ featured.description }}</p>
-				<p>Published on: {{ featured.date|datetimeformat('%B %d, %Y') }}</p>
+        <div class="card-inner">
+          <div class="card-cont">  
+            {% if featured.image.url %}
+            <div class="ItemImg">
+              <a href="{{featured.link}}">
+                <div class="itemImgBg" style="background-image:url({{ featured.image.url }})"></div>
+              </a>
+            </div>
+            {% endif %}
+            {% if featured.topics  %}
+            <div class="tag-wrp eyebrow-text">
+              <span>{{ featured.topics[0].label }}</span>
+            </div>
+            {% endif %}
+            {% if featured.name  %}
+            <div class="title-wrp">
+              <h5>
+                {% set initialPostWords = featured.description|striptags|wordcount %}
+                {% set calculatedPostWords = (initialPostWords / 100) * 100 %}
+                {% set finishedPostWords = calculatedPostWords / 300 %}
+                {% set number = finishedPostWords|round %}
+                {% if number >= 1 %}
+                {{ finishedPostWords|round }}
+                {% endif %} Minute Read | June 10, 2025 date
+              </h5>
+            </div>
+            {% endif %}
+            {% if featured.description %}
+            <div class="des-wrp">
+              {{featured.description}}
+            </div>
+            {% endif %}
+            {% if module.filtered_content.learn_more_text %}
+            <div class="btn-wrp">
+              <a class="hs-sec-btn" href="{{ request.path }}/{{button_link}}">
+                <span class="text">{{module.filtered_content.learn_more_text}}</span>
+                <span class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="25" viewBox="0 0 18 25" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.594 11.8808C12.8098 12.0901 12.8098 12.4294 12.594 12.6387L6.95976 18.1028C6.74394 18.3121 6.39409 18.3121 6.17827 18.1028L5.91772 17.8501C5.7019 17.6408 5.7019 17.3015 5.91772 17.0922L10.9007 12.2598L5.91772 7.42731C5.7019 7.21801 5.7019 6.87872 5.91772 6.66942L6.17827 6.41674C6.39409 6.20744 6.74394 6.20744 6.95976 6.41674L12.594 11.8808Z" fill="#39473F"></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
 			</div>
 			{% endif %}
 		</div>
@@ -38,7 +77,6 @@
 
 {# filter feild #}
 
-3
 <div class='site-search-wrap'>
 	<div class='page-center'>
 		<div class='search-col SearchBtn'>
@@ -76,38 +114,46 @@
 		<div class='cardItems flex-row resourceList'>
 			{% for row in resouces %}
 			<div class="resourceCard cardItem {% for topic in row.topics %}{{ topic.name|lower|replace(' ','-') }}{% endfor %} {% for type in row.type %}{{ type.name|lower|replace(' ','-') }}{% endfor %}">
-				{% if row.image.url %}
-				<div class="ItemImg">
-					<a href="{{row.link}}">
-						<div class="itemImgBg" style="background-image:url({{ row.image.url }})"></div>
-					</a>
-				</div>
-				{% endif %}
-				<div class="itemContent">
-					<div class="itemtag">
-						{% for topic in row.topics %}<span>{{ topic.label }}</span>{% endfor %}
-					</div>
-					<div class="itemTtl">
-						<h4><a class="restitle" href="{{row.link}}">{{ row.name }}</a></h4>
-					</div>
-					<div class="itemdesc">
-						{{ row.description|striptags|truncatehtml(100, '...' , false) }}
-					</div>
-				</div>
-				{% if module.filtered_content.learn_more_text %}
-				<div class="itemBtn">
-					<a class="hs-sec-btn" href="{{row.link}}">
-						<span>{{ module.filtered_content.learn_more_text }}</span>
-						<div class="icon">
-							<div class="inner">
-								<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
-									<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
-								</svg>
-							</div>
-						</div>
-					</a>
-				</div>
-				{% endif %}
+        <div class="card-inner">
+          <div class="card-cont">  
+            {% if row.image.url %}
+            <div class="ItemImg">
+              <a href="{{row.link}}">
+                <div class="itemImgBg" style="background-image:url({{ row.image.url }})"></div>
+              </a>
+            </div>
+            {% endif %}
+            {% if row.topics  %}
+            <div class="tag-wrp">
+              <span>{{ row.topics[0].label }}</span>
+            </div>
+            {% endif %}
+            {% if row.name  %}
+            <div class="title-wrp">
+              <h5>
+                {{row.name}}
+              </h5>
+            </div>
+            {% endif %}
+            {% if row.description %}
+            <div class="des-wrp">
+              {{row.description}}
+            </div>
+            {% endif %}
+            {% if module.filtered_content.learn_more_text %}
+            <div class="btn-wrp">
+              <a class="hs-sec-btn" href="{{ request.path }}/{{button_link}}">
+                <span class="text">{{module.filtered_content.learn_more_text}}</span>
+                <span class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="25" viewBox="0 0 18 25" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.594 11.8808C12.8098 12.0901 12.8098 12.4294 12.594 12.6387L6.95976 18.1028C6.74394 18.3121 6.39409 18.3121 6.17827 18.1028L5.91772 17.8501C5.7019 17.6408 5.7019 17.3015 5.91772 17.0922L10.9007 12.2598L5.91772 7.42731C5.7019 7.21801 5.7019 6.87872 5.91772 6.66942L6.17827 6.41674C6.39409 6.20744 6.74394 6.20744 6.95976 6.41674L12.594 11.8808Z" fill="#39473F"></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
 			</div>
 			{% endfor %}
 		</div>
@@ -227,10 +273,10 @@
 		nav.classList.add("relative", "z-0", "inline-flex", "rounded-md", "shadow-sm", "-space-x-px");
 
 		let paginationHTML = "";
-		paginationHTML += `<button ${currentPage === 1 && "disabled"} class="${currentPage === 1 ? "cursor-not-allowed" : "prev"} prevnext prev-link"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
-					<path d="M6.85403 0.145971L11.854 5.14597C11.9005 5.19241 11.9374 5.24755 11.9626 5.30825C11.9877 5.36895 12.0007 5.43401 12.0007 5.49972C12.0007 5.56543 11.9877 5.63049 11.9626 5.69119C11.9374 5.75189 11.9005 5.80704 11.854 5.85347L6.85403 10.8535C6.76021 10.9473 6.63296 11 6.50028 11C6.3676 11 6.24035 10.9473 6.14653 10.8535C6.05271 10.7597 6 10.6324 6 10.4997C6 10.367 6.05271 10.2398 6.14653 10.146L10.7934 5.49972L6.14653 0.853472C6.10007 0.807016 6.06322 0.751866 6.03808 0.69117C6.01294 0.630473 6 0.565419 6 0.499722C6 0.434024 6.01294 0.36897 6.03808 0.308273C6.06322 0.247577 6.10007 0.192427 6.14653 0.145971C6.19298 0.0995159 6.24813 0.0626669 6.30883 0.0375252C6.36953 0.0123835 6.43458 -0.000556946 6.50028 -0.000556946C6.56598 -0.000556946 6.63103 0.0123835 6.69173 0.0375252C6.75242 0.0626669 6.80757 0.0995159 6.85403 0.145971Z" fill="#2E2E2E"/>
-					<path d="M0.854028 0.145971L5.85403 5.14597C5.90052 5.19241 5.9374 5.24755 5.96256 5.30825C5.98772 5.36895 6.00067 5.43401 6.00067 5.49972C6.00067 5.56543 5.98772 5.63049 5.96256 5.69119C5.9374 5.75189 5.90052 5.80704 5.85403 5.85347L0.854028 10.8535C0.760208 10.9473 0.63296 11 0.500278 11C0.367596 11 0.240348 10.9473 0.146528 10.8535C0.0527074 10.7597 0 10.6324 0 10.4997C0 10.367 0.0527074 10.2398 0.146528 10.146L4.7934 5.49972L0.146528 0.853472C0.100073 0.807016 0.0632225 0.751866 0.0380812 0.69117C0.0129398 0.630473 0 0.565419 0 0.499722C0 0.434024 0.0129398 0.36897 0.0380812 0.308273C0.0632225 0.247577 0.100073 0.192427 0.146528 0.145971C0.192983 0.0995159 0.248133 0.0626669 0.30883 0.0375252C0.369526 0.0123835 0.434581 -0.000556946 0.500278 -0.000556946C0.565975 -0.000556946 0.63103 0.0123835 0.691726 0.0375252C0.752423 0.0626669 0.807573 0.0995159 0.854028 0.145971Z" fill="#2E2E2E"/>
-	</svg></button>`;
+		paginationHTML += `<button ${currentPage === 1 && "disabled"} class="${currentPage === 1 ? "cursor-not-allowed" : "prev"} prevnext prev-link"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 41 41" fill="none">
+						<circle cx="20.5" cy="20.5" r="18.7" stroke="#D0DD28" stroke-width="3"/>
+						<path d="M14.2 20.5L22.3 12.4V28.6L14.2 20.5Z" fill="#536C5F" stroke="#536C5F" stroke-width="3" stroke-linejoin="round"/>
+					</svg></button>`;
 
 		pages.forEach(page => {
 			paginationHTML += currentPage === page
@@ -238,10 +284,10 @@
 			: `<button class="para gray_border black_color light_bg page bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium" page="${page}">${page}</button>`;
 		});
 
-		paginationHTML += `<button ${currentPage === endPage && "disabled"} class="${currentPage === endPage ? "cursor-not-allowed" : "next"} prevnext"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
-				<path d="M6.85403 0.145971L11.854 5.14597C11.9005 5.19241 11.9374 5.24755 11.9626 5.30825C11.9877 5.36895 12.0007 5.43401 12.0007 5.49972C12.0007 5.56543 11.9877 5.63049 11.9626 5.69119C11.9374 5.75189 11.9005 5.80704 11.854 5.85347L6.85403 10.8535C6.76021 10.9473 6.63296 11 6.50028 11C6.3676 11 6.24035 10.9473 6.14653 10.8535C6.05271 10.7597 6 10.6324 6 10.4997C6 10.367 6.05271 10.2398 6.14653 10.146L10.7934 5.49972L6.14653 0.853472C6.10007 0.807016 6.06322 0.751866 6.03808 0.69117C6.01294 0.630473 6 0.565419 6 0.499722C6 0.434024 6.01294 0.36897 6.03808 0.308273C6.06322 0.247577 6.10007 0.192427 6.14653 0.145971C6.19298 0.0995159 6.24813 0.0626669 6.30883 0.0375252C6.36953 0.0123835 6.43458 -0.000556946 6.50028 -0.000556946C6.56598 -0.000556946 6.63103 0.0123835 6.69173 0.0375252C6.75242 0.0626669 6.80757 0.0995159 6.85403 0.145971Z" fill="#2E2E2E"/>
-				<path d="M0.854028 0.145971L5.85403 5.14597C5.90052 5.19241 5.9374 5.24755 5.96256 5.30825C5.98772 5.36895 6.00067 5.43401 6.00067 5.49972C6.00067 5.56543 5.98772 5.63049 5.96256 5.69119C5.9374 5.75189 5.90052 5.80704 5.85403 5.85347L0.854028 10.8535C0.760208 10.9473 0.63296 11 0.500278 11C0.367596 11 0.240348 10.9473 0.146528 10.8535C0.0527074 10.7597 0 10.6324 0 10.4997C0 10.367 0.0527074 10.2398 0.146528 10.146L4.7934 5.49972L0.146528 0.853472C0.100073 0.807016 0.0632225 0.751866 0.0380812 0.69117C0.0129398 0.630473 0 0.565419 0 0.499722C0 0.434024 0.0129398 0.36897 0.0380812 0.308273C0.0632225 0.247577 0.100073 0.192427 0.146528 0.145971C0.192983 0.0995159 0.248133 0.0626669 0.30883 0.0375252C0.369526 0.0123835 0.434581 -0.000556946 0.500278 -0.000556946C0.565975 -0.000556946 0.63103 0.0123835 0.691726 0.0375252C0.752423 0.0626669 0.807573 0.0995159 0.854028 0.145971Z" fill="#2E2E2E"/>
-	</svg></button>`;
+		paginationHTML += `<button ${currentPage === endPage && "disabled"} class="${currentPage === endPage ? "cursor-not-allowed" : "next"} prevnext"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 41 41" fill="none">
+						<circle cx="20.5" cy="20.5" r="18.7" stroke="#D0DD28" stroke-width="3"/>
+						<path d="M26.8 20.5L18.7 12.4V28.6L26.8 20.5Z" fill="#536C5F" stroke="#536C5F" stroke-width="3" stroke-linejoin="round"/>
+					</svg></button>`;
 
 		nav.innerHTML = paginationHTML;
 		pagination.append(nav);

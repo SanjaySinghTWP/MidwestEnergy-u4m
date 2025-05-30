@@ -95,7 +95,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
@@ -287,7 +287,7 @@
     "include_heading" : true,
     "heading_size" : "h2",
     "heading" : "Resources Listing Heading ",
-    "include_content" : false,
+    "include_content" : true,
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>",
     "include_button" : false,
     "button_group" : [ {
@@ -365,7 +365,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -376,7 +376,7 @@
     "select_hubdb_table" : 119593837,
     "learn_more_text" : "Learn More",
     "show_post_per_page" : 9,
-    "show_featured_post" : false
+    "show_featured_post" : true
   }
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
