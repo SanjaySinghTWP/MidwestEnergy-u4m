@@ -1,0 +1,60 @@
+@import "../../css/_module-imports";
+$color_1: #536c5f;
+$font-family_1: "Source Sans Pro";
+$font-family_2: "Priori Sans OT";
+.u4m-filtered-content {
+  .cardItems {
+    gap: 20px;
+    .cardItem {
+      width: 33.333%;
+      max-width: 412px;
+      .card-inner {
+        padding: 40px;
+        border-radius: 24px;
+        background: #f5f7f7;
+        .tag-wrp {
+          span {
+            display: inline-block;
+            text-transform: uppercase;
+            line-height: 24px;
+            font-family: $font1;
+            font-size: $baseFontSize;
+            font-style: normal;
+            font-weight: 600;
+            color: $color_1;
+          }
+        }
+        .card-cont {
+          text-align: left;
+          .tag-wrp {
+            margin-bottom: 12px;
+          }
+          .title-wrp {
+            h5 {
+              font-family: $font-family_2;
+              font-size: 28px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 30px;
+              margin: 0;
+            }
+            margin-bottom: 12px;
+          }
+          .des-wrp {
+            p {
+              font-family: $font-family_1;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 150%;
+              margin: 0;
+            }
+          }
+          .btn-wrp {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+}
