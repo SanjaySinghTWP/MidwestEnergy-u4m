@@ -1,0 +1,147 @@
+@import "../../css/_module-imports";
+
+.u4m-features-comparison-table {
+  .custom-table {
+    .toppannel {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 50rem;
+
+      .items {
+        text-align: center;
+        display: flex;
+        padding: 20rem;
+        justify-content: center;
+        align-items: center;
+        flex: 1 0 0;
+
+        span {
+          @include b1;
+          color: $dark_green;
+          text-align: center;
+          font-weight: 700;
+          line-height: 150%;
+        }
+      }
+    }
+
+    .middlepannel {
+      > .items {
+        display: flex;
+        padding: 20rem;
+        align-items: flex-start;
+        flex: 1 0 0;
+        border-bottom: 6rem solid $bright_green;
+        @include b1;
+        color: $dark_green;
+        font-weight: 700;
+        line-height: 150%;
+        margin-top: 20rem;
+        cursor: pointer;
+
+        &.nomargin {
+          margin-top: 0;
+        }
+      }
+
+      .bottomepannel {
+        display: flex;
+        flex-wrap: wrap;
+
+        .items {
+          display: flex;
+          padding: 20rem;
+          align-items: flex-start;
+          flex: 1 0 0;
+          justify-content: center;
+
+          &.items_1 {
+            justify-content: flex-start;
+          }
+
+          svg {
+            width: 24rem;
+            height: 24rem;
+          }
+
+          span.mobile {
+            @include tabletvertmin {
+              display: none;
+            }
+            @include tabletvert {
+              @include b1;
+              color: $dark_green;
+              font-weight: 400;
+              text-align: center;
+            }
+          }
+        }
+
+        &:nth-child(even) {
+          background: $super_light_gray;
+        }
+
+        @include tabletvert {
+          display: block;
+
+          .items {
+            justify-content: space-between;
+            padding: 10rem;
+          }
+        }
+      }
+
+      .main-wrapper {
+        display: none;
+      }
+    }
+
+    &.four {
+      .middlepannel {
+        .bottomepannel {
+          .items.items_5 {
+            display: none;
+          }
+        }
+      }
+
+      .toppannel {
+        .items.items_5 {
+          display: none;
+        }
+      }
+    }
+
+    &.three {
+      .middlepannel {
+        .bottomepannel {
+          .items.items_4,
+          .items.items_5 {
+            display: none;
+          }
+        }
+      }
+
+      .toppannel {
+        .items.items_4,
+        .items.items_5 {
+          display: none;
+        }
+      }
+    }
+
+    @include tabletvert {
+      .toppannel {
+        display: none;
+      }
+
+      .middlepannel.nomargin {
+        margin-top: 50rem;
+      }
+
+      > .items {
+        padding: 10rem;
+      }
+    }
+  }
+}

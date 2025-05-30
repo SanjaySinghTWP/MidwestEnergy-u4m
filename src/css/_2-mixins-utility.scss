@@ -5,6 +5,12 @@
   }
 }
 
+@mixin tabletvertmin {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
 @mixin tabletvert {
   @media (max-width: 768px) {
     @content;
