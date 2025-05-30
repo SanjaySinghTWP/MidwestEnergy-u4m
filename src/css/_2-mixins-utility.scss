@@ -11,8 +11,20 @@
   }
 }
 
+@mixin tabletVertMax {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
 @mixin tabletvert {
   @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin smallTablet {
+  @media (max-width: 991px) {
     @content;
   }
 }
@@ -25,6 +37,12 @@
 
 @mixin tabletMin {
   @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tabletMax {
+  @media (max-width: 1200px) {
     @content;
   }
 }
@@ -54,7 +72,9 @@
 }
 
 @mixin ie {
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+  @media all and (-ms-high-contrast: none),
+  (-ms-high-contrast: active) {
     @content;
   }
 }
