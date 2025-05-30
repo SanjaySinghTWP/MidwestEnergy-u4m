@@ -1,6 +1,5 @@
 @import "../../css/_module-imports";
 
-$color_4: red;
 
 .u4m-split-lp-form {
 
@@ -113,6 +112,26 @@ $color_4: red;
                         line-height: 150%;
                     }
 
+                    .hs_error_rollup {
+
+                        ul {
+
+                            li {
+
+                                label {
+
+                                    color: $red;
+                                    font-family: $font1;
+                                    font-size: 14rem;
+                                    font-style: normal;
+                                    font-weight: 600;
+                                    line-height: 150%;
+                                    margin-bottom: 8rem;
+                                }
+                            }
+                        }
+                    }
+
                     .hs-richtext {
                         h3 {
                             display: block;
@@ -160,6 +179,8 @@ $color_4: red;
                     }
 
                     fieldset {
+
+                        max-width: 100%;
 
                         @include tablet {
                             max-width: 100%;
@@ -298,7 +319,7 @@ $color_4: red;
                             letter-spacing: normal;
 
                             label.hs-error-msg {
-                                color: $color_4;
+                                color: $red;
                                 font-family: $font1;
                                 font-size: 14rem;
                                 font-style: normal;
