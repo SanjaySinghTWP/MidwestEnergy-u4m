@@ -45,6 +45,10 @@
                     .intro_desc {
                         max-width: 580rem;
 
+                        @include tablet {
+                            max-width: 100%;
+                        }
+
                         p {
                             margin-bottom: 30rem;
                         }
