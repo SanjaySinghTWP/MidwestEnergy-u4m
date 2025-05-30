@@ -1,0 +1,60 @@
+{% set moduleName = 'u4m-cta-row-2' %}
+{% include "../partials/u4-module-includes.html" %}
+</div>
+
+
+<div class="content_column">
+  <svg class="shape" xmlns="http://www.w3.org/2000/svg" width="79" height="139" viewBox="0 0 79 139" fill="none">
+    <rect x="79" y="138.243" width="79" height="29.0875" transform="rotate(-180 79 138.243)" fill="#D0DD28" fill-opacity="0.5"/>
+    <rect x="79" y="83.8477" width="79" height="29.0875" transform="rotate(-180 79 83.8477)" fill="#D0DD28" fill-opacity="0.5"/>
+    <rect x="79" y="29.4531" width="79" height="29.2102" transform="rotate(-180 79 29.4531)" fill="#D0DD28" fill-opacity="0.5"/>
+  </svg>
+  <div class="flex_row">
+
+    <div class="content-column col col-6">
+      {% if module.content_column.heading %}
+      <{{ module.content_column.heading_size }} class="title">{{ module.content_column.heading }}</{{ module.content_column.heading_size }}>
+        {% endif %}
+        {% if module.content_column.content %}
+        <div class="content">
+      {{ module.content_column.content }}
+    </div>
+    {% endif %}
+  </div>
+
+  {% if module.form_column.include_button or module.form_column.include_form %}
+  <div class="form-column col col-6">
+    {% if module.form_column.include_button %}
+    <div class="buttonwrap">
+      {{macros.buttonGroup(module.form_column.button_group)}}
+    </div>
+    {% endif %}
+    {% if module.form_column.include_form %}
+    <div class="formwrap_{{module.form_column.form_type}}">
+      {% if module.form_column.form_type == "hubspot" %}
+      {% form
+	form_to_use="{{ module.form_column.select_form.form_id }}"
+	response_response_type="{{ module.form_column.select_form.response_type }}"
+	response_message="{{ module.form_column.select_form.message }}"
+	response_redirect_id="{{ module.form_column.select_form.redirect_id }}"
+	response_redirect_url="{{module.form_column.select_form.redirect_url}}"
+	gotowebinar_webinar_key="{{ module.form_column.select_form.gotowebinar_webinar_key }}"
+%}
+      {% endif %}
+      {% if module.form_column.form_type == "embed" %}
+      {{ module.form_column.iframe_embed_code }}
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+
+</div>
+</div>
+
+
+
+
+</div>
+</section>

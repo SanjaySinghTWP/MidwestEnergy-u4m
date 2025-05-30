@@ -1,0 +1,162 @@
+@import "../../css/_module-imports";
+
+.u4m-cta-row-2 {
+  .content_column {
+    border-radius: 24rem;
+    background: $dark_green;
+    padding: 80rem;
+    position: relative;
+
+    svg.shape {
+      position: absolute;
+      left: -40rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .content-column {
+      h2.title {
+        color: $white;
+      }
+
+      .content {
+        p {
+          @include b3;
+          color: $white;
+          font-weight: 400;
+          line-height: 160%;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .flex_row {
+      align-items: center;
+
+      .intro_btn_wrap {
+        justify-content: center;
+        column-gap: 55rem;
+        row-gap: 20rem;
+
+        a.hs-sec-btn {
+          color: $white;
+
+          svg path {
+            fill: $white;
+          }
+        }
+      }
+
+      .formwrap_hubspot {
+        .form-title:empty {
+          display: none;
+        }
+
+        form {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0;
+          align-items: flex-end;
+          column-gap: 12rem;
+          position: relative;
+
+          .hs-form-field > label {
+            color: $white;
+            font-family: $font1;
+            @include size14;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%;
+            margin-bottom: 8rem;
+            display: inline-block;
+          }
+
+          .hs-input {
+            display: flex;
+            height: 48rem;
+            padding: 12rem;
+            align-items: flex-start;
+            align-self: stretch;
+            border-radius: 4rem;
+            border: 1rem solid #868c90;
+            background: $white;
+          }
+
+          .hs_email {
+            flex: 1;
+          }
+
+          input.hs-button {
+            padding: 12rem 53rem 12rem 41rem;
+          }
+
+          ul.hs-error-msgs {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            color: red;
+            position: absolute;
+            font-size: 14rem;
+            top: calc(100% + 10rem);
+          }
+
+          .hs_error_rollup {
+            position: absolute;
+            width: 100%;
+            top: calc(100% + 30rem);
+          }
+        }
+      }
+    }
+
+    // Tablet & small laptop breakpoint (<=1024rem)
+    @include tablet {
+      padding: 50rem;
+
+      .flex_row {
+        .intro_btn_wrap {
+          column-gap: 15rem;
+        }
+      }
+    }
+
+    // Mobile breakpoint (<=767rem)
+    @include tabletvert {
+      padding: 20rem;
+
+      svg {
+        display: none;
+      }
+
+      .content-column {
+        .content {
+          p:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .flex_row {
+        .formwrap_hubspot {
+          form {
+            display: block;
+
+            input.hs-button {
+              margin-top: 15rem;
+            }
+
+            ul.hs-error-msgs {
+              position: static;
+            }
+
+            .hs_error_rollup {
+              position: static;
+            }
+          }
+        }
+      }
+    }
+  }
+}
