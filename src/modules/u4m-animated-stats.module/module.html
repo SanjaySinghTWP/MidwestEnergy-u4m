@@ -4,35 +4,42 @@
 </div>
 
 <div class="stats-wrapper outer_wrp">
-	<div class="flex_row ani" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
+  <div class="flex_row ani" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
 {% endif %} data-aos-delay="100">
-		{% for item in module.stats_items %}
-		<div class="stats_item col {{ module.module_settings.cards.number_of_columns }}">
-			{% if  item.value %}
-			<div class="stats_border_wrapper {% if module.module_settings.cards.enable_circular_border %}  {{ module.module_settings.cards.select_gradient }} {% endif %}">
-				<div class="stats_inner">
-					{% if item.prefix %}
-					<span class="stat-prefix">{{ item.prefix }}</span>
-					{% endif %} 
-					{% if  item.value %}
-					<span class="stat-number" data-target="{{ item.value }}">{{ item.value }}</span>
-					{% endif %}
-					{% if item.suffix %}
-					<span class="stat-suffix">{{ item.suffix }}</span>
-					{% endif %}
-				</div>
-			</div>
-			{% endif %} 
-			{% if item.content %}
-			<div class="stats_bottom_text">
+    {% for item in module.stats_items %}
+    <div class="stats_item col {{ module.module_settings.cards.number_of_columns }}">
+	{% if item.top_content %}
+			<div class="stats_bottom_text top_text">
 				<p>
-					{{ item.content }}
+					{{ item.top_content }}
 				</p>
 			</div>
 			{% endif %}
-		</div>
-		{% endfor %}
-	</div>
+      {% if  item.value %}
+      <div class="stats_border_wrapper {% if module.module_settings.cards.enable_circular_border %}  {{ module.module_settings.cards.select_gradient }} {% endif %}">
+        <div class="stats_inner">
+          {% if item.prefix %}
+          <span class="stat-prefix">{{ item.prefix }}</span>
+          {% endif %} 
+          {% if  item.value %}
+          <span class="stat-number" data-target="{{ item.value }}">{{ item.value }}</span>
+          {% endif %}
+          {% if item.suffix %}
+          <span class="stat-suffix">{{ item.suffix }}</span>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %} 
+      {% if item.content %}
+      <div class="stats_bottom_text">
+        <p>
+          {{ item.content }}
+        </p>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
 
 </div>
 
@@ -44,31 +51,31 @@
 
 {% require_css %}
 <style>  
-	{% if module.module_settings.cards.corner_radius %}
-	.{{name}}.u4m-animated-stats .stats-wrapper .stats_item .stats_border_wrapper {
-		border-radius: {{ module.module_settings.cards.corner_radius }}%;
-	}
-	{% endif %}
-	{% if  module.module_settings.cards.background_color.color ||  module.module_settings.cards.corner_radiu %}
-	.{{name}}.u4m-animated-stats .stats-wrapper .stats_item .stats_inner {
-background-color: rgba({{ module.module_settings.cards.background_color.color|convert_rgb}},{{ module.module_settings.cards.background_color.opacity * 0.01}});	
-		border-radius: {{ module.module_settings.cards.corner_radius }}%;
-	}
-	{% endif %}
-	.{{name}}.u4m-animated-stats .stats-wrapper .stats_item .stats_inner * {
-color: rgba({{ module.module_settings.cards.content_color.color|convert_rgb}},{{ module.module_settings.cards.content_color.opacity * 0.01}});		}
-	{% if  not module.module_settings.cards.enable_circular_border %}
-	{{name}}.u4m-animated-stats .stats-wrapper .stats_item .stats_border_wrapper{
-		background:transparent;
-	}
-	{% endif %}
+  {% if module.module_settings.cards.corner_radius %}
+  .{{name}}.u4m-animated-stats .stats-wrapper .stats_item .stats_border_wrapper {
+    border-radius: {{ module.module_settings.cards.corner_radius }}%;
+  }
+  {% endif %}
+  {% if  module.module_settings.cards.background_color.color ||  module.module_settings.cards.corner_radiu %}
+  .{{name}}.u4m-animated-stats .stats-wrapper .stats_item .stats_inner {
+background-color: rgba({{ module.module_settings.cards.background_color.color|convert_rgb}},{{ module.module_settings.cards.background_color.opacity * 0.01}}); 
+    border-radius: {{ module.module_settings.cards.corner_radius }}%;
+  }
+  {% endif %}
+  .{{name}}.u4m-animated-stats .stats-wrapper .stats_item .stats_inner * {
+color: rgba({{ module.module_settings.cards.content_color.color|convert_rgb}},{{ module.module_settings.cards.content_color.opacity * 0.01}});    }
+  {% if  not module.module_settings.cards.enable_circular_border %}
+  {{name}}.u4m-animated-stats .stats-wrapper .stats_item .stats_border_wrapper{
+    background:transparent;
+  }
+  {% endif %}
 
 </style>  
 {% end_require_css %}
 
 {% require_js %}
 <script>  
-	document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
   const statNumbers = document.querySelectorAll(".stat-number");
   const animationDuration = 2000; // 2 seconds
 

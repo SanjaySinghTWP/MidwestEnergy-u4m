@@ -331,12 +331,32 @@
     "default" : 4
   },
   "children" : [ {
+    "id" : "e2959449-4bfd-28cb-07c3-f622c182b221",
+    "name" : "top_content",
+    "label" : "Top Content",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "dedicated employees ready to grow"
+  }, {
     "id" : "423715a4-5b68-0ba2-87af-fc73803f4c9a",
     "name" : "prefix",
     "label" : "Prefix",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "stats_items.value",
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : null,
+      "access" : null
+    },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
@@ -359,22 +379,31 @@
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "stats_items.value",
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : null,
+      "access" : null
+    },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "%"
+    "default" : ""
   }, {
     "id" : "7e05ffd1-a4ed-c2f7-917e-7c705f393c1a",
     "name" : "content",
-    "label" : "Content",
+    "label" : "Bottom Content",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "display_width" : null
+    "display_width" : null,
+    "default" : "dedicated employees ready to grow"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -383,16 +412,24 @@
   "display_width" : null,
   "default" : [ {
     "value" : 177,
-    "suffix" : "%"
+    "suffix" : "",
+    "content" : "dedicated employees ready to grow",
+    "top_content" : "dedicated employees ready to grow"
   }, {
     "value" : 177,
-    "suffix" : "%"
+    "suffix" : "",
+    "content" : "dedicated employees ready to grow",
+    "top_content" : "dedicated employees ready to grow"
   }, {
     "value" : 177,
-    "suffix" : "%"
+    "suffix" : "",
+    "content" : "dedicated employees ready to grow",
+    "top_content" : "dedicated employees ready to grow"
   }, {
     "value" : 177,
-    "suffix" : "%"
+    "suffix" : "",
+    "content" : "dedicated employees ready to grow",
+    "top_content" : "dedicated employees ready to grow"
   } ]
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
@@ -443,7 +480,7 @@
   }, {
     "id" : "f69f6019-064f-3764-a1b4-cde203e3a872",
     "name" : "cards",
-    "label" : "Cards Settings",
+    "label" : "Stats Settings",
     "required" : false,
     "locked" : false,
     "children" : [ {
