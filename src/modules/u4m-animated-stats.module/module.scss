@@ -69,3 +69,14 @@
     margin-top: 50rem;
   }
 }
+.reverse-text.u4m-animated-stats {
+  .stats-wrapper {
+    .stats_item {
+      .stats_bottom_text {
+        p {
+          color: $white;
+        }
+      }
+    }
+  }
+}

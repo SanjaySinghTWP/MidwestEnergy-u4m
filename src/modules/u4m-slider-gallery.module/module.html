@@ -5,104 +5,117 @@
 
 
 <div class="u4m-slider-gallery-row">
-	<div class="cm-card-gallery-slider" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}" 
-			 {% endif %} data-aos-delay="100">
-		<div id="splide" class="splide">
-			<div class="splide__track">
-				<ul class="splide__list">
-					{% for item in module.slider_group %}
-					<li class="splide__slide card-item col col-3 item-{{loop.index}}">
-						<div class="card-inner-item">
-							{% if item.image_field.src %}
-							<div class="image-wrp">
-								<a href="{{ item.image_field.src|escape_url }}" data-fancybox="gallery" {% if item.enable_popup %}data-caption="	{{ item.popup.caption }}" {% endif %}>
-									{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
-									{% if item.image_field.size_type == 'auto' %}
-									{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-									{% elif item.image_field.size_type == 'auto_custom_max' %}
-									{% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-									{% endif %}
-									{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
-									<img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
-								</a>
+  <div class="cm-card-gallery-slider" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}" 
+       {% endif %} data-aos-delay="100">
+    <div id="splide" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for item in module.slider_group %}
+          {% if item.image_field.src %}
+          <li class="splide__slide card-item col col-3 item-{{loop.index}}">
+            <div class="card-inner-item">
+              {% if item.image_field.src %}
+              <div class="image-wrp">
+                <a href="{{ item.image_field.src|escape_url }}"
+                   data-fancybox="gallery"
+                   {% if item.enable_popup %}
+                   data-caption="{{ item.caption }}"
+                   {% endif %}>
+                  {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+                  {% if item.image_field.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.image_field.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                  {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                </a>
 
-							</div> 
-							{% endif %}
-						</div> 
-					</li>
-					{% endfor %}
-				</ul>
-			</div>
+              </div> 
+              {% endif %}
+            </div> 
+          </li>
+          {% endif%}
+          {% endfor %}
+        </ul>
+      </div>
 
 
-			<!-- Custom Arrows Start -->
-			<div class="custom-splide-arrows ">
-				<!-- Left Arrow -->
-				<button class="splide__arrow--prev custom-arrow" aria-label="Previous slide">
-					<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 41 41" fill="none">
-						<circle cx="20.5" cy="20.5" r="18.7" stroke="#D0DD28" stroke-width="3"/>
-						<path d="M14.2 20.5L22.3 12.4V28.6L14.2 20.5Z" fill="#536C5F" stroke="#536C5F" stroke-width="3" stroke-linejoin="round"/>
-					</svg>
-				</button>
+      <!-- Custom Arrows Start -->
+      <div class="custom-splide-arrows ">
+        <!-- Left Arrow -->
+        <button class="splide__arrow--prev custom-arrow" aria-label="Previous slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 41 41" fill="none">
+            <circle cx="20.5" cy="20.5" r="18.7" stroke="#D0DD28" stroke-width="3"/>
+            <path d="M14.2 20.5L22.3 12.4V28.6L14.2 20.5Z" fill="#536C5F" stroke="#536C5F" stroke-width="3" stroke-linejoin="round"/>
+          </svg>
+        </button>
 
-				<!-- Right Arrow -->
-				<button class="splide__arrow--next custom-arrow" aria-label="Next slide">
-					<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 41 41" fill="none">
-						<circle cx="20.5" cy="20.5" r="18.7" stroke="#D0DD28" stroke-width="3"/>
-						<path d="M26.8 20.5L18.7 12.4V28.6L26.8 20.5Z" fill="#536C5F" stroke="#536C5F" stroke-width="3" stroke-linejoin="round"/>
-					</svg>
-				</button>
-			</div>
-			<!-- Custom Arrows End -->
+        <!-- Right Arrow -->
+        <button class="splide__arrow--next custom-arrow" aria-label="Next slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 41 41" fill="none">
+            <circle cx="20.5" cy="20.5" r="18.7" stroke="#D0DD28" stroke-width="3"/>
+            <path d="M26.8 20.5L18.7 12.4V28.6L26.8 20.5Z" fill="#536C5F" stroke="#536C5F" stroke-width="3" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <!-- Custom Arrows End -->
 
-		</div>
+    </div>
 
-	</div>
+  </div>
 </div>
 
 </div>
 </section>
 
 {% require_css%}
-<link  href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+      />
 {% end_require_css%}
 
 
 {% require_js%}
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 <script>
-	document.addEventListener('DOMContentLoaded', function () {
-		new Splide('.{{name}} .splide', {
-							 type: 'loop',
-							 perPage: {{ module.module_settings.slider_options.slides_per_view }},
-							 perMove: {{ module.module_settings.slider_options.slides_per_scroll }}, 
-							 {% if module.module_settings.slider_options.autoplay %}
-							 autoplay: true,
-							 interval: {{ module.module_settings.slider_options.autoplay_speed * 1000 }},
-							 {% endif %}
-							 pauseOnHover: true,
-							 arrows: true,
-							 autoHeight: true,
-							 classes: {
-							 arrows: 'custom-splide-arrows',
-							 arrow: 'custom-arrow',
-							 prev: 'splide__arrow--prev',
-							 next: 'splide__arrow--next',
-							 },
-														pagination: true,
-														gap: '1.5rem',
-														breakpoints: {
-        1024	: {
-          perPage: 2,
-        },
-        767: {
-          perPage: 1,
-        },
-      },
+  // Initialize Fancybox on all elements with data-fancybox attribute
+  Fancybox.bind("[data-fancybox='gallery']", {
+    // Optional custom options can go here
+    // Example: infinite: false,
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Splide('.{{name}} .splide', {
+               type: 'loop',
+               perPage: {{ module.module_settings.slider_options.slides_per_view }},
+               perMove: {{ module.module_settings.slider_options.slides_per_scroll }}, 
+               {% if module.module_settings.slider_options.autoplay %}
+               autoplay: true,
+               interval: {{ module.module_settings.slider_options.autoplay_speed * 1000 }},
+               {% endif %}
+               pauseOnHover: true,
+               arrows: true,
+               autoHeight: true,
+               classes: {
+               arrows: 'custom-splide-arrows',
+               arrow: 'custom-arrow',
+               prev: 'splide__arrow--prev',
+               next: 'splide__arrow--next',
+               },
+                            pagination: true,
+                            gap: '1.5rem',
+                            breakpoints: {
+                            1024	: {
+                            perPage: 2,
+                            },
+    767: {
+      perPage: 1,
+    },
+  },
 
-														}).mount();
-	});
+  }).mount();
+  });
 
 </script>
 {% end_require_js%}

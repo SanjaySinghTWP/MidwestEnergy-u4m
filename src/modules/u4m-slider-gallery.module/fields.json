@@ -95,7 +95,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
@@ -287,7 +287,7 @@
     "include_heading" : true,
     "heading_size" : "h2",
     "heading" : "Company Awards & Recognition",
-    "include_content" : false,
+    "include_content" : true,
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
     "include_button" : false,
     "button_group" : [ {
@@ -328,7 +328,7 @@
     "min" : null,
     "max" : null,
     "sorting_label_field" : null,
-    "default" : 4
+    "default" : 5
   },
   "children" : [ {
     "id" : "e5e51bb4-4be7-4578-e652-2772ecb11e62",
@@ -354,7 +354,7 @@
   }, {
     "id" : "d6839251-b110-1f9c-a05a-dc2a6417146e",
     "name" : "enable_popup",
-    "label" : "Enable Popup",
+    "label" : "Enable Popup Caption",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
@@ -362,11 +362,12 @@
     "display_width" : null,
     "default" : true
   }, {
-    "id" : "bf7eea0f-0497-f530-2035-12054939817e",
-    "name" : "popup",
-    "label" : "Popup",
+    "id" : "add59863-93b6-3ce6-6882-373e6a99886d",
+    "name" : "caption",
+    "label" : "Caption",
     "required" : false,
     "locked" : false,
+    "validation_regex" : "",
     "visibility" : {
       "controlling_field" : null,
       "controlling_field_path" : "slider_group.enable_popup",
@@ -375,24 +376,11 @@
       "operator" : "EQUAL",
       "access" : null
     },
-    "children" : [ {
-      "id" : "3c346fce-f114-5eeb-c4a5-2665d1883c26",
-      "name" : "caption",
-      "label" : "Caption",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "display_width" : null
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
     "display_width" : null,
-    "default" : { }
+    "default" : "Image Caption"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -410,8 +398,8 @@
       "max_width" : 563,
       "max_height" : 563
     },
-    "popup" : { },
-    "enable_popup" : true
+    "enable_popup" : true,
+    "caption" : "Image Caption"
   }, {
     "image_field" : {
       "size_type" : "auto",
@@ -424,7 +412,7 @@
       "max_height" : 563
     },
     "enable_popup" : true,
-    "popup" : { }
+    "caption" : "Image Caption"
   }, {
     "image_field" : {
       "size_type" : "auto",
@@ -437,7 +425,7 @@
       "max_height" : 563
     },
     "enable_popup" : true,
-    "popup" : { }
+    "caption" : "Image Caption"
   }, {
     "image_field" : {
       "size_type" : "auto",
@@ -450,7 +438,20 @@
       "max_height" : 563
     },
     "enable_popup" : true,
-    "popup" : { }
+    "caption" : "Image Caption"
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/MidwestEnergy-u4m/images/Media.png",
+      "alt" : "Media",
+      "loading" : "lazy",
+      "width" : 563,
+      "height" : 563,
+      "max_width" : 563,
+      "max_height" : 563
+    },
+    "enable_popup" : true,
+    "caption" : "Image Caption"
   } ]
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
