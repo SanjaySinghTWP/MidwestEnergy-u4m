@@ -2,7 +2,7 @@
   "global" : false,
   "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
-  "module_id" : 190623538822,
+  "module_id" : 190666250392,
   "css_assets" : [ {
     "url" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/MidwestEnergy-u4m/css/splide.min.css",
     "autoload" : true,
@@ -13,7 +13,7 @@
     "autoload" : true,
     "name" : "splide.min.js"
   } ],
-  "label" : "U4m Simple Slider",
+  "label" : "Simple Slider",
   "icon" : "https://8292614.fs1.hubspotusercontent-na1.net/hubfs/8292614/4.svg",
   "is_available_for_new_content" : true
 }

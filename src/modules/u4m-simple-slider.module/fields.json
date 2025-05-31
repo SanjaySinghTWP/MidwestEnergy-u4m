@@ -522,8 +522,8 @@
     "default" : true
   }, {
     "id" : "1013e5e8-474c-3e7c-4079-22a5743a4c43",
-    "name" : "shpave_color",
-    "label" : "Shpave Color",
+    "name" : "shape_color",
+    "label" : "Shape Color",
     "required" : false,
     "locked" : false,
     "visibility" : {
@@ -547,17 +547,6 @@
     "required" : false,
     "locked" : false,
     "children" : [ {
-      "id" : "e3a3e826-8d1c-43df-642f-4591e737d8c8",
-      "name" : "slides_per_view",
-      "label" : "Slides Per View",
-      "required" : false,
-      "locked" : false,
-      "display" : "text",
-      "step" : 1,
-      "type" : "number",
-      "display_width" : null,
-      "default" : 1
-    }, {
       "id" : "02687343-4ae3-51a1-d3c8-10296ea79648",
       "name" : "slides_per_scroll",
       "label" : "Slides Per Scroll",
@@ -604,7 +593,6 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
-      "slides_per_view" : 1,
       "slides_per_scroll" : 1,
       "autoplay" : true,
       "autoplay_speed" : 3
@@ -645,7 +633,7 @@
       "label" : "Corner Radius",
       "required" : false,
       "locked" : false,
-      "display" : "text",
+      "display" : "slider",
       "step" : 1,
       "type" : "number",
       "display_width" : null,
@@ -654,6 +642,16 @@
       "id" : "cc4fe7a6-df72-89f2-e14e-4fd3c76090a6",
       "name" : "enable_shadow",
       "label" : "Enable Shadow",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "8a70ff28-1aea-1e51-3dbf-c26c443dc527",
+      "name" : "enable_gradient_outline",
+      "label" : "Enable Gradient Outline",
       "required" : false,
       "locked" : false,
       "display" : "checkbox",
@@ -676,7 +674,8 @@
         "opacity" : 100
       },
       "corner_radius" : 24,
-      "enable_shadow" : false
+      "enable_shadow" : false,
+      "enable_gradient_outline" : false
     }
   } ],
   "tab" : "CONTENT",
@@ -690,12 +689,11 @@
     "intro_content_width" : 700,
     "include_animation" : false,
     "enable_shape" : true,
-    "shpave_color" : {
+    "shape_color" : {
       "color" : "#d0dd28",
       "opacity" : 100
     },
     "slider_options" : {
-      "slides_per_view" : 1,
       "slides_per_scroll" : 1,
       "autoplay" : true,
       "autoplay_speed" : 3
@@ -710,7 +708,8 @@
         "opacity" : 100
       },
       "corner_radius" : 24,
-      "enable_shadow" : false
+      "enable_shadow" : false,
+      "enable_gradient_outline" : false
     }
   }
 }, {

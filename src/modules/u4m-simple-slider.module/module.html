@@ -5,13 +5,14 @@
 
 
 <div class="cm-simple-slider">
-	<div class="simple-slider" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}" 
+	<div class="simple-slider {% if module.module_settings.card_settings.enable_gradient_outline %}gradient-border{% endif %}" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}" 
 			 {% endif %} data-aos-delay="100">
 		<div class="card_wrp">
 			<div id="splide" class="splide">
 				<div class="splide__track">
 					<ul class="splide__list">
 						{% for item in module.card_item %}
+            {% if item.image_field.src || item.icon || item.quote || item.title ||item.designation %}
 						<li class="splide__slide card-item col col-12 item-{{loop.index}}">
 							<div class="card-inner-item">
 								<div class="card-cont">  
@@ -67,6 +68,7 @@
 								</div> <!-- .card-cont -->
 							</div> 
 						</li>
+            {% endif %}
 						{% endfor %}
 					</ul>
 				</div>
@@ -118,15 +120,30 @@
 		{% if module.module_settings.card_settings.enable_shadow %}
 		box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
 		{% endif %}
+    {% if module.module_settings.card_settings.enable_gradient_outline %}
+    padding:4px;
+    {% endif %}
 	}
 	.{{name}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider *{
 		color: rgba({{ module.module_settings.card_settings.content_color.color|convert_rgb}},{{ module.module_settings.card_settings.content_color.opacity * 0.01}});
 	}
 
 		.u4m-simple-slider .page-center .cm-simple-slider .simple-slider .svgShape svg rect {
-    fill: rgba({{ module.module_settings.shpave_color.color|convert_rgb}},{{ module.module_settings.shpave_color.opacity * 0.01}});
+    fill: rgba({{ module.module_settings.shape_color.color|convert_rgb}},{{ module.module_settings.shape_color.opacity * 0.01}});
 }
-	}
+	.{{name}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider.gradient-border {
+  position: relative;
+  border-radius: {{ module.module_settings.card_settings.corner_radius }}px;
+  background: linear-gradient(to right, #D0DD28, #536C5F);
+}
+
+.{{name}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider.gradient-border > .card_wrp {
+  border-radius: {{ module.module_settings.card_settings.corner_radius }}px;
+  height: 100%;
+  	background-color: rgba({{ module.module_settings.card_settings.background_color.color|convert_rgb}},{{ module.module_settings.card_settings.background_color.opacity * 0.01}});
+      padding: 40px 10px;
+}
+  
 </style>
 {% end_require_css%}
 
@@ -135,7 +152,7 @@
 	document.addEventListener('DOMContentLoaded', function () {
 		new Splide('.{{name}} .splide', {
 							 type: 'loop',
-							 perPage: {{ module.module_settings.slider_options.slides_per_view }},
+							 perPage: 1,
 							 perMove: {{ module.module_settings.slider_options.slides_per_scroll }}, 
 							 {% if module.module_settings.slider_options.autoplay %}
 							 autoplay: true,
