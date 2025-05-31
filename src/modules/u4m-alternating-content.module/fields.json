@@ -339,70 +339,6 @@
     "display_width" : null,
     "default" : "image"
   }, {
-    "id" : "e429959c-709d-e33b-4f21-dc907a035ca9",
-    "name" : "select_play_icon_type",
-    "label" : "Select Play Icon Type",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "media_section.media_type",
-      "controlling_value_regex" : "video",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "icon", "Icon" ], [ "image", "Image" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null
-  }, {
-    "id" : "aa8dcbd3-cfd3-f33d-6882-62582dfff02b",
-    "name" : "icon_field",
-    "label" : "Icon",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "media_section.select_play_icon_type",
-      "controlling_value_regex" : "icon",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "icon_set" : "fontawesome-5.14.0",
-    "type" : "icon",
-    "display_width" : null,
-    "default" : { }
-  }, {
-    "id" : "5c5a2f15-7253-a8ac-f71a-436d77543f51",
-    "name" : "icon_image",
-    "label" : "Icon Image",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "media_section.select_play_icon_type",
-      "controlling_value_regex" : "image",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "responsive" : true,
-    "resizable" : true,
-    "show_loading" : false,
-    "type" : "image",
-    "display_width" : null,
-    "default" : {
-      "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
-    }
-  }, {
     "id" : "79fca6aa-3562-0806-3197-04588f0386fb",
     "name" : "image_content",
     "label" : "Image Content",
@@ -423,7 +359,7 @@
       "required" : false,
       "locked" : false,
       "responsive" : true,
-      "resizable" : true,
+      "resizable" : false,
       "show_loading" : false,
       "type" : "image",
       "display_width" : null,
@@ -436,69 +372,6 @@
         "height" : 500,
         "max_width" : 800,
         "max_height" : 500
-      }
-    }, {
-      "id" : "7f6e3ea6-0dca-b586-aba0-3152ca2f96b2",
-      "name" : "image_border_radius",
-      "label" : "Image Border Radius",
-      "required" : false,
-      "locked" : false,
-      "children" : [ {
-        "id" : "38d2d507-00ce-ecab-be89-335564db3884",
-        "name" : "top_left_border_radius",
-        "label" : "Top Left Border Radius",
-        "required" : false,
-        "locked" : false,
-        "display" : "text",
-        "step" : 1,
-        "type" : "number",
-        "display_width" : null,
-        "default" : 24
-      }, {
-        "id" : "98a41cb7-e0be-1147-7806-9980058f36c8",
-        "name" : "top_right_border_radius",
-        "label" : "Top Right Border Radius",
-        "required" : false,
-        "locked" : false,
-        "display" : "text",
-        "step" : 1,
-        "type" : "number",
-        "display_width" : null,
-        "default" : 24
-      }, {
-        "id" : "8513b43e-957a-c2d6-ebce-623a42356481",
-        "name" : "bottom_left_border_radius",
-        "label" : "Bottom Left Border Radius",
-        "required" : false,
-        "locked" : false,
-        "display" : "text",
-        "step" : 1,
-        "suffix" : "",
-        "type" : "number",
-        "display_width" : null,
-        "default" : 24
-      }, {
-        "id" : "c3b0c0c4-defe-9503-9f1e-232b38080d24",
-        "name" : "bottom_right_border_radius",
-        "label" : "Bottom Right Border Radius",
-        "required" : false,
-        "locked" : false,
-        "display" : "text",
-        "step" : 1,
-        "type" : "number",
-        "display_width" : null,
-        "default" : 24
-      } ],
-      "tab" : "CONTENT",
-      "expanded" : false,
-      "group_occurrence_meta" : null,
-      "type" : "group",
-      "display_width" : null,
-      "default" : {
-        "top_left_border_radius" : 24,
-        "top_right_border_radius" : 24,
-        "bottom_left_border_radius" : 24,
-        "bottom_right_border_radius" : 24
       }
     }, {
       "id" : "42ed0fe1-a443-11de-491e-3e6078927b88",
@@ -524,6 +397,14 @@
       "label" : "Shape Color",
       "required" : false,
       "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "media_section.image_content.include_shape",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
       "type" : "color",
       "display_width" : null,
       "default" : {
@@ -547,12 +428,6 @@
         "max_width" : 800,
         "max_height" : 500
       },
-      "image_border_radius" : {
-        "top_left_border_radius" : 24,
-        "top_right_border_radius" : 24,
-        "bottom_left_border_radius" : 24,
-        "bottom_right_border_radius" : 24
-      },
       "include_shape" : true,
       "shape_color" : {
         "color" : "#D0DD28",
@@ -574,6 +449,75 @@
       "access" : null
     },
     "children" : [ {
+      "id" : "e429959c-709d-e33b-4f21-dc907a035ca9",
+      "name" : "select_play_icon_type",
+      "label" : "Select Play Icon Type",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "media_section.media_type",
+        "controlling_value_regex" : "video",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "icon", "Icon" ], [ "image", "Image" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "icon"
+    }, {
+      "id" : "aa8dcbd3-cfd3-f33d-6882-62582dfff02b",
+      "name" : "icon_field",
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "media_section.video_content.select_play_icon_type",
+        "controlling_value_regex" : "icon",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "icon_set" : "fontawesome-5.14.0",
+      "type" : "icon",
+      "display_width" : null,
+      "default" : {
+        "name" : "play",
+        "unicode" : "f04b",
+        "type" : "SOLID"
+      }
+    }, {
+      "id" : "5c5a2f15-7253-a8ac-f71a-436d77543f51",
+      "name" : "icon_image",
+      "label" : "Icon Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "media_section.video_content.select_play_icon_type",
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }, {
       "id" : "8b9b8379-b777-599a-b168-f77182b226fe",
       "name" : "video_type",
       "label" : "Video Type",
@@ -585,7 +529,8 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "display_width" : null
+      "display_width" : null,
+      "default" : "external"
     }, {
       "id" : "055a8aa8-dfd8-c8c0-a08d-0e1286ea21bb",
       "name" : "poster_image",
@@ -593,15 +538,19 @@
       "required" : false,
       "locked" : false,
       "responsive" : true,
-      "resizable" : true,
+      "resizable" : false,
       "show_loading" : false,
       "type" : "image",
       "display_width" : null,
       "default" : {
         "size_type" : "auto",
-        "src" : "",
-        "alt" : null,
-        "loading" : "lazy"
+        "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/lineman.jpg",
+        "alt" : "Lineman",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 500,
+        "max_width" : 800,
+        "max_height" : 500
       }
     }, {
       "id" : "d76f53b9-cc2e-a4f9-117c-b63c6c9798f1",
@@ -645,7 +594,7 @@
       "picker" : "video",
       "id" : "e81c306f-7a9b-4c31-d044-ac775ea7905e",
       "name" : "file_field",
-      "label" : "File",
+      "label" : "Select Video",
       "required" : false,
       "locked" : false,
       "visibility" : {
@@ -677,11 +626,28 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
-      "poster_image" : {
+      "select_play_icon_type" : "icon",
+      "icon_field" : {
+        "name" : "play",
+        "unicode" : "f04b",
+        "type" : "SOLID"
+      },
+      "icon_image" : {
         "size_type" : "auto",
         "src" : "",
         "alt" : null,
         "loading" : "lazy"
+      },
+      "video_type" : "external",
+      "poster_image" : {
+        "size_type" : "auto",
+        "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/lineman.jpg",
+        "alt" : "Lineman",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 500,
+        "max_width" : 800,
+        "max_height" : 500
       },
       "embedded_url" : "https://player.vimeo.com/video/842733575",
       "include_popup" : false,
@@ -695,13 +661,6 @@
   "display_width" : null,
   "default" : {
     "media_type" : "image",
-    "icon_field" : { },
-    "icon_image" : {
-      "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
-    },
     "image_content" : {
       "image_field" : {
         "size_type" : "auto",
@@ -713,12 +672,6 @@
         "max_width" : 800,
         "max_height" : 500
       },
-      "image_border_radius" : {
-        "top_left_border_radius" : 24,
-        "top_right_border_radius" : 24,
-        "bottom_left_border_radius" : 24,
-        "bottom_right_border_radius" : 24
-      },
       "include_shape" : true,
       "shape_color" : {
         "color" : "#D0DD28",
@@ -726,11 +679,28 @@
       }
     },
     "video_content" : {
-      "poster_image" : {
+      "select_play_icon_type" : "icon",
+      "icon_field" : {
+        "name" : "play",
+        "unicode" : "f04b",
+        "type" : "SOLID"
+      },
+      "icon_image" : {
         "size_type" : "auto",
         "src" : "",
         "alt" : null,
         "loading" : "lazy"
+      },
+      "video_type" : "external",
+      "poster_image" : {
+        "size_type" : "auto",
+        "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/lineman.jpg",
+        "alt" : "Lineman",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 500,
+        "max_width" : 800,
+        "max_height" : 500
       },
       "embedded_url" : "https://player.vimeo.com/video/842733575",
       "include_popup" : false,
@@ -744,26 +714,37 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
-    "id" : "eaf66463-f286-e7f2-9341-89207d5e5043",
-    "name" : "container_border_radius",
-    "label" : "Container Border Radius",
+    "id" : "4c957eb4-9ac8-c80b-f07a-a5f78d60800a",
+    "name" : "select_content_background_color",
+    "label" : "Select Content Background Color",
     "required" : false,
     "locked" : false,
-    "display" : "text",
-    "step" : 1,
-    "type" : "number",
+    "display" : "select",
+    "choices" : [ [ "bright_green_bg", "Bright Green" ], [ "super_light_gray_bg", "Super Light Gray" ], [ "light_gray_bg", "Light Gray" ], [ "middle_green_bg", "Middle Green" ], [ "dark_green_bg", "Dark Green" ], [ "orange_bg", "Orange" ], [ "red_bg", "Red" ], [ "blue_bg", "Blue" ], [ "yellow_bg", "Yellow" ], [ "custom", "Custom" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
     "display_width" : null,
-    "default" : 24
+    "default" : "custom"
   }, {
-    "id" : "084261f6-e839-9595-8389-b8601755f9c6",
-    "name" : "content_background_color",
-    "label" : "Content Background Color",
+    "id" : "a0b5a4bf-d854-5cb9-520e-7013b299ec27",
+    "name" : "custom_color",
+    "label" : "Custom Color",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.select_content_background_color",
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "type" : "color",
     "display_width" : null,
     "default" : {
-      "color" : "#F5F7F7",
+      "color" : "#f5f7f7",
       "opacity" : 100
     }
   }, {
@@ -818,9 +799,9 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "container_border_radius" : 24,
-    "content_background_color" : {
-      "color" : "#F5F7F7",
+    "select_content_background_color" : "custom",
+    "custom_color" : {
+      "color" : "#f5f7f7",
       "opacity" : 100
     },
     "intro_content_alignment" : "left",
@@ -1368,7 +1349,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "theme"
+    "default" : "custom"
   }, {
     "id" : "2106c911-74cd-42f1-af9c-4ef05f436c77",
     "name" : "custom_container_size",
@@ -1387,7 +1368,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 870
+    "default" : 1293
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -1431,7 +1412,7 @@
       },
       "select_gradient" : "gradient1"
     },
-    "container_size" : "theme",
-    "custom_container_size" : 870
+    "container_size" : "custom",
+    "custom_container_size" : 1293
   }
 } ]
