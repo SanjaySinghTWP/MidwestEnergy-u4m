@@ -15,8 +15,11 @@
 			{% endfor %}
 		</ul>
 		{% for item in module.tab_items %}
-		<div class="tab_content_wrp  tab_content-{{loop.index}} {% if loop.first%} active {% endif%} " data="{{loop.index}}">
-			<div class="tab_content_inner">
+		<div class="tab_content_wrp  tab_content-{{loop.index}} {% if loop.first%} active mob-acc-active {% endif%} " data="{{loop.index}}">
+		<div class="mob_acc_wrp">
+		<a href="javascript:void(0)"class="accordion_title">{{ item.tab_title }}</a>
+		</div>
+		<div class="tab_content_inner">
 				<div class="flex_row ">
 					{% if item.left_column.content ||item.left_column.button_group %}
 					<div class="left-col col {{ item.number_of_columns }}">
@@ -150,9 +153,10 @@
 	const tabItem = document.querySelectorAll('.u4m-top-tabber .page-center .tabber_wrp .tab_row > li > a');
 	const tabContent = document.querySelectorAll('.u4m-top-tabber .page-center .tabber_wrp .tab_content_wrp');
 
+	// Desktop tab click
 	tabItem.forEach((item) => {
 		item.addEventListener('click', function (e) {
-			e.preventDefault(); 
+			e.preventDefault();
 			tabItem.forEach((elm) => {
 				elm.parentNode.classList.remove('active');
 			});
@@ -168,6 +172,39 @@
 			});
 		});
 	});
-</script>
+
+	// Accordion click (mobile only)
+	function setupAccordion() {
+		const accordion = document.querySelectorAll('.u4m-top-tabber .page-center .tabber_wrp .accordion_title');
+
+		accordion.forEach(item => {
+			item.addEventListener('click', function () {
+				// Mobile width check
+				if (window.innerWidth <= 767) {
+					const parent = item.closest('.tab_content_wrp');
+					
+					// Toggle clicked one
+					if (parent.classList.contains('mob-acc-active')) {
+						parent.classList.remove('mob-acc-active');
+					} else {
+						// Close all
+						document.querySelectorAll('.tab_content_wrp').forEach(el => {
+							el.classList.remove('mob-acc-active');
+						});
+						parent.classList.add('mob-acc-active');
+					}
+				}
+			});
+		});
+	}
+
+	// Init on load
+	setupAccordion();
+
+	// Optional: reinit on resize (in case of SPA or resizes)
+	window.addEventListener('resize', function () {
+		// If needed, rebind or recheck
+	});
+</script>	
 
 {% end_require_js%}
