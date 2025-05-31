@@ -1,16 +1,12 @@
 @import "../../css/_module-imports";
 
 /* ===== video column style ==== */
+
 .u4m-rich-text {
     padding-left: 80rem;
     padding-right: 80rem;
     position: relative;
     z-index: 9;
-
-    @include tabletvert {
-        padding-left: 20rem;
-        padding-right: 20rem;
-    }
 
     .intro_content {
         margin-left: auto;
@@ -31,6 +27,26 @@
     .page-center {
         max-width: unset;
         padding: 0;
+
+        .media-column {
+            .image {
+                img {
+                    min-width: 1000rem;
+                    min-height: 373rem;
+                    max-height: 373rem;
+                    object-fit: cover;
+
+                    @include tablet {
+                        min-width: unset;
+                    }
+
+                    @include tabletvert {
+                        min-height: 250rem;
+                        max-height: 250rem;
+                    }
+                }
+            }
+        }
     }
 
     .media-column {
@@ -43,6 +59,10 @@
                 }
 
                 .inner_spacer {
+                    position: relative;
+                    padding-bottom: 75%;
+                    overflow: hidden;
+
                     .poster_image {
                         position: absolute;
                         top: 0;
@@ -54,10 +74,6 @@
                         z-index: 9;
                         transition: 0.2s linear;
                     }
-
-                    position: relative;
-                    padding-bottom: 75%;
-                    overflow: hidden;
                 }
             }
         }
@@ -90,6 +106,7 @@
         video {
             width: 100%;
             height: 100%;
+            -o-object-fit: cover;
             object-fit: cover;
             position: absolute;
             top: 0;
@@ -136,10 +153,19 @@
             border-radius: 100%;
             cursor: pointer;
             transition: 0.2s linear;
+            width: 60rem;
+            height: 60rem;
+            border-radius: 100rem;
+            background: $white;
 
             svg {
                 width: 100%;
                 height: 100%;
+                width: 30rem;
+                height: 30rem;
+                position: relative;
+                top: 4rem;
+                left: 0rem;
             }
 
             img {
@@ -192,7 +218,7 @@
             max-width: 900rem;
             transform: translateY(100rem);
             opacity: 0;
-            transition: .4s ease .2s;
+            transition: 0.4s ease 0.2s;
             width: 100%;
         }
 
@@ -255,17 +281,12 @@
     }
 }
 
-.u4m-rich-text.reverse-text {
-    .bg_overlay.custom {
-        background-color: $dark_black;
-    }
-}
-
 .adv_video_module {
     .cm_vb {
         iframe {
             width: 100%;
             height: 100%;
+            -o-object-fit: cover;
             object-fit: cover;
             position: absolute;
             top: 0;
@@ -277,4 +298,11 @@
 
 .popup_open {
     overflow: hidden;
+}
+
+@media (max-width: 768rem) {
+    .u4m-rich-text {
+        padding-left: 20rem;
+        padding-right: 20rem;
+    }
 }

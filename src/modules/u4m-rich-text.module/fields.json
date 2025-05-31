@@ -319,16 +319,6 @@
     } ]
   }
 }, {
-  "id" : "a3e0c954-550d-2b27-9afe-4ca19452ae0a",
-  "name" : "enable_media",
-  "label" : "Enable Media",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : true
-}, {
   "id" : "2528c1d0-6c0f-b196-1841-83ad8ad8364e",
   "name" : "media_section",
   "label" : "Media Section",
@@ -336,7 +326,7 @@
   "locked" : false,
   "visibility" : {
     "controlling_field" : null,
-    "controlling_field_path" : "enable_media",
+    "controlling_field_path" : "module_settings.enable_media",
     "controlling_value_regex" : "true",
     "property" : null,
     "operator" : "EQUAL",
@@ -356,72 +346,6 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "image"
-  }, {
-    "id" : "011590d7-1c70-a3e5-3c8a-637ea5970828",
-    "name" : "select_play_icon_type",
-    "label" : "Select Play Icon Type",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "media_section.media_type",
-      "controlling_value_regex" : "video",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "icon", "Icon" ], [ "image", "Image" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null
-  }, {
-    "id" : "be58c914-73fe-cd82-9985-d836de5c0e06",
-    "name" : "icon_field",
-    "label" : "Icon",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "media_section.select_play_icon_type",
-      "controlling_value_regex" : "icon",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "icon_set" : "fontawesome-5.14.0",
-    "type" : "icon",
-    "display_width" : null,
-    "default" : {
-      "name" : ""
-    }
-  }, {
-    "id" : "1bee98ba-e0cd-e21c-e5f3-b768399532a0",
-    "name" : "icon_image",
-    "label" : "Icon Image",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "media_section.select_play_icon_type",
-      "controlling_value_regex" : "image",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "responsive" : true,
-    "resizable" : true,
-    "show_loading" : false,
-    "type" : "image",
-    "display_width" : null,
-    "default" : {
-      "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
-    }
   }, {
     "id" : "68044ec7-46f0-ec73-24a0-729ff0e93713",
     "name" : "image_content",
@@ -443,36 +367,17 @@
       "required" : false,
       "locked" : false,
       "responsive" : true,
-      "resizable" : true,
+      "resizable" : false,
       "show_loading" : false,
       "type" : "image",
       "display_width" : null,
       "default" : {
         "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/MidwestEnergy-u4m/images/f06887f7e828f74fc5480924aea4e4556b8ab720.jpg",
-        "alt" : "f06887f7e828f74fc5480924aea4e4556b8ab720",
+        "alt" : "Lineman",
         "width" : 800,
         "height" : 500,
         "max_width" : 800,
         "max_height" : 500
-      }
-    }, {
-      "id" : "8d856f97-324f-35b7-e241-961901583f1f",
-      "name" : "image_link",
-      "label" : "Image Link",
-      "required" : false,
-      "locked" : false,
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
-      "show_advanced_rel_options" : false,
-      "type" : "link",
-      "display_width" : null,
-      "default" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
       }
     } ],
     "tab" : "CONTENT",
@@ -483,20 +388,11 @@
     "default" : {
       "image_field" : {
         "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/MidwestEnergy-u4m/images/f06887f7e828f74fc5480924aea4e4556b8ab720.jpg",
-        "alt" : "f06887f7e828f74fc5480924aea4e4556b8ab720",
+        "alt" : "Lineman",
         "width" : 800,
         "height" : 500,
         "max_width" : 800,
         "max_height" : 500
-      },
-      "image_link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
       }
     }
   }, {
@@ -514,6 +410,75 @@
       "access" : null
     },
     "children" : [ {
+      "id" : "011590d7-1c70-a3e5-3c8a-637ea5970828",
+      "name" : "select_play_icon_type",
+      "label" : "Select Play Icon Type",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "media_section.media_type",
+        "controlling_value_regex" : "video",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "icon", "Icon" ], [ "image", "Image" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "icon"
+    }, {
+      "id" : "be58c914-73fe-cd82-9985-d836de5c0e06",
+      "name" : "icon_field",
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "media_section.video_content.select_play_icon_type",
+        "controlling_value_regex" : "icon",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "icon_set" : "fontawesome-5.14.0",
+      "type" : "icon",
+      "display_width" : null,
+      "default" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "REGULAR"
+      }
+    }, {
+      "id" : "1bee98ba-e0cd-e21c-e5f3-b768399532a0",
+      "name" : "icon_image",
+      "label" : "Icon Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "media_section.video_content.select_play_icon_type",
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }, {
       "id" : "f179b61e-104c-8889-05bb-9b75e10471ba",
       "name" : "video_type",
       "label" : "Video Type",
@@ -534,15 +499,19 @@
       "required" : false,
       "locked" : false,
       "responsive" : true,
-      "resizable" : true,
+      "resizable" : false,
       "show_loading" : false,
       "type" : "image",
       "display_width" : null,
       "default" : {
         "size_type" : "auto",
-        "src" : "",
-        "alt" : null,
-        "loading" : "lazy"
+        "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/Media3.png",
+        "alt" : "Media3",
+        "loading" : "lazy",
+        "width" : 563,
+        "height" : 563,
+        "max_width" : 563,
+        "max_height" : 563
       }
     }, {
       "id" : "6eb12f98-d655-ffcc-ce62-18f4e2a570af",
@@ -586,7 +555,7 @@
       "picker" : "video",
       "id" : "d8f62628-ba28-a5ec-d53c-fa3c7c7c327c",
       "name" : "file_field",
-      "label" : "File",
+      "label" : "Select Video",
       "required" : false,
       "locked" : false,
       "visibility" : {
@@ -610,7 +579,7 @@
       "suffix" : "%",
       "type" : "number",
       "display_width" : null,
-      "default" : 75
+      "default" : 37.3
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -618,16 +587,32 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
-      "video_type" : "external",
-      "poster_image" : {
+      "select_play_icon_type" : "icon",
+      "icon_field" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "REGULAR"
+      },
+      "icon_image" : {
         "size_type" : "auto",
         "src" : "",
         "alt" : null,
         "loading" : "lazy"
       },
+      "video_type" : "external",
+      "poster_image" : {
+        "size_type" : "auto",
+        "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/Media3.png",
+        "alt" : "Media3",
+        "loading" : "lazy",
+        "width" : 563,
+        "height" : 563,
+        "max_width" : 563,
+        "max_height" : 563
+      },
       "embedded_url" : "https://player.vimeo.com/video/842733575",
       "include_popup" : false,
-      "video_height" : 75
+      "video_height" : 37.3
     }
   } ],
   "tab" : "CONTENT",
@@ -637,45 +622,43 @@
   "display_width" : null,
   "default" : {
     "media_type" : "image",
-    "icon_field" : {
-      "name" : ""
-    },
-    "icon_image" : {
-      "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
-    },
     "image_content" : {
       "image_field" : {
         "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/MidwestEnergy-u4m/images/f06887f7e828f74fc5480924aea4e4556b8ab720.jpg",
-        "alt" : "f06887f7e828f74fc5480924aea4e4556b8ab720",
+        "alt" : "Lineman",
         "width" : 800,
         "height" : 500,
         "max_width" : 800,
         "max_height" : 500
-      },
-      "image_link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
       }
     },
     "video_content" : {
-      "video_type" : "external",
-      "poster_image" : {
+      "select_play_icon_type" : "icon",
+      "icon_field" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "REGULAR"
+      },
+      "icon_image" : {
         "size_type" : "auto",
         "src" : "",
         "alt" : null,
         "loading" : "lazy"
       },
+      "video_type" : "external",
+      "poster_image" : {
+        "size_type" : "auto",
+        "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/Media3.png",
+        "alt" : "Media3",
+        "loading" : "lazy",
+        "width" : 563,
+        "height" : 563,
+        "max_width" : 563,
+        "max_height" : 563
+      },
       "embedded_url" : "https://player.vimeo.com/video/842733575",
       "include_popup" : false,
-      "video_height" : 75
+      "video_height" : 37.3
     }
   }
 }, {
@@ -726,6 +709,16 @@
     "display_width" : null,
     "default" : 822
   }, {
+    "id" : "a3e0c954-550d-2b27-9afe-4ca19452ae0a",
+    "name" : "enable_media",
+    "label" : "Enable Media",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
     "id" : "d6ebe062-20c0-9cc5-4fc3-ef8b7a16b4e3",
     "name" : "include_animation",
     "label" : "Include Animation",
@@ -766,6 +759,7 @@
     "intro_content_alignment" : "center",
     "intro_content_size" : "theme",
     "intro_content_width" : 822,
+    "enable_media" : true,
     "include_animation" : false
   }
 }, {

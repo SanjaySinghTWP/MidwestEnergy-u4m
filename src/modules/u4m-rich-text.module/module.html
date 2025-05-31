@@ -3,199 +3,179 @@
 {{ macros.introGroup(module.intro_content, module.module_settings) }}
 </div>
 <div class="row" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
-{% endif %} data-aos-delay="100">
-	{% if module.enable_media %}
-	<div class="media-column">
-		{% if module.media_section.media_type == "image" %}
-		<div class="image">
-			{% if module.media_section.image_content.image_field.src %}
-			{% set href = module.media_section.image_content.image_link.url.href %}
-			{% if module.media_section.image_content.image_link.url.type is equalto "EMAIL_ADDRESS" %}
-			{% set href = "mailto:" + href %}
-			{% endif %}
-			<a
-				 {% if module.media_section.image_content.image_link.url.type is equalto "CALL_TO_ACTION"  %}
-				 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-				 {% else %}
-				 href="{{ href|escape_url }}"
-				 {% endif %}
-				 {% if module.media_section.image_content.image_link.open_in_new_tab %}
-				 target="_blank"
-				 {% endif %}
-				 {% if module.media_section.image_content.image_link.rel %}
-				 rel="{{ module.media_section.image_content.image_link.rel|escape_attr }}"
-				 {% endif %}
-				 >
-				<img src="{{ module.media_section.image_content.image_field.src }}" alt="{{ module.media_section.image_content.image_field.alt }}">
-			</a>
-			{% endif %}
-		</div>
-		{% endif %}
+     {% endif %} data-aos-delay="100">
+  {% if module.module_settings.enable_media %}
+  <div class="media-column">
+    {% if module.media_section.media_type == "image" %}
+    <div class="image">
+      <img src="{{ module.media_section.image_content.image_field.src }}" alt="{{ module.media_section.image_content.image_field.alt }}">
+    </div>
+    {% endif %}
 
-		{% if module.media_section.media_type == "video" %}
-		<div class="main-vid-wrap">
+    {% if module.media_section.media_type == "video" %}
+    <div class="main-vid-wrap">
 
-			<div class="video_container">
-				{% if module.media_section.video_content.video_type == "external" %}
-				<div class="iframe_box cm_vb">
-					<div class="inner_spacer" style="padding-bottom: {{ module.media_section.video_content.video_height }}%;">
-						{% if module.media_section.video_content.poster_image.src %}
-						<div class="poster_image" style="background-image: url({{ module.media_section.video_content.poster_image.src }})"></div>
-						{% endif %}
+      <div class="video_container">
+        {% if module.media_section.video_content.video_type == "external" %}
+        <div class="iframe_box cm_vb">
+          <div class="inner_spacer" style="padding-bottom: {{ module.media_section.video_content.video_height }}%;">
+            {% if module.media_section.video_content.poster_image.src %}
+            <div class="poster_image" style="background-image: url({{ module.media_section.video_content.poster_image.src }})"></div>
+            {% endif %}
 
-						{% if module.media_section.video_content.include_popup %}
-						<div class="vid_trigger bg_secondary pop_trigger" data-id="{{name}}_trigger">
-							<div class="vid_icn">
-								{% if module.media_section.select_play_icon_type == 'icon' %}
-								{% if module.media_section.icon_field.name %}
-								{% icon
-	name="{{ module.media_section.icon_field.name }}"
-	style="{{ module.media_section.icon_field.type }}"
-	unicode="{{ module.media_section.icon_field.unicode }}"
-	icon_set="{{ module.media_section.icon_field.icon_set }}"
-%}       
-								{% endif %}             
-								{% elif module.media_section.select_play_icon_type =='image' %}
-								{% if module.media_section.icon_image.src %}
-								<img src="{{ module.media_section.icon_image.src }}" alt="{{ module.media_section.icon_image.alt }}" title="{{ module.media_section.icon_image.alt }}">
-								{% endif %}
-								{% endif %}          
-							</div>
-						</div>
-						{% else %}
-						{% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}
-						<div class="vid_trigger bg_secondary play_trigger">
-							<div class="vid_icn">
-								{% if module.media_section.select_play_icon_type =='icon' %}
-								{% if module.media_section.icon_field.name %}
-								{% icon
-	name="{{ module.media_section.icon_field.name }}"
-	style="{{ module.media_section.icon_field.type }}"
-	unicode="{{ module.media_section.icon_field.unicode }}"
-	icon_set="{{ module.media_section.icon_field.icon_set }}"
-%}       
-								{% endif %}                
-								{% elif module.media_section.select_play_icon_type =='image' %}
-								{% if module.media_section.icon_image.src %}
-								<img src="{{ module.media_section.icon_image.src }}" alt="{{ module.media_section.icon_image.alt }}" title="{{ module.media_section.icon_image.alt }}">
-								{% endif %}
-								{% endif %}
-							</div>
-						</div>
-						{% endif %}
-						{% if module.media_section.video_content.embedded_url is string_containing "youtube.com" %}
-						{% if module.media_section.video_content.poster_image.src %}
-						<iframe {% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}src="" data-{% endif %}src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay={% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}1{% else %}0{% endif %}&loop=0&mute=1&showinfo=0&controls=1&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
-						{% else %}
-						<iframe src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=0&loop=0&mute=1&showinfo=0&controls=1&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&mute=1&showinfo=0&controls=1&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
-						{% endif %}
-
-						{% else %}
-						{% if module.media_section.video_content.poster_image.src %}
-						<iframe {% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}src="" data-{% endif %}src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay={% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}1{% else %}0{% endif %}&loop=0&autopause=0&muted=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video"></iframe>
-						{% else %}
-						<iframe src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=0&loop=0&autopause=0&muted=1&title=0&byline=0&portrait=0" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=0&loop=0&autopause=0&muted=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video"></iframe>
-						{% endif %}
-
-						{% endif %}
-						{% endif %}
-
-					</div>
-				</div>
-				{% endif  %}
-				{% if module.media_section.video_content.video_type == "file" %}
-				<div class="video_box cm_vb">
-					<div class="inner_spacer" style="padding-bottom: {{ module.media_section.video_content.video_height }}%;">
-						{% if module.media_section.video_content.poster_image.src %}
-						<div class="poster_image" style="background-image: url({{ module.media_section.video_content.poster_image.src }})"></div>
-						{% endif %}
-
-						{% if module.media_section.video_content.include_popup %}
-						<div class="vid_trigger bg_secondary pop_trigger" data-id="{{name}}_trigger">
-							<div class="vid_icn">
-								{% if module.media_section.select_play_icon_type =='icon' %}
-								{% if module.media_section.icon_field.name %}
-							{% icon
-	name="{{ module.media_section.icon_field.name }}"
-	style="{{ module.media_section.icon_field.type }}"
-	unicode="{{ module.media_section.icon_field.unicode }}"
-	icon_set="{{ module.media_section.icon_field.icon_set }}"
+            {% if module.media_section.video_content.include_popup %}
+            <div class="vid_trigger bg_secondary pop_trigger" data-id="{{name}}_trigger">
+              <div class="vid_icn">
+                {% if module.media_section.video_content.select_play_icon_type == 'icon' %}
+                {% if module.media_section.video_content.icon_field.name %}
+                {% icon
+	name="{{ module.media_section.video_content.icon_field.name }}"
+	style="{{ module.media_section.video_content.icon_field.type }}"
+	unicode="{{ module.media_section.video_content.icon_field.unicode }}"
+	icon_set="{{ module.media_section.video_content.icon_field.icon_set }}"
 %}      
-								{% endif %}               
-								{% elif module.media_section.select_play_icon_type =='image' %}
-								{% if module.media_section.icon_image.src %}
-								<img src="{{ module.media_section.icon_image.src }}" alt="{{ module.media_section.icon_image.alt }}" title="{{ module.media_section.icon_image.alt }}">
-								{% endif %}
-								{% endif %}
-							</div>
-						</div>
-						{% else %}
-						{% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}
-						<div class="vid_trigger bg_secondary play_trigger" {% if module.right_column.overlay_color.opacity == 0 and not module.right_column.select_icon_type %}style="display:none"{% endif%}>
-							<div class="vid_icn">
-								{% if module.media_section.select_play_icon_type =='icon' %}
-								{% if module.media_section.icon_field.name %}
-								{% icon
-	name="{{ module.media_section.icon_field.name }}"
-	style="{{ module.media_section.icon_field.type }}"
-	unicode="{{ module.media_section.icon_field.unicode }}"
-	icon_set="{{ module.media_section.icon_field.icon_set }}"
-%}     
-								{% endif %}
-								{% elif module.media_section.select_play_icon_type =='image' %}
-								{% if module.media_section.icon_image.src %}
-								<img src="{{ module.media_section.icon_image.src }}" alt="{{ module.media_section.icon_image.alt }}" title="{{ module.media_section.icon_image.alt }}">
-								{% endif %}
-								{% endif %}
-							</div>
-						</div>
-						{% endif %}
-
-						{% if module.media_section.video_content.poster_image.src %}
-						<video {% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}data-{% endif %}src="{{ module.media_section.video_content.file_field }}"{% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %} autoplay{% endif %} controls></video>
-						{% else %}
-						<video src="{{ module.media_section.video_content.file_field }}" data-src="{{ module.media_section.video_content.file_field }}" controls></video>
-						{% endif %}
-
-						{% endif %}
-					</div>
-				</div>
-				{% endif  %}
-			</div>
-
-
-
-		</div>
-		{% endif %}
-  
-		 {% if module.media_section.video_content.include_popup %}
-          <div class="vid-popup-outer">
-            <div class="video_popup_modal" id="{{name}}_trigger">
-              <div class="modal_video_container">
-                <div class="modal_video_box">
-                  <div class="inner_spacer" style="padding-bottom: {{ module.media_section.video_content.video_height }}%;">
-                    {% if module.media_section.video_content.video_type == "external" %}
-                    {% if module.media_section.video_content.embedded_url is string_containing "youtube.com" %}
-                    <iframe src="" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&mute=1&showinfo=0&controls=1&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
-                    {% else %}
-                    <iframe src="" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&muted=1&autopause=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video"></iframe>
-                    {% endif %}
-                    {% endif  %}
-
-                    {% if module.media_section.video_content.video_type == "file" %}
-                    <video data-src="{{ module.media_section.video_content.file_field }}" autoplay controls></video>
-                    {% endif %}
-                  </div>
-                </div>
-              </div>
-              <div class="closeIcon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path></svg>
+                {% endif %}             
+                {% elif module.media_section.video_content.select_play_icon_type =='image' %}
+                {% if module.media_section.video_content.icon_image.src %}
+                <img src="{{ module.media_section.video_content.icon_image.src }}" alt="{{ module.media_section.video_content.icon_image.alt }}" title="{{ module.media_section.video_content.icon_image.alt }}">
+                {% endif %}
+                {% endif %}          
               </div>
             </div>
-          </div>
-          {% endif %}
+            {% else %}
+            {% if module.media_section.video_content.poster_image.src or module.media_section.select_play_icon_type %}
+            <div class="vid_trigger bg_secondary play_trigger">
+              <div class="vid_icn">
+                {% if module.media_section.video_content.select_play_icon_type =='icon' %}
+                {% if module.media_section.video_content.icon_field.name %}
+                {% icon
+	name="{{ module.media_section.video_content.icon_field.name }}"
+	style="{{ module.media_section.video_content.icon_field.type }}"
+	unicode="{{ module.media_section.video_content.icon_field.unicode }}"
+	icon_set="{{ module.media_section.video_content.icon_field.icon_set }}"
+%}     
+                {% endif %}                
+                {% elif module.media_section.video_content.select_play_icon_type =='image' %}
+                {% if module.media_section.video_content.icon_image.src %}
+                <img src="{{ module.media_section.video_content.icon_image.src }}" alt="{{ module.media_section.video_content.icon_image.alt }}" title="{{ module.media_section.video_content.icon_image.alt }}">
+                {% endif %}
+                {% endif %}
+              </div>
+            </div>
+            {% endif %}
+            {% if module.media_section.video_content.embedded_url is string_containing "youtube.com" %}
+            {% if module.media_section.video_content.poster_image.src %}
+            <iframe {% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %}src="" data-{% endif %}src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay={% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %}1{% else %}0{% endif %}&loop=0&mute=1&showinfo=0&controls=0&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
+            {% else %}
+            <iframe src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=0&loop=0&mute=1&showinfo=0&controls=0&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&mute=1&showinfo=0&controls=0&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
+            {% endif %}
 
-	</div>
+            {% else %}
+            {% if module.media_section.video_content.poster_image.src %}
+            <iframe {% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %}src="" data-{% endif %}src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay={% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %}1{% else %}0{% endif %}&loop=0&autopause=0&muted=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video"></iframe>
+            {% else %}
+            <iframe src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=0&loop=0&autopause=0&muted=1&title=0&byline=0&portrait=0" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=0&loop=0&autopause=0&muted=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video"></iframe>
+            {% endif %}
+
+            {% endif %}
+            {% endif %}
+
+          </div>
+        </div>
+        {% endif  %}
+        {% if module.media_section.video_content.video_type == "file" %}
+        <div class="video_box cm_vb">
+          <div class="inner_spacer" style="padding-bottom: {{ module.media_section.video_content.video_height }}%;">
+            {% if module.media_section.video_content.poster_image.src %}
+            <div class="poster_image" style="background-image: url({{ module.media_section.video_content.poster_image.src }})"></div>
+            {% endif %}
+
+            {% if module.media_section.video_content.include_popup %}
+            <div class="vid_trigger bg_secondary pop_trigger" data-id="{{name}}_trigger">
+              <div class="vid_icn">
+                {% if module.media_section.video_content.select_play_icon_type =='icon' %}
+                {% if module.media_section.video_content.icon_field.name %}
+                {% icon
+	name="{{ module.media_section.video_content.icon_field.name }}"
+	style="{{ module.media_section.video_content.icon_field.type }}"
+	unicode="{{ module.media_section.video_content.icon_field.unicode }}"
+	icon_set="{{ module.media_section.video_content.icon_field.icon_set }}"
+%}    
+                {% endif %}               
+                {% elif module.media_section.video_content.select_play_icon_type =='image' %}
+                {% if module.media_section.video_content.icon_image.src %}
+                <img src="{{ module.media_section.video_content.icon_image.src }}" alt="{{ module.media_section.video_content.icon_image.alt }}" title="{{ module.media_section.video_content.icon_image.alt }}">
+                {% endif %}
+                {% endif %}
+              </div>
+            </div>
+            {% else %}
+            {% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %}
+            <div class="vid_trigger bg_secondary play_trigger" {% if module.right_column.overlay_color.opacity == 0 and not module.right_column.select_icon_type %}style="display:none"{% endif%}>
+              <div class="vid_icn">
+                {% if module.media_section.video_content.select_play_icon_type =='icon' %}
+                {% if module.media_section.video_content.icon_field.name %}
+                {% icon
+	name="{{ module.media_section.video_content.icon_field.name }}"
+	style="{{ module.media_section.video_content.icon_field.type }}"
+	unicode="{{ module.media_section.video_content.icon_field.unicode }}"
+	icon_set="{{ module.media_section.video_content.icon_field.icon_set }}"
+%} 
+                {% endif %}
+                {% elif module.media_section.video_content.select_play_icon_type =='image' %}
+                {% if module.media_section.video_content.icon_image.src %}
+                <img src="{{ module.media_section.video_content.icon_image.src }}" alt="{{ module.media_section.video_content.icon_image.alt }}" title="{{ module.media_section.video_content.icon_image.alt }}">
+                {% endif %}
+                {% endif %}
+              </div>
+            </div>
+            {% endif %}
+
+            {% if module.media_section.video_content.poster_image.src %}
+            <video {% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %}data-{% endif %}src="{{ module.media_section.video_content.file_field }}"{% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %} autoplay{% endif %}></video>
+            {% else %}
+            <video src="{{ module.media_section.video_content.file_field }}" data-src="{{ module.media_section.video_content.file_field }}"></video>
+            {% endif %}
+
+            {% endif %}
+          </div>
+        </div>
+        {% endif  %}
+      </div>
+
+
+
+    </div>
+    {% endif %}
+
+    {% if module.media_section.video_content.include_popup %}
+    <div class="vid-popup-outer">
+      <div class="video_popup_modal" id="{{name}}_trigger">
+        <div class="modal_video_container">
+          <div class="modal_video_box">
+            <div class="inner_spacer" style="padding-bottom: {{ module.media_section.video_content.video_height }}%;">
+              {% if module.media_section.video_content.video_type == "external" %}
+              {% if module.media_section.video_content.embedded_url is string_containing "youtube.com" %}
+              <iframe src="" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&mute=1&showinfo=0&controls=0&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
+              {% else %}
+              <iframe src="" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&muted=1&autopause=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video"></iframe>
+              {% endif %}
+              {% endif  %}
+
+              {% if module.media_section.video_content.video_type == "file" %}
+              <video data-src="{{ module.media_section.video_content.file_field }}" autoplay></video>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="closeIcon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path></svg>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
 
 </div>
 {% endif %}
@@ -204,95 +184,95 @@
 </section>
 
 {% require_js %}
-        <script>
-          {% if module.media_section.media_type == "video" %}
-          var videoContainer = document.querySelectorAll('.u4m-rich-text.{{name}}');
-                                                         if(videoContainer){
-            var getIframeTrigger = document.querySelectorAll('.{{name}} .iframe_box .play_trigger');
-                                                             Array.prototype.slice.call(getIframeTrigger).forEach(function(ele, index) {
-              ele.addEventListener('click', function(e) {
-                var getIframeSrc = ele.nextElementSibling.getAttribute('data-src');
-                ele.nextElementSibling.setAttribute('src',getIframeSrc);
-                ele.parentNode.parentNode.classList.add('activeVideo');
-              });
-            });
+<script>
+  {% if module.media_section.media_type == "video" %}
+  var videoContainer = document.querySelectorAll('.u4m-rich-text.{{name}}');
+                                                 if(videoContainer){
+    var getIframeTrigger = document.querySelectorAll('.{{name}} .iframe_box .play_trigger');
+                                                     Array.prototype.slice.call(getIframeTrigger).forEach(function(ele, index) {
+      ele.addEventListener('click', function(e) {
+        var getIframeSrc = ele.nextElementSibling.getAttribute('data-src');
+        ele.nextElementSibling.setAttribute('src',getIframeSrc);
+        ele.parentNode.parentNode.classList.add('activeVideo');
+      });
+    });
 
-            var getIVideoTrigger = document.querySelectorAll('.{{name}} .video_box .play_trigger');
-                                                             if(getIVideoTrigger){
-              Array.prototype.slice.call(getIVideoTrigger).forEach(function(ele, index) {
-                ele.addEventListener('click', function(e) {
-                  var getVideoSrc = ele.nextElementSibling.getAttribute('data-src');
-                  ele.nextElementSibling.setAttribute('src',getVideoSrc);
-                  ele.nextElementSibling.play();
-                  ele.parentNode.parentNode.classList.add('activeVideo');
-                });
-              });
-            }
+    var getIVideoTrigger = document.querySelectorAll('.{{name}} .video_box .play_trigger');
+                                                     if(getIVideoTrigger){
+      Array.prototype.slice.call(getIVideoTrigger).forEach(function(ele, index) {
+        ele.addEventListener('click', function(e) {
+          var getVideoSrc = ele.nextElementSibling.getAttribute('data-src');
+          ele.nextElementSibling.setAttribute('src',getVideoSrc);
+          ele.nextElementSibling.play();
+          ele.parentNode.parentNode.classList.add('activeVideo');
+        });
+      });
+    }
 
-            var openIframeTrigger = document.querySelectorAll('.{{name}} .iframe_box .pop_trigger');
-                                                              if(openIframeTrigger){
-              Array.prototype.slice.call(openIframeTrigger).forEach(function(ele, index) {
-                ele.addEventListener('click', function(e) {
-                  var getId = this.getAttribute('data-id');
-                  var modalId = document.getElementById(getId);
-                  document.querySelector('body').classList.add('popup_open')
-                  modalId.classList.add('show');
-                  var iframeTag = modalId.querySelector('iframe');
-                  if(iframeTag){
-                    var getAtrr = iframeTag.getAttribute('data-src');
-                    iframeTag.setAttribute('src',getAtrr);
-                  }
-                  setTimeout(function(){
-                    modalId.classList.add('active_show');
-                  })
-                });
-              });
-            }
-
-            var openVideoTrigger = document.querySelectorAll('.{{name}} .video_box .pop_trigger');
-                                                             if(openVideoTrigger){
-              Array.prototype.slice.call(openVideoTrigger).forEach(function(ele, index) {
-                ele.addEventListener('click', function(e) {
-                  var getId = this.getAttribute('data-id');
-                  var modalId = document.getElementById(getId);
-                  document.querySelector('body').classList.add('popup_open')
-                  modalId.classList.add('show');
-                  var videoTag = modalId.querySelector('video');
-                  if(videoTag){
-                    var getAtrr =  videoTag.getAttribute('data-src');
-                    videoTag.setAttribute('src',getAtrr);
-                    videoTag.play();
-                  }
-                  setTimeout(function(){
-                    modalId.classList.add('active_show');
-                  })
-                });
-              });
-            }
-
-            var vdieoModalBox = document.querySelectorAll('.{{name}} .video_popup_modal');
-                                                          if(vdieoModalBox){
-              Array.prototype.slice.call(vdieoModalBox).forEach(function(ele, index) {
-                ele.addEventListener('click', function(e) {
-                  ele.classList.remove('active_show');
-                  document.querySelector('.{{name}} .video_popup_modal video')?.setAttribute('src','');
-                                         document.querySelector('.{{name}} .video_popup_modal iframe')?.setAttribute('src','');
-                                         setTimeout(function(){
-                    ele.classList.remove('show');
-                    document.querySelector('body').classList.remove('popup_open');
-                  });
-                });
-              });
-            }
-
-            var modalVideoBox = document.querySelector('.{{name}} .modal_video_box');
-                                                       if(modalVideoBox){
-              modalVideoBox.addEventListener('click', function(ele) {
-                ele.stopPropagation();
-              });
-            }
+    var openIframeTrigger = document.querySelectorAll('.{{name}} .iframe_box .pop_trigger');
+                                                      if(openIframeTrigger){
+      Array.prototype.slice.call(openIframeTrigger).forEach(function(ele, index) {
+        ele.addEventListener('click', function(e) {
+          var getId = this.getAttribute('data-id');
+          var modalId = document.getElementById(getId);
+          document.querySelector('body').classList.add('popup_open')
+          modalId.classList.add('show');
+          var iframeTag = modalId.querySelector('iframe');
+          if(iframeTag){
+            var getAtrr = iframeTag.getAttribute('data-src');
+            iframeTag.setAttribute('src',getAtrr);
           }
-          {% endif %}
+          setTimeout(function(){
+            modalId.classList.add('active_show');
+          })
+        });
+      });
+    }
 
-        </script>
-        {% end_require_js %}
+    var openVideoTrigger = document.querySelectorAll('.{{name}} .video_box .pop_trigger');
+                                                     if(openVideoTrigger){
+      Array.prototype.slice.call(openVideoTrigger).forEach(function(ele, index) {
+        ele.addEventListener('click', function(e) {
+          var getId = this.getAttribute('data-id');
+          var modalId = document.getElementById(getId);
+          document.querySelector('body').classList.add('popup_open')
+          modalId.classList.add('show');
+          var videoTag = modalId.querySelector('video');
+          if(videoTag){
+            var getAtrr =  videoTag.getAttribute('data-src');
+            videoTag.setAttribute('src',getAtrr);
+            videoTag.play();
+          }
+          setTimeout(function(){
+            modalId.classList.add('active_show');
+          })
+        });
+      });
+    }
+
+    var vdieoModalBox = document.querySelectorAll('.{{name}} .video_popup_modal');
+                                                  if(vdieoModalBox){
+      Array.prototype.slice.call(vdieoModalBox).forEach(function(ele, index) {
+        ele.addEventListener('click', function(e) {
+          ele.classList.remove('active_show');
+          document.querySelector('.{{name}} .video_popup_modal video')?.setAttribute('src','');
+                                 document.querySelector('.{{name}} .video_popup_modal iframe')?.setAttribute('src','');
+                                 setTimeout(function(){
+            ele.classList.remove('show');
+            document.querySelector('body').classList.remove('popup_open');
+          });
+        });
+      });
+    }
+
+    var modalVideoBox = document.querySelector('.{{name}} .modal_video_box');
+                                               if(modalVideoBox){
+      modalVideoBox.addEventListener('click', function(ele) {
+        ele.stopPropagation();
+      });
+    }
+  }
+  {% endif %}
+
+</script>
+{% end_require_js %}
