@@ -1,7 +1,5 @@
 @import "../../css/_module-imports";
 
-$font-family_1: "Priori Sans OT";
-
 .u4m-blog-post-cards {
   .content_column {
     margin-top: 50px;
@@ -12,8 +10,8 @@ $font-family_1: "Priori Sans OT";
       }
       .content_holder {
         h4.cardtitle {
-          font-family: $font-family_1;
-          font-size: 30px;
+          font-family: $font2;
+          font-size: 30rem;
           font-style: normal;
           font-weight: 700;
           line-height: 34px;
@@ -65,6 +63,9 @@ $font-family_1: "Priori Sans OT";
         column-gap: 30px;
         .media_holder {
           width: 60px;
+          @include phone {
+            flex-wrap: wrap;
+          }
         }
       }
       .card_area {
@@ -94,11 +95,5 @@ $font-family_1: "Priori Sans OT";
         flex-wrap: wrap;
       }
     }
-  }
-}
-
-@media (max-width: 479px) {
-  .u4m-blog-post-cards .content_column .flex_row .card_inner.iconleft {
-    flex-wrap: wrap;
   }
 }

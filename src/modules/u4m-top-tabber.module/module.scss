@@ -5,7 +5,6 @@
     .innerContainer {
       .intro_content {
         margin: 0 auto;
-        text-align: center;
       }
     }
     .tabber_wrp {
@@ -13,6 +12,10 @@
         padding: 0rem 0rem;
         margin: 0;
         list-style: none;
+        @include tabletvert {
+          display: none;
+        }
+
         > li {
           margin: 0;
           text-align: center;
@@ -55,7 +58,32 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.2s;
+
+        @include tabletvert {
+          opacity: 1;
+          display: block;
+          visibility: visible;
+          padding: 0;
+          .mob_acc_wrp a.accordion_title {
+            width: 100%;
+            font-family: $font2;
+            font-size: 20rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 1;
+            color: $light_periwinkle_gray;
+            text-align: center;
+            display: inline-flex;
+            justify-content: center;
+            border-bottom: 3rem solid $light_periwinkle_gray;
+            padding: 20rem;
+            cursor: pointer;
+          }
+        }
         .flex_row {
+          @include tabletvert {
+            margin: 0;
+          }
           .col-inner {
             .content_wrp {
               h2 {
@@ -99,6 +127,9 @@
           width: 100%;
           margin-left: -15rem;
           margin-right: -15rem;
+          @include tabletvert {
+            margin: 0;
+          }
           h3 {
             font-family: $font2;
             font-size: 30rem;
@@ -141,6 +172,14 @@
           }
         }
         .tab_content_inner {
+          @include tabletvert {
+            display: none;
+            padding: 20px;
+            @include phone {
+              padding: 10px;
+            }
+          }
+
           .right-col {
             .img_wrp {
               img {
@@ -161,6 +200,31 @@
     padding: 0rem 20rem;
     @include tabletvert {
       padding: 0rem 10rem;
+    }
+  }
+}
+
+@include tabletvertmin {
+  .mob_acc_wrp {
+    display: none;
+  }
+}
+@include tabletvert {
+  .u4m-top-tabber {
+    .page-center {
+      .tabber_wrp {
+        .tab_content_wrp {
+          &.mob-acc-active {
+            .tab_content_inner {
+              display: block;
+            }
+            a.accordion_title {
+              color: $dark_green;
+              border-bottom-color: $bright_green;
+            }
+          }
+        }
+      }
     }
   }
 }
