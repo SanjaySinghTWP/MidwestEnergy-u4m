@@ -424,6 +424,37 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null
+  }, {
+    "id" : "68d24e29-5ae9-b7ef-5973-de78a0168dc9",
+    "name" : "include_animation",
+    "label" : "Include Animation",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "c9ad66ee-9e60-ba6a-35e6-798bb50f3804",
+    "name" : "animation_type",
+    "label" : "Animation Type",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.include_animation",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "fade-up", "Fade Up" ], [ "fade-down", "Fade Down" ], [ "fade-right", "Fade Right" ], [ "fade-left", "Fade Left" ], [ "zoom-in", "Zoom In" ], [ "zoom-out", "Zoom Out" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -432,7 +463,8 @@
   "display_width" : null,
   "default" : {
     "intro_content_alignment" : "left",
-    "intro_content_size" : "theme"
+    "intro_content_size" : "theme",
+    "include_animation" : false
   }
 }, {
   "id" : "module_overrides",
