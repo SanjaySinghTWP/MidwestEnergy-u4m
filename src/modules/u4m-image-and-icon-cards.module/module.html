@@ -9,7 +9,7 @@ data-aos="{{ module.module_settings.animation_type }}"
   <div class="flex_row">
     {% for item in module.content_column.card_items %}
     <div class="card_area col {{ module.module_settings.card_settings.number_of_cards }}">
-      <div class="card_inner {% if item.media_type == "img" %}imageholderactive{% endif %} {% if item.media_type == "svg" %}svgholderactive{% endif %} {% if item.media_type == "icon" %}svgholderactive{% endif %} {{ item.icon_alignment }}">
+      <div class="card_inner {% if module.module_settings.card_settings.number_of_cards == "col-12" %} full-width-image {% endif %} {% if not item.media_type %} no-media {% endif %} {% if item.media_type == "img" %}imageholderactive{% endif %} {% if item.media_type == "svg" %}svgholderactive{% endif %} {% if item.media_type == "icon" %}svgholderactive{% endif %} {{ item.icon_alignment }}">
 
         {% if item.media_type %}
         <div class="media_holder">

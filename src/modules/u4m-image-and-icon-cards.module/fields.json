@@ -161,7 +161,7 @@
       "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
       "name" : "button_style",
       "label" : "Button Style",
-      "required" : false,
+      "required" : true,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
@@ -523,7 +523,7 @@
         "id" : "d8e02677-ecc3-ee93-abd5-16edf347420e",
         "name" : "button_style",
         "label" : "Button Style",
-        "required" : false,
+        "required" : true,
         "locked" : false,
         "visibility" : {
           "controlling_field" : null,
@@ -841,7 +841,7 @@
 }, {
   "id" : "eab059c6-8f7a-b0a5-8ebd-0610e2e1d6bb",
   "name" : "button",
-  "label" : "Button Column",
+  "label" : "Button Group",
   "required" : false,
   "locked" : false,
   "children" : [ {
@@ -892,7 +892,7 @@
       "id" : "86ec13e1-b6d2-6e29-9819-3cbd615518f1",
       "name" : "button_style",
       "label" : "Button Style",
-      "required" : false,
+      "required" : true,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
@@ -1128,7 +1128,7 @@
     "children" : [ {
       "id" : "87a68e6b-2b87-de84-487f-0de8036691ee",
       "name" : "number_of_cards",
-      "label" : "Number Of Cards",
+      "label" : "Number of Cards",
       "required" : false,
       "locked" : false,
       "display" : "select",

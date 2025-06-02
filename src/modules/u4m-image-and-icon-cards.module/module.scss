@@ -59,6 +59,22 @@
         }
       }
       .card_inner {
+        height: 100%;
+        &.no-media {
+          padding: 35px;
+        }
+        &.full-width-image {
+          .media_holder {
+            .img {
+              img {
+                width: 100%;
+                height: 500px;
+                object-fit: cover;
+                object-position: top;
+              }
+            }
+          }
+        }
         .media_holder {
           .img {
             svg {
