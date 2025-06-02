@@ -2,7 +2,21 @@
 
 .u4m-filtered-content {
   .page-center {
+    &.full_width {
+      .listing-wrap {
+        .flex-row {
+          &.cardItems {
+            justify-content: space-between;
+          }
+        }
+      }
+    }
     .top-section {
+      &.intro-width-custom {
+        .flex-row {
+          justify-content: center;
+        }
+      }
       .flex-row {
         gap: 20px;
         align-items: center;
@@ -20,8 +34,12 @@
           max-width: 645px;
           padding-left: 15px;
           padding-right: 15px;
+          width: 50%;
           @include laptop {
             max-width: 100%;
+          }
+          @include tabletvert {
+            width: 100%;
           }
         }
         .intCnt {
@@ -34,7 +52,6 @@
           }
           .intro_desc {
             p {
-              @include b3;
               &:last-child {
                 margin-bottom: 0;
               }
@@ -207,6 +224,7 @@
           padding: 31px 41px;
           padding-bottom: 56px;
           overflow: hidden;
+          height: 100%;
           @include laptop {
             padding: 25px;
           }
@@ -231,6 +249,12 @@
             color: #536c5f;
             font-size: 13px;
             margin-bottom: 12px;
+            .show {
+              display: block;
+            }
+            .hide {
+              display: none;
+            }
           }
           .title-wrp {
             h5 {
@@ -302,6 +326,21 @@
             .intro_desc {
               p {
                 color: $white;
+              }
+            }
+          }
+        }
+      }
+      .listing-wrap {
+        ul.pagination {
+          button {
+            &.para:not(.active):not(:hover) {
+              color: $white;
+            }
+            svg {
+              path {
+                fill: $white;
+                stroke: $white;
               }
             }
           }

@@ -11,7 +11,7 @@
 {% endif %}
 
 
-<div class="top-section">
+<div class="top-section {% if module.module_settings.intro_content_width %} intro-width-custom {% endif %}">
 <div class="flex-row">		
 	<div class="intro-col {% if not module.filtered_content.show_featured_post %} span12 {% else %} span6{% endif %}">
 		{{ macros.introGroup(module.intro_content, module.module_settings) }}
@@ -21,53 +21,53 @@
 	<div class="faeture-col span6">
 		{% if featured_rows|length > 0 %}
 		{% set featured = featured_rows[0] %}
-		<div class="featured-card">
-	<div class="card-inner">
-		<div class="card-cont">  
-		{% if featured.image.url %}
-		<div class="ItemImg">
-			<a href="{{featured.link}}">
-			<div class="itemImgBg" style="background-image:url({{ featured.image.url }})"></div>
-			</a>
+		<div class="featured-card" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+		<div class="card-inner">
+			<div class="card-cont">  
+			{% if featured.image.url %}
+			<div class="ItemImg">
+				<a href="{{featured.link}}">
+				<div class="itemImgBg" style="background-image:url({{ featured.image.url }})"></div>
+				</a>
+			</div>
+			{% endif %}
+			{% if featured.topics  %}
+			<div class="tag-wrp eyebrow-text">
+				<span>{{ featured.topics[0].label }}</span>
+			</div>
+			{% endif %}
+			{% if featured.name  %}
+			<div class="title-wrp">
+				<h5>
+				{% set initialPostWords = featured.description|striptags|wordcount %}
+				{% set calculatedPostWords = (initialPostWords / 100) * 100 %}
+				{% set finishedPostWords = calculatedPostWords / 300 %}
+				{% set number = finishedPostWords|round %}
+				{% if number >= 1 %}
+				{{ finishedPostWords|round }} Minute Read
+				{% endif %}{% if number >= 1 and featured.date %} | {% endif %}{{featured.date|datetimeformat('%B %d, %Y')}}
+				</h5>
+			</div>
+			{% endif %}
+			{% if featured.description %}
+			<div class="des-wrp">
+				<p>{{ featured.description|striptags|truncatehtml(116, '' , false) }}</p>
+			</div>
+			{% endif %}
+			{% if module.filtered_content.learn_more_text %}
+			<div class="btn-wrp">
+				<a class="hs-sec-btn" href="{{ request.path }}/{{button_link}}">
+				<span class="text">{{module.filtered_content.learn_more_text}}</span>
+				<span class="arrow">
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="25" viewBox="0 0 18 25" fill="none">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M12.594 11.8808C12.8098 12.0901 12.8098 12.4294 12.594 12.6387L6.95976 18.1028C6.74394 18.3121 6.39409 18.3121 6.17827 18.1028L5.91772 17.8501C5.7019 17.6408 5.7019 17.3015 5.91772 17.0922L10.9007 12.2598L5.91772 7.42731C5.7019 7.21801 5.7019 6.87872 5.91772 6.66942L6.17827 6.41674C6.39409 6.20744 6.74394 6.20744 6.95976 6.41674L12.594 11.8808Z" fill="#39473F"></path>
+					</svg>
+				</span>
+				</a>
+			</div>
+			{% endif %}
+			</div>
 		</div>
-		{% endif %}
-		{% if featured.topics  %}
-		<div class="tag-wrp eyebrow-text">
-			<span>{{ featured.topics[0].label }}</span>
-		</div>
-		{% endif %}
-		{% if featured.name  %}
-		<div class="title-wrp">
-			<h5>
-			{% set initialPostWords = featured.description|striptags|wordcount %}
-			{% set calculatedPostWords = (initialPostWords / 100) * 100 %}
-			{% set finishedPostWords = calculatedPostWords / 300 %}
-			{% set number = finishedPostWords|round %}
-			{% if number >= 1 %}
-			{{ finishedPostWords|round }}
-			{% endif %} Minute Read | June 10, 2025 date
-			</h5>
-		</div>
-		{% endif %}
-		{% if featured.description %}
-		<div class="des-wrp">
-			{{featured.description}}
-		</div>
-		{% endif %}
-		{% if module.filtered_content.learn_more_text %}
-		<div class="btn-wrp">
-			<a class="hs-sec-btn" href="{{ request.path }}/{{button_link}}">
-			<span class="text">{{module.filtered_content.learn_more_text}}</span>
-			<span class="arrow">
-				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="25" viewBox="0 0 18 25" fill="none">
-				<path fill-rule="evenodd" clip-rule="evenodd" d="M12.594 11.8808C12.8098 12.0901 12.8098 12.4294 12.594 12.6387L6.95976 18.1028C6.74394 18.3121 6.39409 18.3121 6.17827 18.1028L5.91772 17.8501C5.7019 17.6408 5.7019 17.3015 5.91772 17.0922L10.9007 12.2598L5.91772 7.42731C5.7019 7.21801 5.7019 6.87872 5.91772 6.66942L6.17827 6.41674C6.39409 6.20744 6.74394 6.20744 6.95976 6.41674L12.594 11.8808Z" fill="#39473F"></path>
-				</svg>
-			</span>
-			</a>
-		</div>
-		{% endif %}
-		</div>
-	</div>
 		</div>
 		{% endif %}
 	</div>
@@ -77,7 +77,7 @@
 
 {# filter feild #}
 
-<div class='site-search-wrap'>
+<div class='site-search-wrap' {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
 <div class='page-center'>
 	<div class='search-col SearchBtn'>
 		<div class="searchSec">
@@ -112,7 +112,7 @@
 <div class="filter-row-inner">
 	<div class='cardItems flex-row resourceList'>
 		{% for row in resouces %}
-		<div class="resourceCard cardItem {% for topic in row.topics %}{{ topic.name|lower|replace(' ','-') }} {% endfor %} {% for type in row.type %}{{ type.name|lower|replace(' ','-') }} {% endfor %}">
+		<div class="resourceCard cardItem {% for topic in row.topics %}{{ topic.name|lower|replace(' ','-') }} {% endfor %} {% for type in row.type %}{{ type.name|lower|replace(' ','-') }} {% endfor %}" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
 			<div class="card-inner">
 				<div class="card-cont">  
 					{% if row.image.url %}
@@ -122,11 +122,9 @@
 						</a>
 					</div>
 					{% endif %}
-					{% if row.topics  %}
 					<div class="tag-wrp itemtag">
 						<span>{{ row.topics[0].label }}</span>
 					</div>
-					{% endif %}
 					{% if row.name  %}
 					<div class="title-wrp restitle">
 						<h5>
@@ -136,7 +134,7 @@
 					{% endif %}
 					{% if row.description %}
 					<div class="des-wrp itemdesc">
-						{{row.description}}
+						<p>{{ row.description|striptags|truncatehtml(116, '' , false) }}</p>
 					</div>
 					{% endif %}
 					{% if module.filtered_content.learn_more_text %}
@@ -178,14 +176,25 @@ const TagSelect = document.querySelector(".resourceSelect");
 const TypeSelect = document.querySelector(".typeSelect");
 const searchField = document.querySelector(".resourceInput"); 
 
-function filterItems(el, keyword, type, category) {
+{# function filterItems(el, keyword, type, category) {
 	const title = el.querySelector(".restitle").innerText.toLowerCase();
 	const hasKeyword = !keyword || title.includes(keyword);
 	const isOfType = !type || el.classList.contains(type);
 	const isOfcategory = !category || el.classList.contains(category);
 
 	return hasKeyword && isOfType && isOfcategory ;
-} 
+}  #}
+
+function filterItems(el, keyword, type, category) {
+	const title = el.querySelector(".restitle").innerText.trim().toLowerCase();
+	const searchKeyword = keyword ? keyword.trim().toLowerCase() : "";
+	const hasKeyword = !searchKeyword || title.includes(searchKeyword);
+	const isOfType = !type || el.classList.contains(type);
+	const isOfcategory = !category || el.classList.contains(category);
+
+	return hasKeyword && isOfType && isOfcategory;
+}
+
 
 function MainLogic() {
 	const keyword = searchField.value;
@@ -203,6 +212,11 @@ function MainLogic() {
 		wrapper.innerHTML = "<p class='col statusCnt'>No Data Found.</p>";
 	}
 }
+
+
+
+{# topic #}
+
 
 function calculatePagination(totalItems, currentPage = 1, pageSize = 6, maxPages = 4) {
 	let startPage, endPage, totalPages = Math.ceil(totalItems / pageSize);
@@ -300,6 +314,7 @@ TagSelect.addEventListener("change", f => {
 	MainLogic(); 
 }); 
 
+
 TypeSelect.addEventListener("change", f => {
 	f.preventDefault();
 	MainLogic(); 
@@ -331,6 +346,24 @@ document.addEventListener("click", e => {
 });
 
 setHTML(filteredItems); 
+
+document.addEventListener('DOMContentLoaded', function() {
+  var select = document.getElementById('topic');
+  var span = document.querySelector('.tag-wrp.itemtag span');
+  var initialText = span.textContent;
+
+  select.addEventListener('change', function() {
+    var selectedOption = select.options[select.selectedIndex];
+    if (select.value === '') {
+      // Agar empty select hua, to pehle jaisa text dikhao
+      span.textContent = initialText;
+    } else {
+      // Warna selected option ka text dikhao
+      span.textContent = selectedOption.text;
+    }
+  });
+});
+
 
 
 </script>

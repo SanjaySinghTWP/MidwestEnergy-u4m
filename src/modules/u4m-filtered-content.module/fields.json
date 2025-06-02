@@ -161,7 +161,7 @@
       "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
       "name" : "button_style",
       "label" : "Button Style",
-      "required" : false,
+      "required" : true,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
@@ -411,13 +411,21 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "theme"
+    "default" : "b3"
   }, {
     "id" : "7def73cf-f5f3-ad22-22a2-c1a64d3669f5",
     "name" : "intro_content_width",
     "label" : "Intro Content Width",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "filtered_content.show_featured_post",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "display" : "slider",
     "min" : 500,
     "max" : 2000,
@@ -463,7 +471,7 @@
   "display_width" : null,
   "default" : {
     "intro_content_alignment" : "left",
-    "intro_content_size" : "theme",
+    "intro_content_size" : "b3",
     "include_animation" : false
   }
 }, {
