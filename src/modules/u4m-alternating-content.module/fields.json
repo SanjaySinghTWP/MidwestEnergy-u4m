@@ -131,7 +131,7 @@
     "locked" : false,
     "occurrence" : {
       "min" : null,
-      "max" : null,
+      "max" : 2,
       "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
       "default" : 2
     },
@@ -161,7 +161,7 @@
       "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
       "name" : "button_style",
       "label" : "Button Style",
-      "required" : false,
+      "required" : true,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
@@ -449,6 +449,20 @@
       "access" : null
     },
     "children" : [ {
+      "id" : "8b9b8379-b777-599a-b168-f77182b226fe",
+      "name" : "video_type",
+      "label" : "Video Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "file", "File" ], [ "external", "External" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "file"
+    }, {
       "id" : "e429959c-709d-e33b-4f21-dc907a035ca9",
       "name" : "select_play_icon_type",
       "label" : "Select Play Icon Type",
@@ -517,20 +531,6 @@
         "alt" : null,
         "loading" : "lazy"
       }
-    }, {
-      "id" : "8b9b8379-b777-599a-b168-f77182b226fe",
-      "name" : "video_type",
-      "label" : "Video Type",
-      "required" : false,
-      "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "file", "File" ], [ "external", "External" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "display_width" : null,
-      "default" : "external"
     }, {
       "id" : "055a8aa8-dfd8-c8c0-a08d-0e1286ea21bb",
       "name" : "poster_image",
@@ -606,7 +606,8 @@
         "access" : null
       },
       "type" : "file",
-      "display_width" : null
+      "display_width" : null,
+      "default" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Videos/2887463-hd_1920_1080_25fps.mp4"
     }, {
       "id" : "920be1f8-43f0-8a3a-9a7c-4d4854466a55",
       "name" : "video_height",
@@ -626,6 +627,7 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
+      "video_type" : "file",
       "select_play_icon_type" : "icon",
       "icon_field" : {
         "name" : "play",
@@ -638,7 +640,6 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "video_type" : "external",
       "poster_image" : {
         "size_type" : "auto",
         "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/lineman.jpg",
@@ -651,6 +652,7 @@
       },
       "embedded_url" : "https://player.vimeo.com/video/842733575",
       "include_popup" : false,
+      "file_field" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Videos/2887463-hd_1920_1080_25fps.mp4",
       "video_height" : 75
     }
   } ],
@@ -679,6 +681,7 @@
       }
     },
     "video_content" : {
+      "video_type" : "file",
       "select_play_icon_type" : "icon",
       "icon_field" : {
         "name" : "play",
@@ -691,7 +694,6 @@
         "alt" : null,
         "loading" : "lazy"
       },
-      "video_type" : "external",
       "poster_image" : {
         "size_type" : "auto",
         "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/lineman.jpg",
@@ -704,6 +706,7 @@
       },
       "embedded_url" : "https://player.vimeo.com/video/842733575",
       "include_popup" : false,
+      "file_field" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Videos/2887463-hd_1920_1080_25fps.mp4",
       "video_height" : 75
     }
   }
