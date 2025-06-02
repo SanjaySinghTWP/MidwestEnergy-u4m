@@ -2,9 +2,9 @@
 {% include "../partials/u4-module-includes.html" %}
 {{ macros.introGroup(module.intro_content, module.module_settings) }}
 </div>
-<div class="row" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
+<div class="row">
+	<div class="accordion-inner" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" 
 {% endif %} data-aos-delay="100">
-	<div class="accordion-inner">
 		{% for item in module.accordion_items %}
 		<div class="accordion-item">
 			{% if item.title %}
