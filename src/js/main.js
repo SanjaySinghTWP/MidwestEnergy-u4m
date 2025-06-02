@@ -33,6 +33,7 @@ window.addEventListener('scroll', function () {
 });
 
 $('.header-wrap .search-box .toggleicon').on('click', function () {
+	$('.header-wrap .search-item form input[type="search"]').focus();
 	$('html').addClass('open-search');
 });
 
@@ -46,10 +47,6 @@ $('.header-wrap .mainNav .page-center .mainNav-inner .hamburger').click(function
 });
 
 $('.header-wrap .mainNav .page-center .mainNav-inner .header-menu .hs-menu-wrapper>ul>li.hs-item-has-children>a').after(`<div class="child-trigger"><svg class="e-font-icon-svg e-fas-caret-down" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg></div>`);
-
-$(document).ready(function () {
-	$('.header-wrap .search-item form input[type="search"]').focus();
-});
 
 
 $('.child-trigger').on('click', function (e) {

@@ -1,0 +1,29 @@
+<div class="social-share-wrap">
+	<ul>
+		{% for item in module.social_feed %}
+		<li class="{{loop.index}} {{item.select_social_icon}}">
+			{% if item.icon_image.src %}
+			{% set href = item.item_link.url.href %}
+			{% if item.item_link.url.type is equalto "EMAIL_ADDRESS" %}
+			{% set href = "mailto:" + href %}
+			{% endif %}
+			<a
+				 {% if item.item_link.url.type is equalto "CALL_TO_ACTION"  %}
+				 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+				 {% else %}
+				 href="{{ href|escape_url }}"
+				 {% endif %}
+				 {% if item.item_link.open_in_new_tab %}
+				 target="_blank"
+				 {% endif %}
+				 {% if item.item_link.rel %}
+				 rel="{{ item.item_link.rel }}"
+				 {% endif %}
+				 >
+				<img src="{{ item.icon_image.src }}" alt="{{ item.icon_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+			</a>
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
+</div>

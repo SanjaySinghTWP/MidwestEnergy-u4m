@@ -4,14 +4,13 @@
  -->
 
 <div class="header-wrap lp-header">
+  
   <div class="mainNav">
     <div class="page-center">
       <div class="mainNav-inner">
         <div class="logo-cnt">
-          {% set logo_file = get_asset_url('.././images/header-logo.png') %} {%
-          module "header_logo" path="@hubspot/logo", label="Site Logo",
-          link='/', img={src="{{logo_file}}", width=150, alt="Midwest Energy",
-          override_inherited_src= true} %}
+          {% set logo_file =  get_asset_url('.././images/header-logo.png') %}
+          {% module "header_logo" path="@hubspot/logo", label="Site Logo", link='/', img={src="{{logo_file}}", width=150, alt="Midwest Energy", override_inherited_src= true} %}
         </div>
       </div>
     </div>

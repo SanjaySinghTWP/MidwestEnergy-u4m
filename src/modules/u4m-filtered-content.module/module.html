@@ -123,7 +123,7 @@
 					</div>
 					{% endif %}
 					<div class="tag-wrp itemtag">
-						<span>{{ row.topics[0].label }}</span>
+						<span class="select-text">{{ row.topics[0].label }}</span>
 					</div>
 					{% if row.name  %}
 					<div class="title-wrp restitle">
@@ -346,23 +346,6 @@ document.addEventListener("click", e => {
 });
 
 setHTML(filteredItems); 
-
-document.addEventListener('DOMContentLoaded', function() {
-  var select = document.getElementById('topic');
-  var span = document.querySelector('.tag-wrp.itemtag span');
-  var initialText = span.textContent;
-
-  select.addEventListener('change', function() {
-    var selectedOption = select.options[select.selectedIndex];
-    if (select.value === '') {
-      // Agar empty select hua, to pehle jaisa text dikhao
-      span.textContent = initialText;
-    } else {
-      // Warna selected option ka text dikhao
-      span.textContent = selectedOption.text;
-    }
-  });
-});
 
 
 
