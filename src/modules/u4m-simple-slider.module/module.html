@@ -5,108 +5,109 @@
 
 
 <div class="cm-simple-slider">
-	<div class="simple-slider {% if module.module_settings.card_settings.enable_gradient_outline %}gradient-border{% endif %}" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}" 
-			 {% endif %} data-aos-delay="100">
-		<div class="card_wrp">
-			<div id="splide" class="splide">
-				<div class="splide__track">
-					<ul class="splide__list">
-						{% for item in module.card_item %}
-            {% if item.image_field.src || item.icon || item.quote || item.title ||item.designation %}
-						<li class="splide__slide card-item col col-12 item-{{loop.index}}">
-							<div class="card-inner-item">
-								<div class="card-cont">  
-									{% if item.image_field.src || item.icon %}
-									<div class="img_wrp_outer">
-										{% if item.select_image_type == "img" %}
-										{% if item.image_field.src %}
-										<div class="img_wrp">
-											{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
-											{% if item.image_field.size_type == 'auto' %}
-											{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-											{% elif item.image_field.size_type == 'auto_custom_max' %}
-											{% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-											{% endif %}
-											{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
-											<img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
-										</div>
-										{% endif %}
-										{% endif %}
 
-										{% if item.select_image_type == "icon" %}
-										<div class="icon_wrp">
-											{% icon
+  <div class="simple-slider {% if module.module_settings.card_settings.enable_gradient_outline %}gradient-border{% endif %}" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}" 
+       {% endif %} data-aos-delay="100">
+    <div class="card_wrp">
+      <div id="splide" class="splide">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for item in module.card_item %}
+            {% if item.image_field.src || item.icon || item.quote || item.title ||item.designation %}
+            <li class="splide__slide card-item col col-12 item-{{loop.index}}">
+              <div class="card-inner-item">
+                <div class="card-cont">  
+                  {% if item.image_field.src || item.icon %}
+                  <div class="img_wrp_outer">
+                    {% if item.select_image_type == "img" %}
+                    {% if item.image_field.src %}
+                    <div class="img_wrp">
+                      {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+                      {% if item.image_field.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% elif item.image_field.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% endif %}
+                      {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+                      <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+
+                    {% if item.select_image_type == "icon" %}
+                    <div class="icon_wrp">
+                      {% icon
                   name="{{ item.icon_field.name }}"
                   style="{{ item.icon_field.type }}"
                   unicode="{{ item.icon_field.unicode }}"
                   icon_set="{{ item.icon_field.icon_set }}"
                 %}
-										</div>
-										{% endif %}
+                    </div>
+                    {% endif %}
 
-									</div>
-									{% endif %}
+                  </div>
+                  {% endif %}
 
-									{% if item.quote %}
-									<div class="quote">
-										{{ item.quote }}
-									</div>
-									{% endif %}
+                  {% if item.quote %}
+                  <div class="quote">
+                    {{ item.quote }}
+                  </div>
+                  {% endif %}
 
-									{% if item.title %}
-									<div class="name">
-										<h5>{{ item.title }}</h5>
-									</div>
-									{% endif %}
+                  {% if item.title %}
+                  <div class="name">
+                    <h5>{{ item.title }}</h5>
+                  </div>
+                  {% endif %}
 
-									{% if item.designation %}
-									<div class="designation">
-										<p>{{ item.designation }}</p>
-									</div>
-									{% endif %}
+                  {% if item.designation %}
+                  <div class="designation">
+                    <p>{{ item.designation }}</p>
+                  </div>
+                  {% endif %}
 
-								</div> <!-- .card-cont -->
-							</div> 
-						</li>
+                </div> <!-- .card-cont -->
+              </div> 
+            </li>
             {% endif %}
-						{% endfor %}
-					</ul>
-				</div>
+            {% endfor %}
+          </ul>
+        </div>
 
 
-				<!-- Custom Arrows Start -->
-				<div class="custom-splide-arrows {% if module.card_item|length == 1 %} item-count1{% endif %}" style="{% if module.card_item|length == 1%}  display:none;{% endif%}">
-					<!-- Left Arrow -->
-					<button class="splide__arrow--prev custom-arrow" aria-label="Previous slide">
-						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 41 41" fill="none">
-							<circle cx="20.5" cy="20.5" r="18.7" stroke="#D0DD28" stroke-width="3"/>
-							<path d="M14.2 20.5L22.3 12.4V28.6L14.2 20.5Z" fill="#536C5F" stroke="#536C5F" stroke-width="3" stroke-linejoin="round"/>
-						</svg>
-					</button>
+        <!-- Custom Arrows Start -->
+        <div class="custom-splide-arrows {% if module.card_item|length == 1 %} item-count1{% endif %}" style="{% if module.card_item|length == 1%}  display:none;{% endif%}">
+          <!-- Left Arrow -->
+          <button class="splide__arrow--prev custom-arrow" aria-label="Previous slide">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 41 41" fill="none">
+              <circle cx="20.5" cy="20.5" r="18.7" stroke="#D0DD28" stroke-width="3"/>
+              <path d="M14.2 20.5L22.3 12.4V28.6L14.2 20.5Z" fill="#536C5F" stroke="#536C5F" stroke-width="3" stroke-linejoin="round"/>
+            </svg>
+          </button>
 
-					<!-- Right Arrow -->
-					<button class="splide__arrow--next custom-arrow" aria-label="Next slide">
-						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 41 41" fill="none">
-							<circle cx="20.5" cy="20.5" r="18.7" stroke="#D0DD28" stroke-width="3"/>
-							<path d="M26.8 20.5L18.7 12.4V28.6L26.8 20.5Z" fill="#536C5F" stroke="#536C5F" stroke-width="3" stroke-linejoin="round"/>
-						</svg>
-					</button>
-				</div>
-				<!-- Custom Arrows End -->
+          <!-- Right Arrow -->
+          <button class="splide__arrow--next custom-arrow" aria-label="Next slide">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 41 41" fill="none">
+              <circle cx="20.5" cy="20.5" r="18.7" stroke="#D0DD28" stroke-width="3"/>
+              <path d="M26.8 20.5L18.7 12.4V28.6L26.8 20.5Z" fill="#536C5F" stroke="#536C5F" stroke-width="3" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <!-- Custom Arrows End -->
 
-			</div>
+      </div>
 
-		</div>
-{% if module.module_settings.enable_shape %}
-<div class="svgShape">
-	<svg xmlns="http://www.w3.org/2000/svg" width="78" height="139" viewBox="0 0 78 139" fill="none">
-  <rect x="77.1816" y="138.243" width="77.1816" height="29.0875" transform="rotate(-180 77.1816 138.243)" fill="#D0DD28" fill-opacity="0.5"/>
-  <rect x="77.1816" y="83.8477" width="77.1816" height="29.0875" transform="rotate(-180 77.1816 83.8477)" fill="#D0DD28" fill-opacity="0.5"/>
-  <rect x="77.1816" y="29.4531" width="77.1816" height="29.2102" transform="rotate(-180 77.1816 29.4531)" fill="#D0DD28" fill-opacity="0.5"/>
-</svg>
-		</div>{% endif %}
-		
-	</div>
+    </div>
+    {% if module.module_settings.enable_shape %}
+    <div class="svgShape">
+      <svg xmlns="http://www.w3.org/2000/svg" width="78" height="139" viewBox="0 0 78 139" fill="none">
+        <rect x="77.1816" y="138.243" width="77.1816" height="29.0875" transform="rotate(-180 77.1816 138.243)" fill="#D0DD28" fill-opacity="0.5"/>
+        <rect x="77.1816" y="83.8477" width="77.1816" height="29.0875" transform="rotate(-180 77.1816 83.8477)" fill="#D0DD28" fill-opacity="0.5"/>
+        <rect x="77.1816" y="29.4531" width="77.1816" height="29.2102" transform="rotate(-180 77.1816 29.4531)" fill="#D0DD28" fill-opacity="0.5"/>
+      </svg>
+    </div>{% endif %}
+
+  </div>
 
 
 </div>
@@ -114,64 +115,75 @@
 
 {% require_css%}
 <style>
-	.{{name}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider{
-		background-color: rgba({{ module.module_settings.card_settings.background_color.color|convert_rgb}},{{ module.module_settings.card_settings.background_color.opacity * 0.01}});
-		border-radius: {{ module.module_settings.card_settings.corner_radius }}px;
-		{% if module.module_settings.card_settings.enable_shadow %}
-		box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
-		{% endif %}
+  .{{name}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider{
+    background-color: rgba({{ module.module_settings.card_settings.background_color.color|convert_rgb}},{{ module.module_settings.card_settings.background_color.opacity * 0.01}});
+    border-radius: {{ module.module_settings.card_settings.corner_radius }}px;
+    {% if module.module_settings.card_settings.enable_shadow %}
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+    {% endif %}
     {% if module.module_settings.card_settings.enable_gradient_outline %}
     padding:4px;
     {% endif %}
-	}
-	.{{name}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider *{
-		color: rgba({{ module.module_settings.card_settings.content_color.color|convert_rgb}},{{ module.module_settings.card_settings.content_color.opacity * 0.01}});
-	}
+  }
+  .{{name}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider *{
+    color: rgba({{ module.module_settings.card_settings.content_color.color|convert_rgb}},{{ module.module_settings.card_settings.content_color.opacity * 0.01}});
+  }
 
-		.{{name}}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider .svgShape svg rect {
+  .{{name}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider .svgShape svg rect {
     fill: rgba({{ module.module_settings.shape_color.color|convert_rgb}},{{ module.module_settings.shape_color.opacity * 0.01}});
-}
-	.{{name}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider.gradient-border {
-  position: relative;
-  border-radius: {{ module.module_settings.card_settings.corner_radius }}px;
-  background: linear-gradient(to right, #D0DD28, #536C5F);
-}
+    fill-opacity: 1;
+  }
+    .{{name}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider .svgShape svg {
+    fill: rgba({{ module.module_settings.shape_color.color|convert_rgb}},{{ module.module_settings.shape_color.opacity * 0.01}});
+  }
+  .{{name}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider.gradient-border {
+    position: relative;
+    border-radius: {{ module.module_settings.card_settings.corner_radius }}px;
+    background: linear-gradient(to right, #D0DD28, #536C5F);
+  }
 
-.{{name}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider.gradient-border > .card_wrp {
-  border-radius: {{ module.module_settings.card_settings.corner_radius }}px;
-  height: 100%;
-  	background-color: rgba({{ module.module_settings.card_settings.background_color.color|convert_rgb}},{{ module.module_settings.card_settings.background_color.opacity * 0.01}});
-      padding: 40px 10px;
-}
-  
+  .{{name}}.u4m-simple-slider .page-center .cm-simple-slider .simple-slider.gradient-border > .card_wrp {
+    border-radius: {{ module.module_settings.card_settings.corner_radius }}px;
+    height: 100%;
+    background-color: rgba({{ module.module_settings.card_settings.background_color.color|convert_rgb}},{{ module.module_settings.card_settings.background_color.opacity * 0.01}});
+    padding: 40px 10px;
+  }
+  .{{name}}.u4m-simple-slider .cm-simple-slider .splide .custom-splide-arrows button.custom-arrow svg path{
+        fill: rgba({{ module.module_settings.card_settings.arrow_style.color_field.color|convert_rgb}},{{ module.module_settings.card_settings.arrow_style.color_field.opacity * 0.01}});
+
+  }
+    .{{name}}.u4m-simple-slider .cm-simple-slider .splide .custom-splide-arrows button.custom-arrow svg circle{
+        stroke: rgba({{ module.module_settings.card_settings.arrow_style.border_color.color|convert_rgb}},{{ module.module_settings.card_settings.arrow_style.border_color.opacity * 0.01}});
+
+  }
 </style>
 {% end_require_css%}
 
 {% require_js%}
 <script>
-	document.addEventListener('DOMContentLoaded', function () {
-		new Splide('.{{name}} .splide', {
-							 type: 'loop',
-							 perPage: 1,
-							 perMove: {{ module.module_settings.slider_options.slides_per_scroll }}, 
-							 {% if module.module_settings.slider_options.autoplay %}
-							 autoplay: true,
-							 interval: {{ module.module_settings.slider_options.autoplay_speed * 1000 }},
-							 {% endif %}
-							 pauseOnHover: true,
-							 arrows: true,
-							 autoHeight: true,
-							 classes: {
-							 arrows: 'custom-splide-arrows',
-							 arrow: 'custom-arrow',
-							 prev: 'splide__arrow--prev',
-							 next: 'splide__arrow--next',
-							 },
-														pagination: true,
-														gap: '1.5rem',
-													
-	}).mount();
-	});
+  document.addEventListener('DOMContentLoaded', function () {
+    new Splide('.{{name}} .splide', {
+               type: 'loop',
+               perPage: 1,
+               perMove: {{ module.module_settings.slider_options.slides_per_scroll }}, 
+               {% if module.module_settings.slider_options.autoplay %}
+               autoplay: true,
+               interval: {{ module.module_settings.slider_options.autoplay_speed * 1000 }},
+               {% endif %}
+               pauseOnHover: true,
+               arrows: true,
+               autoHeight: true,
+               classes: {
+               arrows: 'custom-splide-arrows',
+               arrow: 'custom-arrow',
+               prev: 'splide__arrow--prev',
+               next: 'splide__arrow--next',
+               },
+                            pagination: true,
+                            gap: '1.5rem',
+
+                            }).mount();
+  });
 
 </script>
 {% end_require_js%}

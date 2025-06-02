@@ -91,9 +91,26 @@
   {% endif %}
   {% if module.media_column.media_type == "video" %}
   <div class="video-wrapp">
+    
+     {% if  module.media_column.video_type == 'hubspot' ||  module.media_column.video_type == 'embed' %}
+                <div class="play-icon">
+ {% icon
+	name="{{ module.media_column.play_icon.name }}"
+	style="{{ module.media_column.play_icon.type }}"
+	unicode="{{ module.media_column.play_icon.unicode }}"
+	icon_set="{{ module.media_column.play_icon.icon_set }}"
+%}
+                 </div>
+                {%  endif %}
+                 {% if  module.media_column.video_type == 'hubspot' ||  module.media_column.video_type == 'embed' %}
+                <div class="postImg " style="background-image :url({{ module.media_column.poster_image.src|escape_url }})">
+                  	
+                 </div>
+                {%  endif %}
+    
     {% if module.media_column.video_type == "hubspot" %}
     <div class="hubspotvideo">
-      <video autoplay loop controls>
+      <video autoplay loop >
         <source src="{{ module.media_column.hubspot_video }}" type="video/mp4">
       </video>
     </div>
@@ -101,7 +118,7 @@
     {% if module.media_column.video_type == "embed" %}
     <div class="external_vid">
       <iframe width="560" height="315" 
-              src="https://www.youtube.com/embed/{{ module.media_column.embed_video_url }}" 
+              src="" data-src="https://www.youtube.com/embed/{{ module.media_column.embed_video_url }}" 
               title="YouTube video player" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 

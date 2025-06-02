@@ -57,7 +57,7 @@
         padding: 52px;
         text-align: center;
         position: relative;
-        @include tabletvert {
+        @include laptop {
           padding: 20px;
           margin: 0;
         }
@@ -113,11 +113,9 @@
           position: absolute;
           right: 0;
           top: 35%;
+          right: -39px;
           @include tabletvert {
             display: none;
-          }
-          svg {
-            fill: rgb(208, 221, 40);
           }
         }
       }

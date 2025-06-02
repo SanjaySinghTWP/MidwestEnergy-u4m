@@ -1,6 +1,26 @@
 @import "../../css/_module-imports";
 
 .u4m-slider-gallery {
+  &.reverse-text {
+    .page-center {
+      .innerContainer {
+        .intro_content {
+          .intro__inner {
+            .intCnt {
+              .eyebrowtext {
+                color: $white;
+              }
+            }
+            .intro_desc {
+              p {
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   .page-center {
     .innerContainer {
       .intro_content {

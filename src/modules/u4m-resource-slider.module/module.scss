@@ -106,7 +106,11 @@ $color_1: #536c5f;
       }
     }
     .resource-slider {
-      margin: 0px -20px !important;
+      margin: 0px -20px;
+      @include laptop {
+        padding: 0px;
+        margin: 0;
+      }
       overflow: hidden;
       @include smallTablet {
         margin: 0;

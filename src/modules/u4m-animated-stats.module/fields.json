@@ -341,7 +341,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "dedicated employees ready to grow"
+    "default" : ""
   }, {
     "id" : "423715a4-5b68-0ba2-87af-fc73803f4c9a",
     "name" : "prefix",
@@ -414,22 +414,22 @@
     "value" : 177,
     "suffix" : "",
     "content" : "dedicated employees ready to grow",
-    "top_content" : "dedicated employees ready to grow"
+    "top_content" : ""
   }, {
     "value" : 177,
     "suffix" : "",
     "content" : "dedicated employees ready to grow",
-    "top_content" : "dedicated employees ready to grow"
+    "top_content" : ""
   }, {
     "value" : 177,
     "suffix" : "",
     "content" : "dedicated employees ready to grow",
-    "top_content" : "dedicated employees ready to grow"
+    "top_content" : ""
   }, {
     "value" : 177,
     "suffix" : "",
     "content" : "dedicated employees ready to grow",
-    "top_content" : "dedicated employees ready to grow"
+    "top_content" : ""
   } ]
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",

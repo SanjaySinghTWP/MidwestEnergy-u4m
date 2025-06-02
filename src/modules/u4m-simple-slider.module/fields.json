@@ -95,7 +95,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
@@ -274,7 +274,7 @@
     "include_heading" : true,
     "heading_size" : "h2",
     "heading" : "Hear From Our Satisfied Customers",
-    "include_content" : false,
+    "include_content" : true,
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>",
     "include_button" : false,
     "button_group" : [ {
@@ -658,6 +658,52 @@
       "type" : "boolean",
       "display_width" : null,
       "default" : false
+    }, {
+      "id" : "0b6cc5df-d3ea-dd16-304b-8312fbc4c610",
+      "name" : "arrow_style",
+      "label" : "Arrow Style",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "50f7ab5e-8d63-ee31-3f2c-dff34ec2f00d",
+        "name" : "color_field",
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#39473f",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "a0847b00-3fa3-9eda-b768-efd1e8319325",
+        "name" : "border_color",
+        "label" : "Border Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#d0dd28",
+          "opacity" : 100
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "color_field" : {
+          "color" : "#39473f",
+          "opacity" : 100
+        },
+        "border_color" : {
+          "color" : "#d0dd28",
+          "opacity" : 100
+        }
+      }
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -675,7 +721,17 @@
       },
       "corner_radius" : 24,
       "enable_shadow" : false,
-      "enable_gradient_outline" : false
+      "enable_gradient_outline" : false,
+      "arrow_style" : {
+        "color_field" : {
+          "color" : "#39473f",
+          "opacity" : 100
+        },
+        "border_color" : {
+          "color" : "#d0dd28",
+          "opacity" : 100
+        }
+      }
     }
   } ],
   "tab" : "CONTENT",
@@ -709,7 +765,17 @@
       },
       "corner_radius" : 24,
       "enable_shadow" : false,
-      "enable_gradient_outline" : false
+      "enable_gradient_outline" : false,
+      "arrow_style" : {
+        "color_field" : {
+          "color" : "#39473f",
+          "opacity" : 100
+        },
+        "border_color" : {
+          "color" : "#d0dd28",
+          "opacity" : 100
+        }
+      }
     }
   }
 }, {
