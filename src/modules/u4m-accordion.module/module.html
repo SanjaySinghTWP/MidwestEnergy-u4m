@@ -40,39 +40,47 @@
 
 {% require_js %}
 <script>
-	const accTitle = document.querySelectorAll('.{{name}}.u4m-accordion .accordion-title');
+  const accTitle = document.querySelectorAll('.{{name}}.u4m-accordion .accordion-title');
 
-																						 if (accTitle.length > 0) {
+if (accTitle.length > 0) {
+	// ✅ Open the first accordion item by default
+	const firstTitle = accTitle[0];
+	const firstContent = firstTitle.nextElementSibling;
+	const firstParent = firstTitle.parentElement;
 
+    {% if module.module_settings.open_by_default %}
+	firstParent.classList.add('acc-open');
+	firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+    {% endif %}
 
-		accTitle.forEach(function(title) {
-			title.addEventListener('click', function() {
-				const content = this.nextElementSibling;
-				const parent = this.parentElement;
+	accTitle.forEach(function(title) {
+		title.addEventListener('click', function() {
+			const content = this.nextElementSibling;
+			const parent = this.parentElement;
 
-				// Close all others
-				accTitle.forEach(function(otherTitle) {
-					const otherContent = otherTitle.nextElementSibling;
-					const otherParent = otherTitle.parentElement;
+			// Close all others
+			accTitle.forEach(function(otherTitle) {
+				const otherContent = otherTitle.nextElementSibling;
+				const otherParent = otherTitle.parentElement;
 
-					if (otherTitle !== title) {
-						otherParent.classList.remove('acc-open');
-						otherContent.style.maxHeight = null;
-					}
-				});
-
-				// Toggle clicked tab
-				const isOpen = parent.classList.contains('acc-open');
-				if (!isOpen) {
-					parent.classList.add('acc-open');
-					content.style.maxHeight = content.scrollHeight + 'px';
-				} else {
-					parent.classList.remove('acc-open');
-					content.style.maxHeight = null;
+				if (otherTitle !== title) {
+					otherParent.classList.remove('acc-open');
+					otherContent.style.maxHeight = null;
 				}
 			});
+
+			// Toggle clicked tab
+			const isOpen = parent.classList.contains('acc-open');
+			if (!isOpen) {
+				parent.classList.add('acc-open');
+				content.style.maxHeight = content.scrollHeight + 'px';
+			} else {
+				parent.classList.remove('acc-open');
+				content.style.maxHeight = null;
+			}
 		});
-	}
+	});
+}
 
 </script>
 {% end_require_js %}

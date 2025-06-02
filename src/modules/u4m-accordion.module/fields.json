@@ -440,6 +440,16 @@
     "type" : "choice",
     "display_width" : null,
     "default" : ""
+  }, {
+    "id" : "976c149b-c8c8-5855-5c52-07a8cac0f140",
+    "name" : "open_by_default",
+    "label" : "Open By Default",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -451,7 +461,8 @@
     "intro_content_size" : "theme",
     "intro_content_width" : 822,
     "enable_animation" : false,
-    "animation_type" : ""
+    "animation_type" : "",
+    "open_by_default" : false
   }
 }, {
   "id" : "module_overrides",
