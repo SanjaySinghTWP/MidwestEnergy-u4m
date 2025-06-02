@@ -231,7 +231,10 @@
 
     form {
       min-width: 1110rem;
+      max-width: 1100rem;
       position: relative;
+
+
 
       input[type="search"] {
         font-weight: normal;
@@ -694,7 +697,7 @@ html.open-search {
     .search-box {
       form {
         button {
-          top: -10%;
+          top: 0%;
         }
       }
     }
