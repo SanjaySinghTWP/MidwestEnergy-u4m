@@ -940,6 +940,18 @@ html.open-search {
   }
 }
 
+
+.u4m-password-prompt {
+  .systems-page {
+    form {
+      input.hs-button {
+        box-sizing: border-box !important;
+      }
+    }
+  }
+}
+
+
 @include tablet {
   .u4m-subscription-preferences {
     .systems-page {
