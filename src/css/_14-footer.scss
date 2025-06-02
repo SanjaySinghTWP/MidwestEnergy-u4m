@@ -1,4 +1,8 @@
 .u4m-footer {
+
+    position: relative;
+    z-index: 99;
+
     .footerTop {
         background: $bright_green;
         padding: 26.5rem 80rem;
