@@ -17,7 +17,7 @@
     "required" : true,
     "locked" : false,
     "display" : "select",
-    "choices" : [ [ "anchor", "Anchor" ], [ "bookmark", "BookMark" ] ],
+    "choices" : [ [ "anchor", "Anchor" ], [ "bookmark", "Bookmark" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
@@ -55,7 +55,7 @@
     "id" : "dd438ddc-8512-38eb-266a-3e3a6e6b0ef0",
     "name" : "anchor_link",
     "label" : "Anchor Link",
-    "help_text" : "add the id of the section you want to link to. No need to include the '#'",
+    "help_text" : "Enter the ID of the section you wish to link to. Do not include the '#' symbol.",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
@@ -176,6 +176,16 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "center"
+  }, {
+    "id" : "8361b179-0fe0-f8a7-f9b9-4b9a87bed718",
+    "name" : "include_sticky",
+    "label" : "Include Sticky",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -183,7 +193,8 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "navbar_content_alignment" : "center"
+    "navbar_content_alignment" : "center",
+    "include_sticky" : true
   }
 }, {
   "id" : "module_overrides",

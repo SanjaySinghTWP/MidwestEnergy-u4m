@@ -49,3 +49,43 @@
 </style>
 {% end_require_css %}
 
+{% require_js %}
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const selector = '.{{name}}.u4m-anchor-nav-bar';
+		const navbarSection = document.querySelector(selector);
+		if (navbarSection) {
+			navbarSection.style.removeProperty('min-height'); // Removes inline style
+		}
+
+		const headerStickySection = document.querySelector('.header-wrap');
+
+		if (headerStickySection && navbarSection) {
+			const navbarOffset = navbarSection.offsetTop;
+
+			window.addEventListener('scroll', function () {
+				let topOffset = navbarOffset;
+
+				if (headerStickySection.parentElement.classList.contains('sticky_header_active')) {
+					const headerHeight = headerStickySection.offsetHeight;
+					topOffset = navbarOffset - headerHeight;
+				}
+
+				const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+				if (scrollTop >= topOffset) {
+					navbarSection.classList.add('sticky_active');
+					if (headerStickySection.parentElement.classList.contains('sticky_header_active')) {
+						navbarSection.style.top = headerStickySection.offsetHeight + 'px';
+					}
+				} else {
+					navbarSection.classList.remove('sticky_active');
+					if (headerStickySection.parentElement.classList.contains('sticky_header_active')) {
+						navbarSection.style.top = '0px';
+					}
+				}
+			});
+		}
+	});
+</script>
+{% end_require_js %}

@@ -33,7 +33,7 @@
     }
 
     .flex_row {
-      align-items: center;
+      align-items: flex-start;
 
       .intro_btn_wrap {
         justify-content: center;
@@ -63,9 +63,13 @@
           margin: 20px 0px;
           fieldset {
             width: 100%;
+
+            max-width: 100%;
           }
           .hs-form-field {
             width: 100%;
+
+            max-width: 100%;
           }
           .hs-submit {
             width: 100%;
