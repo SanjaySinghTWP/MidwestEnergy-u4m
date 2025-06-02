@@ -65,9 +65,9 @@
             {% endif %}
             {% if module.media_section.video_content.embedded_url is string_containing "youtube.com" %}
             {% if module.media_section.video_content.poster_image.src %}
-            <iframe {% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %}src="" data-{% endif %}src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay={% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %}1{% else %}0{% endif %}&loop=0&mute=1&showinfo=0&controls=0&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
+            <iframe {% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %}src="" data-{% endif %}src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay={% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %}1{% else %}0{% endif %}&loop=0&mute=1&showinfo=0&controls=1&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
             {% else %}
-            <iframe src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=0&loop=0&mute=1&showinfo=0&controls=0&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&mute=1&showinfo=0&controls=0&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
+            <iframe src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=0&loop=0&mute=1&showinfo=0&controls=1&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&mute=1&showinfo=0&controls=1&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
             {% endif %}
 
             {% else %}
@@ -134,7 +134,7 @@
             {% if module.media_section.video_content.poster_image.src %}
             <video {% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %}data-{% endif %}src="{{ module.media_section.video_content.file_field }}"{% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %} autoplay{% endif %}></video>
             {% else %}
-            <video src="{{ module.media_section.video_content.file_field }}" data-src="{{ module.media_section.video_content.file_field }}"></video>
+            <video src="{{ module.media_section.video_content.file_field }}" data-src="{{ module.media_section.video_content.file_field }}" controls></video>
             {% endif %}
 
             {% endif %}
@@ -156,14 +156,14 @@
             <div class="inner_spacer" style="padding-bottom: {{ module.media_section.video_content.video_height }}%;">
               {% if module.media_section.video_content.video_type == "external" %}
               {% if module.media_section.video_content.embedded_url is string_containing "youtube.com" %}
-              <iframe src="" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&mute=1&showinfo=0&controls=0&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
+              <iframe src="" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&mute=1&showinfo=0&controls=1&playlist={{ module.media_section.video_content.embedded_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
               {% else %}
               <iframe src="" data-src="{{ module.media_section.video_content.embedded_url|split('?')|first }}?autoplay=1&loop=0&muted=1&autopause=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video"></iframe>
               {% endif %}
               {% endif  %}
 
               {% if module.media_section.video_content.video_type == "file" %}
-              <video data-src="{{ module.media_section.video_content.file_field }}" autoplay></video>
+              <video data-src="{{ module.media_section.video_content.file_field }}" autoplay controls></video>
               {% endif %}
             </div>
           </div>
