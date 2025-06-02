@@ -801,3 +801,152 @@ html.open-search {
     }
   }
 }
+
+
+.u4m-membership-login {
+  .systems-page {
+    form {
+      .hs-submit {
+        input.hs-button {
+          box-sizing: border-box !important;
+        }
+
+        .actions {
+          width: 100%;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  form {
+    input[type="checkbox"] {
+      width: auto !important;
+    }
+  }
+}
+
+.u4m-membership-register {
+  .systems-page {
+    form {
+      .hs-submit {
+        input.hs-button {
+          box-sizing: border-box !important;
+        }
+
+        .actions {
+          width: 100%;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  form {
+    input[type="checkbox"] {
+      width: auto !important;
+    }
+  }
+}
+
+.u4m-membership-reset-password-request {
+  .systems-page {
+    form {
+      .hs-submit {
+        input.hs-button {
+          box-sizing: border-box !important;
+        }
+
+        .actions {
+          width: 100%;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  form {
+    input[type="checkbox"] {
+      width: auto !important;
+    }
+  }
+
+  .form-container {
+    ul.no-list {
+      display: none;
+    }
+  }
+}
+
+.u4m-membership-reset-password {
+  .systems-page {
+    form {
+      .hs-submit {
+        input.hs-button {
+          box-sizing: border-box !important;
+        }
+
+        .actions {
+          width: 100%;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  form {
+    input[type="checkbox"] {
+      width: auto !important;
+    }
+  }
+}
+
+.u4m-password-prompt {
+  .systems-page {
+    form {
+      input[type="password"] {
+        height: auto !important;
+      }
+
+      .hs-submit {
+        input.hs-button {
+          box-sizing: border-box !important;
+        }
+
+        .actions {
+          width: 100%;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+.u4m-search-results {
+  .hs-search-results__pagination {
+    a.hs-search-results__pagination__link {
+      padding: 8px;
+    }
+  }
+}
+
+.u4m-subscription-preferences {
+  .systems-page {
+    form {
+      input.hs-button {
+        box-sizing: border-box !important;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .u4m-subscription-preferences {
+    .systems-page {
+      form {
+        padding: 10rem;
+        max-width: 100%;
+      }
+    }
+  }
+}
