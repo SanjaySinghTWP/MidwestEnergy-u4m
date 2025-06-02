@@ -24,14 +24,25 @@ $medium_grey: #e4e4e4;
 $medium_light_grey: rgb(181, 181, 181);
 $middle_black: rgba(0, 0, 0, 0.3019607843);
 $light_black: rgba(0, 0, 0, 0.1607843137);
-$gradient1: linear-gradient(71deg,
-    $white 0%,
-    $bright_green 41.68%,
-    $middle_green 83.9%,
-    $middle_green 101.77%);
-$gradient2: radial-gradient(43.24% 59.53% at 35.43% 57.72%,
-    rgba(208, 221, 40, 0.25) 0%,
-    rgba(55, 58, 54, 0.06) 100%);
+$gradient1: linear-gradient(
+  71deg,
+  $white 0%,
+  $bright_green 41.68%,
+  $middle_green 83.9%,
+  $middle_green 101.77%
+);
+$gradient2: radial-gradient(
+  43.24% 59.53% at 35.43% 57.72%,
+  rgba(208, 221, 40, 0.25) 0%,
+  rgba(55, 58, 54, 0.06) 100%
+);
+$gradient3: linear-gradient(
+  309deg,
+  $white 0%,
+  $bright_green 41.68%,
+  $middle_green 83.9%,
+  $middle_green 101.77%
+);
 
 $font1: "Source Sans Pro";
 $font2: "Priori Sans OT";

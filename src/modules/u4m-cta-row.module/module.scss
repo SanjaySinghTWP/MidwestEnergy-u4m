@@ -20,11 +20,12 @@
 
     h2.intro_title {
       margin-bottom: 10rem;
+      color: $dark_green;
     }
 
     .intro_desc {
       p {
-        @include b3;
+        color: $dark_green;
         margin-bottom: 30rem;
       }
     }
@@ -41,7 +42,7 @@
     }
 
     &:after {
-      background: $gradient1;
+      background: $gradient3;
       border-radius: 24rem;
       content: "";
       display: block;

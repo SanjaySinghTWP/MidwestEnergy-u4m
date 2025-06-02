@@ -161,7 +161,7 @@
       "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
       "name" : "button_style",
       "label" : "Button Style",
-      "required" : false,
+      "required" : true,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
@@ -198,7 +198,7 @@
       "show_emoji_picker" : false,
       "type" : "text",
       "display_width" : null,
-      "default" : "Button"
+      "default" : "Report an Outage"
     }, {
       "id" : "f1ccd7fd-a18d-1262-3c67-476cdf5424cd",
       "name" : "link",
@@ -251,7 +251,7 @@
     "default" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_text" : "Button",
+      "button_text" : "Report an Outage",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -264,7 +264,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_text" : "Button",
+      "button_text" : "Report an Outage",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -293,7 +293,7 @@
     "button_group" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_text" : "Button",
+      "button_text" : "Report an Outage",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -306,7 +306,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_text" : "Button",
+      "button_text" : "Report an Outage",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -351,7 +351,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "theme"
+    "default" : "b3"
   }, {
     "id" : "7def73cf-f5f3-ad22-22a2-c1a64d3669f5",
     "name" : "intro_content_width",
@@ -418,7 +418,7 @@
   "display_width" : null,
   "default" : {
     "intro_content_alignment" : "left",
-    "intro_content_size" : "theme",
+    "intro_content_size" : "b3",
     "include_animation" : false,
     "animation_type" : "fade-up",
     "style_type" : "two_column"
@@ -700,24 +700,6 @@
     "type" : "number",
     "display_width" : null,
     "default" : 50
-  }, {
-    "id" : "3eccf45d-b0dc-4bac-42a0-f923e4405158",
-    "name" : "reverse_text",
-    "label" : "Dark Theme",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : "enable_overrides",
-      "controlling_field_path" : null,
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
   }, {
     "id" : "94e04306-ecc1-4735-09fd-9b66482a8101",
     "name" : "background_settings",
@@ -1013,7 +995,6 @@
     "bottom_padding" : "bottom-padding-default",
     "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
-    "reverse_text" : false,
     "background_settings" : {
       "background_type" : "image",
       "background_image" : {
