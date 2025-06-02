@@ -282,11 +282,6 @@
       .hs-search-field__suggestions-container {
         width: 100%;
 
-        @include tabletvert {
-          text-overflow: unset;
-          white-space: unset;
-        }
-
         ul {
           li {
             line-height: 1.5;
@@ -296,6 +291,11 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+
+            @include tabletvert {
+              text-overflow: unset;
+              white-space: unset;
+            }
           }
         }
       }
