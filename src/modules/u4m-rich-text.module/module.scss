@@ -3,301 +3,300 @@
 /* ===== video column style ==== */
 
 .u4m-rich-text {
-    padding-left: 80rem;
-    padding-right: 80rem;
-    position: relative;
-    z-index: 9;
+  padding-left: 80rem;
+  padding-right: 80rem;
+  position: relative;
+  z-index: 9;
 
-    .intro_content {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .intro_content {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .row {
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        margin-top: 60rem;
-    }
+  .row {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 60rem;
+  }
 
-    .page-center {
-        padding: 0;
-
-        .media-column {
-            .image {
-                img {
-                    min-width: 1000rem;
-                    min-height: 373rem;
-                    max-height: 373rem;
-                    object-fit: cover;
-
-                    @include navbreak {
-                        max-height: unset;
-                        min-height: unset;
-                        height: auto;
-                        min-width: unset;
-                        width: auto;
-                    }
-
-                }
-            }
-        }
-    }
+  .page-center {
+    padding: 0;
 
     .media-column {
-        .video-wrap {
-            .video-cnt {
-                .cm_vb {
-                    position: relative;
-                    z-index: 2;
-                    position: relative;
-                }
+      .image {
+        img {
+          min-width: 1000rem;
+          min-height: 373rem;
+          max-height: 373rem;
+          object-fit: cover;
 
-                .inner_spacer {
-                    position: relative;
-                    padding-bottom: 75%;
-                    overflow: hidden;
-
-                    .poster_image {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background-size: cover;
-                        background-position: center;
-                        z-index: 9;
-                        transition: 0.2s linear;
-                    }
-                }
-            }
+          @include navbreak {
+            max-height: unset;
+            min-height: unset;
+            height: auto;
+            min-width: unset;
+            width: auto;
+          }
         }
+      }
     }
+  }
 
-    .main-vid-wrap {
-        position: relative;
-        overflow: hidden;
-
+  .media-column {
+    .video-wrap {
+      .video-cnt {
         .cm_vb {
-            position: relative;
-            z-index: 2;
-            position: relative;
+          position: relative;
+          z-index: 2;
+          position: relative;
         }
 
-        &:hover {
-            .vid_icn {
-                transform: scale(1.1);
-            }
-        }
-    }
+        .inner_spacer {
+          position: relative;
+          padding-bottom: 75%;
+          overflow: hidden;
 
-    .inner_spacer {
-        position: relative;
-        padding-bottom: 75%;
-        overflow: hidden;
-    }
-
-    .cm_vb {
-        video {
-            width: 100%;
-            height: 100%;
-            -o-object-fit: cover;
-            object-fit: cover;
+          .poster_image {
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 5;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 9;
+            transition: 0.2s linear;
+          }
         }
+      }
+    }
+  }
+
+  .main-vid-wrap {
+    position: relative;
+    overflow: hidden;
+
+    .cm_vb {
+      position: relative;
+      z-index: 2;
+      position: relative;
     }
 
-    .poster_image {
-        position: absolute;
-        top: 0;
-        left: 0;
+    &:hover {
+      .vid_icn {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .inner_spacer {
+    position: relative;
+    padding-bottom: 75%;
+    overflow: hidden;
+  }
+
+  .cm_vb {
+    video {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
+  }
+
+  .poster_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 9;
+    transition: 0.2s linear;
+  }
+
+  .vid_trigger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 9;
+    transition: 0.2s linear;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $light_black;
+    cursor: pointer;
+
+    .vid_icn {
+      width: 50rem;
+      height: 50rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      cursor: pointer;
+      transition: 0.2s linear;
+      width: 60rem;
+      height: 60rem;
+      border-radius: 100rem;
+      background: $white;
+
+      svg {
         width: 100%;
         height: 100%;
-        background-size: cover;
-        background-position: center;
-        z-index: 9;
-        transition: 0.2s linear;
+        width: 30rem;
+        height: 30rem;
+        position: relative;
+        top: 4rem;
+        left: 2rem;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .cm_vb.activeVideo {
+    .poster_image {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
     }
 
     .vid_trigger {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        z-index: 9;
-        transition: 0.2s linear;
-        z-index: 10;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: $light_black;
-        cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
 
-        .vid_icn {
-            width: 50rem;
-            height: 50rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 100%;
-            cursor: pointer;
-            transition: 0.2s linear;
-            width: 60rem;
-            height: 60rem;
-            border-radius: 100rem;
-            background: $white;
+  .video_popup_modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $middle_black;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.1s ease;
 
-            svg {
-                width: 100%;
-                height: 100%;
-                width: 30rem;
-                height: 30rem;
-                position: relative;
-                top: 4rem;
-                left: 2rem;
-            }
-
-            img {
-                width: 100%;
-            }
-        }
+    .modal_video_container {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+      justify-content: center;
+      width: 100%;
+      overflow: hidden;
+      overflow-y: auto;
+      padding: 50rem 20rem;
     }
 
-    .cm_vb.activeVideo {
-        .poster_image {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .vid_trigger {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
+    .modal_video_box {
+      margin: 0 auto;
+      max-width: 900rem;
+      transform: translateY(100rem);
+      opacity: 0;
+      transition: 0.4s ease 0.2s;
+      width: 100%;
     }
 
-    .video_popup_modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: $middle_black;
-        z-index: 999;
-        visibility: hidden;
-        opacity: 0;
-        transition: 0.1s ease;
-
-        .modal_video_container {
-            align-items: center;
-            display: flex;
-            flex-wrap: wrap;
-            height: 100%;
-            justify-content: center;
-            width: 100%;
-            overflow: hidden;
-            overflow-y: auto;
-            padding: 50rem 20rem;
-        }
-
-        .modal_video_box {
-            margin: 0 auto;
-            max-width: 900rem;
-            transform: translateY(100rem);
-            opacity: 0;
-            transition: 0.4s ease 0.2s;
-            width: 100%;
-        }
-
-        video {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 5;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 5;
-        }
+    video {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
     }
 
-    .video_popup_modal.show {
-        display: block;
+    iframe {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
     }
+  }
 
-    .video_popup_modal.active_show {
-        opacity: 1;
-        visibility: visible;
+  .video_popup_modal.show {
+    display: block;
+  }
 
-        .modal_video_box {
-            transform: translateY(0);
-            opacity: 1;
-        }
+  .video_popup_modal.active_show {
+    opacity: 1;
+    visibility: visible;
+
+    .modal_video_box {
+      transform: translateY(0);
+      opacity: 1;
     }
+  }
 
-    .closeIcon {
-        position: absolute;
-        top: 50rem;
-        right: 50rem;
-        font-size: 35rem;
-        width: 50rem;
-        height: 50rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 11;
-        cursor: pointer;
-        font-weight: bold;
-    }
+  .closeIcon {
+    position: absolute;
+    top: 50rem;
+    right: 50rem;
+    font-size: 35rem;
+    width: 50rem;
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+    cursor: pointer;
+    font-weight: bold;
+  }
 
-    .video_container {
-        iframe.iframe_video {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-        }
+  .video_container {
+    iframe.iframe_video {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
     }
+  }
 }
 
 .adv_video_module {
-    .cm_vb {
-        iframe {
-            width: 100%;
-            height: 100%;
-            -o-object-fit: cover;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 5;
-        }
+  .cm_vb {
+    iframe {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
     }
+  }
 }
 
 .popup_open {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 @include tabletvert {
-    .u4m-rich-text {
-        padding-left: 20rem;
-        padding-right: 20rem;
-    }
+  .u4m-rich-text {
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
 }

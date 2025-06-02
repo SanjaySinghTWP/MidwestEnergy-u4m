@@ -6,10 +6,13 @@
 <div class="u4m-footer">
   <div class="footerTop">
     <div class="page-center">
-      {% module_block module 'footer_top_content' path='@hubspot/rich_text'
-      label='Footer Top Content' %} {% module_attribute 'html' %}
-      <h2>Creating vibrant, relevant, sustainable rural communities.</h2>
-      {% end_module_attribute %} {% end_module_block %}
+      {% module_block module 'footer_top_content' path='@hubspot/rich_text' label='Footer Top Content' %}
+      {% module_attribute 'html' %}
+      <h2>
+        Creating vibrant, relevant, sustainable rural communities.
+      </h2>
+      {% end_module_attribute %}
+      {% end_module_block %}
     </div>
   </div>
 
@@ -18,81 +21,186 @@
       <div class="btm-inner">
         <div class="meta-details">
           <div class="logo">
-            {% set logo_file = get_asset_url('../images/midwest-logo.png') %} {%
-            module "footer_logo2" path="@hubspot/logo", label="Footer Logo",
-            link='/', img={src="{{logo_file}}", width= 187, alt="Midwest
-            Energy", override_inherited_src= true} %}
+            {% set footer_logo_file =  get_asset_url('../images/midwest-logo.png') %}
+            {% module "footer_logo2" path="@hubspot/logo", label="Footer Logo", link='/', img={src="{{footer_logo_file}}", width= 187, alt="Midwest Energy", override_inherited_src= true} %}
           </div>
           <div class="social-icons-wrap">
-            {% module "social_share" path="../../modules/u4m-social-share",
-            label="Social Share" %}
+            {#{% module "social_share" path="../../modules/u4m-social-share", label="Social Share" %}#}
+            {% dnd_area "Social Share" class='social-share-area', label='Social Area Section' %}
+            {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "top" : "0px"
+    }
+  }
+%}
+            {% dnd_module
+    path="../../modules/u4m-social-share",
+    offset=0,
+    width=12,
+    social_feed=[ {
+      "icon_image" : {
+        "alt" : "Facebook",
+        "height" : 24,
+        "loading" : "lazy",
+        "max_height" : 24,
+        "max_width" : 24,
+        "size_type" : "auto",
+        "src" : get_asset_url('../../templates/images/fb-icon.svg'),
+        "width" : 24
+      },
+      "item_link" : {
+        "no_follow" : false,
+        "open_in_new_tab" : false,
+        "url" : {
+          "href" : "",
+          "type" : "EXTERNAL"
+        }
+      },
+      "select_social_icon" : "facebook"
+    }, {
+      "icon_image" : {
+        "alt" : "Instagram",
+        "height" : 24,
+        "loading" : "lazy",
+        "max_height" : 24,
+        "max_width" : 24,
+        "size_type" : "auto",
+        "src" : get_asset_url('../../templates/images/insta-icon.svg'),
+        "width" : 24
+      },
+      "item_link" : {
+        "no_follow" : false,
+        "open_in_new_tab" : false,
+        "url" : {
+          "href" : "",
+          "type" : "EXTERNAL"
+        }
+      },
+      "select_social_icon" : "instagram"
+    }, {
+      "icon_image" : {
+        "alt" : "Youtube",
+        "height" : 24,
+        "loading" : "lazy",
+        "max_height" : 24,
+        "max_width" : 24,
+        "size_type" : "auto",
+        "src" : get_asset_url('../../templates/images/youtube-icon.svg'),
+        "width" : 24
+      },
+      "item_link" : {
+        "no_follow" : false,
+        "open_in_new_tab" : false,
+        "url" : {
+          "href" : "",
+          "type" : "EXTERNAL"
+        }
+      },
+      "select_social_icon" : "youtube"
+    }, {
+      "icon_image" : {
+        "alt" : "Linkedin",
+        "height" : 24,
+        "loading" : "lazy",
+        "max_height" : 24,
+        "max_width" : 24,
+        "size_type" : "auto",
+        "src" : get_asset_url('../../templates/images/linkedin-icon.svg'),
+        "width" : 24
+      },
+      "item_link" : {
+        "no_follow" : false,
+        "open_in_new_tab" : false,
+        "url" : {
+          "href" : "",
+          "type" : "EXTERNAL"
+        }
+      },
+      "select_social_icon" : "linkedin"
+    } ]
+  %}
+            {% end_dnd_module %}
+            {% end_dnd_section %}
+            {% end_dnd_area %}
           </div>
         </div>
         <div class="primary-nav">
           <div class="comp-add">
-            {% module_block module 'company_headquarters'
-            path='@hubspot/rich_text' label='Company Headquarters' %} {%
-            module_attribute 'html' %}
-            <h3>Corporate Headquarters</h3>
+            {% module_block module 'company_headquarters' path='@hubspot/rich_text' label='About Company' %}
+            {% module_attribute 'html' %}
+            <h3>
+              Corporate Headquarters
+            </h3>
             <p>
-              60590 Decatur Rd.<br />
+              60590 Decatur Rd.<br>
               Cassopolis, MI 49031
             </p>
-            <p>800.492.5989</p>
-            <a href="">Privacy Policy</a>
-            {% end_module_attribute %} {% end_module_block %}
+            <p>
+              800.492.5989
+            </p>
+            <a href="#">Privacy Policy</a>
+            {% end_module_attribute %}
+            {% end_module_block %}
           </div>
           <div class="about-us">
-            {% menu "about_us" id=190720561696, flyouts=false, label='About Us'
-            %}
+            {% menu "about_us" id=190720561696, flyouts=false, label='About Us Menu' %}
           </div>
           <div class="quick-links">
-            {% menu "quick_links" id=190720561705, flyouts=false, label='Quick
-            Links' %}
+            {% menu "quick_links" id=190720561705, flyouts=false, label='Quick Links' %}
           </div>
           <div class="solutions">
-            {% menu "soultions" id=190720561709, flyouts=false,
-            label='Solutions' %}
+            {% menu "soultions" id=190720561709, flyouts=false, label='Solutions' %}
           </div>
           <div class="support">
             {% menu "support" id=190720561713, flyouts=false, label='Support' %}
           </div>
         </div>
+
       </div>
       <div class="copyright-image">
         <div class="copyright-text">
-          {% module_block module 'copyright_text3' path='@hubspot/rich_text'
-          label='Copyright' %} {% module_attribute 'html' %}
+          {% module_block module 'copyright_text3' path='@hubspot/rich_text' label='Copyright' %}
+          {% module_attribute 'html' %}
           <p>
-            Copyright © {{year}} Midwest Energy & Communications. All Rights
-            Reserved.
+            Copyright © {{year}} Midwest Energy & Communications. All Rights Reserved.
           </p>
           <p>
-            Internet, propane, and data center services are not regulated by the
-            Michigan Public Service Commission.
+            Internet, propane, and data center services are not regulated by the Michigan Public Service Commission.
           </p>
           <p>
-            CommandIQ™, ExperienceIQ™, and ProtectIQ™ are trademarks of Calix,
-            our internet equipment and CommandIQ™ mobile app partner.
+            CommandIQ™, ExperienceIQ™, and ProtectIQ™ are trademarks of Calix, our internet equipment and CommandIQ™ mobile app partner.
           </p>
-          {% end_module_attribute %} {% end_module_block %}
+          {% end_module_attribute %}
+          {% end_module_block %}
         </div>
         <div class="image-cnt">
           <div class="all-fiber">
-            {% module "all_fiber" path="@hubspot/linked_image" label="All Fiber
-            Certified" img={ "src":
-            get_asset_url('../images/all-fiber-certified.png'), "alt": "All
-            Fiber Certified", "loading": "disabled", "width": 114, "height": 114
-            } %}
+            {% module "all_fiber" path="@hubspot/linked_image" label="All Fiber Certified" img={ 
+						"src": get_asset_url('../images/all-fiber-certified.png'), 
+						"alt": "All Fiber Certified", 
+						"loading": "disabled", 
+						"width": 114, 
+						"height": 114 
+						}
+						%}
           </div>
           <div class="accredited">
-            {% module "accredited2" path="@hubspot/linked_image"
-            label="Accredited Business" img={ "src":
-            get_asset_url('../images/footer-logo-final.png'), "alt": "Accredited
-            Business", "loading": "disabled", "width": 209, "height": 80 }%}
+            {% module "accredited2" path="@hubspot/linked_image" label="Accredited Business"  img={ 
+						"src": get_asset_url('../images/footer-logo-final.png'), 
+						"alt": "Accredited Business", 
+						"loading": "disabled", 
+						"width": 209, 
+						"height": 80 
+						}%}
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
