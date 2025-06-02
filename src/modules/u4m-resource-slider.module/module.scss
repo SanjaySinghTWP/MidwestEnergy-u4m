@@ -9,6 +9,13 @@ $color_1: #536c5f;
       flex-wrap: wrap;
       justify-content: space-between;
       margin: 50px 0px;
+      .intro_desc {
+        max-width: 620px;
+        margin-left: 0;
+        @include tabletvert {
+          max-width: 100%;
+        }
+      }
     }
   }
   .cm-resource-slider {

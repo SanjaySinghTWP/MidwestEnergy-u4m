@@ -57,10 +57,20 @@
         form {
           display: flex;
           flex-wrap: wrap;
-          margin: 0;
           align-items: flex-end;
           column-gap: 12rem;
           position: relative;
+          margin: 20px 0px;
+          fieldset {
+            width: 100%;
+          }
+          .hs-form-field {
+            width: 100%;
+          }
+          .hs-submit {
+            width: 100%;
+            margin-top: 20px;
+          }
 
           .hs-form-field > label {
             color: $white;
@@ -82,6 +92,7 @@
             border-radius: 4rem;
             border: 1rem solid #868c90;
             background: $white;
+            width: 100%;
           }
 
           .hs_email {

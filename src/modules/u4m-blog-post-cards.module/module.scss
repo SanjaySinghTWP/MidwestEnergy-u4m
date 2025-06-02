@@ -93,6 +93,13 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        .intro_desc {
+          max-width: 650px;
+          margin-left: 0;
+          @mixin tabletvert {
+            max-width: 100%;
+          }
+        }
       }
     }
   }

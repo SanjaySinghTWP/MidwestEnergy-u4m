@@ -1,33 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const playIcon = document.querySelector(".play-icon");
   const videoWrapper = document.querySelector(".vid_wrp");
+  if (!videoWrapper) {
+    console.warn(".vid_wrp element not found on the page");
+    return; // Stop execution here, no element to work with
+  }
+
+  const playIcon = videoWrapper.querySelector(".play-icon");
+  if (!playIcon) {
+    console.warn(".play-icon element not found inside .vid_wrp");
+    return;
+  }
+
   const iframe = videoWrapper.querySelector("iframe");
   const video = videoWrapper.querySelector("video");
 
   let isPlaying = false;
 
   playIcon.addEventListener("click", function () {
-    // For iframe (YouTube)
-    if (iframe && !isPlaying) {
-      const videoSrc = iframe.getAttribute("data-src");
-      iframe.src = videoSrc + "?autoplay=1&enablejsapi=1";
-      videoWrapper.classList.add("video-active");
-      isPlaying = true;
-    }
-
-    // For video tag (MP4)
-    if (video && !isPlaying) {
-      video.play();
-      videoWrapper.classList.add("video-active");
-      isPlaying = true;
+    if (!isPlaying) {
+      if (iframe) {
+        const videoSrc = iframe.getAttribute("data-src");
+        iframe.src = videoSrc + "?autoplay=1&mute=1";
+        videoWrapper.classList.add("video-active");
+        isPlaying = true;
+      } else if (video) {
+        video.play();
+        videoWrapper.classList.add("video-active");
+        isPlaying = true;
+      }
     }
   });
 
-  // Stop video on click
   if (iframe) {
     iframe.addEventListener("click", function () {
       if (isPlaying) {
-        iframe.src = ""; // remove src to stop playback
+        iframe.src = "";
         videoWrapper.classList.remove("video-active");
         isPlaying = false;
       }
@@ -38,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     video.addEventListener("click", function () {
       if (isPlaying) {
         video.pause();
-        video.currentTime = 0; // optional: reset to start
+        video.currentTime = 0;
         videoWrapper.classList.remove("video-active");
         isPlaying = false;
       }

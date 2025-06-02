@@ -29,7 +29,7 @@
                 {% endif %}
                 {% if item.description %}
                 <div class="des-wrp">
-                  {{item.description}}
+                  {{item.description|truncatehtml(100)|striptags}}
                 </div>
                 {% endif %}
                 {% if module.module_settings.card_settings.button_text %}
