@@ -255,6 +255,16 @@
         border-radius: 0;
         box-shadow: 0 1rem 0 0 $medium_grey;
         outline: none;
+
+        &::-webkit-search-cancel-button {
+          -webkit-appearance: none;
+          appearance: none;
+          display: none;
+        }
+
+        &::-moz-search-clear-button {
+          display: none;
+        }
       }
 
       button {
