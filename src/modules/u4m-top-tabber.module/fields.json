@@ -95,7 +95,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
@@ -287,7 +287,7 @@
     "include_heading" : true,
     "heading_size" : "h2",
     "heading" : "Electric Reliability",
-    "include_content" : false,
+    "include_content" : true,
     "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>",
     "include_button" : false,
     "button_group" : [ {
@@ -381,7 +381,7 @@
         "min" : null,
         "max" : null,
         "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-        "default" : 2
+        "default" : 1
       },
       "children" : [ {
         "id" : "c70dc96f-2109-68ca-405b-d60035d5e14b",
@@ -418,7 +418,7 @@
         "preset" : null,
         "type" : "choice",
         "display_width" : null,
-        "default" : "hs-button"
+        "default" : "hs-sec-btn"
       }, {
         "id" : "cb254efb-3e58-1ff5-10e7-54a10744e051",
         "name" : "button_text",
@@ -438,7 +438,7 @@
         "show_emoji_picker" : false,
         "type" : "text",
         "display_width" : null,
-        "default" : "Button"
+        "default" : "CTA Button"
       }, {
         "id" : "cd0dcaee-c2cb-917e-8788-1c2629dae47b",
         "name" : "link",
@@ -490,21 +490,8 @@
       "display_width" : null,
       "default" : [ {
         "button_type" : "std",
-        "button_style" : "hs-button",
-        "button_text" : "Button",
-        "link" : {
-          "url" : {
-            "content_id" : null,
-            "type" : "EXTERNAL",
-            "href" : ""
-          },
-          "open_in_new_tab" : false,
-          "no_follow" : false
-        }
-      }, {
-        "button_type" : "std",
-        "button_style" : "hs-button",
-        "button_text" : "Button",
+        "button_style" : "hs-sec-btn",
+        "button_text" : "CTA Button",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -525,21 +512,8 @@
       "content" : "<h2>How Do Rolling Blackouts Work?</h2>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
       "button_group" : [ {
         "button_type" : "std",
-        "button_style" : "hs-button",
-        "button_text" : "Button",
-        "link" : {
-          "url" : {
-            "content_id" : null,
-            "type" : "EXTERNAL",
-            "href" : ""
-          },
-          "open_in_new_tab" : false,
-          "no_follow" : false
-        }
-      }, {
-        "button_type" : "std",
-        "button_style" : "hs-button",
-        "button_text" : "Button",
+        "button_style" : "hs-sec-btn",
+        "button_text" : "CTA Button",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -551,54 +525,6 @@
         }
       } ]
     }
-  }, {
-    "id" : "409db6fa-79ba-59a1-0496-f8841769f07b",
-    "name" : "bottom_content",
-    "label" : "Bottom Content",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null,
-    "default" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
-  }, {
-    "id" : "f2eb0cf0-a4fa-93d4-9ae5-d148427c4122",
-    "name" : "list_item",
-    "label" : "List Item",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : "6510b977-0ecb-1db6-17b9-563851e3a0cb",
-      "default" : 4
-    },
-    "children" : [ {
-      "id" : "6510b977-0ecb-1db6-17b9-563851e3a0cb",
-      "name" : "list_title",
-      "label" : "List Title",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "display_width" : null,
-      "default" : "Icon list"
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
-    "display_width" : null,
-    "default" : [ {
-      "list_title" : "Icon list"
-    }, {
-      "list_title" : "Icon list"
-    }, {
-      "list_title" : "Icon list"
-    }, {
-      "list_title" : "Icon list"
-    } ]
   }, {
     "id" : "8f60678a-b38f-0493-ae60-553bcce17629",
     "name" : "right_column",
@@ -696,10 +622,61 @@
       "display_width" : null,
       "default" : ""
     }, {
+      "id" : "3bae432c-3f14-9f60-acf5-33dfaa49e9f2",
+      "name" : "play_icon",
+      "label" : "Play Icon",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "tab_items.right_column.select_video_type",
+        "controlling_value_regex" : "video1|external",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "icon_set" : "fontawesome-5.14.0",
+      "type" : "icon",
+      "display_width" : null,
+      "default" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "SOLID"
+      }
+    }, {
+      "id" : "4f9294e3-4e28-73a6-ab66-6624f382b673",
+      "name" : "poster_image",
+      "label" : "Poster Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "tab_items.right_column.select_video_type",
+        "controlling_value_regex" : "video1|external",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/1084-536x354-grayscale.jpg",
+        "alt" : "Poster Img",
+        "loading" : "lazy",
+        "width" : 536,
+        "height" : 354,
+        "max_width" : 536,
+        "max_height" : 354
+      }
+    }, {
       "picker" : "video",
       "id" : "84919f41-8c01-5854-a7c8-0bdb2100cb35",
       "name" : "file_field",
-      "label" : "File",
+      "label" : "Select Video",
       "required" : false,
       "locked" : false,
       "visibility" : {
@@ -716,6 +693,7 @@
       "id" : "951ca6d3-b7df-6626-ee7e-b85ea23bf63a",
       "name" : "external_video_url",
       "label" : "External Video URL",
+      "help_text" : "Youtub Url",
       "required" : false,
       "locked" : false,
       "validation_regex" : "",
@@ -727,10 +705,12 @@
         "operator" : "EQUAL",
         "access" : null
       },
+      "placeholder" : "",
       "allow_new_line" : false,
       "show_emoji_picker" : false,
       "type" : "text",
-      "display_width" : null
+      "display_width" : null,
+      "default" : "EngW7tLk6R8"
     }, {
       "id" : "93ecbd14-1b93-e7a9-a1dc-b861d2e86a33",
       "name" : "button_group",
@@ -895,6 +875,22 @@
         "max_height" : 563
       },
       "select_video_type" : "",
+      "play_icon" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "SOLID"
+      },
+      "poster_image" : {
+        "size_type" : "auto",
+        "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/1084-536x354-grayscale.jpg",
+        "alt" : "Poster Img",
+        "loading" : "lazy",
+        "width" : 536,
+        "height" : 354,
+        "max_width" : 536,
+        "max_height" : 354
+      },
+      "external_video_url" : "EngW7tLk6R8",
       "button_group" : [ {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -923,6 +919,54 @@
         }
       } ]
     }
+  }, {
+    "id" : "409db6fa-79ba-59a1-0496-f8841769f07b",
+    "name" : "bottom_content",
+    "label" : "Bottom Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+  }, {
+    "id" : "f2eb0cf0-a4fa-93d4-9ae5-d148427c4122",
+    "name" : "list_item",
+    "label" : "Bottom List Item",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "6510b977-0ecb-1db6-17b9-563851e3a0cb",
+      "default" : 4
+    },
+    "children" : [ {
+      "id" : "6510b977-0ecb-1db6-17b9-563851e3a0cb",
+      "name" : "list_title",
+      "label" : "List Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Icon list"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "list_title" : "Icon list"
+    }, {
+      "list_title" : "Icon list"
+    }, {
+      "list_title" : "Icon list"
+    }, {
+      "list_title" : "Icon list"
+    } ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -936,8 +980,8 @@
       "content" : "<h2>How Do Rolling Blackouts Work?</h2>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
       "button_group" : [ {
         "button_type" : "std",
-        "button_style" : "hs-button",
-        "button_text" : "Button",
+        "button_style" : "hs-sec-btn",
+        "button_text" : "CTA Button",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -947,35 +991,8 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      }, {
-        "button_type" : "std",
-        "button_style" : "hs-button",
-        "button_text" : "Button",
-        "link" : {
-          "url" : {
-            "content_id" : null,
-            "type" : "EXTERNAL",
-            "href" : ""
-          },
-          "open_in_new_tab" : false,
-          "no_follow" : false
-        }
-      } ],
-      "bottom_content" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
-      "list_item" : [ {
-        "list_title" : "Icon list"
       } ]
     },
-    "bottom_content" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
-    "list_item" : [ {
-      "list_title" : "Icon list"
-    }, {
-      "list_title" : "Icon list"
-    }, {
-      "list_title" : "Icon list"
-    }, {
-      "list_title" : "Icon list"
-    } ],
     "right_column" : {
       "select_content_type" : "content",
       "content" : "<h2>How Do Rolling Blackouts Work?</h2>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
@@ -990,6 +1007,17 @@
         "max_height" : 563
       },
       "select_video_type" : "",
+      "poster_image" : {
+        "size_type" : "auto",
+        "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/1084-536x354-grayscale.jpg",
+        "alt" : "Poster Img",
+        "loading" : "lazy",
+        "width" : 536,
+        "height" : 354,
+        "max_width" : 536,
+        "max_height" : 354
+      },
+      "external_video_url" : "EngW7tLk6R8",
       "button_group" : [ {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -1016,8 +1044,23 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      } ]
-    }
+      } ],
+      "play_icon" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "SOLID"
+      }
+    },
+    "bottom_content" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+    "list_item" : [ {
+      "list_title" : "Icon list"
+    }, {
+      "list_title" : "Icon list"
+    }, {
+      "list_title" : "Icon list"
+    }, {
+      "list_title" : "Icon list"
+    } ]
   }, {
     "tab_title" : "How Do Rolling Blackouts Work?",
     "number_of_columns" : "col-12",
@@ -1025,8 +1068,8 @@
       "content" : "<h2>How Do Rolling Blackouts Work?</h2>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
       "button_group" : [ {
         "button_type" : "std",
-        "button_style" : "hs-button",
-        "button_text" : "Button",
+        "button_style" : "hs-sec-btn",
+        "button_text" : "CTA Button",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -1036,35 +1079,8 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      }, {
-        "button_type" : "std",
-        "button_style" : "hs-button",
-        "button_text" : "Button",
-        "link" : {
-          "url" : {
-            "content_id" : null,
-            "type" : "EXTERNAL",
-            "href" : ""
-          },
-          "open_in_new_tab" : false,
-          "no_follow" : false
-        }
-      } ],
-      "bottom_content" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
-      "list_item" : [ {
-        "list_title" : "Icon list"
       } ]
     },
-    "bottom_content" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
-    "list_item" : [ {
-      "list_title" : "Icon list"
-    }, {
-      "list_title" : "Icon list"
-    }, {
-      "list_title" : "Icon list"
-    }, {
-      "list_title" : "Icon list"
-    } ],
     "right_column" : {
       "select_content_type" : "content",
       "content" : "<h2>How Do Rolling Blackouts Work?</h2>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
@@ -1079,6 +1095,17 @@
         "max_height" : 563
       },
       "select_video_type" : "",
+      "poster_image" : {
+        "size_type" : "auto",
+        "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/1084-536x354-grayscale.jpg",
+        "alt" : "Poster Img",
+        "loading" : "lazy",
+        "width" : 536,
+        "height" : 354,
+        "max_width" : 536,
+        "max_height" : 354
+      },
+      "external_video_url" : "EngW7tLk6R8",
       "button_group" : [ {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -1105,8 +1132,23 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      } ]
-    }
+      } ],
+      "play_icon" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "SOLID"
+      }
+    },
+    "bottom_content" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+    "list_item" : [ {
+      "list_title" : "Icon list"
+    }, {
+      "list_title" : "Icon list"
+    }, {
+      "list_title" : "Icon list"
+    }, {
+      "list_title" : "Icon list"
+    } ]
   }, {
     "tab_title" : "How Do Rolling Blackouts Work?",
     "number_of_columns" : "col-12",
@@ -1114,8 +1156,8 @@
       "content" : "<h2>How Do Rolling Blackouts Work?</h2>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
       "button_group" : [ {
         "button_type" : "std",
-        "button_style" : "hs-button",
-        "button_text" : "Button",
+        "button_style" : "hs-sec-btn",
+        "button_text" : "CTA Button",
         "link" : {
           "url" : {
             "content_id" : null,
@@ -1125,35 +1167,8 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      }, {
-        "button_type" : "std",
-        "button_style" : "hs-button",
-        "button_text" : "Button",
-        "link" : {
-          "url" : {
-            "content_id" : null,
-            "type" : "EXTERNAL",
-            "href" : ""
-          },
-          "open_in_new_tab" : false,
-          "no_follow" : false
-        }
-      } ],
-      "bottom_content" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
-      "list_item" : [ {
-        "list_title" : "Icon list"
       } ]
     },
-    "bottom_content" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
-    "list_item" : [ {
-      "list_title" : "Icon list"
-    }, {
-      "list_title" : "Icon list"
-    }, {
-      "list_title" : "Icon list"
-    }, {
-      "list_title" : "Icon list"
-    } ],
     "right_column" : {
       "select_content_type" : "content",
       "content" : "<h2>How Do Rolling Blackouts Work?</h2>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
@@ -1168,6 +1183,17 @@
         "max_height" : 563
       },
       "select_video_type" : "",
+      "poster_image" : {
+        "size_type" : "auto",
+        "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/1084-536x354-grayscale.jpg",
+        "alt" : "Poster Img",
+        "loading" : "lazy",
+        "width" : 536,
+        "height" : 354,
+        "max_width" : 536,
+        "max_height" : 354
+      },
+      "external_video_url" : "EngW7tLk6R8",
       "button_group" : [ {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -1194,8 +1220,23 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      } ]
-    }
+      } ],
+      "play_icon" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "SOLID"
+      }
+    },
+    "bottom_content" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+    "list_item" : [ {
+      "list_title" : "Icon list"
+    }, {
+      "list_title" : "Icon list"
+    }, {
+      "list_title" : "Icon list"
+    }, {
+      "list_title" : "Icon list"
+    } ]
   } ]
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
@@ -1216,7 +1257,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "left"
+    "default" : "center"
   }, {
     "id" : "75e2e625-fa6b-fef7-0233-79606cf1291a",
     "name" : "intro_content_size",
@@ -1242,7 +1283,8 @@
     "max" : 2000,
     "step" : 1,
     "type" : "number",
-    "display_width" : null
+    "display_width" : null,
+    "default" : 800
   }, {
     "id" : "d6ebe062-20c0-9cc5-4fc3-ef8b7a16b4e3",
     "name" : "include_animation",
@@ -1281,8 +1323,9 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "left",
+    "intro_content_alignment" : "center",
     "intro_content_size" : "theme",
+    "intro_content_width" : 800,
     "include_animation" : false
   }
 }, {

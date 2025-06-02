@@ -39,8 +39,9 @@
 						</div>
 					</div>
 					{% endif %}
-					{% if item.number_of_columns =="col-6"%}
+					{% if item.number_of_columns == "col-6"%}
 					<div class="right-col col {{ item.number_of_columns }}">
+            
 						<div class="col-inner">
 							{% if item.right_column.select_content_type =="content"%}
 							{% if item.right_column.content %}
@@ -67,36 +68,48 @@
 							{% endif %}
 							{%  endif %}
 
-							{% if item.right_column.select_content_type =="video"%}
-
 							<div class="vid_wrp">
-								{% if item.right_column.select_video_type =="video1"%}
+								{% if  item.right_column.select_video_type  == "video1"%}
 								{% if  item.right_column.file_field %}
-								<div class="file_vid">
-									<video autoplay loop controls>
+              	<div class="file_vid">
+									<video autoplay loop >
 										<source src="	{{ item.right_column.file_field }}" type="video/mp4">
 									</video>
 								</div>
 								{%  endif %}
 								{%  endif %}
+                {% if item.right_column.select_video_type == 'video1' || item.right_column.select_video_type == 'external' %}
+                <div class="play-icon">
+                  	{% icon
+		name="{{ item.right_column.play_icon.name }}"
+		style="{{ item.right_column.play_icon.type }}"
+		unicode="{{ item.right_column.play_icon.unicode }}"
+		icon_set="{{ item.right_column.play_icon.icon_set }}"
+	%}
+                 </div>
+                {%  endif %}
+                {% if item.right_column.select_video_type == 'video1' || item.right_column.select_video_type == 'external' %}
+                <div class="postImg " style="background-image :url({{ item.right_column.poster_image.src|escape_url }})">
+                  	
+                 </div>
+                {%  endif %}
+                
 								{% if item.right_column.select_video_type =="external"%}
 								{% if item.right_column.external_video_url %}
-								<div class="external_vid">
-									<iframe 
-													width="640" 
-													height="360" 
-													src="{{ item.right_column.external_video_url }}" 
-													title="Video Player" 
-													frameborder="0" 
-													allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-													allowfullscreen>
-									</iframe>
 
-								</div>
-								{%  endif %}
+
+				<iframe width="560" height="315" 
+              src="" data-src="https://www.youtube.com/embed/{{item.right_column.external_video_url}}"
+             title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+      </iframe>
+                
+       
+						{%  endif %} 
 								{%  endif %}
 							</div>
-							{%  endif %}
 							{% if item.right_column.button_group %}
 							{% if item.right_column.button_group %}
 							<div class="btn_wrp">
