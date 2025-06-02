@@ -4,7 +4,7 @@
 </div>
 
 <div class="stats-wrapper outer_wrp">
-  <div class="flex_row ani" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
+  <div class="flex_row ani counterc" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
 {% endif %} data-aos-delay="100">
     {% for item in module.stats_items %}
     <div class="stats_item col {{ module.module_settings.cards.number_of_columns }}">
@@ -75,15 +75,55 @@ color: rgba({{ module.module_settings.cards.content_color.color|convert_rgb}},{{
 
 {% require_js %}
 <script>  
+//   document.addEventListener("DOMContentLoaded", function () {
+//   const statNumbers = document.querySelectorAll(".stat-number");
+//   const animationDuration = 2000; // 2 seconds
+
+//   function easeOutQuad(t) {
+//     return t * (2 - t); // easing function for smoothness
+//   }
+
+//   statNumbers.forEach((el) => {
+//     const target = parseFloat(el.getAttribute("data-target"));
+//     const isDecimal = target % 1 !== 0;
+//     let startTime = null;
+
+//     function animate(timestamp) {
+//       if (!startTime) startTime = timestamp;
+//       const elapsed = timestamp - startTime;
+//       let progress = elapsed / animationDuration;
+//       if (progress > 1) progress = 1;
+
+//       // Apply easing
+//       const easedProgress = easeOutQuad(progress);
+
+//       const currentValue = isDecimal
+//         ? (target * easedProgress).toFixed(1)
+//         : Math.round(target * easedProgress);
+
+//       el.textContent = currentValue;
+
+//       if (progress < 1) {
+//         requestAnimationFrame(animate);
+//       } else {
+//         el.textContent = target; // Ensure final value is exact
+//       }
+//     }
+
+//     requestAnimationFrame(animate);
+//   });
+// });
+  
+  
   document.addEventListener("DOMContentLoaded", function () {
   const statNumbers = document.querySelectorAll(".stat-number");
-  const animationDuration = 2000; // 2 seconds
+  const animationDuration = 2000;
 
   function easeOutQuad(t) {
-    return t * (2 - t); // easing function for smoothness
+    return t * (2 - t);
   }
 
-  statNumbers.forEach((el) => {
+  function animateCount(el) {
     const target = parseFloat(el.getAttribute("data-target"));
     const isDecimal = target % 1 !== 0;
     let startTime = null;
@@ -94,9 +134,7 @@ color: rgba({{ module.module_settings.cards.content_color.color|convert_rgb}},{{
       let progress = elapsed / animationDuration;
       if (progress > 1) progress = 1;
 
-      // Apply easing
       const easedProgress = easeOutQuad(progress);
-
       const currentValue = isDecimal
         ? (target * easedProgress).toFixed(1)
         : Math.round(target * easedProgress);
@@ -106,12 +144,31 @@ color: rgba({{ module.module_settings.cards.content_color.color|convert_rgb}},{{
       if (progress < 1) {
         requestAnimationFrame(animate);
       } else {
-        el.textContent = target; // Ensure final value is exact
+        el.textContent = target;
       }
     }
 
     requestAnimationFrame(animate);
-  });
+  }
+
+  const counterSection = document.querySelector(".counterc");
+  let hasAnimated = false;
+
+  if (counterSection) {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasAnimated) {
+          statNumbers.forEach(el => animateCount(el));
+          hasAnimated = true;
+          observer.unobserve(counterSection);
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    observer.observe(counterSection);
+  }
 });
 
 
