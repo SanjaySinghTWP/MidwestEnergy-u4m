@@ -1120,6 +1120,16 @@
     "type" : "choice",
     "display_width" : null
   }, {
+    "id" : "ef25115a-c643-5cb2-1818-3ef1385d72cb",
+    "name" : "move_intro_content",
+    "label" : "Move Intro Content in Inner Container",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
     "id" : "709abaa3-4d0a-76d1-e1cf-5930f38bc8c4",
     "name" : "card_settings",
     "label" : "Card Settings",
@@ -1225,6 +1235,7 @@
     "intro_content_alignment" : "center",
     "intro_content_size" : "theme",
     "include_animation" : false,
+    "move_intro_content" : false,
     "card_settings" : {
       "number_of_cards" : "col-4",
       "card_background_color" : {

@@ -39,19 +39,11 @@
           margin-bottom: 15rem;
         }
         ul {
-          margin: 0;
-          list-style: none;
-          padding-left: 0;
-          margin-bottom: 15rem;
+          margin: 0 0 15rem;
+          padding-left: 30px;
           li {
             margin-bottom: 0;
             letter-spacing: 0;
-            &:before {
-              font-family: "Font Awesome 6 Free";
-              font-weight: 900;
-              content: "\f00c";
-              margin-right: 8rem;
-            }
           }
           &:last-child {
             margin-bottom: 0;
@@ -109,6 +101,25 @@
         column-gap: 30rem;
         .media_holder {
           width: 60rem;
+        }
+      }
+    }
+  }
+  .content_column {
+    &.intro-content-inner {
+      .intro_content {
+        margin-bottom: 50rem;
+        .eyebrowtext {
+          color: $bright_green;
+          font-size: 13rem;
+        }
+      }
+      .flex_row {
+        > div {
+          max-width: 434px;
+          @include tabletvert {
+            max-width: 100%;
+          }
         }
       }
     }
