@@ -82,7 +82,7 @@ h6:first-child {
   padding-bottom: 50px;
 }
 
-.bg_overlay ~ :not(.bg_overlay),
+.bg_overlay~ :not(.bg_overlay),
 .dnd_padd {
   position: relative;
   z-index: 2;
@@ -112,15 +112,141 @@ h6:first-child {
 .intro_content.center .intCnt {
   text-align: center;
 }
+
 .intro_content.right .intCnt {
   text-align: right;
 }
+
 .intro_content.custom {
   margin: 0 auto;
 }
 
 div.hs_cos_wrapper_widget section.top-margin-none {
   margin-top: 0;
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Pro";
+  font-style: normal;
+  font-weight: 100;
+  font-display: block;
+  src: url("{{ get_asset_url('../fonts/fa-thin-100.woff2') }}") format("woff2"),
+  url("{{ get_asset_url('../fonts/fa-thin-100.ttf') }}") format("truetype");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.woff2') }}") format('woff2'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.ttf') }}") format('ttf'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.eot') }}") format('eot'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.svg') }}") format('svg'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.woff') }}") format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.woff2') }}") format('woff2'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.ttf') }}") format('ttf'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.eot') }}") format('eot'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.svg') }}") format('svg'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.woff') }}") format('woff');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-Light.woff2') }}") format('woff2'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Light.woff') }}") format('woff'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Light.ttf') }}") format('ttf'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Light.eot') }}") format('eot'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Light.svg') }}") format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.woff2') }}") format('woff2'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.ttf') }}") format('ttf'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.eot') }}") format('eot'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.svg') }}") format('svg'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.woff') }}") format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-Regular.woff2') }}") format('woff2'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Regular.ttf') }}") format('ttf'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Regular.svg') }}") format('svg'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Regular.eot') }}") format('eot'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Regular.woff') }}") format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.woff2') }}") format('woff2'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.ttf') }}") format('ttf'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.svg') }}") format('svg'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.eot') }}") format('eot'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.woff') }}") format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-Bold.woff2') }}") format('woff2'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Bold.svg') }}") format('svg'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Bold.eot') }}") format('eot'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Bold.woff') }}") format('woff'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Bold.ttf') }}") format('ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-Black.woff2') }}") format('woff2'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Black.ttf') }}") format('ttf'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Black.svg') }}") format('svg'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Black.eot') }}") format('eot'),
+  url("{{ get_asset_url('../fonts/SourceSansPro-Black.woff') }}") format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* priori sans it font family	 */
+
+
+@font-face {
+  font-family: 'Priori Sans OT';
+  src: url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.woff2') }}") format('woff2'),
+  url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.ttf') }}") format('ttf'),
+  url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.eot') }}") format('eot'),
+  url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.svg') }}") format('svg'),
+  url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.woff') }}") format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Priori Sans OT';
+  src: url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.woff2') }}") format('woff2'),
+  url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.ttf') }}") format('ttf'),
+  url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.eot') }}") format('eot'),
+  url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.svg') }}") format('svg'),
+  url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.woff') }}") format('woff');
+  font-weight: 700;
+  font-style: normal;
 }
 
 div.hs_cos_wrapper_widget section.top-margin-small {
@@ -286,6 +412,7 @@ div.hs_cos_wrapper_widget section.bottom-padding-large {
   top: -160rem;
   visibility: hidden;
 }
+
 //eyebrowtext
 .eyebrowtext {
   color: $middle_green;
@@ -307,15 +434,19 @@ div.hs_cos_wrapper_widget section.bottom-padding-large {
 .intro_content.left .intro_btn_wrap {
   justify-content: left;
 }
+
 .intro_content.right .intro_btn_wrap {
   justify-content: right;
 }
+
 .intro_content.center .intro_btn_wrap {
   justify-content: center;
 }
+
 h2.intro_title {
   margin-bottom: 12px;
 }
+
 .intro_desc p {
   margin-bottom: 12px;
 }
@@ -453,42 +584,46 @@ a.hs-sec-btn {
   align-items: center;
   height: 100%;
   column-gap: 5px;
+
   span.text {
     position: relative;
+
     svg {
       height: 2px;
       flex-shrink: 0;
       width: 100%;
     }
+
     &:before {
       content: "";
       position: absolute;
       left: 0;
       width: 10%;
       height: 2px;
-      background: linear-gradient(
-        71deg,
-        #fff 0%,
-        $bright_green 41.68%,
-        #697b79 83.9%,
-        #697b79 101.77%
-      );
+      background: linear-gradient(71deg,
+          #fff 0%,
+          $bright_green 41.68%,
+          #697b79 83.9%,
+          #697b79 101.77%);
       bottom: -1px;
       transition: all 0.3s ease;
     }
   }
+
   span.arrow {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
     transition: all 0.3s ease;
   }
+
   &:hover {
     span.text {
       &:before {
         width: 100%;
       }
     }
+
     span.arrow {
       transform: translateX(5px);
     }
@@ -515,13 +650,11 @@ a.hs-sec-btn {
       left: 0;
       width: 10%;
       height: 2px;
-      background: linear-gradient(
-        71deg,
-        #fff 0%,
-        #d0dd28 41.68%,
-        #697b79 83.9%,
-        #697b79 101.77%
-      );
+      background: linear-gradient(71deg,
+          #fff 0%,
+          #d0dd28 41.68%,
+          #697b79 83.9%,
+          #697b79 101.77%);
       bottom: -1px;
       transition: all 0.3s ease;
     }
@@ -563,6 +696,7 @@ a.tertiary-btn,
   font-style: normal;
   font-weight: 600;
   line-height: $baseLineHeight;
+
   &:hover {
     border-color: $bright_green;
     color: $bright_green;
@@ -629,7 +763,7 @@ code {
   border-radius: 0;
 }
 
-pre > code {
+pre>code {
   display: block;
   padding: 1rem 15rem;
   white-space: pre;
@@ -689,30 +823,39 @@ section[class*="u4m-"] {
 .bright_green_bg {
   background-color: $bright_green;
 }
+
 .super_light_gray_bg {
   background-color: $super_light_gray;
 }
+
 .light_gray_bg {
   background-color: $light_gray;
 }
+
 .middle_green_bg {
   background-color: $middle_green;
 }
+
 .dark_green_bg {
   background-color: $dark_green;
 }
+
 .orange_bg {
   background-color: $orange;
 }
+
 .red_bg {
   background-color: $red;
 }
+
 .blue_bg {
   background-color: $blue;
 }
+
 .yellow_bg {
   background-color: $yellow;
 }
+
 .gradient1 {
   background: $gradient1;
 }
