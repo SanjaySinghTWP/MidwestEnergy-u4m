@@ -132,7 +132,7 @@
             {% endif %}
 
             {% if module.media_section.video_content.poster_image.src %}
-            <video {% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %}data-{% endif %}src="{{ module.media_section.video_content.file_field }}"{% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %} autoplay{% endif %}></video>
+            <video controls {% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %}data-{% endif %}src="{{ module.media_section.video_content.file_field }}"{% if module.media_section.video_content.poster_image.src or module.media_section.video_content.select_play_icon_type %} autoplay{% endif %}></video>
             {% else %}
             <video src="{{ module.media_section.video_content.file_field }}" data-src="{{ module.media_section.video_content.file_field }}" controls></video>
             {% endif %}
