@@ -21,7 +21,6 @@
     }
 
     .page-center {
-        max-width: unset;
         padding: 0;
 
         .media-column {
@@ -296,7 +295,7 @@
     overflow: hidden;
 }
 
-@media (max-width: 768rem) {
+@include tabletvert {
     .u4m-rich-text {
         padding-left: 20rem;
         padding-right: 20rem;
