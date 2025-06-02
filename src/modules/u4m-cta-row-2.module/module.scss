@@ -25,6 +25,7 @@
           color: $white;
           font-weight: 400;
           line-height: 160%;
+
           &:last-child {
             margin-bottom: 0;
           }
@@ -56,27 +57,34 @@
 
         form {
           display: flex;
-          flex-wrap: wrap;
+          flex-wrap: nowrap;
           align-items: flex-end;
           column-gap: 12rem;
           position: relative;
           margin: 20px 0px;
+
+          @include navbreak {
+            flex-wrap: wrap;
+          }
+
           fieldset {
             width: 100%;
 
             max-width: 100%;
           }
+
           .hs-form-field {
             width: 100%;
 
             max-width: 100%;
           }
+
           .hs-submit {
-            width: 100%;
+            width: auto;
             margin-top: 20px;
           }
 
-          .hs-form-field > label {
+          .hs-form-field>label {
             color: $white;
             font-family: $font1;
             @include size14;
