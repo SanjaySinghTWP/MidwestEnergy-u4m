@@ -3,16 +3,26 @@ section.u4m-subscribe {
   background-color: $black;
   color: $white;
   padding: 50px 0;
-  margin: 0 20px 20px;
-  border-radius: 5px;
+  margin: 0;
+  border-radius: 0;
   overflow: hidden;
+  .innerContainer {
+    .inner {
+      h3 {
+        color: $white;
+      }
+      p {
+        color: $white;
+      }
+    }
+  }
   div.inner {
     float: none;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1240rem;
-    padding-left: 20rem;
-    padding-right: 20rem;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
     display: flex;
     align-items: center;
     .left {
@@ -526,8 +536,7 @@ section.u4m-subscribe {
           margin: 0 0 0 5px;
           line-height: 1.65;
           &:hover {
-            opacity: 0.95;
-            background-color: $action1;
+            background-color: $bright_green;
           }
         }
       }
@@ -1945,8 +1954,8 @@ section.u4m-subscribe {
           margin: 0 0 0 5px;
           line-height: 1.65;
           &:hover {
-            opacity: 0.95;
-            background-color: $action1;
+            background-color: $bright_green;
+            color: $dark_green;
           }
         }
       }
