@@ -17,6 +17,12 @@
   }
 }
 
+@mixin tabTomphone {
+  @media (max-width: 768px) and (max-width: 580px) {
+    @content;
+  }
+}
+
 @mixin tabletvert {
   @media (max-width: 767px) {
     @content;
@@ -72,9 +78,7 @@
 }
 
 @mixin ie {
-
-  @media all and (-ms-high-contrast: none),
-  (-ms-high-contrast: active) {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     @content;
   }
 }
