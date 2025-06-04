@@ -172,13 +172,35 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Bottom" ], [ "olive_btn", "Dark Olive Gray" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "hs-button"
+    }, {
+      "id" : "1464b6d9-9700-114b-2286-bb49234b39bc",
+      "name" : "button_size",
+      "label" : "Button Size",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_style",
+        "controlling_value_regex" : "hs-button|tertiary-btn|olive_btn",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "small"
     }, {
       "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
       "name" : "button_text",
@@ -251,6 +273,7 @@
     "default" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Button",
       "link" : {
         "url" : {
@@ -264,6 +287,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Button",
       "link" : {
         "url" : {
@@ -293,6 +317,7 @@
     "button_group" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Button",
       "link" : {
         "url" : {
@@ -306,6 +331,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Button",
       "link" : {
         "url" : {
@@ -480,20 +506,42 @@
           "locked" : false,
           "visibility" : {
             "controlling_field" : null,
-            "controlling_field_path" : "intro_content.button_group.button_type",
+            "controlling_field_path" : "tab_title.right_column.content_column.button_group.button_type",
             "controlling_value_regex" : "std|cta",
             "property" : null,
             "operator" : "MATCHES_REGEX",
             "access" : null
           },
           "display" : "select",
-          "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+          "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Bottom" ], [ "olive_btn", "Dark Olive Gray" ] ],
           "multiple" : false,
           "reordering_enabled" : true,
           "preset" : null,
           "type" : "choice",
           "display_width" : null,
           "default" : "hs-button"
+        }, {
+          "id" : "d4081450-f0cc-00ff-1159-2ad199ddc06f",
+          "name" : "button_size",
+          "label" : "Button Size",
+          "required" : true,
+          "locked" : false,
+          "visibility" : {
+            "controlling_field" : null,
+            "controlling_field_path" : "tab_title.right_column.content_column.button_group.button_style",
+            "controlling_value_regex" : "hs-button|tertiary-btn|olive_btn",
+            "property" : null,
+            "operator" : "MATCHES_REGEX",
+            "access" : null
+          },
+          "display" : "select",
+          "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+          "multiple" : false,
+          "reordering_enabled" : true,
+          "preset" : null,
+          "type" : "choice",
+          "display_width" : null,
+          "default" : "small"
         }, {
           "id" : "b749b576-2e93-0255-48bb-a6b8f816871f",
           "name" : "button_text",
@@ -503,7 +551,7 @@
           "validation_regex" : "",
           "visibility" : {
             "controlling_field" : null,
-            "controlling_field_path" : "intro_content.button_group.button_type",
+            "controlling_field_path" : "tab_title.right_column.content_column.button_group.button_type",
             "controlling_value_regex" : "std|popup_content",
             "property" : null,
             "operator" : "MATCHES_REGEX",
@@ -522,7 +570,7 @@
           "locked" : false,
           "visibility" : {
             "controlling_field" : null,
-            "controlling_field_path" : "intro_content.button_group.button_type",
+            "controlling_field_path" : "tab_title.right_column.content_column.button_group.button_type",
             "controlling_value_regex" : "std",
             "property" : null,
             "operator" : "EQUAL",
@@ -549,7 +597,7 @@
           "locked" : false,
           "visibility" : {
             "controlling_field" : null,
-            "controlling_field_path" : "intro_content.button_group.button_type",
+            "controlling_field_path" : "tab_title.right_column.content_column.button_group.button_type",
             "controlling_value_regex" : "cta",
             "property" : null,
             "operator" : "EQUAL",
@@ -566,6 +614,7 @@
         "default" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -579,6 +628,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -609,6 +659,7 @@
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -622,6 +673,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -685,6 +737,7 @@
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -698,6 +751,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -739,6 +793,7 @@
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -752,6 +807,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -787,6 +843,7 @@
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -800,6 +857,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -835,6 +893,7 @@
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -848,6 +907,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -883,6 +943,7 @@
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -896,6 +957,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -931,6 +993,7 @@
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
@@ -944,6 +1007,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
+          "button_size" : "small",
           "button_text" : "Learn More",
           "link" : {
             "url" : {
