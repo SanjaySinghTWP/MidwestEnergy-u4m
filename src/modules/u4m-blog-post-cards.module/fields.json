@@ -172,13 +172,35 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Button" ], [ "olive_btn", "Dark Olive Gray" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "hs-sec-btn"
+    }, {
+      "id" : "387d27f7-dac7-f5f4-5d53-2e4db790b080",
+      "name" : "button_size",
+      "label" : "Button Size",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_style",
+        "controlling_value_regex" : "hs-sec-btn",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "small"
     }, {
       "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
       "name" : "button_text",
@@ -260,7 +282,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     } ]
   } ],
   "tab" : "CONTENT",
@@ -289,7 +312,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     } ]
   }
 }, {
@@ -510,6 +534,28 @@
     "type" : "boolean",
     "display_width" : null,
     "default" : true
+  }, {
+    "id" : "c6e74cae-62a1-ab87-eade-9e29385e2d2c",
+    "name" : "select_gradient",
+    "label" : "Select Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "feed_settings.image_bottom_border",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ], [ "gradient3", "Gradient 3" ], [ "gradient4", "Gradient 4" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "gradient1"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -525,7 +571,8 @@
     "date" : false,
     "enable_read_more" : true,
     "read_more_text" : "Learn More",
-    "image_bottom_border" : true
+    "image_bottom_border" : true,
+    "select_gradient" : "gradient1"
   }
 }, {
   "id" : "922a4295-40ca-2882-2b91-6a503a8d91c5",
@@ -1120,7 +1167,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ] ],
+      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ], [ "gradient3", "Gradient 3" ], [ "gradient4", "Gradient 4" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
