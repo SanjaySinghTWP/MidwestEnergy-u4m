@@ -320,7 +320,7 @@
     "locked" : false,
     "type" : "blog",
     "display_width" : null,
-    "default" : 183171352200
+    "default" : ""
   }, {
     "id" : "5155e3f4-f4ca-d584-780d-f72e2376dcc1",
     "name" : "select_tag",
@@ -400,7 +400,7 @@
   "display_width" : null,
   "default" : {
     "feed_type" : "recent",
-    "select_blog" : 183171352200,
+    "select_blog" : "",
     "blog_feed" : [ { } ],
     "number_of_posts" : 3
   }
@@ -420,36 +420,6 @@
     "type" : "boolean",
     "display_width" : null,
     "default" : true
-  }, {
-    "id" : "1909c934-87de-e565-76ff-a8b1d9481cdd",
-    "name" : "include_eyebrow",
-    "label" : "Include Eyebrow",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : true
-  }, {
-    "id" : "94d22980-fd38-aa56-5241-af9f2b1eae70",
-    "name" : "eybrow_text",
-    "label" : "Eybrow Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "feed_settings.include_eyebrow",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "OPTIONAL EYEBROW TEXT"
   }, {
     "id" : "aa1778a5-f7dd-63b9-c276-ad1b8ab39ea1",
     "name" : "post_title",
@@ -474,6 +444,16 @@
     "id" : "17accd7a-21e4-f268-1998-9fe2ecbf6614",
     "name" : "tags",
     "label" : "Tags",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "6f45d8e0-bb20-5d7b-fd5e-32dc4097610a",
+    "name" : "minute_read",
+    "label" : "Minute Read",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
@@ -538,11 +518,10 @@
   "display_width" : null,
   "default" : {
     "feature_image" : true,
-    "include_eyebrow" : true,
-    "eybrow_text" : "OPTIONAL EYEBROW TEXT",
     "post_title" : true,
     "description" : true,
-    "tags" : false,
+    "tags" : true,
+    "minute_read" : false,
     "date" : false,
     "enable_read_more" : true,
     "read_more_text" : "Learn More",
@@ -555,20 +534,6 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
-    "id" : "d3b305ae-382b-ddf9-3432-dc73034d76c9",
-    "name" : "intro_content_alignment",
-    "label" : "Intro Content Alignment",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "left", "Left" ], [ "right", "Right" ], [ "center", "Center" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "left"
-  }, {
     "id" : "6e0b8d7a-99b8-f409-8628-b61109a11df1",
     "name" : "intro_content_size",
     "label" : "Intro Content Size",
@@ -646,30 +611,6 @@
       "type" : "choice",
       "display_width" : null,
       "default" : "col-4"
-    }, {
-      "id" : "e3f6ec21-1f43-8edb-1978-582838ac3e8e",
-      "name" : "card_background_color",
-      "label" : "Card Background Color",
-      "required" : false,
-      "locked" : false,
-      "type" : "color",
-      "display_width" : null,
-      "default" : {
-        "color" : "#F5F7F7",
-        "opacity" : 100
-      }
-    }, {
-      "id" : "2c9fce95-f77f-7022-e2eb-2b18be3f6880",
-      "name" : "card_content_color",
-      "label" : "Card Content Color",
-      "required" : false,
-      "locked" : false,
-      "type" : "color",
-      "display_width" : null,
-      "default" : {
-        "color" : "#39473F",
-        "opacity" : 100
-      }
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -677,15 +618,7 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
-      "number_of_cards" : "col-4",
-      "card_background_color" : {
-        "color" : "#F5F7F7",
-        "opacity" : 100
-      },
-      "card_content_color" : {
-        "color" : "#39473F",
-        "opacity" : 100
-      }
+      "number_of_cards" : "col-4"
     }
   } ],
   "tab" : "CONTENT",
@@ -694,20 +627,11 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "left",
     "intro_content_size" : "theme",
     "include_animation" : false,
     "animation_type" : "fade-down",
     "card_settings" : {
-      "number_of_cards" : "col-4",
-      "card_background_color" : {
-        "color" : "#F5F7F7",
-        "opacity" : 100
-      },
-      "card_content_color" : {
-        "color" : "#39473F",
-        "opacity" : 100
-      }
+      "number_of_cards" : "col-4"
     }
   }
 }, {

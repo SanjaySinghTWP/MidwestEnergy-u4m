@@ -34,16 +34,24 @@
 				</div>
 
 				<div class="content_holder">
-					{% if module.feed_settings.include_eyebrow %}
-					<div class="eyebrowtext">
-						{{ module.feed_settings.eybrow_text }}
-					</div>
+					<div class="eyebrowtext blog-meta">
+					{% if module.feed_settings.tags %}
+						{% set first_tag = item.topic_list[0] %}
 					{% endif %}
-					
+					{% if module.feed_settings.tags %}<span class="meta-tag">{{ first_tag.name|capitalize }}</span>{% endif %}
+					{% if module.feed_settings.minute_read %}
+						{% if module.feed_settings.tags %}|{% endif %}
+						{% set word_count = item.post_body|striptags|wordcount %}
+						{% set read_time = (word_count / 300)|round(0, 'ceil') %}
+						{% if read_time >= 1 %}
+						<span class="meta-tag">{{ read_time }} minute read</span>
+						{% endif %}
+					{% endif %}
 					{% if module.feed_settings.date %}
-					<div class="itemMeta"> <span class="itemDate">{{ item.publish_date_local_time.strftime('%B %e, %Y') }}</span>
-					</div>
+						{% if module.feed_settings.tags or module.feed_settings.minute_read %}|{% endif %}
+						<span class="itemDate meta-tag">{{ item.publish_date_local_time.strftime('%B %e, %Y') }}</span>
 					{% endif %}
+					</div>
 					{% if module.feed_settings.post_title %}
 					{% if item.name %}
 					<h4 class="cardtitle">
@@ -54,7 +62,7 @@
 					{% if module.feed_settings.description %}
 					{% if  item.post_list_content %}
 					<p>
-						{{ item.post_list_content|striptags|truncatehtml(80, '...' , false) }}
+						{{ item.post_list_content|striptags|truncatehtml(130, '' , false) }}
 					</p>
 					{% endif %}
 					{% endif %}
@@ -105,25 +113,25 @@
 				</div>
 
 				<div class="content_holder">
-					{% if module.feed_settings.include_eyebrow %}
-					<div class="eyebrowtext">
-						{{ module.feed_settings.eybrow_text }}
-					</div>
-					{% endif %}
-					{% if module.feed_settings.date %}
-					<div class="itemMeta"> <span class="itemDate">{{ item.publish_date_local_time.strftime('%B %e, %Y') }}</span>
-					</div>
-					{% endif %}
-					{% if module.feed_settings.tags %}
-					{% if item.topic_list %}
-					<div class="itemtag">
-						{% set included_topics = item.topic_list | rejectattr("slug", "equalto", "featured") | list %}
-						{% for topic in included_topics %}
-						{% if loop.first %}
-						<span class="{{ topic.slug }}">{{ topic.name|capitalize }}</span>{% endif %}{% endfor %}
-					</div>
-					{% endif %}
-					{% endif %}
+          <div class="eyebrowtext blog-meta">
+            {% if module.feed_settings.tags %}
+            {% set first_tag = item.topic_list[0] %}
+            {% endif %}
+            {% if module.feed_settings.tags %}<span class="meta-tag">{{ first_tag.name|capitalize }}</span>{% endif %}
+            {% if module.feed_settings.minute_read %}
+            {% if module.feed_settings.tags %}|{% endif %}
+            {% set word_count = item.post_body|striptags|wordcount %}
+            {% set read_time = (word_count / 300)|round(0, 'ceil') %}
+            {% if read_time >= 1 %}
+            <span class="meta-tag">{{ read_time }} minute read</span>
+            {% endif %}
+            {% endif %}
+            {% if module.feed_settings.date %}
+            {% if module.feed_settings.tags or module.feed_settings.minute_read %}|{% endif %}
+            <span class="itemDate meta-tag">{{ item.publish_date_local_time.strftime('%B %e, %Y') }}</span>
+            {% endif %}
+          </div>
+          
 					{% if module.feed_settings.post_title %}
 					{% if item.name %}
 					<h4 class="cardtitle">
@@ -134,7 +142,7 @@
 					{% if module.feed_settings.description %}
 					{% if  item.post_list_content %}
 					<p>
-						{{ item.post_list_content|striptags|truncatehtml(80, '...' , false) }}
+						{{ item.post_list_content|striptags|truncatehtml(130, '' , false) }}
 					</p>
 					{% endif %}
 					{% endif %}
@@ -183,27 +191,28 @@
 				</div>
 
 				<div class="content_holder">
-					{% if module.feed_settings.include_eyebrow %}
-					<div class="eyebrowtext">
-						{{ module.feed_settings.eybrow_text }}
-					</div>
-					{% endif %}
-					{% if module.feed_settings.date %}
-					<div class="itemMeta"> <span class="itemDate">{{ item.publish_date_local_time.strftime('%B %e, %Y') }}</span>
-					</div>
-					{% endif %}
-
-					{% if module.feed_settings.tags %}
-					{% if item.topic_list %}
-					<div class="itemTags">
-						{% set included_topics = item.topic_list | rejectattr("slug", "equalto", "featured") | list %}
-						{% for topic in included_topics %}
-						{% if loop.first %}
-						<a class="{{ topic.slug }}" href="{{ blog_tag_url(group.id, topic.slug) }}">{{ topic.name|capitalize }}</a>{% endif %}
-						{% endfor %}
-					</div>
-					{% endif %}
-					{% endif %}
+          
+          <div class="eyebrowtext blog-meta">
+            {% if module.feed_settings.tags %}
+            {% set first_tag = item.topic_list[0] %}
+            {% endif %}
+            {% if module.feed_settings.tags %}<span class="meta-tag">{{ first_tag.name|capitalize }}</span>{% endif %}
+            {% if module.feed_settings.minute_read %}
+            {% if module.feed_settings.tags %}|{% endif %}
+            {% set word_count = item.post_body|striptags|wordcount %}
+            {% set read_time = (word_count / 300)|round(0, 'ceil') %}
+            {% if read_time >= 1 %}
+            <span class="meta-tag">{{ read_time }} minute read</span>
+            {% endif %}
+            {% endif %}
+            {% if module.feed_settings.date %}
+            {% if module.feed_settings.tags or module.feed_settings.minute_read %}|{% endif %}
+            <span class="itemDate meta-tag">{{ item.publish_date_local_time.strftime('%B %e, %Y') }}</span>
+            {% endif %}
+          </div>
+          
+          
+          
 					{% if module.feed_settings.post_title %}
 					{% if item.name %}
 					<h4 class="cardtitle">
@@ -214,7 +223,7 @@
 					{% if module.feed_settings.description %}
 					{% if  item.post_list_content %}
 					<p>
-						{{ item.post_list_content|striptags|truncatehtml(80, '...' , false) }}
+						{{ item.post_list_content|striptags|truncatehtml(130, '' , false) }}
 					</p>
 					{% endif %}
 					{% endif %}
@@ -247,26 +256,3 @@
 </section>
 
 
-{% require_css %}
-<style>
-	.{{name}}.u4m-blog-post-cards .content_column .flex_row .card_inner .content_holder {
-		background-color: rgba({{ module.module_settings.card_settings.card_background_color.color|convert_rgb}},{{ module.module_settings.card_settings.card_background_color.opacity * 0.01}});
-		border-radius: 0px 0px 24px 24px;
-		padding: 35px;
-	}
-	.u4m-blog-post-cards.{{name}} .content_column .flex_row .content_holder h4.cardtitle a,
-	.u4m-blog-post-cards.{{name}} .content_column .flex_row .content_holder p,
-	.{{name}}.u4m-blog-post-cards .content_column .flex_row .card_inner .content_holder .eyebrowtext{
-		color: rgba({{ module.module_settings.card_settings.card_content_color.color|convert_rgb}},{{ module.module_settings.card_settings.card_content_color.opacity * 0.01}});		
-	}
-	.u4m-blog-post-cards.{{name}} .content_column .flex_row .card_inner .icon svg{
-		fill: rgba({{ module.module_settings.card_settings.card_content_color.color|convert_rgb}},{{ module.module_settings.card_settings.card_content_color.opacity * 0.01}});		
-	}
-	@media(max-width:580px){
-		.{{name}}.u4m-blog-post-cards .content_column .flex_row .card_inner .content_holder {
-		padding: 20px;
-	}
-		
-	}
-</style>
-{% end_require_css %}
