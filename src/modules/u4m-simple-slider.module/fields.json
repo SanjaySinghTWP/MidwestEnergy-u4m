@@ -131,7 +131,7 @@
     "locked" : false,
     "occurrence" : {
       "min" : null,
-      "max" : null,
+      "max" : 2,
       "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
       "default" : 1
     },
@@ -161,7 +161,7 @@
       "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
       "name" : "button_style",
       "label" : "Button Style",
-      "required" : false,
+      "required" : true,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
@@ -688,6 +688,16 @@
           "color" : "#d0dd28",
           "opacity" : 100
         }
+      }, {
+        "id" : "8877e4ff-7783-db3e-b1f8-ca1bd7f1ae91",
+        "name" : "arrow_background_transparent",
+        "label" : "Arrow Background Transparent",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
       } ],
       "tab" : "CONTENT",
       "expanded" : false,
@@ -702,7 +712,8 @@
         "border_color" : {
           "color" : "#d0dd28",
           "opacity" : 100
-        }
+        },
+        "arrow_background_transparent" : false
       }
     } ],
     "tab" : "CONTENT",
@@ -730,7 +741,8 @@
         "border_color" : {
           "color" : "#d0dd28",
           "opacity" : 100
-        }
+        },
+        "arrow_background_transparent" : false
       }
     }
   } ],
@@ -774,7 +786,8 @@
         "border_color" : {
           "color" : "#d0dd28",
           "opacity" : 100
-        }
+        },
+        "arrow_background_transparent" : false
       }
     }
   }

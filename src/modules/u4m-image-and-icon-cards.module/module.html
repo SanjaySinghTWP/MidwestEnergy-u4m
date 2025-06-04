@@ -56,7 +56,7 @@ data-aos="{{ module.module_settings.animation_type }}"
         </div>
         {% endif %}
 
-        <div class="content_holder">
+        <div class="content_holder {% if item.dark_button_arrow %}darkbtn{% endif %}">
           <h4 class="cardtitle">{{ item.heading }}</h4>
           {{ item.content }}
           {% if item.include_button %}

@@ -486,6 +486,24 @@
       "display_width" : null,
       "default" : true
     }, {
+      "id" : "430dff0b-1140-569f-460f-efb8ec002528",
+      "name" : "dark_button_arrow",
+      "label" : "Dark Button",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_column.card_items.include_button",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
       "id" : "38e2c730-71a2-6769-f59f-d2da8ffceae9",
       "name" : "button_group",
       "label" : "Button Group",
@@ -662,7 +680,8 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      } ]
+      } ],
+      "boolean_field" : false
     }, {
       "media_type" : "img",
       "image_field" : {
@@ -695,7 +714,8 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      } ]
+      } ],
+      "boolean_field" : false
     }, {
       "media_type" : "img",
       "image_field" : {
@@ -728,7 +748,8 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      } ]
+      } ],
+      "boolean_field" : false
     } ]
   } ],
   "tab" : "CONTENT",
@@ -769,7 +790,8 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      } ]
+      } ],
+      "boolean_field" : false
     }, {
       "media_type" : "img",
       "image_field" : {
@@ -802,7 +824,8 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      } ]
+      } ],
+      "boolean_field" : false
     }, {
       "media_type" : "img",
       "image_field" : {
@@ -835,7 +858,8 @@
           "open_in_new_tab" : false,
           "no_follow" : false
         }
-      } ]
+      } ],
+      "boolean_field" : false
     } ]
   }
 }, {

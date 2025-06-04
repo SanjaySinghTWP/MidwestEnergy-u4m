@@ -148,8 +148,15 @@
     background-color: rgba({{ module.module_settings.card_settings.background_color.color|convert_rgb}},{{ module.module_settings.card_settings.background_color.opacity * 0.01}});
     padding: 40px 10px;
   }
+  {% if module.module_settings.card_settings.arrow_style.arrow_background_transparent %}
+  .{{name}}.u4m-simple-slider .cm-simple-slider .splide .custom-splide-arrows button.custom-arrow{
+    background-color: transparent;
+  }
+  
+  {% endif %}
   .{{name}}.u4m-simple-slider .cm-simple-slider .splide .custom-splide-arrows button.custom-arrow svg path{
         fill: rgba({{ module.module_settings.card_settings.arrow_style.color_field.color|convert_rgb}},{{ module.module_settings.card_settings.arrow_style.color_field.opacity * 0.01}});
+    stroke: rgba({{ module.module_settings.card_settings.arrow_style.color_field.color|convert_rgb}},{{ module.module_settings.card_settings.arrow_style.color_field.opacity * 0.01}});
 
   }
     .{{name}}.u4m-simple-slider .cm-simple-slider .splide .custom-splide-arrows button.custom-arrow svg circle{

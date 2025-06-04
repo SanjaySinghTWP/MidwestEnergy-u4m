@@ -28,6 +28,23 @@
         padding: 0 10rem;
       }
       .content_holder {
+        &.darkbtn {
+          a.hs-button {
+            background-color: #d0dd28;
+            color: #39473f;
+          }
+          a.tertiary-btn {
+            border-color: #d0dd28;
+            color: #d0dd28;
+          }
+          a.hs-sec-btn {
+            svg {
+              path {
+                fill: $dark_green;
+              }
+            }
+          }
+        }
         h4.cardtitle {
           font-family: $font2;
           @include h4;
@@ -52,6 +69,7 @@
       }
       .card_inner {
         height: 100%;
+
         ul {
           list-style: none;
           margin: 0;
