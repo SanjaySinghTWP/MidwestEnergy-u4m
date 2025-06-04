@@ -115,13 +115,35 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Bottom" ], [ "olive_btn", "Dark Olive Gray" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "hs-button"
+    }, {
+      "id" : "f448a839-1b30-f93b-d2b0-fe15be4f0d48",
+      "name" : "button_size",
+      "label" : "Button Size",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "form_column.button_group.button_style",
+        "controlling_value_regex" : "hs-button|tertiary-btn|olive_btn",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "small"
     }, {
       "id" : "5144a2e3-91f3-0221-ff23-706838dbed1e",
       "name" : "button_text",
@@ -171,7 +193,7 @@
       }
     }, {
       "id" : "cbb026cd-d5df-291e-3208-aea4b079020a",
-      "name" : "cta_field",
+      "name" : "cta",
       "label" : "CTA",
       "required" : false,
       "locked" : false,
@@ -194,6 +216,7 @@
     "default" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Report an Outage",
       "link_field" : {
         "url" : {
@@ -207,6 +230,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Report an Outage",
       "link_field" : {
         "url" : {
@@ -300,6 +324,7 @@
     "button_group" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Report an Outage",
       "link_field" : {
         "url" : {
@@ -313,6 +338,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Report an Outage",
       "link_field" : {
         "url" : {
