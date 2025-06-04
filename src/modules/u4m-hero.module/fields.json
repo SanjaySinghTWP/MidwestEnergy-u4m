@@ -576,6 +576,14 @@
     "label" : "Enable Border Gradient  ",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.style_type",
+      "controlling_value_regex" : "two_col",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
@@ -595,7 +603,7 @@
       "access" : null
     },
     "display" : "select",
-    "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ], [ "gradient3", "Gradient 3" ] ],
+    "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ], [ "gradient3", "Gradient 3" ], [ "gradient4", "Gradient 4" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
@@ -1138,7 +1146,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ] ],
+      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ], [ "gradient3", "Gradient 3" ], [ "gradient4", "Gradient 4" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
