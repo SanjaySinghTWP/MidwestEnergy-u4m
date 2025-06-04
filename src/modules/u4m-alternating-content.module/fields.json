@@ -131,7 +131,7 @@
     "locked" : false,
     "occurrence" : {
       "min" : null,
-      "max" : 2,
+      "max" : null,
       "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
       "default" : 2
     },
@@ -161,7 +161,7 @@
       "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
       "name" : "button_style",
       "label" : "Button Style",
-      "required" : true,
+      "required" : false,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
@@ -172,13 +172,35 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Button" ], [ "olive_btn", "Dark Olive Gray" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "hs-button"
+    }, {
+      "id" : "af032bc4-a581-1524-e62b-f1834089881d",
+      "name" : "button_size",
+      "label" : "Button Size",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_style",
+        "controlling_value_regex" : "hs-button|tertiary-btn|olive_btn",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "small"
     }, {
       "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
       "name" : "button_text",
@@ -198,7 +220,7 @@
       "show_emoji_picker" : false,
       "type" : "text",
       "display_width" : null,
-      "default" : "Start, Stop or Change Service"
+      "default" : "Button"
     }, {
       "id" : "f1ccd7fd-a18d-1262-3c67-476cdf5424cd",
       "name" : "link",
@@ -251,7 +273,7 @@
     "default" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_text" : "Start, Stop or Change Service",
+      "button_text" : "Button",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -260,11 +282,12 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
-      "button_text" : "Start, Stop or Change Service",
+      "button_text" : "Button",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -273,9 +296,10 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     } ]
-  } ],
+  }],
   "tab" : "CONTENT",
   "expanded" : false,
   "group_occurrence_meta" : null,
