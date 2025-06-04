@@ -172,13 +172,35 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Button" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "hs-button"
+    }, {
+      "id" : "33a2e5ac-c03b-2235-fe77-0532cc2528c7",
+      "name" : "button_size",
+      "label" : "Button Size",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_style",
+        "controlling_value_regex" : "hs-sec-btn",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "small"
     }, {
       "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
       "name" : "button_text",
@@ -251,6 +273,7 @@
     "default" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Start, Stop or Change Service",
       "link" : {
         "url" : {
@@ -264,6 +287,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Start, Stop or Change Service",
       "link" : {
         "url" : {
@@ -293,6 +317,7 @@
     "button_group" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Start, Stop or Change Service",
       "link" : {
         "url" : {
@@ -306,6 +331,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Start, Stop or Change Service",
       "link" : {
         "url" : {
@@ -517,6 +543,34 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
+    "id" : "81820244-b3dc-c553-467c-7558164a5011",
+    "name" : "style_type",
+    "label" : "Select Column",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "one_col", "One Column" ], [ "two_col", "Two Column" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "two_col"
+  }, {
+    "id" : "2a58ea9e-6087-5bd6-75a8-9de3c6a7da31",
+    "name" : "intro_content_size",
+    "label" : "Intro Content Size",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "theme", "Theme" ], [ "b3", "Large" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "b3"
+  }, {
     "id" : "d6ebe062-20c0-9cc5-4fc3-ef8b7a16b4e3",
     "name" : "include_animation",
     "label" : "Include Animation",
@@ -548,20 +602,6 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "fade-up"
-  }, {
-    "id" : "81820244-b3dc-c553-467c-7558164a5011",
-    "name" : "style_type",
-    "label" : "Select Column",
-    "required" : true,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "one_col", "One Column" ], [ "two_col", "Two Column" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "two_col"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -569,9 +609,10 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
+    "style_type" : "two_col",
+    "intro_content_size" : "b3",
     "include_animation" : false,
-    "animation_type" : "fade-up",
-    "style_type" : "two_col"
+    "animation_type" : "fade-up"
   }
 }, {
   "id" : "module_overrides",

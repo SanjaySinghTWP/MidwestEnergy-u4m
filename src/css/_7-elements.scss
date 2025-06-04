@@ -737,6 +737,35 @@ a.tertiary-btn,
   }
 }
 
+.border_btn {
+  &:hover {
+    color: $white;
+  }
+  @include bdrbtn;
+  .text {
+    border-bottom: 1px solid $bright_green;
+  }
+  .arrow {
+    line-height: 0;
+    position: relative;
+    top: 2px;
+    svg {
+      path {
+        fill: $white;
+      }
+    }
+  }
+}
+
+a.tertiary-btn {
+  line-height: normal;
+}
+
+.small a.tertiary-btn,
+.btn_item.cmtertiary-btn.small a.cta_button {
+  @include smallbtn;
+}
+
 .large a.tertiary-btn,
 .btn_item.cmtertiary-btn.large a.cta_button {
   @include largebtn;
