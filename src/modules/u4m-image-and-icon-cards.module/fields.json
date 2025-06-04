@@ -1174,6 +1174,20 @@
       "display_width" : null,
       "default" : "col-4"
     }, {
+      "id" : "f7083af3-5f29-c2ce-5f51-3eec7d535123",
+      "name" : "select_list_type",
+      "label" : "Select List Type",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "blt", "Bullet" ], [ "check", "Checkmark" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "check"
+    }, {
       "id" : "40298ab2-be09-178c-6920-79bd00dfb51e",
       "name" : "card_background_color",
       "label" : "Card Background Color",
@@ -1235,6 +1249,7 @@
     "display_width" : null,
     "default" : {
       "number_of_cards" : "col-4",
+      "select_list_type" : "check",
       "card_background_color" : {
         "color" : "#39473F",
         "opacity" : 100
@@ -1262,6 +1277,7 @@
     "move_intro_content" : false,
     "card_settings" : {
       "number_of_cards" : "col-4",
+      "select_list_type" : "check",
       "card_background_color" : {
         "color" : "#39473F",
         "opacity" : 100

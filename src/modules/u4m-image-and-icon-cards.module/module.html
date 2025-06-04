@@ -4,7 +4,7 @@
 {{ macros.introGroup(module.intro_content, module.module_settings) }}
 </div>
 {% endif %}
-<div class="content_column {% if module.module_settings.move_intro_content %} intro-content-inner {% endif %} {% if module.module_settings.card_settings.include_background_in_column %}columnhasbg{% endif %}" {% if module.module_settings.include_animation %}
+<div class="content_column {{ module.module_settings.card_settings.select_list_type }} {% if module.module_settings.move_intro_content %} intro-content-inner {% endif %} {% if module.module_settings.card_settings.include_background_in_column %}columnhasbg{% endif %}" {% if module.module_settings.include_animation %}
 data-aos="{{ module.module_settings.animation_type }}"
 {% endif %}>
   {% if module.module_settings.move_intro_content %}
