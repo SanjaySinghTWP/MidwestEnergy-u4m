@@ -443,7 +443,7 @@
   }, {
     "id" : "976c149b-c8c8-5855-5c52-07a8cac0f140",
     "name" : "open_by_default",
-    "label" : "Open By Default",
+    "label" : "Open First Item By Default",
     "required" : false,
     "locked" : false,
     "display" : "checkbox",
