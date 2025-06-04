@@ -74,7 +74,7 @@
     "locked" : false,
     "occurrence" : {
       "min" : null,
-      "max" : null,
+      "max" : 2,
       "sorting_label_field" : "52125186-6985-0862-5e5b-7dcbf41d1fc9",
       "default" : 2
     },
