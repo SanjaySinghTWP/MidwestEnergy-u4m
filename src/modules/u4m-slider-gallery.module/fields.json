@@ -337,7 +337,7 @@
     "required" : false,
     "locked" : false,
     "responsive" : true,
-    "resizable" : true,
+    "resizable" : false,
     "show_loading" : false,
     "type" : "image",
     "display_width" : null,
@@ -494,11 +494,12 @@
     "required" : false,
     "locked" : false,
     "display" : "slider",
-    "min" : 500,
+    "min" : 800,
     "max" : 2000,
     "step" : 1,
     "type" : "number",
-    "display_width" : null
+    "display_width" : null,
+    "default" : 800
   }, {
     "id" : "d6ebe062-20c0-9cc5-4fc3-ef8b7a16b4e3",
     "name" : "include_animation",
@@ -608,6 +609,7 @@
   "default" : {
     "intro_content_alignment" : "center",
     "intro_content_size" : "theme",
+    "intro_content_width" : 800,
     "include_animation" : false,
     "slider_options" : {
       "slides_per_view" : 4,
