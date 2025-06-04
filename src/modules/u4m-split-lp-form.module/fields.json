@@ -365,6 +365,20 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
+    "id" : "61452245-4172-a0a7-482d-721cb10d885e",
+    "name" : "select_list_type",
+    "label" : "Select List Type",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "blt", "Bullet" ], [ "check", "Checkmark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "check"
+  }, {
     "id" : "d6ebe062-20c0-9cc5-4fc3-ef8b7a16b4e3",
     "name" : "include_animation",
     "label" : "Include Animation",
@@ -402,6 +416,7 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
+    "select_list_type" : "check",
     "include_animation" : false
   }
 }, {

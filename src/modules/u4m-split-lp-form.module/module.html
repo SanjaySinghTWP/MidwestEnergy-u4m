@@ -1,7 +1,7 @@
 {% set moduleName = 'u4m-split-lp-form' %}
 {% include "../partials/u4-module-includes.html" %}
 
-<div class="split-lp-wrap">
+<div class="split-lp-wrap {{ module.module_settings.select_list_type }}">
 	<div class="content-col">
 		{% if module.intro_content.include_eyebrow or module.intro_content.include_heading or module.intro_content.include_content or module.intro_content.include_button %}
 		<div class="intro_content {% if not module.intro_content.include_button %}nobtn{% endif %}" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
