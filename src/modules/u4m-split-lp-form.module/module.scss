@@ -1,394 +1,389 @@
 @import "../../css/_module-imports";
 
-
 .u4m-split-lp-form {
+  @include tabletvert {
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
 
-    @include tabletvert {
-        padding-left: 20rem;
-        padding-right: 20rem;
-    }
+  .page-center {
+    padding: 0;
 
-    .page-center {
-        padding: 0;
+    .split-lp-wrap {
+      display: flex;
+      gap: 80rem;
 
-        .split-lp-wrap {
-            display: flex;
-            gap: 80rem;
+      @include navbreak {
+        gap: 40rem;
+      }
 
+      @include tablet {
+        flex-direction: column;
+      }
 
+      .content-col {
+        width: 50%;
 
-            @include navbreak {
-                gap: 40rem;
-            }
+        @include tablet {
+          width: 100%;
+        }
+
+        .intCnt {
+          margin-bottom: 30px;
+
+          .eyebrowtext {
+            color: $dark_green;
+            margin-bottom: 8rem;
+          }
+
+          h2.intro_title {
+            margin-bottom: 20rem;
+          }
+
+          .intro_desc {
+            max-width: 580rem;
 
             @include tablet {
-                flex-direction: column;
+              max-width: 100%;
             }
 
-            .content-col {
-                width: 50%;
-
-                @include tablet {
-                    width: 100%;
-                }
-
-                .intCnt {
-
-                    margin-bottom: 30px;
-
-                    .eyebrowtext {
-                        color: $dark_green;
-                        margin-bottom: 8rem;
-                    }
-
-                    h2.intro_title {
-                        margin-bottom: 20rem;
-                    }
-
-                    .intro_desc {
-                        max-width: 580rem;
-
-                        @include tablet {
-                            max-width: 100%;
-                        }
-
-                        p {
-                            margin-bottom: 30rem;
-                        }
-
-                        ul {
-                            padding-left: 20rem;
-                            list-style: none;
-                            margin: 0;
-                            padding: 0;
-
-                            li {
-                                margin-bottom: 5rem;
-                                letter-spacing: normal;
-                                display: flex;
-                                align-items: center;
-                                font-family: $font1;
-                                font-size: 16rem;
-                                font-style: normal;
-                                font-weight: 400;
-                                line-height: 24rem;
-                                position: relative;
-
-                                &::before {
-                                    content: '';
-                                    display: inline-block;
-                                    width: 24px;
-                                    height: 24px;
-                                    background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2210%22%20fill%3D%22%2339473F%22/%3E%3Cpath%20d%3D%22M17.5309%208.13315L9.88778%2014.871L6.47078%2011.8587C6.37155%2011.7706%206.23682%2011.7212%206.09629%2011.7212C5.95572%2011.7212%205.82098%2011.7706%205.72196%2011.8586L5.15601%2012.3575C5.05608%2012.445%205%2012.5637%205%2012.6876C5%2012.8115%205.05611%2012.9303%205.15587%2013.0176L9.51733%2016.8625C9.61659%2016.9505%209.75131%2017%209.89183%2017C10.0323%2017%2010.1671%2016.9505%2010.2661%2016.8626L18.844%209.3008C18.9439%209.21343%2019%209.09462%2019%208.97067C19%208.84689%2018.944%208.72823%2018.8445%208.64096L18.2785%208.13487L18.2765%208.13315C18.0687%207.95562%2017.7386%207.95562%2017.5309%208.13315Z%22%20fill%3D%22white%22/%3E%3C/svg%3E);
-                                    background-size: contain;
-                                    background-repeat: no-repeat;
-                                    margin-right: 8px;
-                                    vertical-align: middle; // Example content
-
-                                }
-                            }
-                        }
-                    }
-                }
+            p {
+              margin-bottom: 30rem;
             }
 
-            .form-col {
-                width: 50%;
+            ul {
+              padding-left: 20rem;
+              list-style: none;
+              margin: 0;
+              padding: 0;
 
-                @include tablet {
-                    width: 100%;
+              li {
+                margin-bottom: 5rem;
+                letter-spacing: normal;
+                display: flex;
+                align-items: center;
+                font-family: $font1;
+                font-size: 16rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24rem;
+                position: relative;
+
+                &::before {
+                  content: "";
+                  display: inline-block;
+                  width: 24px;
+                  height: 24px;
+                  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2210%22%20fill%3D%22%2339473F%22/%3E%3Cpath%20d%3D%22M17.5309%208.13315L9.88778%2014.871L6.47078%2011.8587C6.37155%2011.7706%206.23682%2011.7212%206.09629%2011.7212C5.95572%2011.7212%205.82098%2011.7706%205.72196%2011.8586L5.15601%2012.3575C5.05608%2012.445%205%2012.5637%205%2012.6876C5%2012.8115%205.05611%2012.9303%205.15587%2013.0176L9.51733%2016.8625C9.61659%2016.9505%209.75131%2017%209.89183%2017C10.0323%2017%2010.1671%2016.9505%2010.2661%2016.8626L18.844%209.3008C18.9439%209.21343%2019%209.09462%2019%208.97067C19%208.84689%2018.944%208.72823%2018.8445%208.64096L18.2785%208.13487L18.2765%208.13315C18.0687%207.95562%2017.7386%207.95562%2017.5309%208.13315Z%22%20fill%3D%22white%22/%3E%3C/svg%3E);
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  margin-right: 8px;
+                  vertical-align: middle; // Example content
                 }
+              }
             }
+          }
         }
+      }
 
-        .form-col {
-            border-radius: 24rem;
-            background: $dark_green;
-            padding: 40rem;
+      .form-col {
+        width: 50%;
 
-            @include phone {
-                padding: 25rem;
-            }
-
-            .form-wrap {
-                h3 {
-                    display: none;
-                }
-
-                form {
-                    margin: 0;
-
-                    &::-webkit-input-placeholder {
-                        color: $dark_green;
-                        font-size: 14rem;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 150%;
-                    }
-
-                    .hs_error_rollup {
-
-                        ul {
-
-                            li {
-
-                                label {
-
-                                    color: $red;
-                                    font-family: $font1;
-                                    font-size: 14rem;
-                                    font-style: normal;
-                                    font-weight: 600;
-                                    line-height: 150%;
-                                    margin-bottom: 8rem;
-                                }
-                            }
-                        }
-                    }
-
-                    .hs-richtext {
-                        h3 {
-                            display: block;
-                            font-size: 30rem;
-                            font-style: normal;
-                            font-weight: 700;
-                            line-height: 35rem;
-                            color: $white;
-                            margin-bottom: 12rem;
-                        }
-
-                        p {
-                            margin-top: 0;
-                            color: $white;
-                            margin-bottom: 20rem;
-                        }
-                    }
-
-                    .hs-form-field {
-                        margin-bottom: 20rem;
-                        margin-top: 0;
-
-                        >label {
-                            color: $white;
-                            font-family: $font1;
-                            font-size: 14rem;
-                            font-style: normal;
-                            font-weight: 600;
-                            line-height: 150%;
-                            margin-bottom: 8rem;
-                            display: inline-block;
-                        }
-
-                        input {
-                            padding: 12rem;
-                            min-height: 48rem;
-                            border-radius: 4rem;
-                            border: 1rem solid $dark_green;
-                            background: $white;
-
-                            @include phone {
-                                width: 100%;
-                            }
-                        }
-
-                        select {
-                            padding: 12rem;
-                            min-height: 48rem;
-                            border-radius: 4rem;
-                            border: 1rem solid $dark_green;
-                            background: $white;
-                            width: 100%;
-                            -webkit-appearance: none;
-                            /* Chrome, Safari, Edge */
-                            -moz-appearance: none;
-                            /* Firefox */
-                            appearance: none;
-                            outline: none;
-                            color: $dark_green;
-
-                            @include phone {
-                                width: 100%;
-                            }
-                        }
-                    }
-
-                    fieldset {
-
-                        max-width: 100%;
-
-                        @include tablet {
-                            max-width: 100%;
-                        }
-                    }
-
-                    fieldset.form-columns-2 {
-
-                        @include phone {
-                            display: flex;
-                            flex-direction: column;
-                        }
-
-                        .hs-form-field {
-
-                            @include phone {
-                                width: 100%;
-                            }
-
-                            .input {
-                                margin-right: 20rem;
-
-                                @include phone {
-                                    margin-right: 0rem;
-                                }
-                            }
-
-                            &:last-child {
-                                .input {
-                                    margin-right: 0;
-                                }
-                            }
-                        }
-                    }
-
-                    fieldset.form-columns-1 {
-                        .input {
-                            margin: 0;
-
-                            input {
-                                width: 100%;
-                            }
-
-                            textarea {
-                                width: 100%;
-                                border-radius: 4rem;
-                                border: 1rem solid $dark_green;
-                                background: $white;
-                                padding: 12rem;
-                                min-height: 140rem;
-                            }
-                        }
-                    }
-
-                    .hs_submit {
-                        text-align: center;
-
-                        input.hs-button {
-                            padding: 12rem 24rem;
-                            border-radius: 24rem;
-                            border: 1rem solid $white;
-
-                            &:hover {
-                                background: $bright_green;
-                                border: 1rem solid $bright_green;
-                            }
-                        }
-                    }
-
-                    textarea {
-                        outline: none;
-                    }
-
-                    input[type=text] {
-                        outline: none;
-                    }
-
-                    input[type=password] {
-                        outline: none;
-                    }
-
-                    input[type=datetime] {
-                        outline: none;
-                    }
-
-                    input[type=datetime-local] {
-                        outline: none;
-                    }
-
-                    input[type=date] {
-                        outline: none;
-                    }
-
-                    input[type=month] {
-                        outline: none;
-                    }
-
-                    input[type=time] {
-                        outline: none;
-                    }
-
-                    input[type=week] {
-                        outline: none;
-                    }
-
-                    input[type=number] {
-                        outline: none;
-                    }
-
-                    input[type=email] {
-                        outline: none;
-                    }
-
-                    input[type=url] {
-                        outline: none;
-                    }
-
-                    input[type=search] {
-                        outline: none;
-                    }
-
-                    input[type=tel] {
-                        outline: none;
-                    }
-
-                    input[type=color] {
-                        outline: none;
-                    }
-
-                    ul.hs-error-msgs {
-                        margin: 0;
-                        padding: 0;
-
-                        li {
-                            margin: 0;
-                            letter-spacing: normal;
-
-                            label.hs-error-msg {
-                                color: $red;
-                                font-family: $font1;
-                                font-size: 14rem;
-                                font-style: normal;
-                                font-weight: 600;
-                                line-height: 150%;
-                                margin-bottom: 8rem;
-                            }
-                        }
-                    }
-                }
-            }
+        @include tablet {
+          width: 100%;
         }
+      }
     }
 
-    padding-left: 80rem;
-    padding-right: 80rem;
+    .form-col {
+      border-radius: 24rem;
+      background: $dark_green;
+      padding: 40rem;
+
+      @include phone {
+        padding: 25rem;
+      }
+
+      .form-wrap {
+        h3 {
+          display: none;
+        }
+
+        form {
+          margin: 0;
+
+          &::-webkit-input-placeholder {
+            color: $dark_green;
+            font-size: 14rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+          }
+
+          .hs_error_rollup {
+            ul {
+              li {
+                label {
+                  color: $red;
+                  font-family: $font1;
+                  font-size: 14rem;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: 150%;
+                  margin-bottom: 8rem;
+                }
+              }
+            }
+          }
+
+          .hs-richtext {
+            h3 {
+              display: block;
+              font-size: 30rem;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 35rem;
+              color: $white;
+              margin-bottom: 12rem;
+            }
+
+            p {
+              margin-top: 0;
+              color: $white;
+              margin-bottom: 20rem;
+            }
+          }
+
+          .hs-form-field {
+            margin-bottom: 20rem;
+            margin-top: 0;
+
+            > label {
+              color: $white;
+              font-family: $font1;
+              font-size: 14rem;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 150%;
+              margin-bottom: 8rem;
+              display: inline-block;
+            }
+
+            input {
+              padding: 12rem;
+              min-height: 48rem;
+              border-radius: 4rem;
+              border: 1rem solid $dark_green;
+              background: $white;
+              &::-webkit-input-placeholder {
+                color: $dark_green;
+              }
+              @include phone {
+                width: 100%;
+              }
+            }
+
+            select {
+              padding: 12rem;
+              min-height: 48rem;
+              border-radius: 4rem;
+              border: 1rem solid $dark_green;
+              background: $white;
+              width: 100%;
+              -webkit-appearance: none;
+              /* Chrome, Safari, Edge */
+              -moz-appearance: none;
+              /* Firefox */
+              appearance: none;
+              outline: none;
+              color: $dark_green;
+              &::-webkit-input-placeholder {
+                color: $dark_green;
+              }
+              @include phone {
+                width: 100%;
+              }
+            }
+            textarea {
+              &::-webkit-input-placeholder {
+                color: $dark_green;
+              }
+            }
+          }
+
+          fieldset {
+            max-width: 100%;
+
+            @include tablet {
+              max-width: 100%;
+            }
+          }
+
+          fieldset.form-columns-2 {
+            @include phone {
+              display: flex;
+              flex-direction: column;
+            }
+
+            .hs-form-field {
+              @include phone {
+                width: 100%;
+              }
+
+              .input {
+                margin-right: 20rem;
+
+                @include phone {
+                  margin-right: 0rem;
+                }
+              }
+
+              &:last-child {
+                .input {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+
+          fieldset.form-columns-1 {
+            .input {
+              margin: 0;
+
+              input {
+                width: 100%;
+              }
+
+              textarea {
+                width: 100%;
+                border-radius: 4rem;
+                border: 1rem solid $dark_green;
+                background: $white;
+                padding: 12rem;
+                min-height: 140rem;
+              }
+            }
+          }
+
+          .hs_submit {
+            text-align: center;
+
+            input.hs-button {
+              padding: 12rem 24rem;
+              border-radius: 24rem;
+              border: 1rem solid $white;
+
+              &:hover {
+                background: $bright_green;
+                border: 1rem solid $bright_green;
+              }
+            }
+          }
+
+          textarea {
+            outline: none;
+          }
+
+          input[type="text"] {
+            outline: none;
+          }
+
+          input[type="password"] {
+            outline: none;
+          }
+
+          input[type="datetime"] {
+            outline: none;
+          }
+
+          input[type="datetime-local"] {
+            outline: none;
+          }
+
+          input[type="date"] {
+            outline: none;
+          }
+
+          input[type="month"] {
+            outline: none;
+          }
+
+          input[type="time"] {
+            outline: none;
+          }
+
+          input[type="week"] {
+            outline: none;
+          }
+
+          input[type="number"] {
+            outline: none;
+          }
+
+          input[type="email"] {
+            outline: none;
+          }
+
+          input[type="url"] {
+            outline: none;
+          }
+
+          input[type="search"] {
+            outline: none;
+          }
+
+          input[type="tel"] {
+            outline: none;
+          }
+
+          input[type="color"] {
+            outline: none;
+          }
+
+          ul.hs-error-msgs {
+            margin: 0;
+            padding: 0;
+
+            li {
+              margin: 0;
+              letter-spacing: normal;
+
+              label.hs-error-msg {
+                color: $red;
+                font-family: $font1;
+                font-size: 14rem;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 150%;
+                margin-bottom: 8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  padding-left: 80rem;
+  padding-right: 80rem;
 }
 
 .u4m-split-lp-form.reverse-text {
+  .page-center {
+    .split-lp-wrap {
+      .content-col {
+        .intCnt {
+          .eyebrowtext {
+            color: $white;
+          }
 
-    .page-center {
-        .split-lp-wrap {
-            .content-col {
-                .intCnt {
-                    .eyebrowtext {
-                        color: $white;
-                    }
-
-                    .intro_desc {
-                        ul {
-                            color: $white;
-                        }
-                    }
-                }
+          .intro_desc {
+            ul {
+              color: $white;
             }
+          }
         }
+      }
     }
+  }
 }
