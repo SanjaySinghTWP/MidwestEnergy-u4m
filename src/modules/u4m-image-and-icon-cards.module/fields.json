@@ -172,13 +172,35 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Button" ], [ "olive_btn", "Dark Olive Gray" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "hs-button"
+    }, {
+      "id" : "38869a13-0127-81c5-1421-dc29db941810",
+      "name" : "button_size",
+      "label" : "Button Size",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_style",
+        "controlling_value_regex" : "hs-sec-btn",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "small", "Small " ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "small"
     }, {
       "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
       "name" : "button_text",
@@ -260,7 +282,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
@@ -273,7 +296,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     } ]
   } ],
   "tab" : "CONTENT",
@@ -302,7 +326,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
@@ -315,7 +340,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     } ]
   }
 }, {
@@ -398,6 +424,28 @@
       "display_width" : null,
       "default" : true
     }, {
+      "id" : "04cb5a20-b640-250f-e5f9-f25571ecc710",
+      "name" : "select_gradient",
+      "label" : "Select Gradient",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_column.card_items.include_image_bottom_border",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ], [ "gradient3", "Gradient 3" ], [ "gradient4", "Gradient 4" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "gradient1"
+    }, {
       "id" : "19639112-2391-a7e6-1620-fb10ae4fced1",
       "name" : "icon_field",
       "label" : "Icon",
@@ -454,6 +502,20 @@
       "type" : "choice",
       "display_width" : null,
       "default" : "icontop"
+    }, {
+      "id" : "6df1ad43-343c-6700-b044-e59989cd617a",
+      "name" : "heading_type",
+      "label" : "Heading Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "h1", "Heading 1" ], [ "h2", "Heading 2" ], [ "h3", "Heading 3" ], [ "h4", "Heading 4" ], [ "h5", "Heading 5" ], [ "h6", "Heading 6" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "h4"
     }, {
       "id" : "3f0fb69f-2a3a-3519-4cae-0d45ce454cfb",
       "name" : "heading",
@@ -552,13 +614,35 @@
           "access" : null
         },
         "display" : "select",
-        "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+        "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Button" ], [ "dark_olive_gray", "Dark Olive Gray" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
         "preset" : null,
         "type" : "choice",
         "display_width" : null,
         "default" : "hs-button"
+      }, {
+        "id" : "3baf35b3-84b0-ec22-0f91-9440e0d783d5",
+        "name" : "button_size",
+        "label" : "Button Size",
+        "required" : true,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "content_column.card_items.button_group.button_style",
+          "controlling_value_regex" : "hs-sec-btn",
+          "property" : null,
+          "operator" : "NOT_EQUAL",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "small", "Small" ], [ "Medium", "Medium" ], [ "large", "Large" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "small"
       }, {
         "id" : "1a6672dc-d5b7-5cfe-84ce-c727b2483430",
         "name" : "button_text",
@@ -640,7 +724,8 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
+        },
+        "button_size" : "small"
       } ]
     } ],
     "tab" : "CONTENT",
@@ -661,12 +746,15 @@
         "max_height" : 500
       },
       "include_image_bottom_border" : true,
+      "select_gradient_copy" : "gradient1",
       "icon_field" : { },
       "svg_code" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"> <path d=\"M15.4839 33.8709L33.871 6.77417L29.0323 26.129H45.4839L27.0968 53.2258L31.9355 33.8709H15.4839Z\" fill=\"#758B50\"></path> <circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"></circle> </svg>",
       "icon_alignment" : "icontop",
+      "heading_type" : "h4",
       "heading" : "99.9% Uptime for Electric",
       "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>",
       "include_button" : true,
+      "dark_button_arrow" : false,
       "button_group" : [ {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -679,9 +767,9 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
-      } ],
-      "boolean_field" : false
+        },
+        "button_size" : "small"
+      } ]
     }, {
       "media_type" : "img",
       "image_field" : {
@@ -695,12 +783,15 @@
         "max_height" : 500
       },
       "include_image_bottom_border" : true,
+      "select_gradient_copy" : "gradient1",
       "icon_field" : { },
       "svg_code" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"> <path d=\"M15.4839 33.8709L33.871 6.77417L29.0323 26.129H45.4839L27.0968 53.2258L31.9355 33.8709H15.4839Z\" fill=\"#758B50\"></path> <circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"></circle> </svg>",
       "icon_alignment" : "icontop",
+      "heading_type" : "h4",
       "heading" : "99.9% Uptime for Electric",
       "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>",
       "include_button" : true,
+      "dark_button_arrow" : false,
       "button_group" : [ {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -713,9 +804,9 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
-      } ],
-      "boolean_field" : false
+        },
+        "button_size" : "small"
+      } ]
     }, {
       "media_type" : "img",
       "image_field" : {
@@ -729,12 +820,15 @@
         "max_height" : 500
       },
       "include_image_bottom_border" : true,
+      "select_gradient_copy" : "gradient1",
       "icon_field" : { },
       "svg_code" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"> <path d=\"M15.4839 33.8709L33.871 6.77417L29.0323 26.129H45.4839L27.0968 53.2258L31.9355 33.8709H15.4839Z\" fill=\"#758B50\"></path> <circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"></circle> </svg>",
       "icon_alignment" : "icontop",
+      "heading_type" : "h4",
       "heading" : "99.9% Uptime for Electric",
       "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>",
       "include_button" : true,
+      "dark_button_arrow" : false,
       "button_group" : [ {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -747,9 +841,9 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
-      } ],
-      "boolean_field" : false
+        },
+        "button_size" : "small"
+      } ]
     } ]
   } ],
   "tab" : "CONTENT",
@@ -771,12 +865,15 @@
         "max_height" : 500
       },
       "include_image_bottom_border" : true,
+      "select_gradient_copy" : "gradient1",
       "icon_field" : { },
       "svg_code" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"> <path d=\"M15.4839 33.8709L33.871 6.77417L29.0323 26.129H45.4839L27.0968 53.2258L31.9355 33.8709H15.4839Z\" fill=\"#758B50\"></path> <circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"></circle> </svg>",
       "icon_alignment" : "icontop",
+      "heading_type" : "h4",
       "heading" : "99.9% Uptime for Electric",
       "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>",
       "include_button" : true,
+      "dark_button_arrow" : false,
       "button_group" : [ {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -789,9 +886,9 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
-      } ],
-      "boolean_field" : false
+        },
+        "button_size" : "small"
+      } ]
     }, {
       "media_type" : "img",
       "image_field" : {
@@ -805,12 +902,15 @@
         "max_height" : 500
       },
       "include_image_bottom_border" : true,
+      "select_gradient_copy" : "gradient1",
       "icon_field" : { },
       "svg_code" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"> <path d=\"M15.4839 33.8709L33.871 6.77417L29.0323 26.129H45.4839L27.0968 53.2258L31.9355 33.8709H15.4839Z\" fill=\"#758B50\"></path> <circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"></circle> </svg>",
       "icon_alignment" : "icontop",
+      "heading_type" : "h4",
       "heading" : "99.9% Uptime for Electric",
       "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>",
       "include_button" : true,
+      "dark_button_arrow" : false,
       "button_group" : [ {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -823,9 +923,9 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
-      } ],
-      "boolean_field" : false
+        },
+        "button_size" : "small"
+      } ]
     }, {
       "media_type" : "img",
       "image_field" : {
@@ -839,12 +939,15 @@
         "max_height" : 500
       },
       "include_image_bottom_border" : true,
+      "select_gradient_copy" : "gradient1",
       "icon_field" : { },
       "svg_code" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"> <path d=\"M15.4839 33.8709L33.871 6.77417L29.0323 26.129H45.4839L27.0968 53.2258L31.9355 33.8709H15.4839Z\" fill=\"#758B50\"></path> <circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"></circle> </svg>",
       "icon_alignment" : "icontop",
+      "heading_type" : "h4",
       "heading" : "99.9% Uptime for Electric",
       "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>",
       "include_button" : true,
+      "dark_button_arrow" : false,
       "button_group" : [ {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -857,9 +960,9 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
-      } ],
-      "boolean_field" : false
+        },
+        "button_size" : "small"
+      } ]
     } ]
   }
 }, {
@@ -927,13 +1030,35 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Button" ], [ "olive_btn", "Dark Olive Gray" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "hs-button"
+    }, {
+      "id" : "3620181b-2546-423f-1353-47e1daae7578",
+      "name" : "button_size",
+      "label" : "Button Size",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "button.button_group.button_style",
+        "controlling_value_regex" : "hs-sec-btn",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "small"
     }, {
       "id" : "792fe61a-1966-5035-9ee5-d234b8018832",
       "name" : "button_text",
@@ -1015,7 +1140,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
@@ -1028,7 +1154,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     } ]
   } ],
   "tab" : "CONTENT",
@@ -1050,7 +1177,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
@@ -1063,7 +1191,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     } ]
   }
 }, {
@@ -1200,6 +1329,20 @@
         "opacity" : 100
       }
     }, {
+      "id" : "51839d68-15e0-8c1a-3c3d-8d6d6d18602d",
+      "name" : "content_size",
+      "label" : "Content Size",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "large", "Large" ], [ "small", "Small" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "small"
+    }, {
       "id" : "3ed28522-191b-096f-a7d4-940bff00c065",
       "name" : "card_content_color",
       "label" : "Card Content Color",
@@ -1254,6 +1397,7 @@
         "color" : "#39473F",
         "opacity" : 100
       },
+      "content_size" : "small",
       "card_content_color" : {
         "color" : "#FFFFFF",
         "opacity" : 100
@@ -1282,6 +1426,7 @@
         "color" : "#39473F",
         "opacity" : 100
       },
+      "content_size" : "small",
       "card_content_color" : {
         "color" : "#FFFFFF",
         "opacity" : 100
@@ -1779,7 +1924,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ] ],
+      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ], [ "gradient3", "Gradient 3" ], [ "gradient4", "Gradient 4" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
