@@ -82,7 +82,7 @@ h6:first-child {
   padding-bottom: 50px;
 }
 
-.bg_overlay~ :not(.bg_overlay),
+.bg_overlay ~ :not(.bg_overlay),
 .dnd_padd {
   position: relative;
   z-index: 2;
@@ -131,120 +131,154 @@ div.hs_cos_wrapper_widget section.top-margin-none {
   font-weight: 100;
   font-display: block;
   src: url("{{ get_asset_url('../fonts/fa-thin-100.woff2') }}") format("woff2"),
-  url("{{ get_asset_url('../fonts/fa-thin-100.ttf') }}") format("truetype");
+    url("{{ get_asset_url('../fonts/fa-thin-100.ttf') }}") format("truetype");
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
-  src: url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.woff2') }}") format('woff2'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.ttf') }}") format('ttf'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.eot') }}") format('eot'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.svg') }}") format('svg'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.woff') }}") format('woff');
+  font-family: "Source Sans Pro";
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.ttf') }}")
+      format("ttf"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.eot') }}")
+      format("eot"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.svg') }}")
+      format("svg"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLight.woff') }}")
+      format("woff");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
-  src: url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.woff2') }}") format('woff2'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.ttf') }}") format('ttf'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.eot') }}") format('eot'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.svg') }}") format('svg'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.woff') }}") format('woff');
+  font-family: "Source Sans Pro";
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.ttf') }}")
+      format("ttf"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.eot') }}")
+      format("eot"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.svg') }}")
+      format("svg"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-ExtraLightIt.woff') }}")
+      format("woff");
   font-weight: 200;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
-  src: url("{{ get_asset_url('../fonts/SourceSansPro-Light.woff2') }}") format('woff2'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Light.woff') }}") format('woff'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Light.ttf') }}") format('ttf'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Light.eot') }}") format('eot'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Light.svg') }}") format('svg');
+  font-family: "Source Sans Pro";
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-Light.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Light.woff') }}")
+      format("woff"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Light.ttf') }}") format("ttf"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Light.eot') }}") format("eot"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Light.svg') }}") format("svg");
   font-weight: 300;
   font-style: normal;
 }
 
-
 @font-face {
-  font-family: 'Source Sans Pro';
-  src: url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.woff2') }}") format('woff2'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.ttf') }}") format('ttf'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.eot') }}") format('eot'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.svg') }}") format('svg'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.woff') }}") format('woff');
+  font-family: "Source Sans Pro";
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.ttf') }}")
+      format("ttf"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.eot') }}")
+      format("eot"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.svg') }}")
+      format("svg"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-LightIt.woff') }}")
+      format("woff");
   font-weight: 300;
   font-style: italic;
 }
 
-
 @font-face {
-  font-family: 'Source Sans Pro';
-  src: url("{{ get_asset_url('../fonts/SourceSansPro-Regular.woff2') }}") format('woff2'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Regular.ttf') }}") format('ttf'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Regular.svg') }}") format('svg'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Regular.eot') }}") format('eot'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Regular.woff') }}") format('woff');
+  font-family: "Source Sans Pro";
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-Regular.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Regular.ttf') }}")
+      format("ttf"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Regular.svg') }}")
+      format("svg"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Regular.eot') }}")
+      format("eot"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Regular.woff') }}")
+      format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
-  src: url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.woff2') }}") format('woff2'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.ttf') }}") format('ttf'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.svg') }}") format('svg'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.eot') }}") format('eot'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.woff') }}") format('woff');
+  font-family: "Source Sans Pro";
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.ttf') }}")
+      format("ttf"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.svg') }}")
+      format("svg"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.eot') }}")
+      format("eot"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Semibold.woff') }}")
+      format("woff");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
-  src: url("{{ get_asset_url('../fonts/SourceSansPro-Bold.woff2') }}") format('woff2'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Bold.svg') }}") format('svg'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Bold.eot') }}") format('eot'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Bold.woff') }}") format('woff'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Bold.ttf') }}") format('ttf');
+  font-family: "Source Sans Pro";
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-Bold.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Bold.svg') }}") format("svg"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Bold.eot') }}") format("eot"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Bold.woff') }}")
+      format("woff"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Bold.ttf') }}") format("ttf");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
-  src: url("{{ get_asset_url('../fonts/SourceSansPro-Black.woff2') }}") format('woff2'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Black.ttf') }}") format('ttf'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Black.svg') }}") format('svg'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Black.eot') }}") format('eot'),
-  url("{{ get_asset_url('../fonts/SourceSansPro-Black.woff') }}") format('woff');
+  font-family: "Source Sans Pro";
+  src: url("{{ get_asset_url('../fonts/SourceSansPro-Black.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Black.ttf') }}") format("ttf"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Black.svg') }}") format("svg"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Black.eot') }}") format("eot"),
+    url("{{ get_asset_url('../fonts/SourceSansPro-Black.woff') }}")
+      format("woff");
   font-weight: 900;
   font-style: normal;
 }
 
 /* priori sans it font family	 */
 
-
 @font-face {
-  font-family: 'Priori Sans OT';
-  src: url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.woff2') }}") format('woff2'),
-  url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.ttf') }}") format('ttf'),
-  url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.eot') }}") format('eot'),
-  url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.svg') }}") format('svg'),
-  url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.woff') }}") format('woff');
+  font-family: "Priori Sans OT";
+  src: url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.ttf') }}")
+      format("ttf"),
+    url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.eot') }}")
+      format("eot"),
+    url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.svg') }}")
+      format("svg"),
+    url("{{ get_asset_url('../fonts/PrioriSansOT-Regular.woff') }}")
+      format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Priori Sans OT';
-  src: url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.woff2') }}") format('woff2'),
-  url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.ttf') }}") format('ttf'),
-  url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.eot') }}") format('eot'),
-  url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.svg') }}") format('svg'),
-  url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.woff') }}") format('woff');
+  font-family: "Priori Sans OT";
+  src: url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.ttf') }}") format("ttf"),
+    url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.eot') }}") format("eot"),
+    url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.svg') }}") format("svg"),
+    url("{{ get_asset_url('../fonts/PrioriSansOT-Bold.woff') }}") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -572,14 +606,22 @@ form {
   box-sizing: unset !important;
   vertical-align: unset !important;
 }
+.large .hs-button,
+.btn_item.cmhs-button.large a.cta_button {
+  @include largebtn;
+}
+.medium .hs-button,
+.btn_item.cmhs-button.medium a.cta_button {
+  @include mediumbtn;
+}
 
 a.hs-sec-btn {
-  color: #39473f;
-  font-family: "Source Sans Pro";
-  font-size: 16px;
+  color: $dark_green;
+  font-family: $font1;
+  font-size: $baseFontSize;
   font-style: normal;
   font-weight: 600;
-  line-height: 150%;
+  line-height: $baseLineHeight;
   display: flex;
   align-items: center;
   height: 100%;
@@ -589,7 +631,7 @@ a.hs-sec-btn {
     position: relative;
 
     svg {
-      height: 2px;
+      height: 2rem;
       flex-shrink: 0;
       width: 100%;
     }
@@ -600,19 +642,15 @@ a.hs-sec-btn {
       left: 0;
       width: 10%;
       height: 2px;
-      background: linear-gradient(71deg,
-          #fff 0%,
-          $bright_green 41.68%,
-          #697b79 83.9%,
-          #697b79 101.77%);
+      background: $gradient1;
       bottom: -1px;
       transition: all 0.3s ease;
     }
   }
 
   span.arrow {
-    width: 24px;
-    height: 24px;
+    width: 24rem;
+    height: 24rem;
     flex-shrink: 0;
     transition: all 0.3s ease;
   }
@@ -633,12 +671,12 @@ a.hs-sec-btn {
 .cmhs-sec-btn {
   a.cta_button {
     position: relative;
-    color: #39473f;
-    font-family: "Source Sans Pro";
-    font-size: 16px;
+    color: $dark_green;
+    font-family: $font1;
+    font-size: $baseFontSize;
     font-style: normal;
     font-weight: 600;
-    line-height: 150%;
+    line-height: $baseLineHeight;
     display: flex;
     align-items: center;
     height: 100%;
@@ -650,11 +688,7 @@ a.hs-sec-btn {
       left: 0;
       width: 10%;
       height: 2px;
-      background: linear-gradient(71deg,
-          #fff 0%,
-          #d0dd28 41.68%,
-          #697b79 83.9%,
-          #697b79 101.77%);
+      background: $gradient1;
       bottom: -1px;
       transition: all 0.3s ease;
     }
@@ -701,6 +735,16 @@ a.tertiary-btn,
     border-color: $bright_green;
     color: $bright_green;
   }
+}
+
+.large a.tertiary-btn,
+.btn_item.cmtertiary-btn.large a.cta_button {
+  @include largebtn;
+}
+
+.medium a.tertiary-btn,
+.btn_item.cmtertiary-btn.medium a.cta_button {
+  @include mediumbtn;
 }
 
 ::-webkit-input-placeholder {
@@ -763,7 +807,7 @@ code {
   border-radius: 0;
 }
 
-pre>code {
+pre > code {
   display: block;
   padding: 1rem 15rem;
   white-space: pre;

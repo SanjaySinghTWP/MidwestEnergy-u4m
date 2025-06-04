@@ -23,6 +23,16 @@
   }
 }
 
+@mixin largebtn {
+  padding-left: 64rem;
+  padding-right: 64rem;
+}
+
+@mixin mediumbtn {
+  padding-left: 41rem;
+  padding-right: 41rem;
+}
+
 //
 @mixin buttonSmall {
   @include button;
