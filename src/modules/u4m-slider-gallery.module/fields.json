@@ -172,13 +172,35 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Bottom" ], [ "olive_btn", "Dark Olive Gray" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "hs-button"
+    }, {
+      "id" : "63faf471-9eb9-14c7-6607-06722eb2122b",
+      "name" : "button_size",
+      "label" : "Button Size",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_style",
+        "controlling_value_regex" : "hs-button|tertiary-btn|olive_btn",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "small"
     }, {
       "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
       "name" : "button_text",
@@ -251,6 +273,7 @@
     "default" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Button",
       "link" : {
         "url" : {
@@ -264,6 +287,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Button",
       "link" : {
         "url" : {
@@ -293,6 +317,7 @@
     "button_group" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Button",
       "link" : {
         "url" : {
@@ -306,6 +331,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Button",
       "link" : {
         "url" : {
