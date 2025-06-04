@@ -172,13 +172,35 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Bottom" ], [ "olive_btn", "Dark Olive Gray" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "hs-button"
+    }, {
+      "id" : "30fecf3a-1b32-bca9-7785-a5e3edec1cc0",
+      "name" : "button_size",
+      "label" : "Button Size",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_value_regex" : "std|cta",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "large", "Large" ], [ "medium", "Medium" ], [ "small", "Small" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "small"
     }, {
       "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
       "name" : "button_text",
@@ -251,6 +273,7 @@
     "default" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Report an Outage",
       "link" : {
         "url" : {
@@ -264,6 +287,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Report an Outage",
       "link" : {
         "url" : {
@@ -293,6 +317,7 @@
     "button_group" : [ {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Report an Outage",
       "link" : {
         "url" : {
@@ -306,6 +331,7 @@
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
+      "button_size" : "small",
       "button_text" : "Report an Outage",
       "link" : {
         "url" : {
@@ -365,6 +391,38 @@
     "type" : "number",
     "display_width" : null
   }, {
+    "id" : "14e8caa2-25ed-3417-4152-a7b21327d374",
+    "name" : "enable_border_gradient",
+    "label" : "Enable Border Gradient",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "48efea43-4c07-8c4b-9d6a-800112de8350",
+    "name" : "select_gradient",
+    "label" : "Select Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.enable_border_gradient",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ], [ "gradient3", "Gradient 3" ], [ "gradient4", "Gradient 4" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "gradient1"
+  }, {
     "id" : "d6ebe062-20c0-9cc5-4fc3-ef8b7a16b4e3",
     "name" : "include_animation",
     "label" : "Include Animation",
@@ -419,6 +477,8 @@
   "default" : {
     "intro_content_alignment" : "left",
     "intro_content_size" : "b3",
+    "enable_border_gradient" : true,
+    "select_gradient" : "gradient1",
     "include_animation" : false,
     "animation_type" : "fade-up",
     "style_type" : "two_column"
