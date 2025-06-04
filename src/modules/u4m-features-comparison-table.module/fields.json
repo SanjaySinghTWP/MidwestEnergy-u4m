@@ -389,7 +389,7 @@
       "visibility" : {
         "controlling_field" : null,
         "controlling_field_path" : "module_settings.number_of_column",
-        "controlling_value_regex" : "three|four|five",
+        "controlling_value_regex" : "three|four|five|six",
         "property" : null,
         "operator" : "MATCHES_REGEX",
         "access" : null
@@ -411,7 +411,7 @@
       "visibility" : {
         "controlling_field" : null,
         "controlling_field_path" : "module_settings.number_of_column",
-        "controlling_value_regex" : "four|five",
+        "controlling_value_regex" : "four|five|six",
         "property" : null,
         "operator" : "MATCHES_REGEX",
         "access" : null
@@ -433,9 +433,31 @@
       "visibility" : {
         "controlling_field" : null,
         "controlling_field_path" : "module_settings.number_of_column",
-        "controlling_value_regex" : "five",
+        "controlling_value_regex" : "five|six",
         "property" : null,
-        "operator" : "EQUAL",
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "cross", "Cross" ], [ "minus", "Minus" ], [ "check_mark", "Check Mark" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "cross"
+    }, {
+      "id" : "fa6325c9-b2ff-4fb3-e146-d7269cf2c2bc",
+      "name" : "version_05",
+      "label" : "Version 05",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_settings.number_of_column",
+        "controlling_value_regex" : "six",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
         "access" : null
       },
       "display" : "select",
@@ -457,31 +479,36 @@
       "version_1" : "cross",
       "version_02" : "cross",
       "version_03" : "minus",
-      "version_04" : "cross"
+      "version_04" : "cross",
+      "version_04_copy" : "cross"
     }, {
       "heading" : "Feature Name Here",
       "version_1" : "cross",
       "version_02" : "cross",
       "version_03" : "minus",
-      "version_04" : "cross"
+      "version_04" : "cross",
+      "version_04_copy" : "cross"
     }, {
       "heading" : "Feature Name Here",
       "version_1" : "cross",
       "version_02" : "cross",
       "version_03" : "minus",
-      "version_04" : "cross"
+      "version_04" : "cross",
+      "version_04_copy" : "cross"
     }, {
       "heading" : "Feature Name Here",
       "version_1" : "cross",
       "version_02" : "cross",
       "version_03" : "minus",
-      "version_04" : "cross"
+      "version_04" : "cross",
+      "version_04_copy" : "cross"
     }, {
       "heading" : "Feature Name Here",
       "version_1" : "cross",
       "version_02" : "cross",
       "version_03" : "minus",
-      "version_04" : "cross"
+      "version_04" : "cross",
+      "version_04_copy" : "cross"
     } ]
   } ],
   "tab" : "CONTENT",
@@ -641,7 +668,7 @@
     "required" : true,
     "locked" : false,
     "display" : "select",
-    "choices" : [ [ "three", "Three" ], [ "four", "Four" ], [ "five", "Five" ] ],
+    "choices" : [ [ "three", "Three" ], [ "four", "Four" ], [ "five", "Five" ], [ "six", "Six" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,

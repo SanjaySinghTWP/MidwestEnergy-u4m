@@ -99,14 +99,32 @@
     &.four {
       .middlepannel {
         .bottomepannel {
-          .items.items_5 {
+          .items.items_5,
+          .items.items_6 {
             display: none;
           }
         }
       }
 
       .toppannel {
-        .items.items_5 {
+        .items.items_5,
+        .items.items_6 {
+          display: none;
+        }
+      }
+    }
+
+    &.five {
+      .middlepannel {
+        .bottomepannel {
+          .items.items_6 {
+            display: none;
+          }
+        }
+      }
+
+      .toppannel {
+        .items.items_6 {
           display: none;
         }
       }
@@ -116,7 +134,8 @@
       .middlepannel {
         .bottomepannel {
           .items.items_4,
-          .items.items_5 {
+          .items.items_5,
+          .items.items_6 {
             display: none;
           }
         }
@@ -124,7 +143,8 @@
 
       .toppannel {
         .items.items_4,
-        .items.items_5 {
+        .items.items_5,
+        .items.items_6 {
           display: none;
         }
       }
