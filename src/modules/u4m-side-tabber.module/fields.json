@@ -131,7 +131,7 @@
     "locked" : false,
     "occurrence" : {
       "min" : null,
-      "max" : null,
+      "max" : 2,
       "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
       "default" : 2
     },
@@ -161,7 +161,7 @@
       "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
       "name" : "button_style",
       "label" : "Button Style",
-      "required" : false,
+      "required" : true,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
@@ -446,7 +446,7 @@
         "locked" : false,
         "occurrence" : {
           "min" : null,
-          "max" : null,
+          "max" : 2,
           "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
           "default" : 2
         },
@@ -476,7 +476,7 @@
           "id" : "0529d0bf-4206-41fd-1e81-590fccccf4ff",
           "name" : "button_style",
           "label" : "Button Style",
-          "required" : false,
+          "required" : true,
           "locked" : false,
           "visibility" : {
             "controlling_field" : null,
@@ -513,7 +513,7 @@
           "show_emoji_picker" : false,
           "type" : "text",
           "display_width" : null,
-          "default" : "Button"
+          "default" : "Learn More"
         }, {
           "id" : "2a761597-81d0-29df-51ed-5bdf7317a38e",
           "name" : "link",
@@ -566,7 +566,7 @@
         "default" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -579,7 +579,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -609,7 +609,7 @@
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -622,7 +622,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -647,7 +647,7 @@
         "required" : false,
         "locked" : false,
         "responsive" : true,
-        "resizable" : true,
+        "resizable" : false,
         "show_loading" : false,
         "type" : "image",
         "display_width" : null,
@@ -685,7 +685,7 @@
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -698,7 +698,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -734,13 +734,12 @@
           "type" : "SOLID"
         },
         "svg_icon_text" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"><path d=\"M15.4839 33.8712L33.871 6.77441L29.0323 26.1293H45.4839L27.0968 53.226L31.9355 33.8712H15.4839Z\" fill=\"#758B50\"/><circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"/></svg>",
-        "title" : "Internet",
         "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
         "include_button" : true,
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -753,7 +752,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -783,13 +782,12 @@
           "type" : "SOLID"
         },
         "svg_icon_text" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"><path d=\"M15.4839 33.8712L33.871 6.77441L29.0323 26.1293H45.4839L27.0968 53.226L31.9355 33.8712H15.4839Z\" fill=\"#758B50\"/><circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"/></svg>",
-        "title" : "Internet",
         "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
         "include_button" : true,
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -802,7 +800,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -832,13 +830,12 @@
           "type" : "SOLID"
         },
         "svg_icon_text" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"><path d=\"M15.4839 33.8712L33.871 6.77441L29.0323 26.1293H45.4839L27.0968 53.226L31.9355 33.8712H15.4839Z\" fill=\"#758B50\"/><circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"/></svg>",
-        "title" : "Internet",
         "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
         "include_button" : true,
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -851,7 +848,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -881,13 +878,12 @@
           "type" : "SOLID"
         },
         "svg_icon_text" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"><path d=\"M15.4839 33.8712L33.871 6.77441L29.0323 26.1293H45.4839L27.0968 53.226L31.9355 33.8712H15.4839Z\" fill=\"#758B50\"/><circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"/></svg>",
-        "title" : "Internet",
         "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
         "include_button" : true,
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -900,7 +896,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -930,13 +926,12 @@
           "type" : "SOLID"
         },
         "svg_icon_text" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"><path d=\"M15.4839 33.8712L33.871 6.77441L29.0323 26.1293H45.4839L27.0968 53.226L31.9355 33.8712H15.4839Z\" fill=\"#758B50\"/><circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"/></svg>",
-        "title" : "Internet",
         "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
         "include_button" : true,
         "button_group" : [ {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -949,7 +944,7 @@
         }, {
           "button_type" : "std",
           "button_style" : "hs-button",
-          "button_text" : "Button",
+          "button_text" : "Learn More",
           "link" : {
             "url" : {
               "content_id" : null,
@@ -987,7 +982,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "left"
+    "default" : "center"
   }, {
     "id" : "75e2e625-fa6b-fef7-0233-79606cf1291a",
     "name" : "intro_content_size",
@@ -1046,6 +1041,36 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null
+  }, {
+    "id" : "9b529eaa-1af6-3e95-8ba1-951016795024",
+    "name" : "enable_shape",
+    "label" : "Enable Shape",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "645c8642-3ba5-f581-1131-1c20143070bd",
+    "name" : "shape_color",
+    "label" : "Shape Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.enable_shape",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#D0DD28",
+      "opacity" : 50
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -1053,10 +1078,15 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "left",
+    "intro_content_alignment" : "center",
     "intro_content_size" : "theme",
     "intro_content_width" : 800,
-    "include_animation" : false
+    "include_animation" : false,
+    "enable_shape" : true,
+    "shape_color" : {
+      "color" : "#D0DD28",
+      "opacity" : 50
+    }
   }
 }, {
   "id" : "module_overrides",
