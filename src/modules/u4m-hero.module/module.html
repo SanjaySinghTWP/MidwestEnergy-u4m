@@ -7,7 +7,7 @@
 
   <div class="content_column">
     {% if module.intro_content.include_eyebrow or module.intro_content.include_heading or module.intro_content.include_content or module.intro_content.include_button %}
-    <div class="innerContainer">
+    <div class="innerContainer {{ module.module_settings.select_gradient }}">
       <div class="intro_content {% if not module.intro_content.include_button %}nobtn{% endif %}" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
            {% endif %} data-aos-delay="100">
         <div class="intro__inner " >
@@ -74,6 +74,9 @@
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M12.594 11.8808C12.8098 12.0901 12.8098 12.4294 12.594 12.6387L6.95976 18.1028C6.74394 18.3121 6.39409 18.3121 6.17827 18.1028L5.91772 17.8501C5.7019 17.6408 5.7019 17.3015 5.91772 17.0922L10.9007 12.2598L5.91772 7.42731C5.7019 7.21801 5.7019 6.87872 5.91772 6.66942L6.17827 6.41674C6.39409 6.20744 6.74394 6.20744 6.95976 6.41674L12.594 11.8808Z" fill="#39473F"/>
                 </svg>
               </span>
+              {% endif %}
+              {% if item.button_style == "olive_btn" %}
+              {{ item.button_text }}
               {% endif %}
             </a>
             {% endif %}

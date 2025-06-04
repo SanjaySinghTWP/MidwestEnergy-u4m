@@ -172,7 +172,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Button" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Button" ], [ "olive_btn", "Dark Olive Gray" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -571,6 +571,38 @@
     "display_width" : null,
     "default" : "b3"
   }, {
+    "id" : "6d8f84ff-5529-36ec-0420-8d9a9a75c825",
+    "name" : "enable_border_gradient",
+    "label" : "Enable Border Gradient  ",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "406ee26b-43aa-7f1e-bae2-fdb865627702",
+    "name" : "select_gradient",
+    "label" : "Select Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.enable_border_gradient",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ], [ "gradient3", "Gradient 3" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "gradient1"
+  }, {
     "id" : "d6ebe062-20c0-9cc5-4fc3-ef8b7a16b4e3",
     "name" : "include_animation",
     "label" : "Include Animation",
@@ -611,6 +643,8 @@
   "default" : {
     "style_type" : "two_col",
     "intro_content_size" : "b3",
+    "enable_border_gradient" : true,
+    "select_gradient" : "gradient1",
     "include_animation" : false,
     "animation_type" : "fade-up"
   }

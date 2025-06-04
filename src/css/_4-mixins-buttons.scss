@@ -23,6 +23,13 @@
   }
 }
 
+@mixin olivebtn {
+  @include button;
+  border: 1px solid $dark_green;
+  background-color: $dark_green;
+  color: $white;
+}
+
 @mixin largebtn {
   padding-left: 64rem;
   padding-right: 64rem;

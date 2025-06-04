@@ -737,7 +737,17 @@ a.tertiary-btn,
   }
 }
 
-.border_btn {
+.btn_item.cmolive_btn .cta_button {
+  @include olivebtn;
+  &:hover {
+    border: 1px solid $dark_green;
+    background-color: $white;
+    color: $dark_green;
+  }
+}
+
+.border_btn,
+.btn_item.cmborder_btn a.cta_button {
   &:hover {
     color: $white;
   }
@@ -754,6 +764,33 @@ a.tertiary-btn,
         fill: $white;
       }
     }
+  }
+}
+
+.btn_item.cmborder_btn a.cta_button {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: calc(100% - 29px);
+    height: 1px;
+    background: $bright_green;
+    bottom: -1px;
+    transition: all 0.3s ease;
+  }
+
+  &::after {
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2225%22%20viewBox%3D%220%200%2018%2025%22%20fill%3D%22none%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M12.594%2011.8808C12.8098%2012.0901%2012.8098%2012.4294%2012.594%2012.6387L6.95976%2018.1028C6.74394%2018.3121%206.39409%2018.3121%206.17827%2018.1028L5.91772%2017.8501C5.7019%2017.6408%205.7019%2017.3015%205.91772%2017.0922L10.9007%2012.2598L5.91772%207.42731C5.7019%207.21801%205.7019%206.87872%205.91772%206.66942L6.17827%206.41674C6.39409%206.20744%206.74394%206.20744%206.95976%206.41674L12.594%2011.8808Z%22%20fill%3D%22%2339473F%22%2F%3E%3C%2Fsvg%3E");
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(1);
   }
 }
 
@@ -774,6 +811,15 @@ a.tertiary-btn {
 .medium a.tertiary-btn,
 .btn_item.cmtertiary-btn.medium a.cta_button {
   @include mediumbtn;
+}
+.btn_item.cmolive_btn.small .cta_button {
+  @include smallbtn;
+}
+.btn_item.cmolive_btn.medium .cta_button {
+  @include mediumbtn;
+}
+.btn_item.cmolive_btn.large .cta_button {
+  @include largebtn;
 }
 
 ::-webkit-input-placeholder {
@@ -804,6 +850,27 @@ img {
   border: 0;
   -ms-interpolation-mode: bicubic;
   vertical-align: bottom;
+}
+
+.innerContainer.gradient1 {
+  &:after {
+    background: $gradient1;
+  }
+}
+.innerContainer.gradient2 {
+  &:after {
+    background: $gradient2;
+  }
+}
+.innerContainer.gradient3 {
+  &:after {
+    background: $gradient3;
+  }
+}
+.innerContainer.gradient4 {
+  &:after {
+    background: $gradient4;
+  }
 }
 
 /* Make responsive, clear border, fix IE scaling, suppress the space beneath the baseline, fix Webkit blurring on scaled down files */
@@ -937,9 +1004,38 @@ section[class*="u4m-"] {
   background: $gradient2;
 }
 
+.gradient3 {
+  background: $gradient3;
+}
+
+.gradient4 {
+  background: $gradient4;
+}
+
 .intro_desc.b3 p {
   @include b3;
   color: inherit;
+}
+
+.olive_btn {
+  @include olivebtn;
+  &:hover {
+    border: 1px solid $dark_green;
+    background-color: $white;
+    color: $dark_green;
+  }
+}
+.small a.olive_btn,
+.btn_item.cmtertiary-btn.small a.cta_button {
+  @include smallbtn;
+}
+.medium a.olive_btn,
+.btn_item.cmtertiary-btn.medium a.cta_button {
+  @include mediumbtn;
+}
+.large a.olive_btn,
+.btn_item.cmtertiary-btn.large a.cta_button {
+  @include largebtn;
 }
 
 .reverse-text {
