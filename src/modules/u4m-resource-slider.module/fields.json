@@ -13,7 +13,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : true
+    "default" : false
   }, {
     "id" : "77ccc7db-c222-3a3f-d211-900bf8e8d4d5",
     "name" : "eybrow_text",
@@ -172,13 +172,35 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Bottom" ], [ "olive_btn", "Dark Olive Gray" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "hs-sec-btn"
+    }, {
+      "id" : "28a7ff1d-2668-1c44-2b1d-b2fe345aa1a4",
+      "name" : "button_size",
+      "label" : "Button Size",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_style",
+        "controlling_value_regex" : "hs-button|tertiary-btn|olive_btn",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "medium"
     }, {
       "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
       "name" : "button_text",
@@ -251,6 +273,7 @@
     "default" : [ {
       "button_type" : "std",
       "button_style" : "hs-sec-btn",
+      "button_size" : "medium",
       "button_text" : "View All Resources",
       "link" : {
         "url" : {
@@ -269,7 +292,7 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "include_eyebrow" : true,
+    "include_eyebrow" : false,
     "eybrow_text" : "OPTIONAL EYEBROW TEXT",
     "include_heading" : true,
     "heading_size" : "h2",
@@ -280,6 +303,7 @@
     "button_group" : [ {
       "button_type" : "std",
       "button_style" : "hs-sec-btn",
+      "button_size" : "medium",
       "button_text" : "View All Resources",
       "link" : {
         "url" : {
