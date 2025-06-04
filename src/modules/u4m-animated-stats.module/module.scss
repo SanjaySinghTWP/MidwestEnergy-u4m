@@ -52,6 +52,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 0 30px;
       .stats_border_wrapper {
         padding: 8rem;
         display: inline-flex;
@@ -60,8 +61,8 @@
       }
     }
     .flex_row {
-      padding: 0rem 20rem;
       justify-content: center;
+      margin: 0 -30rem;
       @include tabletvert {
         row-gap: 0px;
       }

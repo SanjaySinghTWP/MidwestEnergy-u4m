@@ -67,8 +67,9 @@
 							</div>
 							{% endif %}
 							{%  endif %}
-							{% if item.right_column.external_video_url  %}
-							{% if item.right_column.file_field   %}
+              	{% if item.right_column.file_field  || item.right_column.external_video_url    %}
+							
+						
 							<div class="vid_wrp">
 								{% if  item.right_column.select_video_type  == "video1"%}
 								{% if  item.right_column.file_field %}
@@ -111,7 +112,6 @@
 						{%  endif %} 
 								{%  endif %}
 							</div>
-							{% endif %}
 							{% endif %}
 							{% if item.right_column.button_group %}
 							{% if item.right_column.button_group %}

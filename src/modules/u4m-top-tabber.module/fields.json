@@ -131,7 +131,7 @@
     "locked" : false,
     "occurrence" : {
       "min" : null,
-      "max" : null,
+      "max" : 2,
       "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
       "default" : 2
     },
@@ -161,7 +161,7 @@
       "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
       "name" : "button_style",
       "label" : "Button Style",
-      "required" : false,
+      "required" : true,
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
@@ -172,7 +172,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Button" ], [ "olive_btn", "Dark Olive Gray" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -242,6 +242,28 @@
       },
       "type" : "cta",
       "display_width" : null
+    }, {
+      "id" : "d361ca43-b89d-5b6e-44fd-f2d967b23c5e",
+      "name" : "button_size",
+      "label" : "Button Size",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_style",
+        "controlling_value_regex" : "hs-sec-btn",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "small"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -260,7 +282,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
@@ -273,7 +296,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     } ]
   } ],
   "tab" : "CONTENT",
@@ -302,7 +326,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
@@ -315,7 +340,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     } ]
   }
 }, {
@@ -379,9 +405,9 @@
       "locked" : false,
       "occurrence" : {
         "min" : null,
-        "max" : null,
+        "max" : 2,
         "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-        "default" : 1
+        "default" : 2
       },
       "children" : [ {
         "id" : "c70dc96f-2109-68ca-405b-d60035d5e14b",
@@ -401,7 +427,7 @@
         "id" : "d7b951c4-7cd9-bec1-8a97-59dc9124f996",
         "name" : "button_style",
         "label" : "Button Style",
-        "required" : false,
+        "required" : true,
         "locked" : false,
         "visibility" : {
           "controlling_field" : null,
@@ -412,13 +438,35 @@
           "access" : null
         },
         "display" : "select",
-        "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+        "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Button" ], [ "olive_btn", "Dark Olive Gray" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
         "preset" : null,
         "type" : "choice",
         "display_width" : null,
         "default" : "hs-sec-btn"
+      }, {
+        "id" : "9ea6b43e-404e-9c34-c585-bcbe93fe7307",
+        "name" : "button_size",
+        "label" : "Button Size",
+        "required" : true,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "tab_items.left_column.button_group.button_style",
+          "controlling_value_regex" : "hs-sec-btn",
+          "property" : null,
+          "operator" : "NOT_EQUAL",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "small"
       }, {
         "id" : "cb254efb-3e58-1ff5-10e7-54a10744e051",
         "name" : "button_text",
@@ -500,7 +548,22 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
+        },
+        "button_size" : "small"
+      }, {
+        "button_type" : "std",
+        "button_style" : "hs-sec-btn",
+        "button_text" : "CTA Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "button_size" : "small"
       } ]
     } ],
     "tab" : "CONTENT",
@@ -522,7 +585,22 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
+        },
+        "button_size" : "small"
+      }, {
+        "button_type" : "std",
+        "button_style" : "hs-sec-btn",
+        "button_text" : "CTA Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "button_size" : "small"
       } ]
     }
   }, {
@@ -693,7 +771,7 @@
       "id" : "951ca6d3-b7df-6626-ee7e-b85ea23bf63a",
       "name" : "external_video_url",
       "label" : "External Video URL",
-      "help_text" : "Youtub Url",
+      "help_text" : "Use a token like 'EngW7tLk6R8' from the YouTube video URL to embed the video.",
       "required" : false,
       "locked" : false,
       "validation_regex" : "",
@@ -719,7 +797,7 @@
       "locked" : false,
       "occurrence" : {
         "min" : null,
-        "max" : null,
+        "max" : 2,
         "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
         "default" : 2
       },
@@ -741,7 +819,7 @@
         "id" : "b749ea41-47df-7d0f-326d-6fbe062f346a",
         "name" : "button_style",
         "label" : "Button Style",
-        "required" : false,
+        "required" : true,
         "locked" : false,
         "visibility" : {
           "controlling_field" : null,
@@ -752,7 +830,7 @@
           "access" : null
         },
         "display" : "select",
-        "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+        "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Button" ], [ "olive_btn", "Dark Olive Gray" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
         "preset" : null,
@@ -822,6 +900,28 @@
         },
         "type" : "cta",
         "display_width" : null
+      }, {
+        "id" : "f9913bc2-216a-f263-da10-d73fa281999f",
+        "name" : "button_size",
+        "label" : "Button Size",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "tab_items.right_column.button_group.button_style",
+          "controlling_value_regex" : "hs-sec-btn",
+          "property" : null,
+          "operator" : "NOT_EQUAL",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "small"
       } ],
       "tab" : "CONTENT",
       "expanded" : false,
@@ -840,7 +940,8 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
+        },
+        "button_size" : "small"
       }, {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -853,7 +954,8 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
+        },
+        "button_size" : "small"
       } ]
     } ],
     "tab" : "CONTENT",
@@ -903,7 +1005,8 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
+        },
+        "button_size" : "small"
       }, {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -916,7 +1019,8 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
+        },
+        "button_size" : "small"
       } ]
     }
   }, {
@@ -990,7 +1094,22 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
+        },
+        "button_size" : "small"
+      }, {
+        "button_type" : "std",
+        "button_style" : "hs-sec-btn",
+        "button_text" : "CTA Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "button_size" : "small"
       } ]
     },
     "right_column" : {
@@ -1007,6 +1126,11 @@
         "max_height" : 563
       },
       "select_video_type" : "",
+      "play_icon" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "SOLID"
+      },
       "poster_image" : {
         "size_type" : "auto",
         "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/1084-536x354-grayscale.jpg",
@@ -1030,7 +1154,8 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
+        },
+        "button_size" : "small"
       }, {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -1043,13 +1168,9 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
-      } ],
-      "play_icon" : {
-        "name" : "Play Circle",
-        "unicode" : "f144",
-        "type" : "SOLID"
-      }
+        },
+        "button_size" : "small"
+      } ]
     },
     "bottom_content" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
     "list_item" : [ {
@@ -1078,7 +1199,22 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
+        },
+        "button_size" : "small"
+      }, {
+        "button_type" : "std",
+        "button_style" : "hs-sec-btn",
+        "button_text" : "CTA Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "button_size" : "small"
       } ]
     },
     "right_column" : {
@@ -1095,6 +1231,11 @@
         "max_height" : 563
       },
       "select_video_type" : "",
+      "play_icon" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "SOLID"
+      },
       "poster_image" : {
         "size_type" : "auto",
         "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/1084-536x354-grayscale.jpg",
@@ -1118,7 +1259,8 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
+        },
+        "button_size" : "small"
       }, {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -1131,13 +1273,9 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
-      } ],
-      "play_icon" : {
-        "name" : "Play Circle",
-        "unicode" : "f144",
-        "type" : "SOLID"
-      }
+        },
+        "button_size" : "small"
+      } ]
     },
     "bottom_content" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
     "list_item" : [ {
@@ -1166,7 +1304,22 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
+        },
+        "button_size" : "small"
+      }, {
+        "button_type" : "std",
+        "button_style" : "hs-sec-btn",
+        "button_text" : "CTA Button",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "button_size" : "small"
       } ]
     },
     "right_column" : {
@@ -1183,6 +1336,11 @@
         "max_height" : 563
       },
       "select_video_type" : "",
+      "play_icon" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "SOLID"
+      },
       "poster_image" : {
         "size_type" : "auto",
         "src" : "https://48851491.fs1.hubspotusercontent-na1.net/hubfs/48851491/MidwestEnergy-u4m/Images/1084-536x354-grayscale.jpg",
@@ -1206,7 +1364,8 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
+        },
+        "button_size" : "small"
       }, {
         "button_type" : "std",
         "button_style" : "hs-button",
@@ -1219,13 +1378,9 @@
           },
           "open_in_new_tab" : false,
           "no_follow" : false
-        }
-      } ],
-      "play_icon" : {
-        "name" : "Play Circle",
-        "unicode" : "f144",
-        "type" : "SOLID"
-      }
+        },
+        "button_size" : "small"
+      } ]
     },
     "bottom_content" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
     "list_item" : [ {

@@ -158,6 +158,28 @@
       "display_width" : null,
       "default" : "std"
     }, {
+      "id" : "60c9d0ff-5a83-1fb0-67ff-b94ff2c03c6a",
+      "name" : "button_size",
+      "label" : "Button Size",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "intro_content.button_group.button_style",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "small"
+    }, {
       "id" : "9d5fe057-d461-68d1-9845-607ec6d892ff",
       "name" : "button_style",
       "label" : "Button Style",
@@ -172,7 +194,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ] ],
+      "choices" : [ [ "hs-button", "Primary" ], [ "hs-sec-btn", "Secondary" ], [ "tertiary-btn", "Tertiary" ], [ "border_btn", "Border Button" ], [ "olive_btn", "Dark Olive Gray" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -260,7 +282,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
@@ -273,7 +296,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     } ]
   } ],
   "tab" : "CONTENT",
@@ -302,7 +326,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
@@ -315,7 +340,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     } ]
   }
 }, {
@@ -354,7 +380,7 @@
       "controlling_field_path" : "stats_items.value",
       "controlling_value_regex" : null,
       "property" : null,
-      "operator" : null,
+      "operator" : "NOT_EMPTY",
       "access" : null
     },
     "allow_new_line" : false,
@@ -557,7 +583,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ] ],
+      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ], [ "gradient3", "Gradient 3" ], [ "gradient4", "Gradient 4" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
@@ -1094,7 +1120,7 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ] ],
+      "choices" : [ [ "gradient1", "Gradient 1" ], [ "gradient2", "Gradient 2" ], [ "gradient3", "Gradient 3" ], [ "gradient4", "Gradient 4" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
