@@ -47,6 +47,12 @@
   }
 }
 
+@mixin tabletMin2 {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
 @mixin tabletMax {
   @media (max-width: 1200px) {
     @content;

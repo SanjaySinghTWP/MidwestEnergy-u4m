@@ -13,7 +13,7 @@
 <style>
   {% if module.module_settings.style_type == "one_column" %}
   .{{name}}.u4m-cta-row .innerContainer {
-    max-width: 800px;
+    max-width: {{ module.module_settings.intro_content_width }}px;
     margin: 0 auto;
   }
   .{{name}}.u4m-cta-row .intro_content {

@@ -38,7 +38,9 @@
         line-height: 150%;
         margin-top: 20rem;
         cursor: pointer;
-
+        @include tabletvert {
+          padding: 20rem 10rem;
+        }
         &.nomargin {
           margin-top: 0;
         }
@@ -54,6 +56,11 @@
           align-items: flex-start;
           flex: 1 0 0;
           justify-content: center;
+          &.item-heading {
+            @include tabletvert {
+              font-weight: bold;
+            }
+          }
 
           &.items_1 {
             justify-content: flex-start;

@@ -31,6 +31,7 @@
               }
             }
           }
+
           .bottom-section {
             .list_wrp {
               ul {
@@ -57,10 +58,14 @@
     }
     .tabber_wrp {
       margin-top: 30rem;
+      max-width: 1040px;
+      margin-left: auto;
+      margin-right: auto;
       .tab_row {
         padding: 0rem 0rem;
         margin: 0;
         list-style: none;
+        justify-content: center;
         @include tabletvert {
           display: none;
         }
@@ -107,7 +112,7 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.2s;
-
+        animation: fadeIn 0.4s ease-in-out both;
         @include tabletvert {
           opacity: 1;
           display: block;
@@ -116,7 +121,7 @@
           .mob_acc_wrp a.accordion_title {
             width: 100%;
             font-family: $font2;
-            font-size: 20rem;
+            font-size: 24rem;
             font-style: normal;
             font-weight: 700;
             line-height: 1;
@@ -146,7 +151,7 @@
                   font-size: 35rem;
                   @include tabletvert {
                     line-height: 1;
-                    font-size: 25rem;
+                    font-size: 23rem;
                   }
                 }
               }
@@ -236,7 +241,8 @@
           margin-left: -15rem;
           margin-right: -15rem;
           @include tabletvert {
-            margin: 0;
+            margin-left: 0;
+            margin-right: 0;
           }
           h3 {
             font-family: $font2;
@@ -246,6 +252,10 @@
             line-height: 35rem;
             color: $dark_green;
             margin-bottom: 20rem;
+            @include tabletvert {
+              line-height: 1;
+              font-size: 22rem;
+            }
           }
           .list_wrp {
             ul {
@@ -280,6 +290,8 @@
           }
         }
         .tab_content_inner {
+          padding-left: 15px;
+          padding-right: 15px;
           @include tabletvert {
             display: none;
             padding: 20px;
@@ -334,5 +346,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

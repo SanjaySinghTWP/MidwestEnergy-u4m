@@ -97,8 +97,8 @@ $color_1: #536c5f;
             height: 40px;
           }
           svg {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             @include tabletvert {
               width: 40px;
               height: 40px;
@@ -110,7 +110,6 @@ $color_1: #536c5f;
         }
         button.custom-arrow.splide__arrow--prev {
           transform: rotate(180deg);
-          margin-top: -4px;
         }
       }
     }

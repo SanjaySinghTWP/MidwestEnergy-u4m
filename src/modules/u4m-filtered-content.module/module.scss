@@ -263,6 +263,9 @@
             h5 {
               margin-bottom: 12px;
               color: $dark_green;
+              @include phone {
+                font-size: 24rem;
+              }
             }
           }
           .des-wrp {

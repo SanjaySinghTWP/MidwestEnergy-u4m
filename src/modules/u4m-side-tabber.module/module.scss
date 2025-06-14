@@ -28,8 +28,10 @@
                 color: $light_periwinkle_gray;
                 width: 100%;
                 cursor: pointer;
+                &:hover {
+                  color: $dark_green;
+                }
               }
-
               &.active {
                 border-color: $bright_green;
 
@@ -51,7 +53,7 @@
               }
 
               .mobile {
-                @include tabletMin {
+                @include tabletMin2 {
                   display: none !important;
                 }
 
@@ -79,12 +81,24 @@
         }
 
         .right {
+          &.noImage {
+            .col-inner {
+              max-width: 808px;
+              float: right;
+              margin-right: 80px;
+              @include tabletMax {
+                margin-right: 0;
+                max-width: 100%;
+                float: left;
+              }
+            }
+          }
           .col-inner {
             padding: 80rem;
             border-radius: 24rem;
             background: $super_light_gray;
             position: relative;
-
+            animation: fadeIn 0.4s ease-in-out both;
             h5.title {
               color: $dark_green;
               font-family: $font2;
@@ -112,6 +126,10 @@
               border-radius: 24rem;
               background: $dark_green;
               color: $white;
+              &:hover {
+                background: $bright_green;
+                color: $dark_green;
+              }
             }
 
             svg.shape {
@@ -126,7 +144,7 @@
             }
 
             .intro_btn_wrap {
-              column-gap: 20rem;
+              column-gap: 47rem;
               row-gap: 20rem;
             }
 
@@ -167,7 +185,7 @@
               .contentcol {
                 .inner {
                   padding: 50rem;
-                  padding-right: 0;
+                  padding-right: 15px;
 
                   @include tablet {
                     padding-bottom: 0;
@@ -178,9 +196,9 @@
               }
 
               svg.shape {
-                right: calc(50% - 40rem);
+                right: calc(50% - 54rem);
                 z-index: 9;
-                width: 54rem;
+                width: 79rem;
               }
 
               @include tablet {
@@ -224,5 +242,14 @@
         margin: 0 auto;
       }
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

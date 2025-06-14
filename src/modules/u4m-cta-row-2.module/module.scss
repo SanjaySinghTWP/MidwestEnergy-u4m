@@ -17,6 +17,7 @@
     .content-column {
       h2.title {
         color: $white;
+        margin-bottom: 10px;
       }
 
       .content {
@@ -37,10 +38,12 @@
       align-items: center;
 
       .intro_btn_wrap {
-        justify-content: center;
+        justify-content: right;
         column-gap: 55rem;
         row-gap: 20rem;
-
+        @include tabletvert {
+          justify-content: left;
+        }
         a.hs-sec-btn {
           color: $white;
 
@@ -55,6 +58,10 @@
           display: none;
         }
 
+        .submitted-message {
+          color: $white;
+          text-align: center;
+        }
         form {
           display: flex;
           flex-wrap: nowrap;
@@ -84,7 +91,7 @@
             margin-top: 20px;
           }
 
-          .hs-form-field>label {
+          .hs-form-field > label {
             color: $white;
             font-family: $font1;
             @include size14;
@@ -129,6 +136,7 @@
             position: absolute;
             width: 100%;
             top: calc(100% + 30rem);
+            display: none;
           }
         }
       }

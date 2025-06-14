@@ -48,11 +48,13 @@
   }
 }
 
-.sticky .u4m-anchor-nav-bar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  left: 0;
-  z-index: 9;
-  margin: 0 !important;
+@include tabletvertmin {
+  .sticky .u4m-anchor-nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 9;
+    margin: 0 !important;
+  }
 }

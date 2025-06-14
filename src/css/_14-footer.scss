@@ -545,7 +545,7 @@
 
         .copyright-image {
           align-items: center;
-
+          flex-direction: column-reverse;
           .copyright-text {
             p {
               text-align: center;

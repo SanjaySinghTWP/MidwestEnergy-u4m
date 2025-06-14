@@ -5,7 +5,7 @@
     position: relative;
     max-width: 662rem;
     margin-left: auto;
-
+    border-radius: 24rem;
     .intro_content {
       border-radius: 24rem;
       background: $white;
@@ -16,6 +16,16 @@
       gap: 10rem;
       z-index: 99;
       position: relative;
+      &.center {
+        .intro_btn_wrap {
+          justify-content: center;
+        }
+      }
+      &.right {
+        .intro_btn_wrap {
+          justify-content: flex-end;
+        }
+      }
     }
 
     h2.intro_title {
@@ -31,7 +41,7 @@
     }
 
     .intro_btn_wrap {
-      justify-content: center;
+      justify-content: left;
       column-gap: 55rem;
       row-gap: 20rem;
 

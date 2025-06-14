@@ -79,7 +79,7 @@
     </div>	
     {% endif %}
     {% for item in module.tab_title %}
-    <div class="col col-9 right {% if loop.first%} active {% endif  %}" data="{{loop.index}}">
+    <div class="col col-9 right {% if item.right_column.media_column.image_field.src %} withImage {% else %} noImage {% endif %} {% if loop.first%} active {% endif  %}" data="{{loop.index}}">
       <div class="col-inner {% if item.right_column.media_column.image_field.src %}media_colum_active{% endif %}">
         {% if module.module_settings.enable_shape %}
         <svg class="shape" xmlns="http://www.w3.org/2000/svg" width="79" height="138" viewBox="0 0 79 138" fill="none">
@@ -216,26 +216,20 @@
       $(this).find('.mobile.right').slideDown(0); // instantly show (no animation)
     });
 
-    // STEP 2: On tab click
-    $('.u4m-side-tabber .page-center .cm-side-tabber .flex_row .left ul.tab_row > li a.tablink').on('click', function () {
-      const $parentLi = $(this).closest('li');
-      const $target = $parentLi.find('.mobile.right');
-
-      // If already active, just toggle its content
-      if ($parentLi.hasClass('active')) {
-        $target.stop(true, true).slideToggle();
-      } else {
-        // Remove active from others
-        $parentLi.siblings().removeClass('active').find('.mobile.right').slideUp();
-
-        // Add active to clicked
-        $parentLi.addClass('active');
-
-        // Slide down the selected
-        $target.stop(true, true).slideDown();
+      if (window.innerWidth <= 1025) {
+        $('.u4m-side-tabber .page-center .cm-side-tabber .flex_row .left ul.tab_row>li .tablink').click(function(){
+          $(this).parent().toggleClass('active').siblings().removeClass('active');
+          $(this).siblings('.mobile.right').slideToggle(250).parent().siblings().children('.mobile.right').slideUp(250)
+        });
       }
-    });
+
+    
+
+
   });
+
+
+
 
 </script>
 

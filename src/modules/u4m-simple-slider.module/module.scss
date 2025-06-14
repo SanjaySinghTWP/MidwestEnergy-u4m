@@ -17,6 +17,9 @@
           padding: 0;
           width: 50px;
           border: 0;
+          &:hover {
+            background: $bright_green;
+          }
           @include tabletvert {
             width: 40px;
             height: 40px;
