@@ -20,5 +20,12 @@
     padding: 45px;
   }
   {% endif %}
+  {% if module.module_settings.style_type == "two_column" %}
+    {% if module.module_settings.content_column_position == "left" %}
+  .{{name}}.u4m-cta-row .innerContainer {
+    margin-left: 0;
+  }
+    {% endif %}
+  {% endif %}
 </style>
 {% end_require_css %}

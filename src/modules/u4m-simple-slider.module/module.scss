@@ -58,10 +58,12 @@
       .simple-slider {
         margin: 0px -37px;
         padding: 52px;
+        padding-bottom: 41px;
         text-align: center;
         position: relative;
         @include laptop {
-          padding: 20px;
+          padding-left: 20px;
+          padding-right: 20px;
           margin: 0;
         }
         .card-item {
@@ -126,6 +128,23 @@
       padding: 0px 30px;
       @include tabletvert {
         padding: 0px 10px;
+      }
+    }
+  }
+  &.reverse-text {
+    .page-center {
+      .cm-simple-slider {
+        .simple-slider {
+          .card-item {
+            .card-cont {
+              .name {
+                h5 {
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

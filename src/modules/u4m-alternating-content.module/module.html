@@ -2,7 +2,7 @@
 {% include "../partials/u4-module-includes.html" %}
 
 <div class="u4m-alt-cnt-wrap {{ module.module_settings.intro_content_alignment }}">
-  <div class="content-col {{ module.module_settings.select_content_background_color }}" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
+  <div class="content-col {{ module.module_settings.select_content_background_color }} " {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
        {% endif %} data-aos-delay="100">
     {% if module.intro_content.include_eyebrow or module.intro_content.include_heading or module.intro_content.include_content or module.intro_content.include_button %}
     <div class="intro_content {% if not module.intro_content.include_button %}nobtn{% endif %}">
@@ -379,6 +379,16 @@
 
   .u4m-alternating-content.{{name}} .page-center .innerContainer .content-col.custom{
     background-color:rgba({{module.module_settings.custom_color.color|convert_rgb  }},{{ module.module_settings.custom_color.opacity/100 }});
+  }
+
+  @media (max-width:1024px){
+  .{{name}}.u4m-alternating-content .u4m-alt-cnt-wrap.right .content-col,  
+  .u4m-alternating-content.{{name}} .page-center .innerContainer .content-col.custom{
+      {% if module.module_settings.custom_color.color and module.module_settings.custom_color.opacity == 0 %}
+        padding-left:0;
+        padding-right:0;
+      {% endif %}
+    }
   }
 
   .u4m-alternating-content.{{name}} .u4m-alt-cnt-wrap .media-column .shape-box svg rect {

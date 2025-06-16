@@ -4,11 +4,13 @@
 
 
 <div class="content_column">
+  {% if module.module_settings.enable_shape %}
   <svg class="shape" xmlns="http://www.w3.org/2000/svg" width="79" height="139" viewBox="0 0 79 139" fill="none">
     <rect x="79" y="138.243" width="79" height="29.0875" transform="rotate(-180 79 138.243)" fill="#D0DD28" fill-opacity="0.5"/>
     <rect x="79" y="83.8477" width="79" height="29.0875" transform="rotate(-180 79 83.8477)" fill="#D0DD28" fill-opacity="0.5"/>
     <rect x="79" y="29.4531" width="79" height="29.2102" transform="rotate(-180 79 29.4531)" fill="#D0DD28" fill-opacity="0.5"/>
   </svg>
+  {% endif %}
   <div class="flex_row">
 
     <div class="content-column col col-6">
@@ -58,3 +60,16 @@
 
 </div>
 </section>
+
+{% require_css %}
+  <style>
+  .{{name}}.u4m-cta-row-2 .content_column svg.shape rect {
+    fill: rgba({{ module.module_settings.shape_color.color|convert_rgb}},{{ module.module_settings.shape_color.opacity * 0.01}});
+    fill-opacity: 1;
+  }
+    .{{name}}.u4m-cta-row-2 .content_column svg.shape {
+    fill: rgba({{ module.module_settings.shape_color.color|convert_rgb}},{{ module.module_settings.shape_color.opacity * 0.01}});
+  }
+</style>
+
+{% end_require_css %}

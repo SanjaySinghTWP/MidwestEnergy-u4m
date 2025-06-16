@@ -47,7 +47,7 @@ $color_1: #536c5f;
               font-family: $font2;
               font-size: 28rem;
               font-style: normal;
-              font-weight: 400;
+              font-weight: 700;
               line-height: 30px;
               margin: 0;
               @include tabletvert {
@@ -85,7 +85,7 @@ $color_1: #536c5f;
           padding: 25px 0px;
         }
         button.custom-arrow {
-          background: $white;
+          background: transparent;
           border-radius: 50%;
           display: inline-block;
           height: 50px;

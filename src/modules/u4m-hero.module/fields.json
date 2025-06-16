@@ -557,6 +557,28 @@
     "display_width" : null,
     "default" : "two_col"
   }, {
+    "id" : "82714bf5-9b37-e33d-a71a-7868be8ebce1",
+    "name" : "select_content_column_position",
+    "label" : "Select Content Column Position",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.style_type",
+      "controlling_value_regex" : "two_col",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "left"
+  }, {
     "id" : "2a58ea9e-6087-5bd6-75a8-9de3c6a7da31",
     "name" : "intro_content_size",
     "label" : "Intro Content Size",
@@ -650,6 +672,7 @@
   "display_width" : null,
   "default" : {
     "style_type" : "two_col",
+    "select_content_column_position" : "left",
     "intro_content_size" : "b3",
     "enable_border_gradient" : true,
     "select_gradient" : "gradient1",

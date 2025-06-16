@@ -38,6 +38,20 @@
         line-height: 150%;
         margin-top: 20rem;
         cursor: pointer;
+        justify-content: space-between;
+        &:after {
+          content: "+";
+          float: right;
+          font-size: 30rem;
+          transition: transform 0.3s ease;
+        }
+        &.active {
+          &:after {
+            content: "-";
+            font-size: 40rem;
+            margin-top: -2px;
+          }
+        }
         @include tabletvert {
           padding: 20rem 10rem;
         }
@@ -49,7 +63,7 @@
       .bottomepannel {
         display: flex;
         flex-wrap: wrap;
-
+        align-items: center;
         .items {
           display: flex;
           padding: 20rem;

@@ -302,6 +302,8 @@
 
           .right-col {
             .img_wrp {
+              border-radius: $border4;
+              overflow: hidden;
               img {
                 width: 100%;
               }

@@ -446,6 +446,17 @@
         "display_width" : null,
         "default" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\"><path d=\"M15.4839 33.8712L33.871 6.77441L29.0323 26.1293H45.4839L27.0968 53.226L31.9355 33.8712H15.4839Z\" fill=\"#758B50\"/><circle cx=\"30\" cy=\"30\" r=\"27.5\" stroke=\"#D0DD28\" stroke-width=\"5\"/></svg>"
       }, {
+        "id" : "65c6f5b4-f7bf-fd87-8835-3a256e057baf",
+        "name" : "title",
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
         "id" : "079d1a72-f694-9ea1-6351-72a014b142a7",
         "name" : "content",
         "label" : "Content",

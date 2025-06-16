@@ -468,6 +468,28 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "two_column"
+  }, {
+    "id" : "a693482d-f936-c5f7-213d-f1f99f655efc",
+    "name" : "content_column_position",
+    "label" : "Content Column Position",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.style_type",
+      "controlling_value_regex" : "two_column",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "right"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -478,10 +500,11 @@
     "intro_content_alignment" : "left",
     "intro_content_size" : "b3",
     "enable_border_gradient" : true,
-    "select_gradient" : "gradient1",
+    "select_gradient" : "gradient3",
     "include_animation" : false,
     "animation_type" : "fade-up",
-    "style_type" : "two_column"
+    "style_type" : "two_column",
+    "content_column_position" : "right"
   }
 }, {
   "id" : "module_overrides",

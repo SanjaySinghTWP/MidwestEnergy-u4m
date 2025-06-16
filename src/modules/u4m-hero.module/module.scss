@@ -3,7 +3,12 @@
 .u4m-hero {
   .flex-row {
     width: auto;
-
+    &.contentPosright {
+      flex-direction: row-reverse;
+      @include tablet {
+        flex-direction: column-reverse;
+      }
+    }
     &.one_col {
       > div {
         width: 100%;

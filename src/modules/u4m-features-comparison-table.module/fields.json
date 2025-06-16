@@ -326,7 +326,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     }, {
       "button_type" : "std",
       "button_style" : "hs-button",
@@ -339,7 +340,8 @@
         },
         "open_in_new_tab" : false,
         "no_follow" : false
-      }
+      },
+      "button_size" : "small"
     } ]
   }
 }, {
@@ -397,13 +399,32 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "cross", "Cross" ], [ "minus", "Minus" ], [ "check_mark", "Check Mark" ] ],
+      "choices" : [ [ "cross", "Cross" ], [ "minus", "Minus" ], [ "check_mark", "Check Mark" ], [ "text", "Text" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "cross"
+    }, {
+      "id" : "689b8327-87fe-6796-8dcf-3646fc258707",
+      "name" : "version_1_value",
+      "label" : "Value",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "featured_items.comparison_items.version_1",
+        "controlling_value_regex" : "text",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null
     }, {
       "id" : "6f95cd07-8af4-afbb-4e72-6ecd2334e9e2",
       "name" : "version_02",
@@ -419,13 +440,32 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "cross", "Cross" ], [ "minus", "Minus" ], [ "check_mark", "Check Mark" ] ],
+      "choices" : [ [ "cross", "Cross" ], [ "minus", "Minus" ], [ "check_mark", "Check Mark" ], [ "text", "Text" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "cross"
+    }, {
+      "id" : "3f44f34a-7d94-9712-d93b-26d3e97f5b4d",
+      "name" : "version_2_value",
+      "label" : "Value",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "featured_items.comparison_items.version_02",
+        "controlling_value_regex" : "text",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null
     }, {
       "id" : "0ad11766-1a86-381c-2990-87596d89ad17",
       "name" : "version_03",
@@ -441,13 +481,32 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "cross", "Cross" ], [ "minus", "Minus" ], [ "check_mark", "Check Mark" ] ],
+      "choices" : [ [ "cross", "Cross" ], [ "minus", "Minus" ], [ "check_mark", "Check Mark" ], [ "text", "Text" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "minus"
+    }, {
+      "id" : "d3b36d72-7572-2fca-ebab-4d3629ea96ba",
+      "name" : "version_3_value",
+      "label" : "Value",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "featured_items.comparison_items.version_03",
+        "controlling_value_regex" : "text",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null
     }, {
       "id" : "30e02447-dcf8-f503-3ca8-b7c422405514",
       "name" : "version_04",
@@ -463,13 +522,32 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "cross", "Cross" ], [ "minus", "Minus" ], [ "check_mark", "Check Mark" ] ],
+      "choices" : [ [ "cross", "Cross" ], [ "minus", "Minus" ], [ "check_mark", "Check Mark" ], [ "text", "Text" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "cross"
+    }, {
+      "id" : "6140a94f-92ef-2bf2-436a-aa74925af295",
+      "name" : "version_4_value",
+      "label" : "Value",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "featured_items.comparison_items.version_04",
+        "controlling_value_regex" : "text",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null
     }, {
       "id" : "fa6325c9-b2ff-4fb3-e146-d7269cf2c2bc",
       "name" : "version_05",
@@ -485,13 +563,32 @@
         "access" : null
       },
       "display" : "select",
-      "choices" : [ [ "cross", "Cross" ], [ "minus", "Minus" ], [ "check_mark", "Check Mark" ] ],
+      "choices" : [ [ "cross", "Cross" ], [ "minus", "Minus" ], [ "check_mark", "Check Mark" ], [ "text", "Text" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
       "default" : "cross"
+    }, {
+      "id" : "d5a13e1d-1873-eaff-870d-c4387f122859",
+      "name" : "version_5_value",
+      "label" : "Value",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "featured_items.comparison_items.version_05",
+        "controlling_value_regex" : "text",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "display_width" : null
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -504,35 +601,35 @@
       "version_02" : "cross",
       "version_03" : "minus",
       "version_04" : "cross",
-      "version_04_copy" : "cross"
+      "version_05" : "cross"
     }, {
       "heading" : "Feature Name Here",
       "version_1" : "cross",
       "version_02" : "cross",
       "version_03" : "minus",
       "version_04" : "cross",
-      "version_04_copy" : "cross"
+      "version_05" : "cross"
     }, {
       "heading" : "Feature Name Here",
       "version_1" : "cross",
       "version_02" : "cross",
       "version_03" : "minus",
       "version_04" : "cross",
-      "version_04_copy" : "cross"
+      "version_05" : "cross"
     }, {
       "heading" : "Feature Name Here",
       "version_1" : "cross",
       "version_02" : "cross",
       "version_03" : "minus",
       "version_04" : "cross",
-      "version_04_copy" : "cross"
+      "version_05" : "cross"
     }, {
       "heading" : "Feature Name Here",
       "version_1" : "cross",
       "version_02" : "cross",
       "version_03" : "minus",
       "version_04" : "cross",
-      "version_04_copy" : "cross"
+      "version_05" : "cross"
     } ]
   } ],
   "tab" : "CONTENT",

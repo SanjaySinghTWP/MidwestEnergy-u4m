@@ -67,8 +67,8 @@
 							</div>
 							{% endif %}
 							{%  endif %}
-              	{% if item.right_column.file_field  || item.right_column.external_video_url    %}
-							
+              	{#% if item.right_column.file_field  || item.right_column.external_video_url    %#}
+							{% if item.right_column.select_video_type %}
 						
 							<div class="vid_wrp">
 								{% if  item.right_column.select_video_type  == "video1"%}
@@ -124,7 +124,7 @@
 					</div>
 					{% endif %}
 				</div>
-
+{% if item.disable_bottom_content == "false" %}
 				<div class="bottom-section">
 					{% if item.bottom_content %}
 					<div class="content_wrp">
@@ -148,9 +148,8 @@
 							{% endfor %}
 						</ul>
 					</div>
-
 				</div>
-
+{% endif %}
 			</div>
 		</div>
 		{% endfor %}

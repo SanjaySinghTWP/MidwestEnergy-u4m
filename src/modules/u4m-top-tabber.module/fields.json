@@ -1029,6 +1029,14 @@
     "label" : "Bottom Content",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "tab_items.disable_bottom_content",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "type" : "richtext",
     "display_width" : null,
     "default" : "<h3>Alternating Content Module</h3>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
@@ -1043,6 +1051,14 @@
       "max" : null,
       "sorting_label_field" : "6510b977-0ecb-1db6-17b9-563851e3a0cb",
       "default" : 4
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "tab_items.disable_bottom_content",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
     },
     "children" : [ {
       "id" : "6510b977-0ecb-1db6-17b9-563851e3a0cb",
@@ -1071,6 +1087,16 @@
     }, {
       "list_title" : "Icon list"
     } ]
+  }, {
+    "id" : "fe6ff822-72a8-0eb6-78f2-0894662b3458",
+    "name" : "disable_bottom_content",
+    "label" : "Disable Bottom Content",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -1181,7 +1207,8 @@
       "list_title" : "Icon list"
     }, {
       "list_title" : "Icon list"
-    } ]
+    } ],
+    "boolean_field" : false
   }, {
     "tab_title" : "How Do Rolling Blackouts Work?",
     "number_of_columns" : "col-12",
@@ -1286,7 +1313,8 @@
       "list_title" : "Icon list"
     }, {
       "list_title" : "Icon list"
-    } ]
+    } ],
+    "boolean_field" : false
   }, {
     "tab_title" : "How Do Rolling Blackouts Work?",
     "number_of_columns" : "col-12",
@@ -1391,7 +1419,8 @@
       "list_title" : "Icon list"
     }, {
       "list_title" : "Icon list"
-    } ]
+    } ],
+    "boolean_field" : false
   } ]
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",

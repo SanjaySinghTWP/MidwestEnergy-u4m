@@ -363,6 +363,36 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
+    "id" : "6a4b0652-ebb6-524d-758e-c56ab89e87fc",
+    "name" : "enable_shape",
+    "label" : "Enable Shape",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "862d96c7-344c-f8dc-931c-348a360055ff",
+    "name" : "shape_color",
+    "label" : "Shape Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.enable_shape",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#D0DD28",
+      "opacity" : 50
+    }
+  }, {
     "id" : "d6ebe062-20c0-9cc5-4fc3-ef8b7a16b4e3",
     "name" : "include_animation",
     "label" : "Include Animation",
@@ -401,6 +431,11 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
+    "enable_shape" : true,
+    "shape_color" : {
+      "color" : "#D0DD28",
+      "opacity" : 50
+    },
     "include_animation" : false,
     "animation_type" : "fade-up"
   }

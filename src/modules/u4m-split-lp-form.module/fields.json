@@ -405,6 +405,40 @@
     "display_width" : null,
     "default" : "check"
   }, {
+    "id" : "5c589ecf-e965-69d5-7d15-a0181267b66b",
+    "name" : "select_background_color",
+    "label" : "Form Background Color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bright_green_bg", "Bright Green" ], [ "super_light_gray_bg", "Super Light Gray" ], [ "light_gray_bg", "Light Gray" ], [ "middle_green_bg", "Middle Green" ], [ "dark_green_bg", "Dark Green" ], [ "orange_bg", "Orange" ], [ "red_bg", "Red" ], [ "blue_bg", "Blue" ], [ "yellow_bg", "Yellow" ], [ "custom", "Custom" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "dark_green_bg"
+  }, {
+    "id" : "859cdb54-0bbe-2461-d92a-7452455a6529",
+    "name" : "custom_background_color",
+    "label" : "Custom Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.select_background_color",
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  }, {
     "id" : "d6ebe062-20c0-9cc5-4fc3-ef8b7a16b4e3",
     "name" : "include_animation",
     "label" : "Include Animation",
@@ -443,6 +477,11 @@
   "display_width" : null,
   "default" : {
     "select_list_type" : "check",
+    "select_background_color" : "dark_green_bg",
+    "custom_background_color" : {
+      "color" : null,
+      "opacity" : null
+    },
     "include_animation" : false
   }
 }, {

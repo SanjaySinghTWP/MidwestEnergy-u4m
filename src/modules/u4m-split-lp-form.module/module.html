@@ -90,7 +90,7 @@
   {% endif %}
 </div>
 {% if module.form_section.form_field.form_id %}
-<div class="form-col" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
+<div class="form-col {{ module.module_settings.select_background_color }}" {% if module.module_settings.include_animation %}data-aos="{{ module.module_settings.animation_type }}"
      {% endif %} data-aos-delay="100">
   <div class="form-wrap">
     {% form
@@ -108,5 +108,14 @@
 </div>
 </section>
 
+{% require_css %}
+  <style>
+    {% if module.module_settings.select_background_color == "custom" %}
+    .{{name}} .form-col.custom{
+      background-color:rgba({{ module.module_settings.custom_background_color.color|convert_rgb }}{{ module.module_settings.custom_background_color.opacity*0.01 }});
+      {% endif %}
+    }
+</style>
+{% end_require_css %}
 
 

@@ -12,10 +12,12 @@
       position: relative;
 
       .image {
+        height: 100%;
         img {
           -o-object-fit: cover;
           object-fit: cover;
           min-height: 503rem;
+          height: 100%;
         }
       }
 
@@ -88,6 +90,13 @@
 
       img {
         border-radius: 24rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        @include tablet {
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+          border-top-right-radius: 24rem;
+        }
       }
     }
 
@@ -397,6 +406,11 @@
       .intCnt {
         .eyebrowtext {
           color: $white;
+        }
+      }
+      .intro_btn_wrap {
+        a.hs-button {
+          @include button;
         }
       }
     }

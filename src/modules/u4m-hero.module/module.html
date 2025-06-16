@@ -3,7 +3,7 @@
 </div>
 
 
-<div class="flex-row {{ module.module_settings.style_type }}">
+<div class="flex-row {{ module.module_settings.style_type }} contentPos{{ module.module_settings.select_content_column_position }}">
 
   <div class="content_column">
     {% if module.intro_content.include_eyebrow or module.intro_content.include_heading or module.intro_content.include_content or module.intro_content.include_button %}
@@ -98,7 +98,9 @@
 {% if module.media_column.media_type %}
 <div class="media_column">
   {% if module.media_column.media_type == "img" %}
+    {% if module.media_column.image.src %}
   <img src="{{ module.media_column.image.src|escape_url }}" alt="{{ module.media_column.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+  {% endif %}
   {% endif %}
   {% if module.media_column.media_type == "video" %}
   <div class="video-wrapp">

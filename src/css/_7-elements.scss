@@ -28,6 +28,21 @@ body.lp-sign-up {
   margin-top: 0;
 }
 
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.hs-inline-edit [data-aos^="fade"],
+.hs-inline-edit [data-aos*="fade"],
+.hs-inline-edit [data-aos^="zoom"],
+.hs-inline-edit [data-aos*="zoom"] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Set default text size */
 h1,
 h2,
@@ -254,6 +269,19 @@ div.hs_cos_wrapper_widget section.top-margin-none {
 }
 
 /* priori sans it font family	 */
+
+@font-face {
+  font-family: "Priori Sans OT";
+  src: url("{{ get_asset_url('../fonts/PrioriSansOT-Light.woff2') }}")
+      format("woff2"),
+    url("{{ get_asset_url('../fonts/PrioriSansOT-Light.ttf') }}") format("ttf"),
+    url("{{ get_asset_url('../fonts/PrioriSansOT-Light.eot') }}") format("eot"),
+    url("{{ get_asset_url('../fonts/PrioriSansOT-Light.svg') }}") format("svg"),
+    url("{{ get_asset_url('../fonts/PrioriSansOT-Light.woff') }}")
+      format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
 
 @font-face {
   font-family: "Priori Sans OT";
@@ -1019,6 +1047,7 @@ section[class*="u4m-"] {
 
 .olive_btn {
   @include olivebtn;
+  padding: 11rem 24rem;
   &:hover {
     border: 1px solid $dark_green;
     background-color: $white;
