@@ -63,6 +63,9 @@
     .flex_row {
       justify-content: center;
       margin: 0 -30rem;
+      @include navbreak {
+        margin: 0;
+      }
       @include tabletvert {
         row-gap: 0px;
       }
